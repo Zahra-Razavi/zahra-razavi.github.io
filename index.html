@@ -13,6 +13,7 @@
   <style>
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif; }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-DWcLgJ8Ycm9B3ch6xubDq0hP47Gm2f7RtADxFODrM1Sr3srmh64MczOQ8pXxvFVF6pHI9gV5g9KQ0kivS4QnTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-white text-gray-800">
   <!-- Header -->
@@ -34,15 +35,12 @@
     <p class="mt-4 md:text-lg text-gray-600">
       Expertise in FinTech, SaaS, logistics, IoT-enabled services, digital health, e-commerce, and AI-assisted workflows.
     </p>
-    <a href="#work" class="inline-block mt-6 px-5 py-3 border rounded-lg hover:translate-y-0.5 transition">
-      View Selected Work
-    </a>
   </section>
 
   <!-- Work Grid -->
   <section id="work" class="max-w-5xl mx-auto px-4 pb-16 grid gap-6 md:grid-cols-2">
     <!-- Project Card Template -->
-    <a href="projects/Lendeck.html" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+    <a href="projects/lendeck.html" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
       <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
       <div class="p-5">
         <h3 class="font-medium text-lg">Lendeck — FinTech platform</h3>
@@ -50,7 +48,7 @@
         <span class="inline-block mt-3 text-sm group-hover:translate-x-1 transition">Read case study →</span>
       </div>
     </a>
-    <a href="projects/Mediana.html" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+    <a href="projects/mediana.html" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
       <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
       <div class="p-5">
         <h3 class="font-medium text-lg">Mediana — VoIP SaaS Dashboard</h3>
@@ -58,7 +56,7 @@
         <span class="inline-block mt-3 text-sm group-hover:translate-x-1 transition">Read case study →</span>
       </div>
     </a>
-    <a href="projects/Ganje.html" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+    <a href="projects/ganje.html" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
       <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
       <div class="p-5">
         <h3 class="font-medium text-lg">Ganje — B2B Logistics Platform; IoT smart lockers</h3>
@@ -66,7 +64,7 @@
         <span class="inline-block mt-3 text-sm group-hover:translate-x-1 transition">Read case study →</span>
       </div>
     </a>
-    <a href="projects/Kidora.html" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+    <a href="projects/kidora.html" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
       <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
       <div class="p-5">
         <h3 class="font-medium text-lg">Kidora — Early Childhood Development App</h3>
@@ -77,27 +75,61 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="max-w-3xl mx-auto px-4 pb-16">
+  <section id="about" class="max-w-5xl mx-auto px-4 py-16">
     <h2 class="text-2xl font-semibold">About</h2>
-    <p class="mt-3 text-gray-700 text-justify">
+    <p class="max-w-3xl mx-auto mt-8 text-gray-700 text-justify">
       Product Designer & UX Researcher with 6+ years owning end-to-end design of SaaS products, mobile/web apps, and agentic-AI experiences, from discovery through production release, for high-growth startups across North America and MENA. Proven ability to scale platforms, reduce churn, and accelerate delivery through lean, AI-augmented workflows. Skilled in full-cycle product design, from discovery, cognitive research, and journey mapping to accessible, WCAG-compliant interfaces and iterative UX optimization in Agile/Scrum environments. Known for strong collaboration with cross-functional teams, backed by deep expertise in UX research, behavioral analytics, and product strategy.
     </p>
   </section>
 
   <!-- Resume -->
-  <section id="resume" class="max-w-3xl mx-auto px-4 pb-16">
+   <section id="resume" class="max-w-5xl mx-auto px-4 py-16">
     <h2 class="text-2xl font-semibold">Resume</h2>
-    <p class="mt-3">Download my <a class="underline" href="Zahra_Razavi_Resume.pdf" target="_blank" rel="noopener">resume (PDF)</a></p>
-    <div class="mt-6 border rounded-lg overflow-hidden">
-      <iframe src="Zahra_Razavi_Resume.pdf" class="w-full h-[600px]"></iframe>
-    </div> 
+    
+    <!-- Inline PDF preview -->
+    <!-- Fallback link for mobile or if viewer blocks PDFs -->
+    <p class="mt-2">
+      If the preview doesn’t load, 
+      <a class="underline" href="assets/Zahra-Razavi-Resume.pdf" target="_blank" rel="noopener">
+        open the PDF in a new tab
+      </a>.
+    </p>
+
+    <div class="text-center">
+     <div class="max-w-3xl mx-auto mt-8 w-full h-[min(80vh,900px)] border rounded-xl overflow-hidden">
+      <iframe
+        src="assets/Zahra-Razavi-Resume.pdf#view=FitH"
+        title="Zahra Razavi — Resume PDF"
+        class="w-full h-full"
+        loading="lazy">
+      </iframe>
+     </div>
+
+
+      <a href="assets/Zahra-Razavi-Resume.pdf" download
+        class="inline-block mt-8 px-5 py-3 border rounded-lg text-gray-700 hover:translate-y-0.5 transition">
+        Download my resume (PDF)
+      </a>
+    </div>
   </section>
 
+  
   <!-- Contact -->
-  <section id="contact" class="max-w-3xl mx-auto px-4 pb-24">
+  <section id="contact" class="max-w-5xl mx-auto px-4 pb-24">
     <h2 class="text-2xl font-semibold">Contact</h2>
-    <p class="mt-3"><a class="underline" href="mailto:zrazavi97@gmail.com">zrazavi97@gmail.com</a></p>
-    <p class="mt-1"><a class="underline" href="https://www.linkedin.com/in/zahrarazavi97">LinkedIn</a> · <a class="underline" href="https://behance.net/zahrarazavi">Behance</a></p>
+    <p class="mt-3">
+      <a class="underline" href="mailto:zrazavi97@gmail.com">zrazavi97@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a class="underline inline-flex items-center gap-1" href="https://www.linkedin.com/in/zahrarazavi97" target="_blank" rel="noopener">
+  LinkedIn
+      </a>
+      
+      &nbsp;·&nbsp;
+      <a class="underline inline-flex items-center gap-1" href="https://behance.net/zahrarazavi" target="_blank" rel="noopener">
+  Behance
+      </a>
+
+    </p>
   </section>
 
   <footer class="text-center text-sm text-gray-500 py-8">© <span x-data x-text="new Date().getFullYear()"></span> Zahra Razavi</footer>
