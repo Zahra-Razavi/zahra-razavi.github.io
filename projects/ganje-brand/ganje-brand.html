@@ -1,359 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganje Branding Case Study</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #1b1b3a;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #005BE2 0%, #1B1B3A 100%);
+      color: white;
+    }
+    header h1 { font-size: 2.5rem; margin: 0; }
+    header p { margin-top: .5rem; font-size: 1.2rem; }
+    section { max-width: 1000px; margin: 3rem auto; padding: 0 1rem; }
+    h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+    .logo-switcher {
+      display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
+    }
+    .logo-box {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      width: 200px;
+    }
+    .logo-box.dark { background: #1B1B3A; }
+    .logo-box.light { background: #fff; }
+    .logo-box img { max-height: 60px; }
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #ccc;
+    }
+    .swatch-color { height: 80px; }
+    .swatch-info { padding: .5rem; font-size: .9rem; }
+    .applications {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .app-box {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+    .app-box img { width: 100%; height: 180px; object-fit: cover; }
+    .app-box div { padding: .75rem; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ganje — Smart Locker IoT Brand Identity</h1>
+    <p>Designing the face of Iran’s first IoT-powered smart locker service</p>
+  </header>
 
-
-import { useState } from "react";
-import { motion } from "framer-motion";
-
-/**
- * Ganje Branding Case Study — Single-file React component
- * ------------------------------------------------------
- * - TailwindCSS utility classes
- * - Framer Motion for subtle, scroll-triggered animations
- * - Accessible markup (alt text, aria labels)
- * - Replace image src paths with your actual assets
- * - Drop this component into your portfolio app and route to it
- */
-
-const palette = [
-  { name: "Ganje Blue", hex: "#005BE2", role: "Primary / Interactive" },
-  { name: "Ivory White", hex: "#FFFFFF", role: "Surfaces / Text on dark" },
-  { name: "Nocturne", hex: "#1B1B3A", role: "Background / Headings" },
-  { name: "Graphite", hex: "#1E1E24", role: "Neutral UI / Dividers" },
-  { name: "Mist", hex: "#E6ECEA", role: "Subtle backgrounds" },
-];
-
-const typeScale = [
-  { label: "Display / H1", className: "text-4xl md:text-6xl", demo: "Ganje — Smart Locker IoT" },
-  { label: "Headline / H2", className: "text-3xl md:text-4xl", demo: "Futuristic · Sophisticated" },
-  { label: "Title / H3", className: "text-2xl", demo: "Smart living, elegantly delivered" },
-  { label: "Body / Paragraph", className: "text-base", demo: "Clarity and elegance were key — typography that feels modern yet timeless." },
-  { label: "Caption / Meta", className: "text-sm tracking-wide uppercase", demo: "IoT • Sustainability • Convenience" },
-];
-
-const logoSteps = [
-  {
-    title: "Sketches",
-    caption: "Exploring forms inspired by security, connectivity, and fluid access.",
-    src: "/images/ganje/logo-sketches.jpg",
-  },
-  {
-    title: "Vector Refinement",
-    caption: "Simplifying geometry, balancing negative space for legibility.",
-    src: "/images/ganje/logo-refine.jpg",
-  },
-  {
-    title: "Final Mark",
-    caption: "A modern glyph merging a keyhole and node network.",
-    src: "projects/ganje-brand/images/ganje-logo.svg",
-  },
-];
-
-const applications = [
-  { title: "Locker UI Panel", src: "/images/ganje/mock-locker-ui.jpg" },
-  { title: "Mobile App Login", src: "/images/ganje/mock-app-login.jpg" },
-  { title: "Billboard / OOH", src: "/images/ganje/mock-billboard.jpg" },
-  { title: "Packaging / Parcel Label", src: "/images/ganje/mock-packaging.jpg" },
-  { title: "Website Hero", src: "/images/ganje/mock-website-hero.jpg" },
-  { title: "Branded Card / NFC", src: "/images/ganje/mock-nfc-card.jpg" },
-];
-
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" },
-};
-
-function ColorSwatch({ color }) {
-  const [hover, setHover] = useState(false);
-  return (
-    <div
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      className="group relative"
-      aria-label={`${color.name} swatch`}
-    >
-      <div
-        className="h-28 rounded-2xl shadow-sm border border-black/5"
-        style={{ backgroundColor: color.hex }}
-      />
-      <div className="mt-2 flex items-center justify-between text-sm">
-        <div className="font-medium text-gray-900 dark:text-gray-100">{color.name}</div>
-        <code className="text-gray-500">{color.hex}</code>
+  <section>
+    <h2>Logo Variants</h2>
+    <div class="logo-switcher">
+      <div class="logo-box light">
+        <p>Light Background</p>
+        <img src="projects/ganje-brand/images/ganje-logo.svg" alt="Ganje logo light">
       </div>
-      <div className="text-xs text-gray-500">{color.role}</div>
-
-      {/* Hover demo card */}
-      <div
-        className={`absolute left-1/2 z-10 mt-3 w-64 -translate-x-1/2 rounded-xl border border-black/10 bg-white p-3 shadow-2xl transition ${
-          hover ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-2"
-        }`}
-      >
-        <div className="text-[10px] mb-2 uppercase tracking-wide text-gray-500">Usage Preview</div>
-        <div className="rounded-lg overflow-hidden border border-black/10">
-          <div className="h-10 flex items-center justify-center font-semibold" style={{ backgroundColor: color.hex }}>
-            <span className="text-white drop-shadow-sm">CTA / Banner</span>
-          </div>
-          <div className="p-3">
-            <div className="h-2 w-20 rounded mb-2" style={{ backgroundColor: color.hex }} />
-            <div className="h-2 w-40 rounded" style={{ backgroundColor: color.hex + "20" }} />
-          </div>
-        </div>
+      <div class="logo-box dark">
+        <p style="color:white">Dark Background</p>
+        <img src="projects/ganje-brand/images/ganje-logo.svg" alt="Ganje logo dark">
       </div>
     </div>
-  );
-}
+  </section>
 
-function LogoPreviewSwitcher() {
-  const [mode, setMode] = useState("light");
-  const isDark = mode === "dark";
-  const logoSrcLight = "projects/ganje-brand/images/ganje-logo.svg";
-  const logoSrcDark = "projects/ganje-brand/images/ganje-logo.svg"; // replace with a dark-optimized file if you have one
-  return (
-    <div className="rounded-2xl border border-black/10 bg-white/60 p-5 backdrop-blur dark:border-white/10 dark:bg-white/5">
-      <div className="flex items-center justify-between gap-4">
-        <div>
-          <div className="text-sm text-gray-500">Logo Variant</div>
-          <div className="font-medium">Preview on light / dark surfaces</div>
-        </div>
-        <div className="inline-flex items-center gap-2 rounded-xl border border-black/10 bg-white px-1 py-1 text-sm dark:border-white/10 dark:bg-white/10">
-          <button onClick={() => setMode("light")} className={`px-3 py-1 rounded-lg ${!isDark ? "bg-black/5 dark:bg-white/20" : ""}`}>Light</button>
-          <button onClick={() => setMode("dark")} className={`px-3 py-1 rounded-lg ${isDark ? "bg-black/5 dark:bg-white/20" : ""}`}>Dark</button>
-        </div>
+  <section>
+    <h2>Color Palette</h2>
+    <div class="palette">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#005BE2"></div>
+        <div class="swatch-info"><b>Ganje Blue</b><br>#005BE2</div>
       </div>
-      <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
-        {/* Light preview */}
-        <div className="rounded-xl border border-black/10 p-6">
-          <div className="text-xs uppercase tracking-wide text-gray-500">Light Surface</div>
-          <div className="mt-3 flex h-28 items-center justify-center rounded-lg" style={{ backgroundColor: "#FFFFFF" }}>
-            <img src={logoSrcLight} alt="Ganje logo on light" className="h-12 w-auto" />
-          </div>
-        </div>
-        {/* Dark preview */}
-        <div className="rounded-xl border border-black/10 p-6">
-          <div className="text-xs uppercase tracking-wide text-gray-500">Dark Surface</div>
-          <div className="mt-3 flex h-28 items-center justify-center rounded-lg" style={{ backgroundColor: "#1B1B3A" }}>
-            <img src={logoSrcDark} alt="Ganje logo on dark" className="h-12 w-auto" />
-          </div>
-        </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FFFFFF"></div>
+        <div class="swatch-info"><b>Ivory White</b><br>#FFFFFF</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1B1B3A"></div>
+        <div class="swatch-info"><b>Nocturne</b><br>#1B1B3A</div>
       </div>
     </div>
-  );
-}
+  </section>
 
-export default function GanjeBrandingCaseStudy() {
-  return (
-    <div className="relative overflow-clip bg-gradient-to-b from-[#F8FAF9] to-white dark:from-[#0B0D0C] dark:to-black text-gray-900 dark:text-gray-100">
-      {/* Decorative gradient aura */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[480px] w-[880px] rounded-full bg-gradient-to-r from-[#18C2A6]/20 via-[#0F7A5C]/10 to-transparent blur-3xl" />
-
-      {/* HERO */}
-      <section className="relative mx-auto max-w-6xl px-6 pt-24 pb-24">
-        <motion.div {...fadeUp} className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 px-3 py-1 text-xs backdrop-blur dark:border-white/10 dark:bg-white/5">
-            <span className="size-2 rounded-full" style={{ backgroundColor: "#18C2A6" }} />
-            Case Study
-          </div>
-          <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl">Ganje — Smart Locker IoT Brand Identity</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-            Designing the face of Iran’s first IoT-powered smart locker service — balancing trust, innovation, and sophisticated simplicity.
-          </p>
-        </motion.div>
-        <motion.div {...fadeUp} className="mt-10 flex justify-center">
-          <img
-            src="/images/ganje/hero-mock.jpg"
-            alt="Ganje branding hero montage"
-            className="w-full max-w-5xl rounded-3xl border border-black/10 shadow-2xl"
-            loading="lazy"
-          />
-        </motion.div>
-      </section>
-
-      {/* OVERVIEW */}
-      <section className="mx-auto max-w-6xl px-6 py-12">
-        <motion.div {...fadeUp} className="grid grid-cols-1 gap-10 md:grid-cols-5">
-          <div className="md:col-span-3">
-            <h2 className="text-2xl md:text-3xl font-semibold">Project Overview</h2>
-            <p className="mt-3 text-gray-600 dark:text-gray-300">
-              Ganje is the first smart locker IoT service in Iran. The brand identity needed to blend
-              <strong> futuristic confidence</strong> with <strong>refined simplicity</strong> — creating a premium, trustworthy
-              experience for tech-savvy early adopters while signaling sustainable progress in last‑mile delivery.
-            </p>
-          </div>
-          <div className="md:col-span-2">
-            <div className="rounded-2xl border border-black/10 bg-white/60 p-5 backdrop-blur dark:border-white/10 dark:bg-white/5">
-              <dl className="grid grid-cols-2 gap-4 text-sm">
-                <div>
-                  <dt className="text-gray-500">Industry</dt>
-                  <dd className="font-medium">IoT / Smart Lockers</dd>
-                </div>
-                <div>
-                  <dt className="text-gray-500">Year</dt>
-                  <dd className="font-medium">20XX</dd>
-                </div>
-                <div>
-                  <dt className="text-gray-500">Deliverables</dt>
-                  <dd className="font-medium">Logo, Visual System, Style Guide, Palette, Icons</dd>
-                </div>
-                <div>
-                  <dt className="text-gray-500">Role</dt>
-                  <dd className="font-medium">Branding & Design</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* LOGO STORY */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <motion.h2 {...fadeUp} className="text-2xl md:text-3xl font-semibold">The Logo Story</motion.h2>
-        <motion.p {...fadeUp} className="mt-3 max-w-3xl text-gray-600 dark:text-gray-300">
-          From concept to clarity: a modern glyph that merges a <strong>keyhole</strong> and a <strong>node network</strong>, expressing
-          secure access, connectivity, and flow.
-        </motion.p>
-
-        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {logoSteps.map((step) => (
-            <motion.figure key={step.title} {...fadeUp} className="rounded-2xl border border-black/10 bg-white/60 p-4 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
-              <img src={step.src} alt={step.title} className="h-44 w-full rounded-xl object-cover" loading="lazy" />
-              <figcaption className="mt-3">
-                <div className="font-semibold">{step.title}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-300">{step.caption}</div>
-              </figcaption>
-            </motion.figure>
-          ))}
-        </div>
-
-        <motion.div {...fadeUp} className="mt-10">
-          {/* Light/Dark Logo Variant Switcher */}
-          <LogoPreviewSwitcher />
-        </motion.div>
-      </section>
-
-      {/* COLOR PALETTE */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <motion.h2 {...fadeUp} className="text-2xl md:text-3xl font-semibold">Color Palette</motion.h2>
-        <motion.p {...fadeUp} className="mt-3 max-w-3xl text-gray-600 dark:text-gray-300">
-          A bold, modern palette anchored by <strong>Ganje Blue</strong> for action and visibility, grounded with
-          <strong> Nocturne</strong> for depth and contrast, and balanced with <strong>Ivory White</strong> for clarity and space.
-        </motion.p>
-        <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-5">
-          {palette.map((c) => (
-            <motion.div key={c.hex} {...fadeUp}>
-              <ColorSwatch color={c} />
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* TYPOGRAPHY & STYLE GUIDE */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <motion.h2 {...fadeUp} className="text-2xl md:text-3xl font-semibold">Typography & Style</motion.h2>
-        <motion.p {...fadeUp} className="mt-3 max-w-3xl text-gray-600 dark:text-gray-300">
-          Clarity and elegance were key — typography that feels modern yet timeless. Use strong hierarchy, generous
-          spacing, and restrained accents.
-        </motion.p>
-        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-          <motion.div {...fadeUp} className="space-y-6">
-            {typeScale.map((t) => (
-              <div key={t.label} className="rounded-2xl border border-black/10 bg-white/60 p-5 backdrop-blur dark:border-white/10 dark:bg-white/5">
-                <div className="text-xs uppercase tracking-wide text-gray-500">{t.label}</div>
-                <div className={`mt-2 font-semibold ${t.className}`}>{t.demo}</div>
-              </div>
-            ))}
-          </motion.div>
-          <motion.div {...fadeUp} className="rounded-2xl border border-black/10 bg-white/60 p-6 backdrop-blur dark:border-white/10 dark:bg-white/5">
-            <div className="text-xs uppercase tracking-wide text-gray-500">Usage Examples</div>
-            <div className="mt-4 space-y-4">
-              <div className="rounded-xl border border-black/10 p-4">
-                <div className="text-sm text-gray-500">Signage</div>
-                <div className="mt-1 text-2xl font-bold">LOCK • PICK • GO</div>
-              </div>
-              <div className="rounded-xl border border-black/10 p-4">
-                <div className="text-sm text-gray-500">App UI</div>
-                <div className="mt-1 text-lg">Enter Pickup Code</div>
-                <input
-                  className="mt-2 w-full rounded-lg border border-black/10 bg-white/70 p-3 outline-none ring-0 focus:border-[#18C2A6]"
-                  placeholder="•••• ••"
-                  aria-label="Pickup code"
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* VISUAL IDENTITY IN ACTION */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <motion.h2 {...fadeUp} className="text-2xl md:text-3xl font-semibold">Visual Identity in Action</motion.h2>
-        <motion.p {...fadeUp} className="mt-3 max-w-3xl text-gray-600 dark:text-gray-300">
-          A cohesive system across physical and digital touchpoints — from locker panels and mobile onboarding to
-          outdoor campaigns and packaging.
-        </motion.p>
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {applications.map((app) => (
-            <motion.figure key={app.title} {...fadeUp} className="group overflow-hidden rounded-2xl border border-black/10 bg-white/60 shadow-sm backdrop-blur transition hover:shadow-xl dark:border-white/10 dark:bg-white/5">
-              <img src={app.src} alt={app.title} className="h-56 w-full object-cover transition group-hover:scale-[1.02]" loading="lazy" />
-              <figcaption className="flex items-center justify-between p-4 text-sm">
-                <div className="font-medium">{app.title}</div>
-                <span className="text-xs text-gray-500">Mockup</span>
-              </figcaption>
-            </motion.figure>
-          ))}
-        </div>
-      </section>
-
-      {/* BRAND PERSONALITY */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <motion.div {...fadeUp} className="rounded-3xl border border-black/10 bg-gradient-to-r from-[#0F7A5C] to-[#18C2A6] p-8 text-white shadow-2xl">
-          <div className="text-xs uppercase tracking-widest text-white/80">Brand Personality</div>
-          <h3 className="mt-2 text-2xl md:text-3xl font-semibold">The Visionary Sophisticate</h3>
-          <p className="mt-2 max-w-3xl text-white/90">
-            Not just a locker — a smarter, more elegant way of living with technology. Bold, sleek, and confident, designed
-            for tech‑savvy early adopters.
-          </p>
-          <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-            <div className="rounded-xl bg-white/10 p-4">
-              <div className="text-sm text-white/90">Tone</div>
-              <div className="font-medium">Bold · Sleek · Confident</div>
-            </div>
-            <div className="rounded-xl bg-white/10 p-4">
-              <div className="text-sm text-white/90">Promise</div>
-              <div className="font-medium">Smart living, elegantly delivered</div>
-            </div>
-            <div className="rounded-xl bg-white/10 p-4">
-              <div className="text-sm text-white/90">Keywords</div>
-              <div className="font-medium">Futuristic • Secure • Premium • Sustainable</div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* CLOSING / CTA */}
-      <section className="mx-auto max-w-6xl px-6 pb-24">
-        <motion.div {...fadeUp} className="rounded-3xl border border-black/10 bg-white/70 p-8 backdrop-blur dark:border-white/10 dark:bg-white/5">
-          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-3">
-            <div className="md:col-span-2">
-              <h3 className="text-xl md:text-2xl font-semibold">Outcome</h3>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                The identity set the stage for Iran’s first IoT-based smart delivery brand — aligning customer trust with a
-                futuristic, premium experience across touchpoints.
-              </p>
-            </div>
-            <div className="flex justify-end">
-              <a
-                href="/projects"
-                className="inline-flex items-center gap-2 rounded-2xl border border-black/10 bg-gradient-to-r from-[#0F7A5C] to-[#18C2A6] px-5 py-3 font-medium text-white shadow-lg transition hover:translate-y-0.5"
-              >
-                See More Projects
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </section>
+  <section>
+    <h2>Applications</h2>
+    <div class="applications">
+      <div class="app-box">
+        <img src="projects/ganje-brand/images/mock-locker.jpg" alt="Locker UI">
+        <div>Locker UI Panel</div>
+      </div>
+      <div class="app-box">
+        <img src="projects/ganje-brand/images/mock-app.jpg" alt="App login">
+        <div>Mobile App Login</div>
+      </div>
+      <div class="app-box">
+        <img src="projects/ganje-brand/images/mock-billboard.jpg" alt="Billboard">
+        <div>Billboard / OOH</div>
+      </div>
     </div>
-  );
-}
+  </section>
+
+</body>
+</html>
