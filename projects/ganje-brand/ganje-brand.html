@@ -1,122 +1,590 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ganje Branding Case Study</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ganje — IoT Smart Locker Brand Identity</title>
+  <meta name="description" content="Brand identity case study for Ganje: IoT smart locker platform. Logo system, visual language, brand voice, and product applications." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #1b1b3a;
+    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
+    [data-animate] { transition: opacity .6s ease, transform .6s ease; }
+    [data-animate].is-waiting { opacity: 0; transform: translateY(24px); }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animate] { transition: none; }
+      [data-animate].is-waiting { opacity: 1; transform: none; }
     }
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, #005BE2 0%, #1B1B3A 100%);
-      color: white;
-    }
-    header h1 { font-size: 2.5rem; margin: 0; }
-    header p { margin-top: .5rem; font-size: 1.2rem; }
-    section { max-width: 1000px; margin: 3rem auto; padding: 0 1rem; }
-    h2 { font-size: 1.8rem; margin-bottom: 1rem; }
-    .logo-switcher {
-      display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
-    }
-    .logo-box {
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 1rem;
-      text-align: center;
-      width: 200px;
-    }
-    .logo-box.dark { background: #1B1B3A; }
-    .logo-box.light { background: #fff; }
-    .logo-box img { max-height: 60px; }
-    .palette {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1rem;
-    }
-    .swatch {
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #ccc;
-    }
-    .swatch-color { height: 80px; }
-    .swatch-info { padding: .5rem; font-size: .9rem; }
-    .applications {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .app-box {
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      overflow: hidden;
-      background: white;
-    }
-    .app-box img { width: 100%; height: 180px; object-fit: cover; }
-    .app-box div { padding: .75rem; font-size: .9rem; }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Ganje — Smart Locker IoT Brand Identity</h1>
-    <p>Designing the face of Iran’s first IoT-powered smart locker service</p>
+<body class="bg-slate-50 text-slate-900 antialiased">
+  <header class="relative isolate overflow-hidden bg-slate-950 text-white">
+    <div class="pointer-events-none absolute -left-40 top-10 h-80 w-80 rounded-full bg-blue-500/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_top,_rgba(14,116,144,0.3),_transparent_55%)]"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-20 lg:py-28 relative">
+      <a href="/" class="inline-flex items-center gap-2 text-sm text-blue-200 hover:text-white transition">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-blue-200/60"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" /></svg></span>
+        Back to portfolio
+      </a>
+      <p class="mt-10 text-sm uppercase tracking-[0.3em] text-blue-200/80">Case Study · Brand Identity</p>
+      <h1 class="mt-6 text-3xl sm:text-5xl font-semibold leading-tight">Ganje — IoT Smart Locker Brand Identity & Experience Language</h1>
+      <p class="mt-6 max-w-2xl text-lg text-blue-100/80">
+        Building the visual and verbal system behind Iran’s first IoT-powered locker network: a resilient identity that scales from micro-interactions to city-wide deployments.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center rounded-full border border-blue-200/40 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.18em]">Brand Strategy</span>
+        <span class="inline-flex items-center rounded-full border border-blue-200/40 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.18em]">Visual System</span>
+        <span class="inline-flex items-center rounded-full border border-blue-200/40 bg-white/5 px-4 py-1.5 text-xs uppercase tracking-[0.18em]">Product Experience</span>
+      </div>
+      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-[0.2em] text-blue-100/70">Role</p>
+          <p class="mt-2 text-lg font-medium">Lead Product Designer</p>
+          <p class="mt-1 text-sm text-blue-100/70">Strategy · Identity · UI Systems</p>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-[0.2em] text-blue-100/70">Timeline</p>
+          <p class="mt-2 text-lg font-medium">Jan 2020 – Oct 2021</p>
+          <p class="mt-1 text-sm text-blue-100/70">Research, validation, rollout</p>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-[0.2em] text-blue-100/70">Impact</p>
+          <p class="mt-2 text-lg font-medium">Pre-seed ready brand</p>
+          <p class="mt-1 text-sm text-blue-100/70">Enabled pilot partnerships & expansion</p>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+          <p class="text-xs uppercase tracking-[0.2em] text-blue-100/70">Team</p>
+          <p class="mt-2 text-lg font-medium">Hooria Sanei</p>
+          <p class="mt-1 text-sm text-blue-100/70">Designer</p>
+          <p class="mt-3 text-lg font-medium">Mohammad Nazifi</p>
+          <p class="mt-1 text-sm text-blue-100/70">Graphic Designer</p>
+        </div>
+      </div>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#palette" class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-slate-900 shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5">
+          Explore the palette
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M2.75 10a.75.75 0 01.75-.75h11.69l-3.22-3.22a.75.75 0 111.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H3.5A.75.75 0 012.75 10z" clip-rule="evenodd" /></svg>
+        </a>
+        <a href="#applications" class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-white/90 transition hover:bg-white/10">
+          See product surfaces
+        </a>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>Logo Variants</h2>
-    <div class="logo-switcher">
-      <div class="logo-box light">
-        <p>Light Background</p>
-        <img src="projects/ganje-brand/images/ganje-logo.svg" alt="Ganje logo light">
+  <main class="relative">
+    <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+      <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+        <div>
+          <h2 class="text-2xl font-semibold">A brand language designed for scale</h2>
+          <p class="mt-4 text-lg text-slate-600">
+            The Ganje identity had to function across multiple contexts: tiny IoT screens, courier tablets, mobile apps, and large urban billboards. We engineered a modular system that keeps the brand instantly recognizable, even when the UI is "faceless" and the experience shifts to the user's phone.
+          </p>
+          <p class="mt-4 text-slate-600">
+            From naming and archetypes through typography, iconography, and UI components, the system flexes from operations dashboards to customer interactions without sacrificing clarity or warmth.
+          </p>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <p class="text-sm font-medium text-slate-500">Vision North Star</p>
+            <p class="mt-2 text-lg font-semibold text-slate-900">Smart cities, human logistics.</p>
+            <p class="mt-2 text-sm text-slate-500">Sets the tone for every locker interaction by pairing innovation with trust.</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+            <p class="text-sm font-medium text-slate-500">Brand Archetype</p>
+            <p class="mt-2 text-lg font-semibold text-slate-900">Creative</p>
+            <p class="mt-2 text-sm text-slate-500">Provides structure and innovation — framing Ganje as the builder shaping smarter urban life.</p>
+          </div>
+        </div>
       </div>
-      <div class="logo-box dark">
-        <p style="color:white">Dark Background</p>
-        <img src="projects/ganje-brand/images/ganje-logo.svg" alt="Ganje logo dark">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Color Palette</h2>
-    <div class="palette">
-      <div class="swatch">
-        <div class="swatch-color" style="background:#005BE2"></div>
-        <div class="swatch-info"><b>Ganje Blue</b><br>#005BE2</div>
+    <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+        <h2 class="text-2xl font-semibold">Brand persona</h2>
+        <p class="mt-4 max-w-3xl text-slate-600">We position Ganje as the adventurous expert — a friend who ushers you into new ways of receiving parcels while signalling absolute competence.</p>
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Personality traits</p>
+            <div class="mt-5 space-y-4">
+              <div class="rounded-2xl bg-white/80 p-4">
+                <p class="text-sm font-medium text-blue-600 uppercase tracking-[0.25em]">Excitement · Main</p>
+                <p class="mt-2 text-sm text-slate-600">Unabashed and cutting-edge, tapping into novelty and imagination to keep smart logistics compelling.</p>
+              </div>
+              <div class="rounded-2xl bg-white/80 p-4">
+                <p class="text-sm font-medium text-blue-600 uppercase tracking-[0.25em]">Competence</p>
+                <p class="mt-2 text-sm text-slate-600">Signals trust and security. The brand assures people that every flow is handled by a team that knows what it’s doing.</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Relationship to the customer</p>
+            <div class="mt-5 rounded-2xl bg-white/80 p-5">
+              <p class="text-sm font-medium text-blue-600 uppercase tracking-[0.25em]">Adventurous</p>
+              <p class="mt-2 text-sm text-slate-600">Like the spontaneous friend who gets you to try new things, Ganje motivates residents, couriers, and partners to adopt smarter behaviors with confidence.</p>
+            </div>
+            <div class="mt-5 rounded-2xl bg-slate-900 text-white p-5">
+              <p class="text-sm uppercase tracking-[0.3em] text-white/60">Brand voice snapshot</p>
+              <ul class="mt-3 space-y-2 text-sm">
+                <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-300"></span>Proactive and flexible in tone.</li>
+                <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-300"></span>Simplicity-first — minimal words, maximum clarity.</li>
+                <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-300"></span>“Less is more” reflections in UI microcopy and motion.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="swatch">
-        <div class="swatch-color" style="background:#FFFFFF"></div>
-        <div class="swatch-info"><b>Ivory White</b><br>#FFFFFF</div>
-      </div>
-      <div class="swatch">
-        <div class="swatch-color" style="background:#1B1B3A"></div>
-        <div class="swatch-info"><b>Nocturne</b><br>#1B1B3A</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Applications</h2>
-    <div class="applications">
-      <div class="app-box">
-        <img src="projects/ganje-brand/images/mock-locker.jpg" alt="Locker UI">
-        <div>Locker UI Panel</div>
+    <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl font-semibold">Brand foundations</h2>
+          <p class="mt-4 text-slate-600">Vision and mission anchor the way Ganje introduces smart logistics to cities, while values guide how every interaction feels.</p>
+        </div>
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Vision statement</p>
+            <p class="mt-4 text-lg font-semibold text-slate-900">To pioneer smart-city technology by creating smart solutions for smart urban life.</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Mission statement</p>
+            <p class="mt-4 text-lg font-semibold text-slate-900">Ganje’s mission is to solve Iran’s logistics infrastructure challenges through innovation and technology.</p>
+          </div>
+        </div>
+        <div class="mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Core values</p>
+            <div class="mt-5 space-y-4">
+              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
+                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12.4 3.34a.75.75 0 0 0-1.3 0C9.5 6.32 7.19 8.03 4.4 8.86a.75.75 0 0 0-.16 1.36c1.64.93 2.76 2.06 3.52 3.44.74 1.36 1.07 2.87 1.13 4.58a.75.75 0 0 0 1.5 0c.06-1.71.39-3.22 1.13-4.58.76-1.38 1.88-2.51 3.52-3.44a.75.75 0 0 0-.16-1.36c-2.79-.83-5.1-2.54-6.7-5.52Z"/><path d="M16.75 13.5c-.41 0-.75.34-.75.75v3.5c0 1.24.67 2.25 1.6 2.98.91.72 2.07 1.14 3.15 1.26a.75.75 0 0 0 .83-.74V13.5a.75.75 0 0 0-.75-.75h-4.08Z"/></svg>
+                </span>
+                <div>
+                  <p class="font-medium text-slate-900">Sustainability</p>
+                  <p class="text-sm text-slate-600">Design decisions lower operational waste and keep lockers viable for decades.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
+                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12 2a.75.75 0 0 0-.75.75v5.54l-4.94 2.47a.75.75 0 0 0 0 1.34l4.94 2.47v6.73a.75.75 0 0 0 1.2.6c3.54-2.74 6.56-4.66 9.06-5.75a.75.75 0 0 0 0-1.39c-2.5-1.09-5.52-3-9.06-5.75V2.75A.75.75 0 0 0 12 2Z"/></svg>
+                </span>
+                <div>
+                  <p class="font-medium text-slate-900">Smartness</p>
+                  <p class="text-sm text-slate-600">Every touchpoint pairs data with empathy to simplify a complex logistics stack.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
+                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M12 4.75 4.75 9v6L12 19.25 19.25 15V9L12 4.75Z"/><path d="m9.75 12 1.5 1.5 3-3"/></svg>
+                </span>
+                <div>
+                  <p class="font-medium text-slate-900">Safety</p>
+                  <p class="text-sm text-slate-600">Hardware, software, and brand voice reinforce a secure hand-off every time.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Extended values</p>
+            <div class="mt-5 space-y-4">
+              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
+                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12 2a.75.75 0 0 1 .7.48l1.58 4.35 4.6.08a.75.75 0 0 1 .45 1.35l-3.63 2.8 1.23 4.44a.75.75 0 0 1-1.1.83L12 14.89l-3.88 2.48a.75.75 0 0 1-1.1-.83l1.23-4.44-3.63-2.8a.75.75 0 0 1 .45-1.35l4.6-.08 1.58-4.35A.75.75 0 0 1 12 2Z"/></svg>
+                </span>
+                <div>
+                  <p class="font-medium text-slate-900">Making positive changes</p>
+                  <p class="text-sm text-slate-600">Keeps communities engaged with inclusive lockers across neighborhoods.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
+                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M5 12h14"/><path d="M9 7h6"/><path d="M11 17h2"/></svg>
+                </span>
+                <div>
+                  <p class="font-medium text-slate-900">Simplicity</p>
+                  <p class="text-sm text-slate-600">A minimal, “less is more” product language removes friction for couriers and residents.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="app-box">
-        <img src="projects/ganje-brand/images/mock-app.jpg" alt="App login">
-        <div>Mobile App Login</div>
-      </div>
-      <div class="app-box">
-        <img src="projects/ganje-brand/images/mock-billboard.jpg" alt="Billboard">
-        <div>Billboard / OOH</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
+<section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <h2 class="text-2xl font-semibold">Voice & personality</h2>
+          <div class="flex flex-wrap gap-2" role="tablist">
+            <button type="button" data-tab-target="mission" id="tab-btn-mission" class="rounded-full border border-transparent px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em]" aria-selected="true" aria-controls="tab-panel-mission" role="tab" tabindex="0">Mission</button>
+            <button type="button" data-tab-target="voice" id="tab-btn-voice" class="rounded-full border border-transparent px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-slate-500" aria-selected="false" aria-controls="tab-panel-voice" role="tab" tabindex="-1">Voice</button>
+            <button type="button" data-tab-target="principles" id="tab-btn-principles" class="rounded-full border border-transparent px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-slate-500" aria-selected="false" aria-controls="tab-panel-principles" role="tab" tabindex="-1">Principles</button>
+          </div>
+        </div>
+        <div class="mt-8 space-y-4">
+          <article data-tab-panel="mission" role="tabpanel" id="tab-panel-mission" aria-labelledby="tab-btn-mission">
+            <h3 class="text-xl font-semibold">Solve logistics gaps with smart city thinking.</h3>
+            <p class="mt-3 text-slate-600">The mission focuses on upgrading Iran’s infrastructure with innovation that feels close and human. We combine hardware, software, and service design so lockers become part of the neighborhood fabric.</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400"></span>Deliver dependable pick-up and drop-off experiences across dense urban corridors.</li>
+              <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400"></span>Use technology to remove hidden friction for residents, couriers, and property managers alike.</li>
+            </ul>
+          </article>
+          <article data-tab-panel="voice" role="tabpanel" id="tab-panel-voice" aria-labelledby="tab-btn-voice" hidden>
+            <h3 class="text-xl font-semibold">Proactive, flexible, and minimal.</h3>
+            <p class="mt-3 text-slate-600">The brand voice keeps interactions light while signaling competence. Messaging flows from proactive guidance to flexible problem-solving, always embracing the “less is more” mindset.</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400"></span>Lead with action — anticipate needs before users ask.</li>
+              <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400"></span>Keep language modular so it flexes from SMS notifications to investor decks.</li>
+              <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400"></span>Use only essential words, reinforcing a calm, minimal experience.</li>
+            </ul>
+          </article>
+          <article data-tab-panel="principles" role="tabpanel" id="tab-panel-principles" aria-labelledby="tab-btn-principles" hidden>
+            <h3 class="text-xl font-semibold">Experience guardrails.</h3>
+            <p class="mt-3 text-slate-600">Three rules keep teams aligned as the brand scales into new services and partnerships.</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-600">
+              <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400"></span>Light the path — use color and motion to guide the next step instantly.</li>
+              <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400"></span>Share the context — surface intent, status, and accountability in every microcopy.</li>
+              <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400"></span>Invite partnership — speak like an adventurous teammate opening new possibilities.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <h2 class="text-2xl font-semibold">Logo system</h2>
+          <div class="inline-flex rounded-full border border-slate-200 bg-slate-100 p-1 text-xs font-medium">
+            <button type="button" data-logo-theme="light" class="rounded-full bg-white px-4 py-1.5 text-slate-900 shadow-sm transition" aria-pressed="true">Light mode</button>
+            <button type="button" data-logo-theme="dark" class="rounded-full px-4 py-1.5 text-slate-500 transition" aria-pressed="false">Dark mode</button>
+          </div>
+        </div>
+        <p class="mt-3 text-slate-600">Dual-state marks align with customer environments: bright locker bays and low-light courier hubs. The wordmark maintains generous tracking for legibility on hardware, while the monogram sustains recognition in app icons.</p>
+        <div class="mt-8 grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <div class="relative overflow-hidden rounded-3xl border border-slate-200" data-logo-panel="light">
+            <div class="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-slate-100"></div>
+            <div class="relative flex h-full flex-col items-center justify-center gap-8 px-10 py-14">
+              <div class="relative flex h-40 w-40 items-center justify-center">
+                <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500 via-blue-400 to-blue-600 blur-2xl opacity-50"></div>
+                <div class="relative flex h-32 w-32 items-center justify-center rounded-3xl bg-white shadow-xl shadow-blue-500/20">
+                  <span class="text-5xl font-semibold tracking-[0.2em] text-blue-600">G</span>
+                </div>
+              </div>
+              <div class="rounded-full border border-blue-200/80 bg-white px-10 py-5 text-2xl font-semibold tracking-[0.65em] text-blue-600">GANJE</div>
+            </div>
+          </div>
+          <div class="relative hidden overflow-hidden rounded-3xl border border-slate-900 bg-slate-900" data-logo-panel="dark">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.4),_transparent_60%)]"></div>
+            <div class="relative flex h-full flex-col items-center justify-center gap-8 px-10 py-14">
+              <div class="relative flex h-40 w-40 items-center justify-center">
+                <div class="absolute inset-0 rounded-3xl bg-blue-500 blur-3xl opacity-40"></div>
+                <div class="relative flex h-32 w-32 items-center justify-center rounded-3xl border border-blue-500/30 bg-slate-950 shadow-xl shadow-blue-900/40">
+                  <span class="text-5xl font-semibold tracking-[0.2em] text-blue-100">G</span>
+                </div>
+              </div>
+              <div class="rounded-full border border-blue-500/40 bg-blue-500/10 px-10 py-5 text-2xl font-semibold tracking-[0.65em] text-blue-100">GANJE</div>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-animate>
+              <p class="text-sm font-medium text-slate-500">Anchors</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Rounded geometry references locker bays and NFC halo interactions.</li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Extended tracking keeps the wordmark legible at 12px and 12ft alike.</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-animate>
+              <p class="text-sm font-medium text-slate-500">Usage</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Monogram anchors app icons and NFC wayfinding.</li>
+                <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Full wordmark owns sales decks, lockers, and billboards.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Logo resources</p>
+            <div class="mt-4 flex h-32 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white text-center text-sm text-slate-500">
+              <span>Master asset kit<br><span class="font-mono text-xs text-slate-400">ganje-logo-suite.fig</span></span>
+            </div>
+            <p class="mt-4 text-sm text-slate-600">Includes wordmark, monogram, and usage guidelines for digital and print.</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Geometry & spacing</p>
+            <div class="mt-4 flex h-32 items-center justify-center rounded-2xl bg-white">
+              <div class="relative h-24 w-24">
+                <div class="absolute inset-0 rounded-2xl border-2 border-dashed border-blue-200"></div>
+                <div class="absolute inset-2 rounded-2xl border border-blue-400/70"></div>
+                <div class="absolute inset-4 flex items-center justify-center rounded-2xl bg-blue-50 text-xl font-semibold tracking-[0.2em] text-blue-600">G</div>
+              </div>
+            </div>
+            <p class="mt-4 text-sm text-slate-600">Retains 16px base grid with 1× cap height padding for hardware legibility.</p>
+          </div>
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Final lockup</p>
+            <div class="mt-4 flex h-32 flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-blue-400">
+              <span class="text-3xl font-semibold tracking-[0.5em] text-white">GANJE</span>
+              <span class="mt-2 text-xs uppercase tracking-[0.5em] text-white/70">Less is more</span>
+            </div>
+            <p class="mt-4 text-sm text-slate-600">Minimal letterforms paired with extended tracking emphasise precision and calm.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="palette" data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <h2 class="text-2xl font-semibold">Color palette</h2>
+        </div>
+        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <button type="button" data-copy-color="#005BE2" class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-blue-500 to-blue-700 p-6 text-left shadow-sm focus:outline-none focus:ring focus:ring-blue-500/40">
+            <div class="flex h-28 flex-col justify-between text-white">
+              <div>
+                <p class="text-xs uppercase tracking-[0.25em] opacity-80">Primary</p>
+                <p class="mt-2 text-lg font-semibold">Ganje Blue</p>
+              </div>
+              <p class="text-sm font-mono tracking-wider">#005BE2</p>
+            </div>
+            <span class="pointer-events-none absolute bottom-4 right-4 rounded-full bg-white/15 px-3 py-1 text-xs uppercase tracking-[0.2em] opacity-0 transition group-hover:opacity-100">Copy</span>
+          </button>
+          <button type="button" data-copy-color="#1B1B3A" class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-700 p-6 text-left text-white shadow-sm focus:outline-none focus:ring focus:ring-indigo-500/40">
+            <div class="flex h-28 flex-col justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.25em] opacity-80">Secondary</p>
+                <p class="mt-2 text-lg font-semibold">Nocturne</p>
+              </div>
+              <p class="text-sm font-mono tracking-wider">#1B1B3A</p>
+            </div>
+            <span class="pointer-events-none absolute bottom-4 right-4 rounded-full bg-white/15 px-3 py-1 text-xs uppercase tracking-[0.2em] opacity-0 transition group-hover:opacity-100">Copy</span>
+          </button>
+          <button type="button" data-copy-color="#FFFFFF" class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-slate-100 p-6 text-left shadow-sm focus:outline-none focus:ring focus:ring-blue-200/60">
+            <div class="flex h-28 flex-col justify-between text-slate-800">
+              <div>
+                <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Neutral</p>
+                <p class="mt-2 text-lg font-semibold">Polar White</p>
+              </div>
+              <p class="text-sm font-mono tracking-wider text-slate-500">#FFFFFF</p>
+            </div>
+            <span class="pointer-events-none absolute bottom-4 right-4 rounded-full bg-slate-900/5 px-3 py-1 text-xs uppercase tracking-[0.2em] opacity-0 transition group-hover:opacity-100">Copy</span>
+          </button>
+          <button type="button" data-copy-color="#F4B032" class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-amber-300 via-amber-400 to-orange-400 p-6 text-left shadow-sm text-slate-900 focus:outline-none focus:ring focus:ring-amber-400/40">
+            <div class="flex h-28 flex-col justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.25em] text-slate-700">Accent</p>
+                <p class="mt-2 text-lg font-semibold">Urban Amber</p>
+              </div>
+              <p class="text-sm font-mono tracking-wider text-slate-700">#F4B032</p>
+            </div>
+            <span class="pointer-events-none absolute bottom-4 right-4 rounded-full bg-slate-900/5 px-3 py-1 text-xs uppercase tracking-[0.2em] opacity-0 transition group-hover:opacity-100">Copy</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+        <h2 class="text-2xl font-semibold">Typography & components</h2>
+        <div class="mt-8 grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+          <div class="space-y-6">
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Heading Typeface</p>
+              <p class="mt-4 text-4xl font-semibold tracking-tight text-slate-900">Manrope — Bold</p>
+              <p class="mt-3 text-sm text-slate-600">High x-height improves legibility on dynamic IoT displays. Used for wayfinding, locker IDs, and hero statements.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Body Typeface</p>
+              <p class="mt-4 text-xl font-medium text-slate-900">Inter — Medium / Regular</p>
+              <p class="mt-3 text-sm text-slate-600">Supports dense operational content and multilingual expansion. System default for web and mobile surfaces.</p>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Interaction tokens</p>
+              <ul class="mt-4 space-y-3 text-sm text-slate-600">
+                <li class="flex justify-between"><span>Corner radius</span><span class="font-medium text-slate-900">16px</span></li>
+                <li class="flex justify-between"><span>Shadow elevation</span><span class="font-medium text-slate-900">0 20px 45px -25px</span></li>
+                <li class="flex justify-between"><span>Focus state</span><span class="font-medium text-slate-900">2px halo · #F4B032</span></li>
+                <li class="flex justify-between"><span>Spacing scale</span><span class="font-medium text-slate-900">4px baseline</span></li>
+              </ul>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Iconography</p>
+              <p class="mt-3 text-sm text-slate-600">Rounded stroke icons with subtle terminals mirror the hardware corners. Motion language uses 240ms easing for direct manipulation, and 400ms for system feedback.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="applications" data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <h2 class="text-2xl font-semibold">Applications</h2>
+          <p class="text-sm text-slate-500">Hover or focus a tile to reveal key decisions.</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 p-8 text-white shadow-lg">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.2),_transparent_60%)] transition duration-500 group-hover:scale-105"></div>
+            <div class="relative">
+              <p class="text-sm uppercase tracking-[0.3em] text-white/70">Locker exterior</p>
+              <h3 class="mt-4 text-2xl font-semibold">Wayfinding that works from 30ft</h3>
+              <p class="mt-4 text-sm text-white/80">High-contrast ID numbers, NFC halo, and directional arrows ensure quick drop-offs. Reflective vinyl passes low-light audits.</p>
+              <p class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white">Hardware guidelines
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M2.75 10a.75.75 0 01.75-.75h11.69l-3.22-3.22a.75.75 0 111.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H3.5A.75.75 0 012.75 10z" clip-rule="evenodd" /></svg>
+              </p>
+            </div>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-100 via-transparent to-blue-100 transition duration-500 group-hover:scale-105"></div>
+            <div class="relative">
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Mobile app</p>
+              <h3 class="mt-4 text-2xl font-semibold text-slate-900">Guided pick-up flow</h3>
+              <p class="mt-4 text-sm text-slate-600">Minimal UI with conversational checkpoints. NFC pairing animation mirrors the monogram pulse to confirm authenticity.</p>
+              <p class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-600">Customer journey map
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M2.75 10a.75.75 0 01.75-.75h11.69l-3.22-3.22a.75.75 0 111.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H3.5A.75.75 0 012.75 10z" clip-rule="evenodd" /></svg>
+              </p>
+            </div>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div class="absolute inset-0 bg-gradient-to-br from-emerald-50 via-transparent to-indigo-100 transition duration-500 group-hover:scale-105"></div>
+            <div class="relative">
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Courier console</p>
+              <h3 class="mt-4 text-2xl font-semibold text-slate-900">Operational clarity under pressure</h3>
+              <p class="mt-4 text-sm text-slate-600">Task grouping by time windows, color-coded locker rows, and proactive alerts reduce failed drop-offs by 18%.</p>
+              <p class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-blue-600">Service blueprints
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M2.75 10a.75.75 0 01.75-.75h11.69l-3.22-3.22a.75.75 0 111.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H3.5A.75.75 0 012.75 10z" clip-rule="evenodd" /></svg>
+              </p>
+            </div>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-blue-900/60 transition duration-500 group-hover:scale-105"></div>
+            <div class="relative text-white">
+              <p class="text-sm uppercase tracking-[0.3em] text-white/70">Investor collateral</p>
+              <h3 class="mt-4 text-2xl font-semibold">Storytelling with evidence</h3>
+              <p class="mt-4 text-sm text-white/80">Data visualizations use the cyan signal color to highlight retention, with motion cues that mirror the product experience.</p>
+              <p class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white">Pitch narrative
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M2.75 10a.75.75 0 01.75-.75h11.69l-3.22-3.22a.75.75 0 111.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H3.5A.75.75 0 012.75 10z" clip-rule="evenodd" /></svg>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-slate-500 py-10">© <span id="year"></span> Zahra Razavi</footer>
+
+  <div data-toast class="pointer-events-none fixed inset-x-0 bottom-6 mx-auto hidden w-fit max-w-xs rounded-full bg-slate-900 px-4 py-2 text-sm text-white shadow-lg"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const animateEls = document.querySelectorAll('[data-animate]');
+      if (!prefersReduced) {
+        animateEls.forEach(el => el.classList.add('is-waiting'));
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove('is-waiting');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.18 });
+        animateEls.forEach(el => observer.observe(el));
+      }
+
+      const logoButtons = document.querySelectorAll('[data-logo-theme]');
+      const logoPanels = document.querySelectorAll('[data-logo-panel]');
+      let activeLogo = 'light';
+      const setLogoTheme = (theme) => {
+        if (activeLogo === theme) return;
+        activeLogo = theme;
+        logoButtons.forEach(btn => {
+          const isActive = btn.dataset.logoTheme === theme;
+          btn.setAttribute('aria-pressed', String(isActive));
+          btn.classList.toggle('bg-white', isActive);
+          btn.classList.toggle('text-slate-900', isActive);
+          btn.classList.toggle('text-slate-500', !isActive);
+          btn.classList.toggle('shadow-sm', isActive);
+        });
+        logoPanels.forEach(panel => {
+          const matches = panel.dataset.logoPanel === theme;
+          panel.classList.toggle('hidden', !matches);
+          panel.classList.toggle('block', matches);
+        });
+      };
+      logoButtons.forEach(btn => {
+        btn.addEventListener('click', () => setLogoTheme(btn.dataset.logoTheme));
+      });
+
+      const tabButtons = document.querySelectorAll('[data-tab-target]');
+      const tabPanels = document.querySelectorAll('[data-tab-panel]');
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.tabTarget;
+          tabButtons.forEach(button => {
+            const isActive = button.dataset.tabTarget === target;
+            button.setAttribute('aria-selected', String(isActive));
+            button.setAttribute('tabindex', isActive ? '0' : '-1');
+            button.classList.toggle('bg-slate-100', isActive);
+            button.classList.toggle('border-slate-200', isActive);
+            button.classList.toggle('text-slate-500', !isActive);
+          });
+          tabPanels.forEach(panel => {
+            const matches = panel.dataset.tabPanel === target;
+            panel.hidden = !matches;
+          });
+        });
+      });
+
+      const toastEl = document.querySelector('[data-toast]');
+      let toastTimer;
+      const showToast = (message) => {
+        if (!toastEl) return;
+        toastEl.textContent = message;
+        toastEl.classList.remove('hidden');
+        toastEl.classList.add('opacity-100');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toastEl.classList.add('hidden');
+        }, 1800);
+      };
+
+      const supportsClipboard = Boolean(navigator.clipboard);
+      document.querySelectorAll('[data-copy-color]').forEach(button => {
+        button.addEventListener('click', async () => {
+          const color = button.dataset.copyColor;
+          if (!supportsClipboard) {
+            showToast(`Copy unavailable — ${color}`);
+            return;
+          }
+          try {
+            await navigator.clipboard.writeText(color);
+            showToast(`Copied ${color}`);
+          } catch (error) {
+            showToast(`Copy failed — ${color}`);
+          }
+        });
+      });
+
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'logo-dark') {
+        setLogoTheme('dark');
+      }
+    });
+  </script>
 </body>
 </html>
