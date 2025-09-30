@@ -343,51 +343,115 @@
         <div class="flex flex-wrap items-center justify-between gap-4">
           <h2 class="text-2xl font-semibold">Color palette</h2>
         </div>
+        <p class="mt-3 text-sm text-slate-500">Four key swatches with production-ready values in HEX, RGB, HSB, and CMYK.</p>
         <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <button type="button" data-copy-color="#005BE2" class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-blue-500 to-blue-700 p-6 text-left shadow-sm focus:outline-none focus:ring focus:ring-blue-500/40">
-            <div class="flex h-28 flex-col justify-between text-white">
-              <div>
-                <p class="text-xs uppercase tracking-[0.25em] opacity-80">Primary</p>
-                <p class="mt-2 text-lg font-semibold">Ganje Blue</p>
-              </div>
-              <p class="text-sm font-mono tracking-wider">#005BE2</p>
-            </div>
-            <span class="pointer-events-none absolute bottom-4 right-4 rounded-full bg-white/15 px-3 py-1 text-xs uppercase tracking-[0.2em] opacity-0 transition group-hover:opacity-100">Copy</span>
-          </button>
-          <button type="button" data-copy-color="#1B1B3A" class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-700 p-6 text-left text-white shadow-sm focus:outline-none focus:ring focus:ring-indigo-500/40">
+          <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-blue-500 to-blue-700 p-6 text-left text-white shadow-sm">
             <div class="flex h-28 flex-col justify-between">
               <div>
-                <p class="text-xs uppercase tracking-[0.25em] opacity-80">Secondary</p>
+                <p class="text-xs uppercase tracking-[0.25em] text-white/70">Primary</p>
+                <p class="mt-2 text-lg font-semibold">Ganje Blue</p>
+              </div>
+            </div>
+            <div class="mt-6 space-y-2 font-mono text-sm">
+              <div class="flex items-baseline justify-between">
+                <span class="text-base font-semibold tracking-wider">#005BE2</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-white/70 text-right">HEX</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>0, 91, 226</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-white/70 text-right">RGB</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>216°, 100%, 89%</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-white/70 text-right">HSB</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>100, 60, 0, 11</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-white/70 text-right">CMYK</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-900 to-slate-700 p-6 text-left text-white shadow-sm">
+            <div class="flex h-28 flex-col justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.25em] text-white/70">Secondary</p>
                 <p class="mt-2 text-lg font-semibold">Nocturne</p>
               </div>
-              <p class="text-sm font-mono tracking-wider">#1B1B3A</p>
             </div>
-            <span class="pointer-events-none absolute bottom-4 right-4 rounded-full bg-white/15 px-3 py-1 text-xs uppercase tracking-[0.2em] opacity-0 transition group-hover:opacity-100">Copy</span>
-          </button>
-          <button type="button" data-copy-color="#FFFFFF" class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-slate-100 p-6 text-left shadow-sm focus:outline-none focus:ring focus:ring-blue-200/60">
-            <div class="flex h-28 flex-col justify-between text-slate-800">
+            <div class="mt-6 space-y-2 font-mono text-sm">
+              <div class="flex items-baseline justify-between">
+                <span class="text-base font-semibold tracking-wider">#1B1B3A</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-white/70 text-right">HEX</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>27, 27, 58</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-white/70 text-right">RGB</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>240°, 53%, 23%</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-white/70 text-right">HSB</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>53, 53, 0, 77</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-white/70 text-right">CMYK</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-slate-100 p-6 text-left shadow-sm text-slate-900">
+            <div class="flex h-28 flex-col justify-between">
               <div>
                 <p class="text-xs uppercase tracking-[0.25em] text-slate-500">Neutral</p>
                 <p class="mt-2 text-lg font-semibold">Polar White</p>
               </div>
-              <p class="text-sm font-mono tracking-wider text-slate-500">#FFFFFF</p>
             </div>
-            <span class="pointer-events-none absolute bottom-4 right-4 rounded-full bg-slate-900/5 px-3 py-1 text-xs uppercase tracking-[0.2em] opacity-0 transition group-hover:opacity-100">Copy</span>
-          </button>
-          <button type="button" data-copy-color="#F4B032" class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-amber-300 via-amber-400 to-orange-400 p-6 text-left shadow-sm text-slate-900 focus:outline-none focus:ring focus:ring-amber-400/40">
+            <div class="mt-6 space-y-2 font-mono text-sm text-slate-700">
+              <div class="flex items-baseline justify-between">
+                <span class="text-base font-semibold tracking-wider text-slate-900">#FFFFFF</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-slate-500 text-right">HEX</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>255, 255, 255</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-slate-500 text-right">RGB</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>0°, 0%, 100%</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-slate-500 text-right">HSB</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>0, 0, 0, 0</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-slate-500 text-right">CMYK</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-amber-300 via-amber-400 to-orange-400 p-6 text-left shadow-sm text-slate-900">
             <div class="flex h-28 flex-col justify-between">
               <div>
                 <p class="text-xs uppercase tracking-[0.25em] text-slate-700">Accent</p>
                 <p class="mt-2 text-lg font-semibold">Urban Amber</p>
               </div>
-              <p class="text-sm font-mono tracking-wider text-slate-700">#F4B032</p>
             </div>
-            <span class="pointer-events-none absolute bottom-4 right-4 rounded-full bg-slate-900/5 px-3 py-1 text-xs uppercase tracking-[0.2em] opacity-0 transition group-hover:opacity-100">Copy</span>
-          </button>
+            <div class="mt-6 space-y-2 font-mono text-sm text-slate-800">
+              <div class="flex items-baseline justify-between">
+                <span class="text-base font-semibold tracking-wider text-slate-900">#F4B032</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-slate-700 text-right">HEX</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>244, 176, 50</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-slate-700 text-right">RGB</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>39°, 80%, 96%</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-slate-700 text-right">HSB</span>
+              </div>
+              <div class="flex items-baseline justify-between">
+                <span>0, 28, 80, 4</span>
+                <span class="text-xs uppercase tracking-[0.35em] text-slate-700 text-right">CMYK</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
 
     <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
       <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
@@ -482,8 +546,6 @@
 
   <footer class="text-center text-sm text-slate-500 py-10">© <span id="year"></span> Zahra Razavi</footer>
 
-  <div data-toast class="pointer-events-none fixed inset-x-0 bottom-6 mx-auto hidden w-fit max-w-xs rounded-full bg-slate-900 px-4 py-2 text-sm text-white shadow-lg"></div>
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -542,36 +604,6 @@
             const matches = panel.dataset.tabPanel === target;
             panel.hidden = !matches;
           });
-        });
-      });
-
-      const toastEl = document.querySelector('[data-toast]');
-      let toastTimer;
-      const showToast = (message) => {
-        if (!toastEl) return;
-        toastEl.textContent = message;
-        toastEl.classList.remove('hidden');
-        toastEl.classList.add('opacity-100');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => {
-          toastEl.classList.add('hidden');
-        }, 1800);
-      };
-
-      const supportsClipboard = Boolean(navigator.clipboard);
-      document.querySelectorAll('[data-copy-color]').forEach(button => {
-        button.addEventListener('click', async () => {
-          const color = button.dataset.copyColor;
-          if (!supportsClipboard) {
-            showToast(`Copy unavailable — ${color}`);
-            return;
-          }
-          try {
-            await navigator.clipboard.writeText(color);
-            showToast(`Copied ${color}`);
-          } catch (error) {
-            showToast(`Copy failed — ${color}`);
-          }
         });
       });
 
