@@ -1,0 +1,16 @@
+# 🧩 Conventional Commit Message Template
+# Format: <type>(scope): <short summary>
+# Example: feat(typography): add Persian font IRANYekan for RTL support
+#
+# Types:
+#   feat      → new feature
+#   fix       → bug fix
+#   docs      → documentation changes
+#   style     → code style (formatting, spacing)
+#   refactor  → refactor without behavior change
+#   perf      → performance improvement
+#   test      → add or update tests
+#   build     → build process, tools, dependencies
+#   chore     → maintenance or minor updates
+#
+# Write your message below this line:
