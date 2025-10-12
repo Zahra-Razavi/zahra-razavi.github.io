@@ -21,7 +21,7 @@
     <a href="/" class="font-semibold">Zahra Razavi</a>
     <nav class="hidden md:flex gap-6">
       <a href="#work" class="hover:opacity-70">Work</a>
-      <a href="#resume" class="hover:opacity-70">Resume</a>
+      <a href="/zahra-razavi.github.io/resume/" class="hover:opacity-70">Resume</a>
       <a href="#about" class="hover:opacity-70">About</a>
       <a href="#contact" class="hover:opacity-70">Contact</a>
     </nav>
@@ -44,41 +44,38 @@
       <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
       <div class="p-5">
         <h3 class="font-medium text-lg">Lendeck — FinTech platform</h3>
-        <p class="text-sm text-gray-600 mt-1">designed a 3-sided lending dashboard</p>
-        <span class="inline-block mt-3 text-sm group-hover:translate-x-1 transition">Read case study →</span>
       </div>
     </a>
     <a href="projects/mediana/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
       <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
       <div class="p-5">
         <h3 class="font-medium text-lg">Mediana — VoIP SaaS Dashboard</h3>
-        <p class="text-sm text-gray-600 mt-1">designed a new B2B VoIP service</p>
-        <span class="inline-block mt-3 text-sm group-hover:translate-x-1 transition">Read case study →</span>
       </div>
     </a>
     <a href="projects/ganje/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
       <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
       <div class="p-5">
         <h3 class="font-medium text-lg">Ganje — B2B Logistics Platform; IoT smart lockers</h3>
-        <p class="text-sm text-gray-600 mt-1">built and mentored a 5‑person product team; contributed to pre‑seed fundraising</p>
-        <span class="inline-block mt-3 text-sm group-hover:translate-x-1 transition">Read case study →</span>
       </div>
     </a>
     </a>
     <a href="projects/ganje-brand/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
       <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
       <div class="p-5">
-        <h3 class="font-medium text-lg">Ganje — B2B Logistics Platform; IoT smart lockers</h3>
-        <p class="text-sm text-gray-600 mt-1">built and mentored a 5‑person product team; contributed to pre‑seed fundraising</p>
-        <span class="inline-block mt-3 text-sm group-hover:translate-x-1 transition">Read case study →</span>
+        <h3 class="font-medium text-lg">Ganje - Brand Design</h3>
+        <p class="text-sm text-gray-600 mt-1"></p>
       </div>
     </a>
     <a href="projects/kidora/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
       <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
       <div class="p-5">
         <h3 class="font-medium text-lg">Kidora — Early Childhood Development App</h3>
-        <p class="text-sm text-gray-600 mt-1">app design based on cognitive science study in UX research</p>
-        <span class="inline-block mt-3 text-sm group-hover:translate-x-1 transition">Read case study →</span>
+      </div>
+    </a>
+     <a href="projects/kidora/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+      <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
+      <div class="p-5">
+        <h3 class="font-medium text-lg">Notyfy Me! - Shopify App</h3>
       </div>
     </a>
   </section>
@@ -91,32 +88,31 @@
     </p>
   </section>
 
-  <!-- Resume -->
+   <!-- Resume -->
    <section id="resume" class="max-w-5xl mx-auto px-4 py-16">
     <h2 class="text-2xl font-semibold">Resume</h2>
     
-    <!-- Inline PDF preview -->
-    <!-- Fallback link for mobile or if viewer blocks PDFs -->
-    <p class="mt-2">
-      If the preview doesn’t load, 
-      <a class="underline" href="assets/Zahra-Razavi-Resume.pdf" target="_blank" rel="noopener">
-        open the PDF in a new tab
-      </a>.
+    <p class="mt-2 text-gray-600">
+      Explore the interactive preview below, or click anywhere on it to open the full-page version.
     </p>
 
     <div class="text-center">
-     <div class="max-w-3xl mx-auto mt-8 w-full h-[min(80vh,900px)] border rounded-xl overflow-hidden">
-      <iframe
-        src="assets/Zahra-Razavi-Resume.pdf#view=FitH"
-        title="Zahra Razavi — Resume PDF"
-        class="w-full h-full"
-        loading="lazy">
-      </iframe>
-     </div>
+      <div class="relative max-w-3xl mx-auto mt-8 w-full h-[min(80vh,900px)] border rounded-xl overflow-hidden shadow-sm">
+        <iframe
+          id="resume-preview"
+          src="resume/index.html"
+          title="Zahra Razavi — Resume Preview"
+          class="w-full h-full bg-gray-50"
+          loading="lazy">
+        </iframe>
+      </div>
 
-
+      <a href="resume/"
+        class="inline-block mt-6 px-5 py-3 border rounded-lg text-gray-700 hover:translate-y-0.5 transition">
+        Open full resume
+      </a>
       <a href="assets/Zahra-Razavi-Resume.pdf" download
-        class="inline-block mt-8 px-5 py-3 border rounded-lg text-gray-700 hover:translate-y-0.5 transition">
+        class="inline-block mt-3 px-5 py-3 border rounded-lg text-gray-700 hover:translate-y-0.5 transition">
         Download my resume (PDF)
       </a>
     </div>
@@ -132,11 +128,6 @@
       <a class="underline inline-flex items-center gap-1" href="https://www.linkedin.com/in/zahrarazavi97" target="_blank" rel="noopener">
   LinkedIn
       </a>
-      
-      &nbsp;·&nbsp;
-      <a class="underline inline-flex items-center gap-1" href="https://behance.net/zahrarazavi" target="_blank" rel="noopener">
-  Behance
-      </a>
 
     </p>
   </section>
@@ -149,6 +140,17 @@
     if (!mediaQuery.matches) {
       document.querySelectorAll('a, button').forEach(el => {
         el.classList.add('transition', 'duration-300');
+      });
+    }
+     const resumePreview = document.getElementById('resume-preview');
+    if (resumePreview) {
+      resumePreview.addEventListener('load', () => {
+        const previewDocument = resumePreview.contentDocument || resumePreview.contentWindow?.document;
+        if (previewDocument) {
+          previewDocument.addEventListener('click', () => {
+            window.open('resume/index.html', '_blank', 'noopener');
+          });
+        }
       });
     }
   </script>
