@@ -64,6 +64,10 @@
       h3 {
         @apply mb-3 text-center text-lg font-medium text-gray-900;
       }
+
+      body.image-lightbox-open {
+        @apply overflow-hidden;
+      }
     }
 
     @layer components {
@@ -72,7 +76,44 @@
       }
 
       .section-title {
-        @apply text-center text-display-5 font-black leading-none tracking-wide-10 text-accent-soft;
+        @apply text-center text-3xl font-black leading-tight tracking-widest text-accent-soft sm:text-4xl md:text-5xl lg:text-display-5 lg:leading-none;
+      }
+
+      @screen md {
+        .section-title {
+          @apply tracking-wide-10;
+        }
+      }
+
+      .image-large {
+        @apply cursor-zoom-in transition duration-200 ease-out;
+      }
+
+      .image-lightbox {
+        @apply fixed inset-0 flex items-center justify-center bg-white p-6 sm:p-12;
+        z-index: 999;
+      }
+
+      .image-lightbox__inner {
+        @apply relative h-full w-full max-w-6xl overflow-hidden;
+      }
+
+      .image-lightbox__img {
+        max-height: calc(100vh - 6rem);
+        width: 100%;
+        height: auto;
+        cursor: zoom-out;
+        touch-action: none;
+        transform-origin: center;
+        transition: transform 0.2s ease-out;
+      }
+
+      .image-lightbox__img.is-zoomed {
+        cursor: grab;
+      }
+
+      .image-lightbox__img.is-grabbing {
+        cursor: grabbing;
       }
 
       .card-heading {
@@ -112,7 +153,7 @@
       }
 
       .item-title {
-        @apply text-left text-base font-semibold text-gray-800;
+        @apply text-3xl text-center  font-bold text-accent;
       }
 
       .panel {
@@ -145,12 +186,12 @@
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased font-sans">
+<body class="bg-[#F9F8FD] text-gray-900 antialiased font-sans">
   <header class="relative isolate overflow-hidden bg-gradient-to-br from-[#4E0F60] via-[#6F2B8A] to-[#2D0638] text-white">
     <div class="pointer-events-none absolute -left-32 top-20 h-64 w-64 rounded-full bg-[#6F2B8A]/30 blur-3xl"></div>
     <div class="pointer-events-none absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_top,_rgba(118,52,142,0.28),_transparent_55%)]"></div>
     <div class="relative mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:pb-28 lg:pt-16">
-      <a href="/" class="inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition hover:text-white">
+      <a href="https://zahra-razavi.github.io/home/index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition hover:text-white">
         <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/60"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" /></svg></span>
         
       </a>
@@ -170,7 +211,7 @@
           <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <div class="space-y-2">
               <p class="stat-label">Role</p>
-              <p class="stat-value">Product Designer</p>
+              <p class="stat-value">Solo Product Designer</p>
             </div>
             <div class="space-y-2">
               <p class="stat-label">Timeline</p>
@@ -276,36 +317,31 @@
       </div>
     </section>
 
-    <!--
+    
     <section id="user-journey" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
       <div class="panel">
         <div class="gap-8 lg:grid-cols-2 lg:items-start">
-          <div class="space-y-6">
-            <h2 class="section-title">User Journey</h2>
-            <div class="space-y-5">
-              <p class="paragraph-medium">The journey visualized handoffs across brokers, lenders, and merchants, surfacing where automation and guidance could reduce friction.</p>
-              <div>
-                <p class="subheading-muted">User Pain</p>
-                <div class="mt-3 space-y-4">
+            <h2 class="section-title mb-4"> Journey map</h2>
+              <p class="paragraph-medium mb-12">The journey visualized handoffs across brokers, lenders, and merchants, surfacing where automation and guidance could reduce friction.</p>
                   <div>
-                    <p class="item-title">Classic</p>
-                    <p class="paragraph-medium">Manual document uploads, unclear loan progress, delayed responses, and repetitive data entry.</p>
+                    <h3 class="item-title mb-8">Brokers Classic Journey</h3>
+                    <figure class="overflow-hidden mb-4">
+                        <img src="images/Lendeck-BrokerJourney-ClassicLendingProcess.svg" alt="Lendeck dashboard sitemap" class="w-full object-cover" />
+                    </figure>
+                    <p class="paragraph-medium mb-20">The broker experiences fragmented communication, poor visibility, and heavy manual workload throughout the lending process.</p>
                   </div>
-                  <div>
-                    <p class="item-title">Competitive</p>
-                    <p class="paragraph-medium">Competitors lacked unified dashboards and clear progress visibility; users often switched between platforms or emails to track one deal.</p>
+                  <div class="">
+                    <h3 class="item-title mb-8">Lenders Classic Journey</h3>
+                    <figure class="overflow-hidden mb-4">
+                        <img src="images/Lendeck-LenderJourney-ClassicLendingProcess.svg" alt="Lendeck dashboard sitemap" class="w-full object-cover" />
+                    </figure>
+                    <p class="paragraph-medium ">The lender faces inefficiencies, fragmented data, and slow loan cycles that limit deal flow and scalability.</p>
                   </div>
-                </div>
               </div>
             </div>
-          </div>
-          <figure class="placeholder-frame bg-[linear-gradient(135deg,#F3F4F6_0%,#FFFFFF_60%,#F9FAFB_100%)] lg:ml-auto" role="img" aria-label="User journey map placeholder">
-            User Journey Placeholder
-          </figure>
-        </div>
       </div>
     </section>
-  -->
+  
 
     <section id="site-map" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
       <div class="panel">
@@ -323,8 +359,8 @@
         <div class="space-y-6">
           <h2 class="section-title">User Flow</h2>
           <p class="paragraph-medium">Each user type’s flow was optimized to reduce steps and cognitive load. Brokers can submit deals in under three minutes; lenders review with automated insights; merchants upload documents with guided prompts.</p>
-          <figure class="placeholder-frame bg-[linear-gradient(135deg,#F3F4F6_0%,#FFFFFF_60%,#F9FAFB_100%)]" role="img" aria-label="User flow placeholder">
-            User Flow Placeholder
+          <figure class="overflow-hidden rounded-3xl">
+            <img src="images/userflow-broker-newmerchant.svg" alt="Lendeck dashboard sitemap" class="image-large w-full object-cover" />
           </figure>
         </div>
       </div>
@@ -401,7 +437,7 @@
     
   </main>
 
-  <footer class="py-10 text-center text-sm text-gray-500">© <span id="year"></span> Zahra Razavi</footer>
+  <footer class="border-t border-white/15 py-10 text-center text-sm text-white/80">© <span id="year"></span> Zahra Razavi</footer>
 
   <div data-toast class="pointer-events-none fixed inset-x-0 bottom-6 mx-auto hidden w-fit max-w-xs rounded-full bg-gray-900 px-4 py-2 text-sm text-white shadow-lg"></div>
 
@@ -426,10 +462,181 @@
         animateEls.forEach(el => observer.observe(el));
       }
 
+      const initImageLightbox = () => {
+        const zoomables = document.querySelectorAll('.image-large');
+        if (!zoomables.length) {
+          return;
+        }
+
+        let overlay = null;
+        let overlayImg = null;
+        let currentScale = 1;
+        let currentX = 0;
+        let currentY = 0;
+        let isPanning = false;
+        let panStartX = 0;
+        let panStartY = 0;
+
+        const updateTransform = () => {
+          if (!overlayImg) {
+            return;
+          }
+          overlayImg.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) scale(${currentScale})`;
+          overlayImg.classList.toggle('is-zoomed', currentScale > 1);
+        };
+
+        const resetTransform = () => {
+          currentScale = 1;
+          currentX = 0;
+          currentY = 0;
+          isPanning = false;
+          if (overlayImg) {
+            overlayImg.classList.remove('is-grabbing');
+          }
+          updateTransform();
+        };
+
+        const cleanListeners = () => {
+          if (overlay) {
+            overlay.removeEventListener('click', handleOverlayClick);
+          }
+          if (!overlayImg) {
+            return;
+          }
+          overlayImg.removeEventListener('click', handleImageClick);
+          overlayImg.removeEventListener('wheel', handleWheel);
+          overlayImg.removeEventListener('pointerdown', handlePointerDown);
+          overlayImg.removeEventListener('pointermove', handlePointerMove);
+          overlayImg.removeEventListener('pointerup', handlePointerUp);
+          overlayImg.removeEventListener('pointercancel', handlePointerUp);
+          overlayImg.removeEventListener('pointerleave', handlePointerUp);
+        };
+
+        const closeOverlay = () => {
+          if (!overlay) {
+            return;
+          }
+          cleanListeners();
+          overlay.remove();
+          overlay = null;
+          overlayImg = null;
+          document.body.classList.remove('image-lightbox-open');
+          resetTransform();
+        };
+
+        const handleWheel = event => {
+          if (!overlayImg) {
+            return;
+          }
+          event.preventDefault();
+          const direction = event.deltaY < 0 ? 1 : -1;
+          const nextScale = Math.min(Math.max(currentScale + direction * 0.2, 1), 4);
+          if (nextScale !== currentScale) {
+            currentScale = nextScale;
+            if (currentScale === 1) {
+              currentX = 0;
+              currentY = 0;
+            }
+            updateTransform();
+          }
+        };
+
+        const handlePointerDown = event => {
+          if (!overlayImg || currentScale === 1) {
+            return;
+          }
+          isPanning = true;
+          panStartX = event.clientX - currentX;
+          panStartY = event.clientY - currentY;
+          overlayImg.classList.add('is-grabbing');
+          overlayImg.setPointerCapture(event.pointerId);
+        };
+
+        const handlePointerMove = event => {
+          if (!overlayImg || !isPanning || currentScale === 1) {
+            return;
+          }
+          currentX = event.clientX - panStartX;
+          currentY = event.clientY - panStartY;
+          updateTransform();
+        };
+
+        const handlePointerUp = event => {
+          if (!overlayImg) {
+            return;
+          }
+          isPanning = false;
+          overlayImg.classList.remove('is-grabbing');
+          if (overlayImg.hasPointerCapture(event.pointerId)) {
+            overlayImg.releasePointerCapture(event.pointerId);
+          }
+        };
+
+        const handleOverlayClick = event => {
+          if (event.target === overlay) {
+            closeOverlay();
+          }
+        };
+
+        const handleImageClick = event => {
+          event.stopPropagation();
+          if (currentScale > 1) {
+            resetTransform();
+            return;
+          }
+          closeOverlay();
+        };
+
+        const openOverlay = img => {
+          if (overlay) {
+            closeOverlay();
+          }
+
+          overlay = document.createElement('div');
+          overlay.className = 'image-lightbox';
+
+          const inner = document.createElement('div');
+          inner.className = 'image-lightbox__inner';
+
+          overlayImg = document.createElement('img');
+          overlayImg.className = 'image-lightbox__img';
+          overlayImg.src = img.currentSrc || img.src;
+          overlayImg.alt = img.alt || '';
+
+          inner.appendChild(overlayImg);
+          overlay.appendChild(inner);
+          document.body.appendChild(overlay);
+          document.body.classList.add('image-lightbox-open');
+
+          resetTransform();
+
+          overlay.addEventListener('click', handleOverlayClick);
+          overlayImg.addEventListener('click', handleImageClick);
+          overlayImg.addEventListener('wheel', handleWheel, { passive: false });
+          overlayImg.addEventListener('pointerdown', handlePointerDown);
+          overlayImg.addEventListener('pointermove', handlePointerMove);
+          overlayImg.addEventListener('pointerup', handlePointerUp);
+          overlayImg.addEventListener('pointercancel', handlePointerUp);
+          overlayImg.addEventListener('pointerleave', handlePointerUp);
+        };
+
+        zoomables.forEach(img => {
+          img.addEventListener('click', () => openOverlay(img));
+        });
+
+        document.addEventListener('keydown', event => {
+          if (event.key === 'Escape') {
+            closeOverlay();
+          }
+        });
+      };
+
       const yearEl = document.getElementById('year');
       if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
       }
+
+      initImageLightbox();
     });
   </script>
 </body>
