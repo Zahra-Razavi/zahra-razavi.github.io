@@ -3,101 +3,378 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mediana — VoIP SaaS Dashboard | Case Study</title>
-  <meta name="description" content="Case study: Mediana VoIP SaaS dashboard. Problem framing, constraints, process, and outcomes." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style> body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; } </style>
+  <title>Mediana Voice — Dashboard Case Study</title>
+  <style>
+    :root {
+      --black: #000000;
+      --dark-900: #262626;
+      --dark-800: #1f1f1f;
+      --dark-700: #232323;
+      --dark-600: #1a1a1a;
+      --teal-450: #4a8b82;
+      --teal-500: #9ac6bd;
+      --teal-300: #b7ded5;
+      --teal-200: #cfe9e3;
+      --teal-100: #e6f5f1;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--dark-900);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    section {
+      width: 100%;
+    }
+
+    h1, h2 {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .section-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+
+    .back-wrapper {
+      padding-top: 32px;
+      padding-bottom: 16px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      color: var(--white);
+    }
+
+    .back-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: border-color 0.2s ease;
+    }
+
+    .back-link:hover .back-icon,
+    .back-link:focus-visible .back-icon {
+      border-color: var(--teal-500);
+    }
+
+    .back-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero {
+      background: var(--dark-900);
+      color: var(--dark-900);
+    }
+
+    .hero-inner {
+      display: grid;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: 2.5rem;
+      line-height: 1.2;
+      letter-spacing: 0.08em;
+    }
+
+    .hero p {
+      color: var(--white);
+      font-size: 1.1rem;
+      max-width: 780px;
+    }
+
+    .hero-visual {
+      width: 100%;
+      max-width: 680px;
+      height: 340px;
+      background: var(--dark-900);
+      color: var(--teal-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.5em;
+      margin-left: auto;
+    }
+
+    @media (min-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1.6fr 1fr;
+      }
+    }
+
+    .meta {
+      background: var(--teal-300);
+      border-top: 1px solid #3b3b3b;
+      border-bottom: 1px solid #3b3b3b;
+    }
+
+    .meta-grid {
+      display: grid;
+      gap: 40px;
+    }
+
+    .meta-title {
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      color: var(--dark-900);
+    }
+
+    .meta-value {
+      margin-top: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--dark-700);
+    }
+
+    @media (min-width: 900px) {
+      .meta-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .case-subheader {
+      text-align: left;
+      font-size: 2rem;
+      color: var(--teal-200);
+    }
+
+    .case-header {
+      text-align: center;
+      font-size: 4rem;
+      color: var(--teal-200);
+      margin-bottom: 32px;
+    }
+
+    .overview {
+      background: var(--dark-700);
+    }
+
+    .overview-grid {
+      display: grid;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .overview-text {
+      text-align: justify;
+      color: var(--teal-100);
+    }
+
+    .placeholder {
+      width: 100%;
+      min-height: 320px;
+      background: var(--dark-600);
+      border: 1px solid #3b3b3b;
+      color: var(--teal-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.45em;
+    }
+
+    @media (min-width: 900px) {
+      .overview-grid {
+        grid-template-columns: 1.1fr 1fr;
+      }
+    }
+
+    .section-dark {
+      background: var(--dark-900);
+    }
+
+    .section-ink {
+      background: var(--dark-700);
+    }
+
+    .section-footer {
+      background: var(--dark-900);
+      padding-bottom: 96px;
+    }
+
+    .system-group {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .similar-card {
+      display: block;
+      padding: 48px 32px;
+      border: 1px solid #3b3b3b;
+      color: var(--white);
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .similar-card:hover,
+    .similar-card:focus-visible {
+      background: var(--dark-800);
+      outline: none;
+    }
+
+    .similar-card span {
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      color: var(--teal-500);
+    }
+
+    .similar-card h3 {
+      margin-top: 16px;
+      font-size: 1.8rem;
+      letter-spacing: 0.08em;
+    }
+
+    .similar-card p {
+      margin-top: 8px;
+      color: var(--teal-200);
+      max-width: 580px;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800">
-  <header class="max-w-5xl mx-auto px-4 py-6 flex items-center justify-between">
-    <a href="/" class="font-semibold">← Back to Home</a>
-    <nav class="hidden md:flex gap-6">
-      <a href="#overview" class="hover:opacity-70">Overview</a>
-      <a href="#process" class="hover:opacity-70">Process</a>
-      <a href="#solution" class="hover:opacity-70">Solution</a>
-      <a href="#outcomes" class="hover:opacity-70">Outcomes</a>
-    </nav>
-  </header>
-
-  <main class="max-w-3xl mx-auto px-4 py-8 space-y-12">
-    <section id="overview" class="space-y-4">
-      <h1 class="text-3xl font-semibold leading-tight">Mediana — VoIP SaaS Dashboard</h1>
-      <p class="text-gray-700">A dashboard for SMBs to manage IVR, extensions, call logs, and analytics. I led UX from discovery to delivery, aligning stakeholders and shipping a Polaris-consistent dashboard.</p>
-      <ul class="list-disc pl-6 text-gray-700">
-        <li><strong>Role:</strong> Product Designer & PM</li>
-        <li><strong>Timeline:</strong> 5 months</li>
-        <li><strong>Team:</strong> 1 PM, 2 FE devs, 1 BE dev</li>
-        <li><strong>Platform:</strong> Web (responsive)</li>
-      </ul>
-    </section>
-
-    <section id="problem" class="space-y-3">
-      <h2 class="text-2xl font-semibold">Problem</h2>
-      <p class="text-gray-700">Customers struggled to configure IVR and manage call flows. High setup friction caused drop-offs in onboarding and support tickets.</p>
-    </section>
-
-    <section id="goals" class="space-y-3">
-      <h2 class="text-2xl font-semibold">Goals & Constraints</h2>
-      <ul class="list-disc pl-6 text-gray-700">
-        <li>Reduce onboarding drop-off</li>
-        <li>Enable non-technical admins to configure IVR</li>
-        <li>Stay within existing tech stack and Polaris guidelines</li>
-        <li>Deliver MVP in 10 weeks, iterate post-launch</li>
-      </ul>
-    </section>
-
-    <section id="process" class="space-y-3">
-      <h2 class="text-2xl font-semibold">Process</h2>
-      <ol class="list-decimal pl-6 text-gray-700 space-y-1">
-        <li>User interviews and task analyses with 8 admins</li>
-        <li>Flow mapping for IVR, extensions, and call routing</li>
-        <li>Low-fi → hi-fi prototypes; hallway tests</li>
-        <li>Design QA and release checklist</li>
-      </ol>
-    </section>
-
-    <section id="solution" class="space-y-4">
-      <h2 class="text-2xl font-semibold">Solution</h2>
-      <p class="text-gray-700">A guided setup with clear hierarchy, previewable IVR, and analytics surfaced at the right moments. Accessible, responsive layout with consistent components.</p>
-      <div class="grid gap-4 md:grid-cols-2">
-        <figure class="border rounded-lg p-3">
-          <div class="aspect-[16/10] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">IVR Builder mock</div>
-          <figcaption class="text-sm text-gray-600 mt-2">IVR visual builder with steps</figcaption>
-        </figure>
-        <figure class="border rounded-lg p-3">
-          <div class="aspect-[16/10] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Call Logs mock</div>
-          <figcaption class="text-sm text-gray-600 mt-2">Filterable logs with export</figcaption>
-        </figure>
+<body>
+  <main>
+    <section class="back-bar" class="hero">
+      <div class="section-container back-wrapper">
+        <a class="back-link" href="https://zahra-razavi.github.io/">
+          <span class="back-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" />
+            </svg>
+          </span>
+        </a>
       </div>
     </section>
 
-    <section id="outcomes" class="space-y-3">
-      <h2 class="text-2xl font-semibold">Outcomes & Impact</h2>
-      <ul class="list-disc pl-6 text-gray-700">
-        <li>Onboarding drop-off reduced (insert your metric here)</li>
-        <li>Support tickets about IVR setup decreased (insert metric)</li>
-        <li>Admins completed setup 30% faster (example metric)</li>
-      </ul>
+    <section id="section0" class="hero">
+      <div class="section-container hero-inner">
+        <div>
+          <h1>Mediana Voice - VoIP SaaS Dashboard</h1>
+        </div>
+        <div class="hero-visual">HORIZONTAL&nbsp;IMAGE</div>
+      </div>
     </section>
 
-    <section id="next" class="space-y-3">
-      <h2 class="text-2xl font-semibold">Next Steps</h2>
-      <ul class="list-disc pl-6 text-gray-700">
-        <li>Voice prompts library</li>
-        <li>Advanced analytics and cohort insights</li>
-        <li>Role-based permissions</li>
-      </ul>
+    <section id="section1" class="meta">
+      <div class="section-container meta-grid">
+        <div>
+          <p class="meta-title">Role</p>
+          <p class="meta-value">Product Manager</p>
+        </div>
+        <div>
+          <p class="meta-title">Timeline</p>
+          <p class="meta-value">—</p>
+        </div>
+        <div>
+          <p class="meta-title">Scope</p>
+          <p class="meta-value">Business development, UX, UI</p>
+        </div>
+        <div>
+          <p class="meta-title">Team</p>
+          <p class="meta-value">Iman Behboodi, Business line owner</p>
+        </div>
+      </div>
     </section>
 
-    <section id="credits" class="space-y-2">
-      <h2 class="text-2xl font-semibold">My Contributions</h2>
-      <p class="text-gray-700">Discovery, flows, IA, hi-fi UI, design QA, and release notes.</p>
+    <section id="section2" class="overview">
+      <div class="section-container overview-grid">
+        <div>
+          <h2 class="case-subheader">overview</h2>
+          <p class="overview-text">Mediana Voice is a modern VoIP management dashboard that centralizes business communication control—covering analytics, call logs, line management, IVR flows and voices, billing, and user access. It provides clear insights into active calls and usage through detailed reports, enables easy configuration of extension lines and IVR systems, and supports tiered service plans for different business needs. With multi-level user access (Admin, Manager, Operator) and integrated registration and billing tools, Mediana Voice delivers an intuitive, all-in-one platform for monitoring, managing, and optimizing voice operations efficiently.</p>
+        </div>
+        <div class="placeholder">DASHBOARD&nbsp;OVERVIEW</div>
+      </div>
+      <div class="section-container" style="padding-top: 0;">
+        <div class="placeholder">FULL&nbsp;WIDTH&nbsp;INSIGHT</div>
+      </div>
+    </section>
+
+    <section id="section3" class="section-dark">
+      <div class="section-container">
+        <h2 class="case-header">User flow</h2>
+        <div class="placeholder">USER&nbsp;FLOW&nbsp;DIAGRAM</div>
+      </div>
+    </section>
+
+    <section id="section4" class="section-ink">
+      <div class="section-container">
+        <h2 class="case-header">Site map</h2>
+        <div class="placeholder">SITE&nbsp;MAP&nbsp;ILLUSTRATION</div>
+      </div>
+    </section>
+
+    <section id="section5-ui" class="section-dark">
+      <div class="section-container">
+        <h2 class="case-header">UI design</h2>
+        <div class="placeholder">UI&nbsp;SCREENS&nbsp;GALLERY</div>
+      </div>
+    </section>
+
+    <section id="section5-system" class="section-ink">
+      <div class="section-container system-group">
+        <div>
+          <h2 class="case-header">Design system</h2>
+          <div class="placeholder" style="min-height: 260px;">SYSTEM&nbsp;OVERVIEW</div>
+        </div>
+        <div>
+          <h2 class="case-header">Color</h2>
+          <div class="placeholder" style="min-height: 220px;">PALETTE&nbsp;DETAIL</div>
+        </div>
+        <div>
+          <h2 class="case-header">Components</h2>
+          <div class="placeholder" style="min-height: 260px;">COMPONENT&nbsp;LIBRARY</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section6" class="section-footer">
+      <div class="section-container">
+        <h2 class="case-header">Similar projects</h2>
+        <a class="similar-card" href="../lendeck/index.html">
+          <span>CASE STUDY</span>
+          <h3>Lendeck Dashboard Modernization</h3>
+          <p>Streamlining the lending journey with modular workflows, data-rich insights, and responsive operator tooling engineered for growth.</p>
+        </a>
+      </div>
     </section>
   </main>
-
-  <footer class="text-center text-sm text-gray-500 py-8">© <script>document.write(new Date().getFullYear())</script> Zahra Razavi</footer>
 </body>
 </html>
