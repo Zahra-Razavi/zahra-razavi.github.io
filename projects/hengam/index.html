@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Notify Me! — Shopify App Case Study</title>
-  <meta name="description" content="Notify Me! Shopify app case study highlighting personalized notification experiences, discovery insights, and end-to-end flows inspired by the Polaris design system." />
+  <meta name="description" content="Notify Me! Shopify app case study highlighting problem discovery, research insights, and notification flow design inspired by the Polaris design system." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,28 +13,25 @@
           colors: {
             accent: '#5E8E3E',
             'accent-light': '#95BF47',
-            'accent-soft': '#E5F2D8',
-            'accent-dark': '#1F3A1F',
-            ink: '#000000',
-          },
-          fontSize: {
-            'display-5': ['4.75rem', { lineHeight: '1' }],
-            'body-sm': ['0.95rem', { lineHeight: '1.65' }],
-          },
-          letterSpacing: {
-            'wide-08': '0.08em',
-            'wide-12': '0.12em',
-            'wide-16': '0.16em',
+            'accent-dark': '#3F6A28',
+            surface: '#F5F8F4',
+            'surface-strong': '#E4F0DA',
+            ink: '#222222',
+            'ink-muted': '#4A4A4A',
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'Ubuntu', 'Cantarell', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif'],
             display: ['Poppins', 'Inter', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'Ubuntu', 'Cantarell', '"Helvetica Neue"', 'Arial', '"Noto Sans"', 'sans-serif'],
           },
+          fontSize: {
+            'display-4': ['3.75rem', { lineHeight: '1' }],
+            'body-sm': ['0.9375rem', { lineHeight: '1.6' }],
+          },
           borderRadius: {
-            '5xl': '40px',
+            '5xl': '36px',
           },
           boxShadow: {
-            uplift: '0 28px 60px -24px rgba(26, 59, 14, 0.25)',
+            raised: '0 20px 50px -20px rgba(34, 68, 34, 0.25)',
           },
         },
       },
@@ -45,6 +42,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
   <style type="text/tailwindcss">
     @layer base {
+      body {
+        @apply bg-white text-ink antialiased;
+      }
+
       h1,
       h2,
       h3 {
@@ -52,299 +53,294 @@
       }
 
       p {
-        @apply text-base leading-7 text-gray-700;
+        @apply text-base leading-7 text-ink-muted;
       }
 
       li {
-        @apply text-body-sm leading-6 text-gray-700;
-      }
-
-      h3 {
-        @apply text-lg font-semibold text-ink;
+        @apply text-body-sm text-ink-muted;
       }
     }
 
     @layer components {
-      .case-title {
-        @apply text-4xl font-bold leading-tight tracking-tight text-ink sm:text-5xl lg:text-display-5;
+      .section-shell {
+        @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
       }
 
       .section-title {
-        @apply text-3xl font-semibold tracking-wide-08 text-accent-dark sm:text-4xl md:text-5xl;
+        @apply text-3xl font-semibold tracking-tight text-ink sm:text-4xl lg:text-display-4;
       }
 
-      .panel {
-        @apply rounded-5xl border border-accent-soft/80 bg-white/90 p-8 shadow-xl shadow-accent-dark/5 backdrop-blur-sm sm:p-12;
+      .meta-label {
+        @apply text-xs font-semibold uppercase tracking-[0.24em] text-ink-muted;
       }
 
-      .stat-card {
-        @apply rounded-3xl border border-accent-soft bg-white/80 p-6 text-left shadow-sm shadow-accent-dark/10;
+      .meta-value {
+        @apply text-sm font-semibold text-ink;
       }
 
-      .stat-label {
-        @apply text-sm font-semibold uppercase tracking-wide-12 text-accent-dark/70;
+      .card {
+        @apply rounded-3xl border border-surface-strong bg-white p-6 shadow-sm;
       }
 
-      .stat-value {
-        @apply mt-1 text-lg font-semibold text-ink;
-      }
-
-      .meta-kicker {
-        @apply inline-flex items-center rounded-full bg-accent-soft px-4 py-2 text-xs font-semibold uppercase tracking-wide-16 text-accent-dark;
-      }
-
-      .logo-badge {
-        @apply flex items-center justify-center rounded-xl border border-accent-soft bg-white px-4 py-2 shadow-sm shadow-accent-dark/10;
-      }
-
-      .flow-card {
-        @apply rounded-4xl border border-accent-soft bg-white/80 p-8 shadow-uplift;
-      }
-
-      .video-frame {
-        @apply relative overflow-hidden rounded-4xl border border-accent-soft bg-black shadow-uplift;
-      }
-
-      .video-label {
-        @apply absolute left-4 top-4 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide-12 text-accent-dark;
+      .placeholder-frame {
+        @apply flex h-72 items-center justify-center rounded-3xl border-2 border-dashed border-surface-strong bg-surface text-xs font-semibold uppercase tracking-[0.2em] text-ink-muted;
       }
     }
   </style>
 </head>
-<body class="bg-[#F4F7F0] text-ink antialiased font-sans">
-  <header class="relative overflow-hidden bg-gradient-to-br from-white via-[#F3F9EA] to-[#DDEDC9]">
-    <div class="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(circle_at_top,_rgba(149,191,71,0.45),_transparent_60%)] lg:block"></div>
-    <div class="pointer-events-none absolute -left-32 top-0 h-72 w-72 rounded-full bg-[#95BF47]/20 blur-3xl"></div>
-    <div class="relative mx-auto flex min-h-[540px] max-w-7xl flex-col gap-12 px-4 pb-24 pt-12 sm:px-6 lg:flex-row lg:items-start lg:pb-32 lg:pt-16">
-      <div class="relative z-10 flex-1 space-y-10">
-        <a href="https://zahra-razavi.github.io/" class="inline-flex items-center gap-2 text-sm font-semibold text-accent-dark/80 transition hover:text-accent-dark">
-          <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-accent-soft bg-white/80">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-accent-dark">
-              <path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" />
+<body>
+  <header class="relative isolate overflow-hidden bg-surface">
+    <div class="pointer-events-none absolute -left-24 top-16 h-48 w-48 rounded-full bg-accent-light/30 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_top_right,_rgba(149,191,71,0.18),_transparent_55%)]"></div>
+    <img
+      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='680' viewBox='0 0 960 680'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0%25' x2='100%25' y1='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2395BF47'/%3E%3Cstop offset='45%25' stop-color='%235E8E3E'/%3E%3Cstop offset='100%25' stop-color='%23000000' stop-opacity='0.65'/%3E%3C/linearGradient%3E%3Cpattern id='b' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Crect width='60' height='60' fill='none' stroke='%23FFFFFF' stroke-opacity='0.15' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='960' height='680' fill='url(%23a)' rx='0'/%3E%3Crect width='960' height='680' fill='url(%23b)'/%3E%3Ccircle cx='210' cy='180' r='36' fill='%23ffffff' fill-opacity='0.35'/%3E%3Ccircle cx='420' cy='460' r='64' fill='%23ffffff' fill-opacity='0.25'/%3E%3Cpath d='M640 140h140a10 10 0 0 1 10 10v56a10 10 0 0 1-10 10H640a10 10 0 0 1-10-10v-56a10 10 0 0 1 10-10z' fill='%23ffffff' fill-opacity='0.18'/%3E%3C/svg%3E"
+      alt="Notify Me! interface artwork"
+      class="absolute right-0 top-0 hidden h-full w-full max-w-3xl object-cover object-center md:block"
+    />
+    <div class="section-shell relative z-10 flex flex-col gap-12 py-16 md:flex-row md:items-start md:gap-16 md:py-24">
+      <div class="block overflow-hidden rounded-3xl border border-accent-light/40 md:hidden">
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='680' viewBox='0 0 960 680'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0%25' x2='100%25' y1='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2395BF47'/%3E%3Cstop offset='45%25' stop-color='%235E8E3E'/%3E%3Cstop offset='100%25' stop-color='%23000000' stop-opacity='0.65'/%3E%3C/linearGradient%3E%3Cpattern id='b' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Crect width='60' height='60' fill='none' stroke='%23FFFFFF' stroke-opacity='0.15' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='960' height='680' fill='url(%23a)' rx='0'/%3E%3Crect width='960' height='680' fill='url(%23b)'/%3E%3Ccircle cx='210' cy='180' r='36' fill='%23ffffff' fill-opacity='0.35'/%3E%3Ccircle cx='420' cy='460' r='64' fill='%23ffffff' fill-opacity='0.25'/%3E%3Cpath d='M640 140h140a10 10 0 0 1 10 10v56a10 10 0 0 1-10 10H640a10 10 0 0 1-10-10v-56a10 10 0 0 1 10-10z' fill='%23ffffff' fill-opacity='0.18'/%3E%3C/svg%3E"
+          alt="Notify Me! interface artwork"
+          class="h-full w-full object-cover object-center"
+        />
+      </div>
+      <div class="flex-1 space-y-10">
+        <a href="https://zahra-razavi.github.io/" class="inline-flex items-center gap-2 text-sm font-semibold text-accent-dark transition hover:text-ink">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent-dark/20 bg-white text-accent-dark">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M12.53 4.22a.75.75 0 01.073.976l-.073.084L8.06 10l4.47 4.72a.75.75 0 01-.976 1.133l-.084-.073-5-5.25a.75.75 0 01-.073-.976l.073-.084 5-5.25a.75.75 0 011.133.976l-.073.084L8.81 10l3.72-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" />
             </svg>
           </span>
           Back to portfolio
         </a>
-        <span class="meta-kicker">Case Study · Product Design</span>
         <div class="space-y-6">
-          <h1 class="case-title">Notify Me! — A Shopify App for Proactive Merchants</h1>
-          <p class="max-w-2xl text-lg text-gray-700">Designing a Polaris-inspired customization experience that gives merchants control over every notification touchpoint—from push to SMS—while reducing support load and improving retention.</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-accent-dark/70">Case Study</p>
+          <h1 class="text-4xl font-semibold tracking-tight text-ink sm:text-5xl md:text-6xl">Notify Me! A Shopify App</h1>
+          <p class="max-w-xl text-lg leading-8 text-ink-muted">
+            Building a cohesive customization experience for multi-channel notifications, aligning the Shopify Polaris design language with merchant workflows and customer expectations.
+          </p>
         </div>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="stat-card">
-            <p class="stat-label">Role</p>
-            <p class="stat-value">Solo Product Designer</p>
+        <dl class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="space-y-2 rounded-3xl border border-surface-strong bg-white p-5">
+            <dt class="meta-label">Role</dt>
+            <dd class="meta-value">Solo product designer</dd>
           </div>
-          <div class="stat-card">
-            <p class="stat-label">Timeline</p>
-            <p class="stat-value">Jan 2022 – Jun 2022</p>
+          <div class="space-y-2 rounded-3xl border border-surface-strong bg-white p-5">
+            <dt class="meta-label">Timeline</dt>
+            <dd class="meta-value">Jan 2022 – Jun 2022</dd>
           </div>
-          <div class="stat-card">
-            <p class="stat-label">Scope</p>
-            <p class="stat-value">User Research, UX Design, UI Design</p>
+          <div class="space-y-2 rounded-3xl border border-surface-strong bg-white p-5">
+            <dt class="meta-label">Scope</dt>
+            <dd class="meta-value">User research, UX design, UI design</dd>
           </div>
-          <div class="stat-card">
-            <p class="stat-label">Tools &amp; Resources</p>
-            <div class="mt-3 grid grid-cols-3 gap-3">
-              <span class="logo-badge" aria-label="Figma">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma logo" class="h-6 w-6" loading="lazy" />
-              </span>
-              <span class="logo-badge" aria-label="Hotjar">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Hotjar-logo.svg" alt="Hotjar logo" class="h-6" loading="lazy" />
-              </span>
-              <span class="logo-badge" aria-label="Lucky Orange">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Lucky_Orange_logo.svg" alt="Lucky Orange logo" class="h-6" loading="lazy" />
-              </span>
-              <span class="logo-badge" aria-label="Intercom">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Intercom_logo.svg" alt="Intercom logo" class="h-6" loading="lazy" />
-              </span>
-              <span class="logo-badge" aria-label="Jira">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira logo" class="h-6 w-6" loading="lazy" />
-              </span>
-              <span class="logo-badge" aria-label="Mailchimp">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/5d/Mailchimp_logo.svg" alt="Mailchimp logo" class="h-6" loading="lazy" />
-              </span>
-              <span class="logo-badge col-span-3" aria-label="Polaris design system">
-                <img src="https://cdn.shopify.com/shopifycloud/web/assets/v1/64f782f30b8a1bf38e12f5e04c3cfd05.svg" alt="Polaris design system logo" class="h-6" loading="lazy" />
-              </span>
-            </div>
+          <div class="space-y-2 rounded-3xl border border-surface-strong bg-white p-5">
+            <dt class="meta-label">Tools &amp; resources</dt>
+            <dd class="meta-value">Figma, Hotjar, Lucky Orange, Intercom, Jira, Mailchimp, Polaris</dd>
           </div>
-        </div>
+        </dl>
       </div>
-      <div class="relative flex-1 lg:pl-12">
-        <div class="pointer-events-none absolute inset-0 rounded-l-5xl bg-[linear-gradient(180deg,rgba(149,191,71,0.25),transparent)] lg:rounded-5xl"></div>
-        <div class="relative hidden h-full max-h-[520px] w-full max-w-[520px] flex-col overflow-hidden rounded-5xl border border-accent-soft bg-gradient-to-br from-[#F3F9EA] via-[#E2F1CE] to-[#95BF47] p-8 shadow-uplift lg:flex">
-          <div class="flex items-center justify-between">
-            <span class="rounded-full bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide-12 text-accent-dark">Live preview</span>
-            <span class="text-sm font-medium text-white/80">Responsive</span>
-          </div>
-          <div class="mt-8 space-y-4 text-accent-dark">
-            <h2 class="text-4xl font-semibold">Notify Me!</h2>
-            <p class="text-base text-accent-dark/80">Smart notification orchestration for Shopify merchants.</p>
-          </div>
-          <div class="mt-8 grid gap-4">
-            <div class="rounded-3xl bg-white/85 p-4 shadow-sm">
-              <p class="text-sm font-semibold text-accent-dark">Push Widget</p>
-              <p class="text-sm text-gray-700">Reminder: Your preorder ships tomorrow.</p>
-              <div class="mt-3 flex items-center gap-2">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-accent text-xs font-semibold text-white">1</span>
-                <span class="text-xs font-medium uppercase tracking-wide-12 text-gray-600">Actionable alerts</span>
-              </div>
-            </div>
-            <div class="rounded-3xl bg-white/80 p-4 shadow-sm">
-              <p class="text-sm font-semibold text-accent-dark">SMS Automation</p>
-              <p class="text-sm text-gray-700">Hi Ava 👋 Your size M restock is available. Tap to confirm.</p>
-            </div>
-          </div>
-          <div class="mt-auto flex items-center justify-between pt-6 text-sm text-white/85">
-            <span>Multi-channel ready</span>
-            <span class="inline-flex items-center gap-2">
-              <span class="h-2 w-2 rounded-full bg-white"></span>
-              <span class="h-2 w-2 rounded-full bg-white/50"></span>
-              <span class="h-2 w-2 rounded-full bg-white/30"></span>
-            </span>
-          </div>
-        </div>
-        <div class="relative mx-auto flex h-full w-full max-w-xl items-center justify-center rounded-5xl border border-accent-soft bg-white/85 p-12 shadow-uplift lg:hidden">
-          <span class="text-center text-sm font-semibold uppercase tracking-wide-12 text-accent-dark/70">Notify Me! hero visual (mobile placeholder)</span>
+      <div class="w-full max-w-sm space-y-6 rounded-3xl border border-accent-light/30 bg-white/80 p-6 backdrop-blur-sm shadow-raised">
+        <p class="meta-label text-center">Tools &amp; Resources</p>
+        <div class="grid grid-cols-3 items-center gap-4">
+          <img src="../../images/Figma.svg" alt="Figma logo" class="h-10 w-auto object-contain" />
+          <img src="../../images/hotjar.svg" alt="Hotjar logo" class="h-10 w-auto object-contain" />
+          <img src="../../images/lucky-orange.png" alt="Lucky Orange logo" class="h-10 w-auto object-contain" />
+          <img src="../../images/intercom.svg" alt="Intercom logo" class="h-10 w-auto object-contain" />
+          <img src="../../images/jira.svg" alt="Jira logo" class="h-10 w-auto object-contain" />
+          <img src="../../images/mailchimp.svg" alt="Mailchimp logo" class="h-10 w-auto object-contain" />
+          <img src="../../images/polaris.svg" alt="Polaris design system logo" class="col-span-3 h-10 w-full object-contain" />
         </div>
       </div>
     </div>
   </header>
 
-  <main class="pb-24">
-    <section id="problem" class="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
-      <div class="panel">
-        <h2 class="section-title text-center">Problem</h2>
-        <div class="mt-8 space-y-6 text-lg text-gray-700">
-          <p>Merchants struggled to customize critical reminder and preorder confirmation notifications across push and SMS. While email templates were editable, high-volume support tickets highlighted frustration with inconsistent messaging and lack of control.</p>
-          <p>The product team introduced push notifications to meet demand, but merchants also needed a cohesive way to configure the push widget appearance and copy—without relying on support or developer assistance.</p>
+  <main class="space-y-24 pb-24 pt-16 sm:pt-24">
+    <section class="section-shell space-y-8">
+      <div class="max-w-3xl space-y-4">
+        <h2 class="section-title">Problem</h2>
+        <p>
+          Merchants adopted Notify Me! to keep shoppers in the loop when high-demand items restocked or when pre-orders shipped. As channels expanded beyond email, the customization experience lagged behind, generating an influx of support tickets and fragmented brand touchpoints.
+        </p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="card space-y-4">
+          <p class="text-base leading-7 text-ink-muted">
+            Users could not customize Push or SMS notifications for critical categories such as reminder notifications and pre-order confirmations. Only email templates were editable, creating a brand inconsistency and a high volume of customer support tickets.
+          </p>
+        </div>
+        <div class="card space-y-4">
+          <p class="text-base leading-7 text-ink-muted">
+            Responding to merchant feedback, Push notifications were introduced. However, the release lacked flexible configuration for push widgets and message styling, leaving users without the ability to adapt the experience to their storefront and audience tone.
+          </p>
         </div>
       </div>
     </section>
 
-    <section id="discovery" class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="panel space-y-10">
-        <h2 class="section-title text-center">Discovery</h2>
+    <section class="bg-surface py-20">
+      <div class="section-shell space-y-12">
+        <div class="space-y-4">
+          <h2 class="section-title">Discovery</h2>
+          <p class="max-w-3xl text-lg leading-8 text-ink-muted">
+            A Polaris-aligned discovery process combined qualitative depth with quantitative guardrails to reveal how merchants shaped notification flows and where they struggled.
+          </p>
+        </div>
         <div class="grid gap-10 lg:grid-cols-2">
           <div class="space-y-6">
-            <h3 class="text-2xl font-semibold text-accent-dark">Qualitative</h3>
-            <ul class="space-y-4">
-              <li class="flex items-start gap-3">
-                <span class="logo-badge h-10 w-10 rounded-full">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Hotjar-logo.svg" alt="Hotjar logo" class="h-6" loading="lazy" />
-                </span>
+            <h3 class="text-xl font-semibold text-ink">Qualitative</h3>
+            <div class="space-y-5 rounded-3xl border border-surface-strong bg-white p-6 shadow-sm">
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-light/10 text-accent-dark">
+                  <img src="../../images/hotjar.svg" alt="Hotjar logo" class="h-6 w-6 object-contain" />
+                </div>
                 <div>
                   <p class="font-semibold text-ink">User behaviour analysis</p>
-                  <p class="text-gray-700">20 user session recordings surfaced friction in locating push settings and understanding template hierarchy.</p>
+                  <p class="text-sm text-ink-muted">20 merchant session recordings triangulated to uncover friction in multi-channel setup.</p>
                 </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="logo-badge h-10 w-10 rounded-full">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Lucky_Orange_logo.svg" alt="Lucky Orange logo" class="h-6" loading="lazy" />
-                </span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-light/10 text-accent-dark">
+                  <img src="../../images/lucky-orange.png" alt="Lucky Orange logo" class="h-6 w-6 object-contain" />
+                </div>
                 <div>
-                  <p class="font-semibold text-ink">Heatmap insights</p>
-                  <p class="text-gray-700">Scroll-depth heatmaps showed merchants abandoning customization mid-flow due to preview visibility issues.</p>
+                  <p class="font-semibold text-ink">Heatmaps &amp; click tracking</p>
+                  <p class="text-sm text-ink-muted">Navigation hotspots surfaced the need for clearer channel labeling.</p>
                 </div>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="logo-badge h-10 w-10 rounded-full">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Intercom_logo.svg" alt="Intercom logo" class="h-6" loading="lazy" />
-                </span>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-light/10 text-accent-dark">
+                  <img src="../../images/intercom.svg" alt="Intercom logo" class="h-6 w-6 object-contain" />
+                </div>
                 <div>
                   <p class="font-semibold text-ink">Chat support feedback</p>
-                  <p class="text-gray-700">Support transcripts revealed repeat requests for consistent tone across channels and for dynamic variables in push copy.</p>
+                  <p class="text-sm text-ink-muted">Intercom transcripts mapped support tickets to missing customization controls.</p>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
           <div class="space-y-6">
-            <h3 class="text-2xl font-semibold text-accent-dark">Quantitative</h3>
-            <ul class="space-y-4">
-              <li class="flow-card">
-                <p class="font-semibold text-ink">Churn Rate</p>
-                <p class="mt-2 text-gray-700">Merchants without multi-channel customization churned 22% faster within the first 60 days.</p>
-              </li>
-              <li class="flow-card">
-                <p class="font-semibold text-ink">Onboarding Drop-off</p>
-                <p class="mt-2 text-gray-700">17% of new installs disengaged during onboarding when prompted to accept default notifications.</p>
-              </li>
-            </ul>
+            <h3 class="text-xl font-semibold text-ink">Quantitative</h3>
+            <div class="space-y-5 rounded-3xl border border-surface-strong bg-white p-6 shadow-sm">
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-light/10 text-accent-dark">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 17l4-4 4 4 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14 7h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-ink">Churn rate</p>
+                  <p class="text-sm text-ink-muted">Tracked post-launch churn trends to ensure personalization reduced attrition.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-light/10 text-accent-dark">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none">
+                    <path d="M4 7h16M7 12h10M10 17h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-semibold text-ink">Onboarding churn rate</p>
+                  <p class="text-sm text-ink-muted">Measured drop-off between channel selection and template activation.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="user-flows" class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="panel">
-        <h2 class="section-title text-center">Notification User Flow</h2>
-        <div class="mt-10 grid gap-8 lg:grid-cols-2">
-          <div class="flow-card">
-            <h3 class="text-2xl font-semibold text-accent-dark">Push Notification Setup</h3>
-            <p class="mt-4 text-gray-700">Guided merchants through widget styling, dynamic field selection, and channel-specific previews—ensuring parity with Polaris input patterns.</p>
-            <ul class="mt-6 space-y-3">
-              <li class="flex items-start gap-3">
-                <span class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-accent"></span>
-                <p class="text-gray-700">Channel overview uses Polaris Page and Layout components for familiarity.</p>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-accent"></span>
-                <p class="text-gray-700">Live preview updates copy and styling instantly, reducing guesswork.</p>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-accent"></span>
-                <p class="text-gray-700">Validation states reuse Polaris Banner patterns for consistent feedback.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="flow-card">
-            <h3 class="text-2xl font-semibold text-accent-dark">Email Template Customization</h3>
-            <p class="mt-4 text-gray-700">Simplified the templating experience with Polaris index tables and editor, enabling merchants to control sequence logic alongside branding.</p>
-            <ul class="mt-6 space-y-3">
-              <li class="flex items-start gap-3">
-                <span class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-accent"></span>
-                <p class="text-gray-700">Template list view highlights status (draft vs. live) using badge systems.</p>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-accent"></span>
-                <p class="text-gray-700">Rich-text editor integrates Polaris toolbar icons for brand consistency.</p>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-accent"></span>
-                <p class="text-gray-700">Testing mode consolidates email, SMS, and push previews in a single step.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <section class="section-shell space-y-10">
+      <div class="space-y-4">
+        <h2 class="section-title">Notification user flow</h2>
+        <p class="max-w-3xl text-lg leading-8 text-ink-muted">
+          The redesigned flow grounded each step in Polaris patterns—surface hierarchy, resource lists, and modal summaries—to guide merchants from channel selection to launch-ready notifications without context switching.
+        </p>
+      </div>
+      <div class="rounded-3xl border border-surface-strong bg-white p-8 shadow-sm">
+        <ol class="grid gap-6 md:grid-cols-2">
+          <li>
+            <p class="font-semibold text-ink">1. Channel overview</p>
+            <p class="text-sm text-ink-muted">Polaris card layout highlights readiness status for email, SMS, and push.</p>
+          </li>
+          <li>
+            <p class="font-semibold text-ink">2. Template customization</p>
+            <p class="text-sm text-ink-muted">Inline editor supports copy, media, and branding adjustments with live previews.</p>
+          </li>
+          <li>
+            <p class="font-semibold text-ink">3. Trigger rules</p>
+            <p class="text-sm text-ink-muted">Event settings leverage Polaris resource lists for quick association.</p>
+          </li>
+          <li>
+            <p class="font-semibold text-ink">4. Launch confirmation</p>
+            <p class="text-sm text-ink-muted">Summary sheet confirms cadence, audience, and fallback notifications.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section id="media" class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="panel">
-        <h2 class="section-title text-center">Prototype Highlights</h2>
-        <div class="mt-10 grid gap-10 lg:grid-cols-2">
-          <figure class="video-frame">
-            <span class="video-label">Push flow</span>
-            <video class="block h-full w-full object-cover" autoplay loop muted playsinline poster="images/notify-push-poster.png">
-              <source src="videos/notify-push.mp4" type="video/mp4" />
-              <p class="px-6 py-10 text-sm text-white/80">Push notification flow video preview placeholder.</p>
-            </video>
-          </figure>
-          <figure class="video-frame">
-            <span class="video-label">Email flow</span>
-            <video class="block h-full w-full object-cover" autoplay loop muted playsinline poster="images/notify-email-poster.png">
-              <source src="videos/notify-email.mp4" type="video/mp4" />
-              <p class="px-6 py-10 text-sm text-white/80">Email flow video preview placeholder.</p>
-            </video>
-          </figure>
+    <section class="section-shell space-y-10">
+      <div class="space-y-4">
+        <h2 class="section-title">Email setup user flow</h2>
+        <p class="max-w-3xl text-lg leading-8 text-ink-muted">
+          The email flow modernized legacy templates with modular Polaris components, creating consistent structures for pre-order confirmations, restock alerts, and reminders.
+        </p>
+      </div>
+      <div class="rounded-3xl border border-surface-strong bg-white p-8 shadow-sm">
+        <ol class="grid gap-6 md:grid-cols-2">
+          <li>
+            <p class="font-semibold text-ink">1. Template selection</p>
+            <p class="text-sm text-ink-muted">Scenario-based templates help merchants pick the right communication moment.</p>
+          </li>
+          <li>
+            <p class="font-semibold text-ink">2. Content structure</p>
+            <p class="text-sm text-ink-muted">Drag-and-drop Polaris sections enable quick experimentation with layout hierarchy.</p>
+          </li>
+          <li>
+            <p class="font-semibold text-ink">3. Personalization tokens</p>
+            <p class="text-sm text-ink-muted">Dynamic fields surface shopper data, ensuring messaging stays personal.</p>
+          </li>
+          <li>
+            <p class="font-semibold text-ink">4. Delivery cadence</p>
+            <p class="text-sm text-ink-muted">Scheduler aligns send frequency with inventory availability and shopper preferences.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="bg-surface py-20">
+      <div class="section-shell space-y-10">
+        <h2 class="section-title">Flow visuals</h2>
+        <p class="max-w-3xl text-lg leading-8 text-ink-muted">
+          High-fidelity flows combine Polaris components with branded surfaces, ready for stakeholder reviews and engineering handoff.
+        </p>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <div class="placeholder-frame">Push Notification Flow Placeholder</div>
+          <div class="placeholder-frame">Email Flow Placeholder</div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="mx-auto mt-20 max-w-6xl px-4 pb-16 text-center text-sm text-gray-600">
-    <p>Notify Me! Shopify App · Designed with a Polaris mindset · © Zahra Razavi</p>
+  <footer class="section-shell border-t border-surface-strong py-12 text-sm text-ink-muted">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; <span id="year"></span> Notify Me! Case Study</p>
+      <a href="https://zahra-razavi.github.io/" class="inline-flex items-center gap-2 font-semibold text-accent-dark transition hover:text-ink">
+        Back to portfolio
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M7.47 4.22a.75.75 0 010 1.06L3.81 9h12.44a.75.75 0 010 1.5H3.81l3.66 3.72a.75.75 0 11-1.06 1.06l-5-5.25a.75.75 0 010-1.06l5-5.25a.75.75 0 011.06 0z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
 </body>
 </html>
