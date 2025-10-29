@@ -8,9 +8,73 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
+    :root {
+      --title-color: #ffffff;
+      --headline-color: #e0cbed;
+      --headline2-color: #BA68C8;
+      --paragraph-color: inherit;
+      --playful-font: "Fredoka", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    }
+body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
+    body h1 {
+      color: var(--title-color);
+      font-family: var(--playful-font);
+      font-size: 6rem;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    } 
+       body h2 {
+      color: var(--headline-color);
+      font-family: var(--playful-font);
+      font-size: 4.5rem;
+      line-height: 1;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    body h3 {
+      color: var(--headline2-color);
+      font-family: var(--playful-font);
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 600;
+    }
+    body p { color: var(--paragraph-color); font-family: var(--playful-font); }
+    body li { font-family: var(--playful-font); }
+    body p.p1 {
+      font-size: 1rem;
+      line-height: 1.625;
+      text-align: center;
+      color: #475569;
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 2rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+    body p.p2 {
+      font-size: 1rem;
+      line-height: 1.625;
+      text-align: justify;
+      color: #475569;
+      padding-bottom: 2rem;
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      body p.p1,
+      body p.p2 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
     [data-animate] { transition: opacity .6s ease, transform .6s ease; }
     [data-animate].is-waiting { opacity: 0; transform: translateY(24px); }
     @media (prefers-reduced-motion: reduce) {
@@ -23,18 +87,19 @@
   <header class="relative isolate overflow-hidden bg-gradient-to-br from-[#A130B4] via-[#9537D1] to-[#7A3FEA] text-white">
     <div class="pointer-events-none absolute -left-32 top-16 h-72 w-72 rounded-full bg-white/20 blur-3xl"></div>
     <div class="pointer-events-none absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_55%)]"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-20 lg:pt-16 lg:pb-28 relative">
-      <a href="https://zahra-razavi.github.io/" class="inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition hover:text-white">
-        <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/60"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" /></svg></span>
-      </a>
-      <div class="mt-12 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div class="space-y-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-8 lg:pt-16 lg:pb-8 relative">
+      <div class="flex flex-col items-start gap-3">
+        <a href="https://zahra-razavi.github.io/" class="inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition hover:text-white">
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/60"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" /></svg></span>
+        </a>
+        <p class="text-base font-regular mt-4 tracking-[0.3em] text-white/80">Case Study · Product Design</p>
+      </div>
+      <div class=" grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div class="space-y-14">
-          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-white/100">Case Study · Product Design</p>
-          <h1 class="text-3xl mb-16 leading-tight sm:text-5xl">Kidora — Cognitive Growth App for Kids</h1>
+          <h1 class="mb-16 leading-tight sm:text-5xl">Kidora, Cognitive Growth App for Kids</h1>
           <p class="max-w-2xl text-lg font-medium text-justify text-white/100">
             Kidora is a child healthcare mobile application designed to empower parents by offering personalized, science-based developmental programs. It provides age-appropriate and comprehensive cognitive activities that support every stage of a child’s growth.</p>
-        </div>
+        
         <div class="space-y-2">
             <p class="max-w-2xl text-lg font-medium text-white/100">Key Features:</p>
           <ul class="max-w-2xl list-disc pl-6 text-lg font-medium text-justify leading-normal text-white/85">
@@ -44,7 +109,7 @@
             <li>Expert information to help parents raise healthy children and unlock their cognitive potential</li>
           </ul>
         </div>
-        </div>
+      </div>
         <div class="relative mx-auto w-full max-w-xs sm:max-w-sm">
           <div class="pointer-events-none absolute -right-16 top-12 hidden h-64 w-64 rounded-full bg-white/20 blur-3xl lg:block"></div>
           <div class="relative rounded-[32px] ">
@@ -52,21 +117,24 @@
           </div>
         </div>
       </div>
-      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-3xl border border-white/10 bg-white/10 p-5">
+      <div class="mt-8 mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class=" p-5">
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Role</p>
-          <p class="mt-2 text-lg font-bold text-white">Digital Product Designer</p>
+          <p class="mt-2 text-lg font-semibold text-white">Digital Product Designer</p>
         </div>
-        <div class="rounded-3xl border border-white/10 bg-white/10 p-5">
+        <div class=" p-5">
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Timeline</p>
-          <p class="mt-2 text-lg font-bold text-white">Sep 2020 – Dec 2022</p>
+          <p class="mt-2 text-lg font-semibold text-white">Sep 2020 – Dec 2022</p>
         </div>
        
-        <div class="rounded-3xl border border-white/10 bg-white/10 p-5">
+        <div class=" p-5">
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Tools & Resources</p>
-          <p class="mt-2 text-sm font-medium text-white">Figma · Material Design Guidelines · Human Interface Guidelines · Eye tracking</p>
+          <div class="mt-2 flex items-center gap-3 text-sm font-medium text-white">
+            <img src="../../images/Figma.svg" alt="Figma logo" class="h-6 w-6 object-contain" />
+            <span>&  Eye-tracking</span>
+          </div>          
         </div>
-         <div class="rounded-3xl border border-white/10 bg-white/10 p-5">
+         <div class=" p-5">
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Product Team</p>
           <p class="mt-2 text-sm font-medium text-white">Dr. Abolghasemi, AI Scientist</p>
           <p class="mt-2 text-sm font-medium text-white">Dr. Navab, Cognitive Scientist</p>
@@ -76,38 +144,44 @@
   </header>
 
   <main class="pb-20">
-    <section id="overview" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6 -mt-12">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-        <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+    <section id="overview" data-animate class=" mx-auto mt-16 max-w-7xl px-4 sm:px-6 -mt-12">
+      <div class="grid gap-10 lg:grid-cols-2">
+       <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
           <div class="space-y-6">
-            <div>
-              <h2 class="text-2xl font-semibold">Main Contributions</h2>
+              <h3>Main Contributions</h3>
               <ul class="mt-4 space-y-3 text-base text-slate-600">
                 <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>User research to deeply understand parents’ behaviors, expectations, and stressors.</li>
                 <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Iterative flow, navigation, and feature design aligned with cognitive development milestones.</li>
                 <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Data-driven UX analysis enhanced by biofeedback and eye-tracking insights.</li>
               </ul>
-            </div>
           </div>
-          
         </div>
-      </div>
+          <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+            <div class="space-y-6">
+             <h3>Challenges</h3>
+             <ul class="mt-4 space-y-3 text-sm text-slate-600">
+               <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Diverse user needs with limited behavioral benchmarks demanded extensive qualitative research.</li>
+               <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Lack of Persian market references required translating global best practices to local contexts.</li>
+               <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Design guidelines for multilingual experiences were scarce, complicating interface rules.</li>
+               <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Mobile eye-tracking data lacked fidelity, so web-based testing supplemented findings.</li>
+             </ul>
+          </div>
+        
+       </div>
     </section>
 
           
     <section id="process" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-          <div class="space-y-8">
-              <h2 class="text-2xl font-semibold">Process & Methods</h2>
-              <p class="text-base leading-relaxed text-slate-600 pb-8 max-w-3xl mx-auto px-3 sm:px-6 text-justify">
+      <div class="rounded-[32px] p-6 sm:p-10 ">
+          <div class="space-y-6">
+              <h2>Process</h2>
+              <p class="p1">
                 I followed the Design Thinking process—empathizing with parents and experts, defining the problem space, ideating solutions, prototyping rapidly, and testing repeatedly. Each iteration focused on translating research into confident caregiving moments.
               </p>
           </div>
-
-            
               <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
                 <div class="rounded-2xl p-4 shadow-sm border-purple-100 bg-purple-50/70">
-                  <p class="text-sm font-semibold text-slate-900">Empathy</p>
+                  <p class="text-sm font-semibold text-[#A130B4] text-slate-900">Empathy</p>
                   <ul class="mt-3 space-y-1 text-xs text-slate-600">
                     <li>Primary & desktop research</li>
                     <li>Competitive analysis</li>
@@ -116,7 +190,7 @@
                   </ul>
                 </div>
                 <div class="rounded-2xl p-4 shadow-sm border-purple-100 bg-purple-50/70">
-                  <p class="text-sm font-semibold text-slate-900">Define</p>
+                  <p class="text-sm font-semibold text-[#A130B4] text-slate-900">Define</p>
                   <ul class="mt-3 space-y-1 text-xs text-slate-600">
                     <li>Information synthesis</li>
                     <li>Challenge framing</li>
@@ -124,7 +198,7 @@
                   </ul>
                 </div>
                 <div class="rounded-2xl p-4 shadow-sm border-purple-100 bg-purple-50/70">
-                  <p class="text-sm font-semibold text-slate-900">Ideation</p>
+                  <p class="text-sm font-semibold text-[#A130B4] text-slate-900">Ideation</p>
                   <ul class="mt-3 space-y-1 text-xs text-slate-600">
                     <li>Application map</li>
                     <li>User flow & wireframes</li>
@@ -133,14 +207,14 @@
                   </ul>
                 </div>
                 <div class="rounded-2xl p-4 shadow-sm border-purple-100 bg-purple-50/70">
-                  <p class="text-sm font-semibold text-slate-900">Prototype</p>
+                  <p class="text-sm font-semibold text-[#A130B4] text-slate-900">Prototype</p>
                   <ul class="mt-3 space-y-1 text-xs text-slate-600">
                     <li>Lo-fi journeys in Figma</li>
                     <li>Hi-fi interactive testing</li>
                   </ul>
                 </div>
                 <div class="rounded-2xl p-4 shadow-sm border-purple-100 bg-purple-50/70">
-                  <p class="text-sm font-semibold text-slate-900">Test</p>
+                  <p class="text-sm font-semibold text-[#A130B4] text-slate-900">Test</p>
                   <ul class="mt-3 space-y-1 text-xs text-slate-600">
                     <li>User & usability testing</li>
                     <li>Expert review loops</li>
@@ -153,62 +227,31 @@
       </div>
     </section>
 
-    <section id="discovery" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-        <h2 class="text-2xl font-semibold">Empathy &amp; Define</h2>
-        <div class="grid gap-8 lg:grid-cols-2">
-          <div class=" p-6">
-            
-            <p class="mt-4 text-base leading-relaxed  text-justify text-slate-600">
-              I combined primary and desk research with interviews to access deep stories about caregiving routines. Insights about cultural expectations and time constraints shaped how features surfaced at each step.
-            </p>
-          </div>
-          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Challenges</p>
-            <ul class="mt-4 space-y-3 text-sm text-slate-600">
-              <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Diverse user needs with limited behavioral benchmarks demanded extensive qualitative research.</li>
-              <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Lack of Persian market references required translating global best practices to local contexts.</li>
-              <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Design guidelines for multilingual experiences were scarce, complicating interface rules.</li>
-              <li class="flex gap-3"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-purple-500"></span>Mobile eye-tracking data lacked fidelity, so web-based testing supplemented findings.</li>
-            </ul>
-          </div>
-         
-        </div>
-      </div>
-    </section>
 
     <section id="personas" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-        
-          <div class="space-y-8">
-            <div class="space-y-5">
-              <h2 class="text-2xl font-semibold">Personas</h2>
-              <p class="text-base leading-relaxed text-slate-600 pb-8 max-w-3xl mx-auto px-3 sm:px-6 text-justify">
-              Ten colors are considered as the main colors that are used in the main pages of the mobile application as the colors of each category. In fact, each of these colors represents one of the areas of cognitive development based on the ASQ test. Ten main colors have been selected from the entire natural color spectrum to enable the differentiation of all categories. 4 shads of each primary color are used to display the elements of the user interface of the product, such as the background, text color.
-              </p>
-            </div>
+      <div class="p-6 sm:p-10 ">
+          <div class="space-y-6">
+            <h2>Persona</h2>
+            <p class="p1">
+              15 user interviews revealed patterns that led to three key personas representing Kidora’s core audience. These profiles captured parents’ needs, motivations, and challenges, guiding a more empathetic and purposeful product experience.            
+            </p>
           </div>
-        
         <div class="space-y-6">
-          <img src="images/persona1.png" alt="Persona: Sara, the time-strapped teacher" class="w-full rounded-3xl border border-slate-200" />
-          <img src="images/persona2.png" alt="Persona: Reza, the data-driven dad" class="w-full rounded-3xl border border-slate-200" />
-          <img src="images/persona3.png" alt="Persona: Mina, the community connector" class="w-full rounded-3xl border border-slate-200" />
+          <img src="images/persona2.png" alt="Persona: Reza, the data-driven dad"/>
+          <img src="images/persona1.png" alt="Persona: Sara, the time-strapped teacher" />
+          <img src="images/persona3.png" alt="Persona: Mina, the community connector" />
         </div>
-        
       </div>
     </section>
 
     <section id="ideation" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-          <div class="space-y-8">
-
-            <h2 class="text-2xl font-semibold">Ideation · Site Map</h2>
-            <p class="text-base leading-relaxed text-slate-600 pb-8 max-w-3xl mx-auto px-3 sm:px-6 text-justify">
-              In order to create new features and the maximum amount of ideas possible for each feature and experience, ideation by wireframe and visualization of ideas has been done.
-              The user tests and interviews conducted in the empathy phase and the analysis of this information in the definition phase make it possible to design an information architecture using a site map.
-              Here the User flow is generally shown on the Site map. 
-            </p>
-          </div>
+      <div class="p-6 sm:p-10 ">
+        <div class="space-y-6">
+          <h2>Site Map</h2>
+          <p class="p1">
+             Through wireframing and idea visualization, we structured Kidora’s user journeys into a clear site map. Insights from earlier research shaped the information architecture, ensuring intuitive navigation and logical flow between features.
+          </p>
+        </div>
           <div class="space-y-6">
             <img src="images/kidora-sitemap.png" alt="Persona: Sara, the time-strapped teacher" class="w-full rounded-3xl border border-slate-200" />
           </div>
@@ -216,14 +259,13 @@
     </section>
 
     <section id="palette" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-        <div class="flex flex-wrap items-center justify-between gap-4">
-          <h2 class="text-2xl font-semibold">Color Palette</h2>
-        </div>
-        <p class="mt-3 text-sm text-slate-500">Ten hero colors support Kidora’s progress pathways. Each swatch includes a text-safe shade plus lighter tones for gradients, backgrounds, and interaction states.</p>
-
-        <div class="mt-8 space-y-10">
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+      <div class=" p-6 sm:p-10">
+        <div class="space-y-6">
+          <h2>Color Palette</h2>
+          <p class="p1">
+            Kidora’s visual system includes ten hero colors, each symbolizing a specific area of cognitive development and childcare activities. Every color set features accessible shades and gradients, giving the interface a friendly, educational, and cohesive look.        
+            </p>
+              <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
             <div class="space-y-3">
               <div class="relative overflow-hidden rounded-3xl border border-slate-200 p-6 text-left text-white" style="background: linear-gradient(140deg, #FE0056 0%, #F06292 85%); box-shadow: 0 12px 30px rgba(15,23,42,0.08);">
                 <div class="flex h-28 flex-col justify-between">
@@ -415,7 +457,7 @@
         <div class="space-y-10">
           <div class="grid gap-8 lg:grid-cols-2">
             <div>
-              <h2 class="text-2xl font-semibold">UI Design</h2>
+              <h2>UI Design</h2>
               <p class="mt-4 text-sm leading-relaxed text-slate-600">
                 Nine vibrant categories differentiate cognitive focus areas, while measured gradients soften the pediatric experience. Each palette anchors micro-interactions, helping parents instantly recognize which developmental skill is in focus.
               </p>
@@ -437,23 +479,17 @@
 
 
     <section id="testing" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+      <div class="rounded-[32px] p-6 sm:p-10">
         <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
         <div>
           <div class="space-y-6"> 
-            <h2 class="text-2xl font-semibold">Prototyping & Testing</h2>
+            <h2>Prototyping & Testing</h2>
             <p class="mt-4 text-base text-justify leading-relaxed text-slate-600">
-              I validated every design decision through an iterative cycle of prototyping and user testing. Using Figma, I built both low- and high-fidelity prototypes and tested each feature shortly after design completion to ensure usability and clarity.
-              Each testing round engaged 5–8 parents and caregivers, whose feedback guided rapid refinements and helped shape a more intuitive and engaging user experience.
-            </p>
+              Each design decision was validated through continuous prototyping and user testing in Figma. Both low- and high-fidelity prototypes were tested with 5–8 parents and caregivers per round to refine usability and engagement. </p>
             <p class="mt-4 text-base leading-relaxed text-justify text-slate-600">
-                Using User Testing and Usability testing I observed the user behavior and identified where they tend to bounce off the website. This helped to identify the pages that had the hardest experience for the users. I conducted Eye-tracking Test on the pages identified and suggested a redesign for such pages.
-            </p>
-            <p class="mt-4 text-base leading-relaxed text-justify text-slate-600">
-              Quantitative task success metrics and System Usability Scale snapshots tracked improvements, guiding roadmap priorities for onboarding, assessments, and report sharing.
-            </p>
+              Through usability and eye-tracking tests, I identified friction points and improved key user flows. Quantitative metrics and SUS scores guided iterative refinements across onboarding, assessments, and report-sharing experiences.            </p>
           </div>
-          
+          <!--
           <div class="space-y-6">
             <div class="mt-8 rounded-3xl border border-slate-100 bg-slate-50 p-6">
                 <p class="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">Deliverables</p>
@@ -462,11 +498,12 @@
                 </p>
             </div>
           </div>
+          -->
           </div>
           <div>
-          <div class="rounded-3xl border border-slate-100 bg-slate-50 p-6">
+          <div class="rounded-3xl border border-slate-100 bg-white p-3 max-w-sm mx-auto">
           <div class="space-y-6">
-            <img src="images/eyetracking-heatmap.png" alt="Persona: Sara, the time-strapped teacher" class="w-full rounded-3xl border border-slate-200" />
+            <img src="images/eyetracking-heatmap.png" alt="Heatmap of Eyetracking" class="w-full rounded-3xl border border-slate-200" />
           </div> 
           </div>
         </div>

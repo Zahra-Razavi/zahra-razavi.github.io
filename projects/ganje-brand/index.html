@@ -9,8 +9,149 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.fontcdn.ir/Font/Persian/IranYekan/IRANYekanWeb.css" />
   <style>
     body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
+    .font-iranyekan { font-family: "IRANYekan", "IRANYekanWeb", "IRANYekanWeb(FaNum)", "IRANYekanWebBold", Tahoma, sans-serif; }
+    :root {
+      --heading-2-font-size: 6rem;
+      --heading-2-line-height: 7rem;
+      --heading-2-font-weight: 800;
+      --heading-2-text-align: left;
+      --heading-color: #99BBF3;
+      --heading-3-font-size: 2rem;
+      --heading-3-line-height: 1.5rem;
+      --heading-3-font-weight: 600;
+      --heading-3-letter-spacing: 0.02em;
+      --heading-3-transform: none;
+      --subheading-color: #6699EE;
+      --general-text-color: #337FE8;
+      --paragraph-color: #1B1B3A;
+      --ganje-blue-color: #005BE2;
+    }
+    h1 {
+      font-size: var(--heading-2-font-size) !important;
+      line-height: var(--heading-2-line-height) !important;
+      font-weight: var(--heading-2-font-weight) !important;
+      text-align: var(--heading-2-text-align) !important;
+      color: #005BE2 !important;
+    }
+    h2 {
+      font-size: var(--heading-2-font-size) !important;
+      line-height: var(--heading-2-line-height) !important;
+      font-weight: var(--heading-2-font-weight) !important;
+      text-align: var(--heading-2-text-align) !important;
+      color: var(--heading-color) !important;
+    }
+    h3 {
+      font-size: var(--heading-3-font-size) !important;
+      line-height: var(--heading-3-line-height) !important;
+      font-weight: var(--heading-3-font-weight) !important;
+      letter-spacing: var(--heading-3-letter-spacing) !important;
+      color: var(--subheading-color) !important;
+      text-transform: var(--heading-3-transform) !important;
+      margin: 2rem;
+    }
+    h4 {
+      display: block;
+      font-size: 3rem !important;
+      font-weight: 700 !important;
+      color: #6699EE !important;
+    }
+    .brand-header { color: var(--heading-color); background: transparent; }
+    .brand-header a { color: inherit; }
+    .brand-header a:hover { color: inherit; }
+    .brand-header .chip { border: 1px solid var(--heading-color); background: transparent;  }
+    .values-circle {
+      position: relative;
+      --circle-size: min(28rem, 90vw);
+      width: var(--circle-size);
+      height: var(--circle-size);
+      margin: 0 auto;
+    }
+    .values-circle::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 9999px;
+      border: 2px dashed #6699EE;
+      opacity: 0.2;
+    }
+    .values-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 7rem;
+      height: 7rem;
+      --angle: 0deg;
+      --radius: calc(var(--circle-size) / 2);
+      transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));
+    }
+    .values-icon {
+      display: inline-flex;
+      height: 7rem;
+      width: 7rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      background: #fff;
+      color: #6699EE;
+      box-shadow: 0 10px 30px -12px rgba(51, 127, 232, 0.45);
+    }
+    .values-label {
+      position: absolute;
+      top: calc(100% + 0.8rem);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10rem;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #6699EE;
+    }
+    .values-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.125rem;
+      padding: 3.5rem 2rem;
+      border-radius: 9999px;
+      background: #ffffff;
+      color: #6699EE;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+    .values-item-1 { --angle: -90deg; }
+    .values-item-2 { --angle: -18deg; }
+    .values-item-3 { --angle: 54deg; }
+    .values-item-4 { --angle: 126deg; }
+    .values-item-5 { --angle: 198deg; }
+    @media (max-width: 640px) {
+      .values-circle {
+        --circle-size: min(22rem, 85vw);
+        width: var(--circle-size);
+        height: var(--circle-size);
+      }
+      .values-item {
+        width: 5.5rem;
+        height: 5.5rem;
+        --radius: calc(var(--circle-size) / 2);
+      }
+      .values-icon {
+        width: 5.5rem;
+        height: 5.5rem;
+      }
+      .values-label {
+        width: 6.5rem;
+        font-size: 0.95rem;
+        top: calc(100% + 0.6rem);
+      }
+    }
     [data-animate] { transition: opacity .6s ease, transform .6s ease; }
     [data-animate].is-waiting { opacity: 0; transform: translateY(24px); }
     @media (prefers-reduced-motion: reduce) {
@@ -20,93 +161,97 @@
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased">
-  <header class="relative isolate overflow-hidden bg-[#005BE2] text-white">
-    <div class="pointer-events-none absolute -left-40 top-10 h-80 w-80 rounded-full bg-white/15 blur-3xl"></div>
-    <div class="pointer-events-none absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.22),_transparent_55%)]"></div>
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-20 lg:py-28 relative">
-      <a href="https://zahra-razavi.github.io/" class="inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition hover:text-white">
-        <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/70"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" /></svg></span>
-      </a>
-      <p class="mt-10 text-sm font-semibold uppercase tracking-[0.3em] text-white/80">Case Study · Brand Identity</p>
-      <h1 class="mt-6 text-3xl sm:text-5xl font-semibold leading-tight">Ganje — IoT Smart Locker Brand Identity & Visual guidelines </h1>
-      <p class="mt-6 max-w-2xl text-lg font-medium text-white/85">
-        Building the visual and verbal system behind Iran’s first IoT-powered locker network: a resilient identity that scales from micro-interactions to city-wide deployments.
-      </p>
-      <div class="mt-10 flex flex-wrap items-center gap-3">
-        <span class="inline-flex items-center rounded-full border border-white/50 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white">Brand Identity</span>
-        <span class="inline-flex items-center rounded-full border border-white/50 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white">Brand Strategy</span>
-        <span class="inline-flex items-center rounded-full border border-white/50 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-white">Brand Visual Identity</span>
-      </div>
-      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">Role</p>
-          <p class="mt-2 text-lg font-bold text-white">Brand Designer & Manager</p>
-          <p class="mt-1 text-sm font-medium text-white">Brand Identity Design,   Visual Identity Design</p>
+  <header class="brand-header relative isolate overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 lg:py-8 relative">
+          <a href="https://zahra-razavi.github.io/" class="mb-12 inline-flex items-center gap-2 text-sm font-semibold transition">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border" style="border-color: var(--ganje-blue-color);"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" /></svg></span>
+          </a>
+      <div class="grid sm:grid-cols-1 lg:grid-cols-[1fr_1.3fr]">
+        <div>
+          <img src="images/ganje-logo-no text.png" alt="Ganje logo" class="mt-28 mx-auto w-full max-w-xs object-contain" />
         </div>
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">Timeline</p>
-          <p class="mt-2 text-lg font-bold text-white">Jul 2020–Jun 2021</p>
-          <p class="mt-1 text-sm font-medium text-white">Research, Design, Implimentaion</p>
-        </div>
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">Impact</p>
-          <p class="mt-2 text-lg font-bold text-white">Seed ready brand</p>
-          <p class="mt-1 text-sm font-medium text-white">Enabled partnerships & expansion with bigest E-commerce in MANA</p>
-        </div>
-        <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">Team</p>
-          <p class="mt-2 text-base font-semibold text-white">Hooria Sanei</p>
-          <p class="mt-1 text-sm font-medium text-whitex">Designer</p>
-          <p class="mt-3 text-base font-semibold text-white">Mohammad Nazifi</p>
-          <p class="mt-1 text-sm font-medium text-white">Graphic Designer</p>
+                  
+           <!--
+          <div class="mt-10 flex flex-wrap items-center gap-3">
+            <span class="chip inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold tracking-[0.1em] text-[#337FE8]">Brand Identity</span>
+            <span class="chip inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold tracking-[0.1em] text-[#337FE8]">Brand Strategy</span>
+            <span class="chip inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold tracking-[0.1em] text-[#337FE8]">Brand Visual Identity</span>
+            <span class="chip inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold tracking-[0.1em] text-[#337FE8]">Brand Guidline</span>
+          </div>
+        -->
+        <div>
+          <p class="mt-12 text-sm font-semibold uppercase text-[#005BE2] tracking-[0.3em]">Case Study · Brand Identity
+          </p>
+          <h1 class="mt-3">
+            <span class="block">Brand  & </span>
+            <span class="block">Visual Identity</span>
+            <span class="block text-4xl mt-3">&nbsp;&nbsp;of</span>
+            <span class="block">Ganje</span>
+          </h1> 
         </div>
       </div>
+    </div>
+      <div class="mt-20 grid gap-4 max-w-7xl mx-auto sm:grid-cols-2 lg:grid-cols-[1fr_0.8fr_1fr_1fr] font-bold text-[#005BE2]">
+        <div class=" p-5">
+          <p class="text-lg">Role</p>
+          <p class="mt-2 text-lg">Brand Designer & Manager</p>
+        </div>
+        <div class=" p-5">
+          <p class="text-lg">Timeline</p>
+          <p class="mt-2 text-lg ">Jul 2020–Jun 2021</p>
+        </div>
+        <div class=" p-5">
+          <p class="text-lg ">Team</p>
+          <p class="mt-2 text-base ">Hooria Sanei, Designer</p>
+          <p class="mt-3 text-base ">Mohamad Nazifi, Graphic Designer</p>
+        </div>
+        <div class=" p-5">Tools</p>
+          <p class="mt-2 text-lg ">Illustrator, Photoshop, Figma</p>
+        </div>
+      </div>
+      <!--
       <div class="mt-10 flex flex-wrap gap-4">
         <a href="#logo" class="inline-flex items-center gap-2 rounded-full border border-white/60 bg-white/15 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 hover:bg-white/25">
           Explore the Visual Ideantitly
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M2.75 10a.75.75 0 01.75-.75h11.69l-3.22-3.22a.75.75 0 111.06-1.06l4.5 4.5a.75.75 0 010 1.06l-4.5 4.5a.75.75 0 11-1.06-1.06l3.22-3.22H3.5A.75.75 0 012.75 10z" clip-rule="evenodd" /></svg>
         </a>
-        <a href="#applications" class="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/15">
-          Related works
-        </a>
       </div>
-    </div>
+    -->
   </header>
 
   <main class="relative">
-    <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+    <section data-animate class="mt-16 mx-auto max-w-7xl px-4 sm:px-6 py-16">
       <div class="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
         <div>
-          <h2 class="text-2xl font-semibold">A brand language designed for scale</h2>
-          <p class="mt-4 text-lg text-slate-600">
-            The Ganje identity had to function across multiple contexts: tiny IoT screens, courier tablets, mobile apps, and large urban billboards. We engineered a modular system that keeps the brand instantly recognizable, even when the UI is "faceless" and the experience shifts to the user's phone.
-          </p>
-          <p class="mt-4 text-slate-600">
-            From naming and archetypes through typography, iconography, and UI components, the system flexes from operations dashboards to customer interactions without sacrificing clarity or warmth.
-          </p>
+          <h2>A brand language designed for scale</h2>
+          
         </div>
         <div class="space-y-4">
-          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="p-0">
             <p class="text-sm font-medium text-slate-500">Vision North Star</p>
-            <p class="mt-2 text-lg font-semibold text-slate-900">Smart cities, human logistics.</p>
+            <p class="mt-2 text-3xl font-bold text-[#6699EE]">Smart cities, human logistics.</p>
             <p class="mt-2 text-sm text-slate-500">Sets the tone for every locker interaction by pairing innovation with trust.</p>
-          </div>
-          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          </div> 
+          <div class="p-0">
             <p class="text-sm font-medium text-slate-500">Brand Archetype</p>
-            <p class="mt-2 text-lg font-semibold text-slate-900">Creative</p>
+            <p class="mt-2 text-3xl font-bold text-[#6699EE]">Creative</p>
             <p class="mt-2 text-sm text-slate-500">Provides structure and innovation — framing Ganje as the builder shaping smarter urban life.</p>
           </div>
+          <p class="mt-4 text-lg text-slate-600">
+            A comprehensive visual and verbal system was developed to ensure seamless adaptability across diverse touchpoints — from compact IoT screens and courier tablets to mobile applications and large-scale urban billboards. The modular design framework maintains consistent brand recognition, even within minimal or “faceless” digital environments. Covering all aspects from naming and archetypes to typography and UI components, the system harmonizes operational precision with a clear and approachable brand presence.          </p>
+          <p class="mt-4 text-slate-600">
+          </p>
         </div>
       </div>
     </section>
 
-    <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-8">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
-        <h2 class="text-2xl font-semibold">Brand persona</h2>
+    <section data-animate class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+      <div class="p-6 sm:p-10">
+        <h2>Brand persona</h2>
         <p class="mt-4 max-w-3xl text-slate-600">We position Ganje as the adventurous expert — a friend who ushers you into new ways of receiving parcels while signalling absolute competence.</p>
         <div class="mt-8 grid gap-6 md:grid-cols-2">
           <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-base uppercase tracking-[0.3em] text-slate-500">Personality traits</p>
+            <h3>Personality traits</h3>
             <div class="mt-5 space-y-4">
               <div class="rounded-2xl bg-white/80 p-4">
                 <p class="text-sm font-medium text-blue-600 uppercase tracking-[0.25em]">Excitement · Main</p>
@@ -119,7 +264,7 @@
             </div>
           </div>
           <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-base uppercase tracking-[0.3em] text-slate-500"> Customer Relationship </p>
+            <h3>Customer Relationship</h3>
             <div class="mt-5 rounded-2xl bg-white/80 p-5">
               <p class="text-sm font-medium text-blue-600 uppercase tracking-[0.25em]">Adventurous</p>
               <p class="mt-2 text-sm text-slate-600">Like the spontaneous friend who gets you to try new things, Ganje motivates residents, couriers, and partners to adopt smarter behaviors with confidence.</p>
@@ -137,96 +282,103 @@
       </div>
     </section>
 
-    <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-8">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+    <section data-animate class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+      <div class=" p-6 sm:p-10">
         <div class="max-w-3xl">
-          <h2 class="text-2xl font-semibold">Brand foundations</h2>
-          <p class="mt-4 text-slate-600">Vision and mission anchor the way Ganje introduces smart logistics to cities, while values guide how every interaction feels.</p>
+          <h2>Brand foundations</h2>
         </div>
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-base uppercase tracking-[0.3em] text-slate-500">Vision statement</p>
-            <p class="mt-4 text-lg font-semibold text-slate-900">To pioneer smart-city technology by creating smart solutions for smart urban life.</p>
-          </div>
-          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-base uppercase tracking-[0.3em] text-slate-500">Mission statement</p>
-            <p class="mt-4 text-lg font-semibold text-slate-900">Ganje’s mission is to solve Iran’s logistics infrastructure challenges through innovation and technology.</p>
+        
+        <div class="mt-20">
+          <div class="mt-10 values-circle">
+            <div class="values-item values-item-1">
+              <span class="values-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.25"></circle>
+                  <path d="M12 7.5 L 8.75 9 V 12.25 Q 8.75 14.75 12 16.75 Q 15.25 14.75 15.25 12.25 V 9 Z"></path>
+                  <path d="M10.5 12.75 L 12 14.25 L 14.25 12"></path>
+                </svg>
+              </span>
+              <span class="values-label">Safety</span>
+            </div>
+
+            <div class="values-item values-item-2">
+              <span class="values-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.25"></circle>
+                  <path d="M11.4 7.4c-1.3 0-2.4 1-2.4 2.3v.3c-.9.3-1.6 1.1-1.6 2.1s.7 1.8 1.6 2.1v.9c0 .9.7 1.6 1.6 1.6H12"></path>
+                  <path d="M12.6 7.4c1.3 0 2.4 1 2.4 2.3v.3c.9.3 1.6 1.1 1.6 2.1s-.7 1.8-1.6 2.1v.9c0 .9-.7 1.6-1.6 1.6H12"></path>
+                  <path d="M11.2 9.6c.6 0 1 .5 1 1.1v3.4"></path>
+                  <path d="M12.8 10.8c-.6 0-1-.5-1-1.1V8.6"></path>
+                </svg>
+              </span>
+              <span class="values-label">Smartness</span>
+            </div>
+
+            <div class="values-item values-item-3">
+              <span class="values-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.25"></circle>
+                  <path d="M12 6.4 Q 7.25 9.4 7.25 12.8 Q 7.25 15.4 9.4 17.1 Q 10.9 18.25 12 18.65 Q 13.1 18.25 14.6 17.1 Q 16.75 15.4 16.75 12.8 Q 16.75 9.4 12 6.4 Z"></path>
+                  <path d="M12 9.6 V 17.7"></path>
+                  <path d="M12 12.7 L 14.4 10.9"></path>
+                </svg>
+              </span>
+              <span class="values-label">Sustainability</span>
+            </div>
+
+            <div class="values-item values-item-4">
+              <span class="values-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.25"></circle>
+                  <path d="M8 15.5 H 10.75"></path>
+                  <path d="M8.5 14.5 L 12 11 L 14.25 13.25 L 17 10.5"></path>
+                  <path d="M16.5 8.1 V 10.1"></path>
+                  <path d="M15.5 9.1 H 17.5"></path>
+                </svg>
+              </span>
+              <span class="values-label">Positive Change</span>
+            </div>
+
+            <div class="values-item values-item-5">
+              <span class="values-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.25"></circle>
+                  <path d="M9 9.75 H 15"></path>
+                  <path d="M9 12 H 13.5"></path>
+                  <path d="M9 14.25 H 15"></path>
+                </svg>
+              </span>
+              <span class="values-label">Simplicity</span>
+            </div>
+            <div class="values-center">Values</div>
           </div>
         </div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
-          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-base uppercase tracking-[0.3em] text-slate-500">Core values</p>
-            <div class="mt-5 space-y-4">
-              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
-                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12.4 3.34a.75.75 0 0 0-1.3 0C9.5 6.32 7.19 8.03 4.4 8.86a.75.75 0 0 0-.16 1.36c1.64.93 2.76 2.06 3.52 3.44.74 1.36 1.07 2.87 1.13 4.58a.75.75 0 0 0 1.5 0c.06-1.71.39-3.22 1.13-4.58.76-1.38 1.88-2.51 3.52-3.44a.75.75 0 0 0-.16-1.36c-2.79-.83-5.1-2.54-6.7-5.52Z"/><path d="M16.75 13.5c-.41 0-.75.34-.75.75v3.5c0 1.24.67 2.25 1.6 2.98.91.72 2.07 1.14 3.15 1.26a.75.75 0 0 0 .83-.74V13.5a.75.75 0 0 0-.75-.75h-4.08Z"/></svg>
-                </span>
-                <div>
-                  <p class="font-medium text-slate-900">Sustainability</p>
-                  <p class="text-sm text-slate-600">Design decisions lower operational waste and keep lockers viable for decades.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
-                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12 2a.75.75 0 0 0-.75.75v5.54l-4.94 2.47a.75.75 0 0 0 0 1.34l4.94 2.47v6.73a.75.75 0 0 0 1.2.6c3.54-2.74 6.56-4.66 9.06-5.75a.75.75 0 0 0 0-1.39c-2.5-1.09-5.52-3-9.06-5.75V2.75A.75.75 0 0 0 12 2Z"/></svg>
-                </span>
-                <div>
-                  <p class="font-medium text-slate-900">Smartness</p>
-                  <p class="text-sm text-slate-600">Every touchpoint pairs data with empathy to simplify a complex logistics stack.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
-                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M12 4.75 4.75 9v6L12 19.25 19.25 15V9L12 4.75Z"/><path d="m9.75 12 1.5 1.5 3-3"/></svg>
-                </span>
-                <div>
-                  <p class="font-medium text-slate-900">Safety</p>
-                  <p class="text-sm text-slate-600">Hardware, software, and brand voice reinforce a secure hand-off every time.</p>
-                </div>
-              </div>
-            </div>
+        <div class="mt-32 gap-6 grid md:grid-cols-[1fr_3fr]">
+          <div class="text-right">
+            <h4 class="mt-7 ">Vision &nbsp;&nbsp;</h4>
+            <h4 class="mt-12 ">Mission &nbsp;&nbsp;</h4>
           </div>
-          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-base uppercase tracking-[0.3em] text-slate-500">Extended values</p>
-            <div class="mt-5 space-y-4">
-              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
-                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M12 2a.75.75 0 0 1 .7.48l1.58 4.35 4.6.08a.75.75 0 0 1 .45 1.35l-3.63 2.8 1.23 4.44a.75.75 0 0 1-1.1.83L12 14.89l-3.88 2.48a.75.75 0 0 1-1.1-.83l1.23-4.44-3.63-2.8a.75.75 0 0 1 .45-1.35l4.6-.08 1.58-4.35A.75.75 0 0 1 12 2Z"/></svg>
-                </span>
-                <div>
-                  <p class="font-medium text-slate-900">Making positive changes</p>
-                  <p class="text-sm text-slate-600">Keeps communities engaged with inclusive lockers across neighborhoods.</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3 rounded-2xl bg-white/70 p-4">
-                <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-500/10 text-blue-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" aria-hidden="true"><path d="M5 12h14"/><path d="M9 7h6"/><path d="M11 17h2"/></svg>
-                </span>
-                <div>
-                  <p class="font-medium text-slate-900">Simplicity</p>
-                  <p class="text-sm text-slate-600">A minimal, “less is more” product language removes friction for couriers and residents.</p>
-                </div>
-              </div>
-            </div>
+          <div class=" text-left">
+            <p class="mt-8 text-2xl font-semibold text-[#6699EE]">"&nbsp; To pioneer smart-city technology by creating smart solutions for smart urban life.&nbsp;&nbsp;"</p>
+            <p class="mt-16 text-2xl font-semibold text-[#6699EE]">"&nbsp;&nbsp; Ganje’s mission is to solve Iran’s logistics infrastructure challenges through innovation and technology.&nbsp;&nbsp;"</p>
           </div>
         </div>
       </div>
+          
     </section>
 
-    <section id="logo" data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-8">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+    <section id="logo" data-animate class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+      <div class="p-6 sm:p-10">
         <div class="flex flex-wrap items-center justify-between gap-4">
-          <h2 class="text-2xl font-semibold">Logo</h2>
-          <div class="inline-flex rounded-full border border-slate-200 bg-slate-100 p-1 text-xs font-medium">
+          <h2>Logo</h2>
+          <div class="mt-8 inline-flex rounded-full border border-slate-200 bg-slate-100 p-1 text-xs font-medium">
             <button type="button" data-logo-theme="light" class="rounded-full bg-white px-4 py-1.5 text-slate-900 shadow-sm transition" aria-pressed="true">Light mode</button>
             <button type="button" data-logo-theme="dark" class="rounded-full px-4 py-1.5 text-slate-500 transition" aria-pressed="false">Dark mode</button>
           </div>
-        </div>
-        <p class="mt-3 text-slate-600">Dual-state marks align with customer environments: bright locker bays and low-light courier hubs. The wordmark maintains generous tracking for legibility on hardware, while the monogram sustains recognition in app icons.</p>
-        
+        </div>        
         <div class="mt-8 flex flex-col gap-6">
           <div class="space-y-0">
-            <div class="relative overflow-hidden rounded-3xl border border-slate-200" data-logo-panel="light">
+            <div class="relative overflow-hidden rounded-3xl border border-slate-200 bg-white" data-logo-panel="light">
               <img src="images/ganje-LOGO-image.png" alt="Ganje logo" class="h-full w-full p-6 object-contain" />
             </div>
             <div class="relative hidden overflow-hidden rounded-3xl border bg-[#1B1B3A]" data-logo-panel="dark">
@@ -235,15 +387,15 @@
           </div>
           
           <div class="flex flex-col gap-6 md:flex-row">
-            <div class="flex-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-animate>
-              <p class="text-base font-medium text-slate-500">Anchors</p>
+            <div class="flex-1 p-6 " data-animate>
+              <h3>Anchors</h3>
               <ul class="mt-3 space-y-2 text-sm text-slate-600">
                 <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Rounded geometry references locker bays and NFC halo interactions.</li>
                 <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Extended tracking keeps the wordmark legible at 12px and 12ft alike.</li>
               </ul>
             </div>
-            <div class="flex-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm" data-animate>
-              <p class="text-base font-medium text-slate-500">Usage</p>
+            <div class="flex-1 p-6" data-animate>
+              <h3>Usage</h3>
               <ul class="mt-3 space-y-2 text-sm text-slate-600">
                 <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Monogram anchors app icons and NFC wayfinding.</li>
                 <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Full wordmark owns sales decks, lockers, and billboards.</li>
@@ -251,16 +403,17 @@
             </div>
           </div>
         </div>
+        <!--
         <div class="mt-10 flex flex-col gap-6">
           <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-base uppercase tracking-[0.3em] text-slate-500">Logo resources</p>
+            <h3>Logo resources</h3>
             <div class="mt-4 flex h-32 items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white text-center text-sm text-slate-500">
               <span>Master asset kit<br><span class="font-mono text-xs text-slate-400">ganje-logo-suite.fig</span></span>
             </div>
             <p class="mt-4 text-sm text-slate-600">Includes wordmark, monogram, and usage guidelines for digital and print.</p>
           </div>
           <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-base uppercase tracking-[0.3em] text-slate-500">Geometry & spacing</p>
+            <h3>Geometry & spacing</h3>
             <div class="mt-4 flex h-32 items-center justify-center rounded-2xl bg-white">
               <div class="relative h-24 w-24">
                 <div class="absolute inset-0 rounded-2xl border-2 border-dashed border-blue-200"></div>
@@ -270,24 +423,25 @@
             </div>
             <p class="mt-4 text-sm text-slate-600">Retains 16px base grid with 1× cap height padding for hardware legibility.</p>
           </div>
-        <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <p class="text-base uppercase tracking-[0.3em] text-slate-500">Do</p>
-            <div class="mt-4 flex h-31 items-center justify-center rounded-2xl bg-slate-50">
+          -->
+        <div class="mt-8 p-6">
+            <h3>Do</h3>
+            <div class="mt-4 flex h-31 items-center justify-center ">
               <img src="images/Do-ganje-logo.png" alt="Ganje final lockup" class="h-full w-full object-contain" />
             </div>
           
-            <p class="mt-4 text-base uppercase tracking-[0.3em] text-slate-500">Don't</p>
-            <div class="mt-4 flex h-55 items-center justify-center rounded-2xl bg-slate-50">
+            <h3 class="mt-4">Don't</h3>
+            <div class="mt-4 flex h-55 items-center justify-center ">
               <img src="images/Don't-ganje-logo4.png" alt="Ganje final lockup" class="h-full w-full object-contain" />
             </div>
         </div>
       </div>
     </section>
 
-    <section id="palette" data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-8">
-     <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+    <section id="palette" data-animate class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+     <div class="p-6 sm:p-10">
        <div class="flex flex-wrap items-center justify-between gap-4">
-         <h2 class="text-2xl font-semibold">Color palette</h2>
+         <h2>Color palette</h2>
        </div>
        <p class="mt-3 text-sm text-slate-500">Four key swatches with production-ready values in HEX, RGB, HSB, and CMYK.</p>
        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -422,201 +576,211 @@
 
 
 
-    <section data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-8">
-      <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
+    <section data-animate class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+      <div class="p-6 sm:p-10">
         <div class="flex flex-wrap items-center justify-between gap-4">
-          <h2 class="text-2xl font-semibold">Typography</h2>
-          <div class="inline-flex rounded-full border border-slate-200 bg-slate-100 p-1 text-xs font-medium">
+          <h2>Typography</h2>
+          <div class="mt-8 inline-flex rounded-full border border-slate-200 bg-slate-100 p-1 text-xs font-medium">
             <button type="button" data-type-theme="english" class="rounded-full bg-white px-4 py-1.5 text-slate-900 shadow-sm transition" aria-pressed="true">English</button>
             <button type="button" data-type-theme="persian" class="rounded-full px-4 py-1.5 text-slate-500 transition" aria-pressed="false">Persian</button>
           </div>
         </div>
-
-        <div class="mt-8 space-y-10">
-          <div data-type-panel="english" class="space-y-8">
-            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <div class="flex flex-wrap items-center justify-between gap-3">
-                <p class="text-lg uppercase tracking-[0.3em] text-slate-500">UI · Web & Mobile</p>
-              </div>
-              <div class="mt-6 grid gap-6 md:grid-cols-2">
-                <div class="space-y-4">
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p class="text-base uppercase tracking-[0.25em] text-slate-500">Typeface</p>
-                    <p class="mt-4 text-lg text-slate-700"><span class="font-medium text-slate-900">Inter
-                      <li class="flex gap-2 text-sm"></span>Google font</li>
-                      
-                 </div>
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p class="text-base uppercase tracking-[0.25em] text-slate-500">Usage notes</p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Maintain 16px minimum body size for accessibility.</li>
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Scale headings responsively on mobile breakpoints.</li>
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Leverage Inter’s optical optimization for crisp UI typography.</li>
-                    </ul>
-                  </div>
+        <div class="mt-8">
+          <div data-type-panel="english" class="grid gap-6 md:grid-cols-[1fr_1.2fr]">
+            <div class="mt-8 flex flex-wrap items-center justify-between gap-4">
+              <h3>UI · Web & Mobile</h3>
+              <div class="mt-4 space-y-4">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3>Typeface</h3>
+                  <p class="mt-6 text-lg text-slate-700">
+                    <span class="font-semibold text-slate-900">Inter</span><br />
+                    <span class="text-sm text-slate-500">Google Fonts · Sans serif · Variable axes for weight & optical size</span>
+                  </p>
                 </div>
-                <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                  <p class="text-base uppercase tracking-[0.25em] text-slate-500">Hierarchy</p>
-                  <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                    <li><span class="font-medium text-slate-900">Heading 1:
-                      <li></li>
-                    </span> 32px (Desktop) / 24px (Mobile) · Bold · Line-height 1.2</li>
-                    <li><span class="font-medium text-slate-900">Heading 2:
-                      <li></li>
-                    </span> 24px / 20px  · Medium · Line-height 1.3</li>
-                    <li><span class="font-medium text-slate-900">Body:
-                      <li></li>
-                    </span> 16px / 14px · Regular · Line-height 1.5–1.6</li>
-                    <li><span class="font-medium text-slate-900">Caption:
-                      <li></li>
-                    </span> 14px / 12px · Light · Uppercase · Letter-spacing +0.05em</li>
+                <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3>Hierarchy</h3>
+                  <ul class="mt-6 space-y-4 text-sm text-slate-700">
+                    <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-2">
+                      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Heading 1</p>
+                      <p class="text-3xl font-semibold text-slate-900 sm:text-4xl">Smart Cities, Delivered</p>
+                      <p class="text-xs text-slate-500">32px (Desktop) / 24px (Mobile) · Bold · Line-height 1.2</p>
+                    </li>
+                    <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-2">
+                      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Heading 2</p>
+                      <p class="text-2xl font-semibold text-slate-900 sm:text-3xl">One Network for Every Parcel</p>
+                      <p class="text-xs text-slate-500">24px (Desktop) / 20px (Mobile) · Medium · Line-height 1.3</p>
+                    </li>
+                    <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-2">
+                      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Body</p>
+                      <p class="text-base text-slate-700 sm:text-lg">Access lockers anytime, anywhere with instant notifications.</p>
+                      <p class="text-xs text-slate-500">16px (Desktop) / 14px (Mobile) · Regular · Line-height 1.5–1.6</p>
+                    </li>
+                    <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-2">
+                      <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">Caption</p>
+                      <p class="text-xs font-semibold tracking-[0.1em] text-slate-600">Next Pickup · 14:20</p>
+                      <p class="text-xs text-slate-500">14px (Desktop) / 12px (Mobile) · Semi-bold · Letter-spacing +0.05em</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3>Usage notes</h3>
+                  <ul class="mt-6 space-y-2 text-sm text-slate-700">
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Maintain 16px minimum body size for accessibility.</li>
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Scale headings responsively on mobile breakpoints.</li>
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Leverage Inter’s optical sizing for crisp UI typography.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class=" mt-8 flex flex-wrap items-center justify-between gap-4">
+              <h3>Print systems</h3>
+              <div class="mt-4 space-y-4">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3>Typeface</h3>
+                  <p class="mt-6 text-lg text-slate-700">
+                    <span class="font-semibold text-slate-900">Inter</span><br />
+                    <span class="text-sm text-slate-500">Desktop publishing license · Stylistic set 1 for print numerals</span>
+                  </p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3>Hierarchy</h3>
+                  <ul class="mt-6 space-y-4 text-sm text-slate-700">
+                    <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-2">
+                      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Title (H1)</p>
+                      <p class="text-3xl font-semibold text-slate-900 sm:text-4xl">Urban Logistics Annual Report</p>
+                      <p class="text-xs text-slate-500">48pt · Bold · Leading 54pt</p>
+                    </li>
+                    <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-2">
+                      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Subtitle (H2)</p>
+                      <p class="text-2xl font-semibold text-slate-900 sm:text-3xl">Scaling Resilient Locker Ecosystems</p>
+                      <p class="text-xs text-slate-500">36pt · Medium · Leading 42pt</p>
+                    </li>
+                    <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-2">
+                      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Body</p>
+                      <p class="text-base text-slate-700 sm:text-lg">Ganje builds trust across municipalities with data-led deployment.</p>
+                      <p class="text-xs text-slate-500">11–12pt · Regular · Leading 15pt</p>
+                    </li>
+                    <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 space-y-2">
+                      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Caption</p>
+                      <p class="text-xs font-semibold tracking-[0.1em] text-slate-600">Figure 02 · Deployment Timeline</p>
+                      <p class="text-xs text-slate-500">9pt · Medium · Letter-spacing +0.04em</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3>Usage notes</h3>
+                  <ul class="mt-6 space-y-2 text-sm text-slate-700">
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Increase letter-spacing slightly for long-form clarity.</li>
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Keep backgrounds clean and maintain high contrast.</li>
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Anchor section titles with brand blue or charcoal.</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-
-            <div data-type-panel="english" class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <div class="flex flex-wrap items-center justify-between gap-3">
-                <p class="text-lg uppercase tracking-[0.3em] text-slate-500">Print systems</p>
-              </div>
-              <div class="mt-6 grid gap-6 md:grid-cols-2">
-                <div class="space-y-4">
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                      <p class="text-base uppercase tracking-[0.25em] text-slate-500">Typeface</p>
-                      <p class="mt-4 text-lg text-slate-700"><span class="font-medium text-slate-900">Inter
-                        <li class="flex gap-2 text-sm"></span>Desktop published</li>
-                  </div>
-                
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p class="text-base uppercase tracking-[0.25em] text-slate-500">Usage notes</p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Increase letter-spacing slightly for print clarity.</li>
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Keep backgrounds clean and maintain high contrast.</li>
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Apply brand colors to section titles for emphasis.</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="space-y-4">
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p class="text-base uppercase tracking-[0.25em] text-slate-500">Hierarchy</p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                      <li><span class="font-medium text-slate-900">Titles (H1):<li>
-
-                      </li></span> 48pt · Bold</li>
-                      <li><span class="font-medium text-slate-900">Subtitles (H2):<li>
-
-                      </span> 36pt · Medium</li>
-                      <li><span class="font-medium text-slate-900">Body:<li>
-
-                      </span> 11–12pt · Regular</li>
-                      <li><span class="font-medium text-slate-900">Captions:<li>
-
-                      </span> 9pt · Light · Uppercase</li>
-                    </ul>
-                  </div>
+          <div data-type-panel="persian" class="hidden font-iranyekan grid gap-6 md:grid-cols-2" dir="rtl">
+            <div class="mt-8 flex flex-wrap items-center justify-between gap-4">
+              <h3>رابط کاربری · وب و موبایل</h3>
+              <div class="mt-6 w-full space-y-4">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3 style="--heading-3-letter-spacing: 0.25em;">فونت</h3>
+                  <p class="mt-4 text-lg text-slate-700">
+                    <span class="font-semibold text-slate-900">ایران‌یکان</span><br />
+                    <span class="text-sm text-slate-500">وزن‌های Regular، Medium و Bold برای UI</span>
+                  </p>
                 </div>
                 
+              <div class="rounded-2xl border border-slate-200 bg-white p-6 w-full">
+                <h3>سلسله‌مراتب</h3>
+                <ul class="mt-6 space-y-4 text-sm text-slate-700">
+                  <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 text-right space-y-2">
+                    <p class="text-xs font-semibold tracking-[0.3em] text-slate-500">سرتیتر یک</p>
+                    <p class="text-3xl font-semibold text-slate-900 sm:text-4xl">شهر هوشمند، تحویل مطمئن</p>
+                    <p class="text-xs text-slate-500" dir="ltr">32px (Desktop) / 24px (Mobile) · Bold · Line-height 1.3</p>
+                  </li>
+                  <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 text-right space-y-2">
+                    <p class="text-xs font-semibold tracking-[0.3em] text-slate-500">سرتیتر دو</p>
+                    <p class="text-2xl font-semibold text-slate-900 sm:text-3xl">شبکه‌ای واحد برای همه مرسوله‌ها</p>
+                    <p class="text-xs text-slate-500" dir="ltr">24px (Desktop) / 20px (Mobile) · Medium · Line-height 1.6</p>
+                  </li>
+                  <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 text-right space-y-2">
+                    <p class="text-xs font-semibold tracking-[0.3em] text-slate-500">متن بدنه</p>
+                    <p class="text-base text-slate-700 sm:text-lg leading-relaxed">با گنجه، تحویل و دریافت در هر ساعت شبانه‌روز ممکن است.</p>
+                    <p class="text-xs text-slate-500" dir="ltr">16px (Desktop) / 14px (Mobile) · Regular · Line-height 1.6</p>
+                  </li>
+                  <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 text-right space-y-2">
+                    <p class="text-xs font-semibold tracking-[0.3em] text-slate-500">کپشن</p>
+                    <p class="text-xs font-semibold tracking-[0.25em] text-slate-600">تحویل امروز · ۱۴:۲۰</p>
+                    <p class="text-xs text-slate-500" dir="ltr">14px (Desktop) / 12px (Mobile) · Medium · Letter-spacing +0.03em</p>
+                  </li>
+                </ul>
               </div>
-            </div>
-          </div>
-
-          <div data-type-panel="persian" class="hidden space-y-8" dir="ltr">
-            
-            <div class="mt-8 space-y-10">
-          <div data-type-panel="persian" class="space-y-8">
-            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <div class="flex flex-wrap items-center justify-between gap-3">
-                <p class="text-lg uppercase tracking-[0.3em] text-slate-500">UI · Web & Mobile</p>
-              </div>
-              <div class="mt-6 grid gap-6 md:grid-cols-2">
-                <div class="space-y-4">
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p class="text-base uppercase tracking-[0.25em] text-slate-500">Typeface</p>
-                    <p class="mt-4 text-lg text-slate-700"><span class="font-medium text-slate-900">IRANYekan
-                 </div>
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p class="text-base uppercase tracking-[0.25em] text-slate-500">Usage notes</p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Line-height slightly larger than English (Persian script needs breathing space).</li>
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Ensure RTL alignment in web/mobile layouts.</li>
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Don’t mix Inter + IRANYekan in the same line; switch by language context.</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                  <p class="text-base uppercase tracking-[0.25em] text-slate-500">Hierarchy</p>
-                  <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                    <li><span class="font-medium text-slate-900">Heading 1:
-                      <li></li>
-                    </span> 32px (Desktop) / 24px (Mobile) · Bold · Line-height 1.3</li>
-                    <li><span class="font-medium text-slate-900">Heading 2:
-                      <li></li>
-                    </span> 24px / 20px  · Medium · Line-height 1.6</li>
-                    <li><span class="font-medium text-slate-900">Body:
-                      <li></li>
-                    </span> 16px / 14px · Regular · Line-height 1.6</li>
-                    <li><span class="font-medium text-slate-900">Caption:
-                      <li></li>
-                    </span> 14px / 12px · Light · with subtle letter-spacing</li>
+              <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3>نکات کاربردی</h3>
+                  <ul class="mt-6 space-y-2 text-sm text-slate-700">
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>فاصله خطوط را کمی بیشتر از نسخه انگلیسی در نظر بگیرید.</li>
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>در طراحی وب و اپ، چیدمان را راست‌به‌چپ تنظیم کنید.</li>
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>در هر خط فقط یک زبان استفاده شود تا خوانایی حفظ شود.</li>
                   </ul>
                 </div>
               </div>
             </div>
-          </div>
-
-            <div data-type-panel="persian" class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-              <div class="flex flex-wrap items-center justify-between gap-3">
-                <p class="text-lg uppercase tracking-[0.3em] text-slate-500">Print systems</p>
-              </div>
-              <div class="mt-6 grid gap-6 md:grid-cols-2">
-                <div class="space-y-4">
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                      <p class="text-base uppercase tracking-[0.25em] text-slate-500">Typeface</p>
-                      <p class="mt-4 text-lg text-slate-700"><span class="font-medium text-slate-900">IRANYekan
-                      
-                  </div>
+            <div class=" mt-8 flex flex-wrap items-center justify-between gap-3">
+              <h3>چاپ و انتشارات</h3>
+              <div class="mt-4 w-full space-y-4">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3>فونت</h3>
+                  <p class="mt-6 text-lg text-slate-700">
+                    <span class="font-semibold text-slate-900">ایران‌یکان</span><br />
+                    <span class="text-sm text-slate-500">نسخه‌های چاپی با کرنینگ بهینه برای متن طولانی</span>
+                  </p>
+                </div>
                 
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p class="text-base uppercase tracking-[0.25em] text-slate-500">Usage notes</p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Use ample line spacing to prevent script overlap.</li>
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Maintain high ink density (avoid light weights in print).</li>
-                      <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>Use brand palette sparingly — Persian typography benefits from high contrast black/white for clarity.</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="space-y-4">
-                  <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                    <p class="text-base uppercase tracking-[0.25em] text-slate-500">Hierarchy</p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-700">
-                      <li><span class="font-medium text-slate-900">Titles (H1):<li>
-
-                      </li></span> 48pt · Bold</li>
-                      <li><span class="font-medium text-slate-900">Subtitles (H2):<li>
-
-                      </span> 36pt · Medium</li>
-                      <li><span class="font-medium text-slate-900">Body:<li>
-
-                      </span> 11–12pt · Regular</li>
-                      <li><span class="font-medium text-slate-900">Captions:<li>
-
-                      </span> 9pt · Light · Uppercase</li>
-                    </ul>
-                  </div>
-                </div>
               </div>
+              <div class="rounded-2xl border border-slate-200 bg-white p-6 w-full">
+                <h3>سلسله‌مراتب</h3>
+                <ul class="mt-6 space-y-4 text-sm text-slate-700">
+                  <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 text-right space-y-2">
+                    <p class="text-xs font-semibold tracking-[0.3em] text-slate-500">سرتیتر یک</p>
+                    <p class="text-3xl font-semibold text-slate-900 sm:text-4xl">گزارش سالانه لجستیک شهری</p>
+                    <p class="text-xs text-slate-500" dir="ltr">48pt · Bold · Leading 54pt</p>
+                  </li>
+                  <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 text-right space-y-2">
+                    <p class="text-xs font-semibold tracking-[0.3em] text-slate-500">سرتیتر دو</p>
+                    <p class="text-2xl font-semibold text-slate-900 sm:text-3xl">گسترش شبکه‌ای ایمن در محلات</p>
+                    <p class="text-xs text-slate-500" dir="ltr">36pt · Medium · Leading 42pt</p>
+                  </li>
+                  <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 text-right space-y-2">
+                    <p class="text-xs font-semibold tracking-[0.3em] text-slate-500">متن بدنه</p>
+                    <p class="text-base text-slate-700 sm:text-lg leading-relaxed">گنجه با داده‌محوری، اعتماد شهرداری‌ها را جلب می‌کند.</p>
+                    <p class="text-xs text-slate-500" dir="ltr">11–12pt · Regular · Leading 16pt</p>
+                  </li>
+                  <li class="rounded-xl border border-slate-200 bg-slate-50/80 p-4 text-right space-y-2">
+                    <p class="text-xs font-semibold tracking-[0.3em] text-slate-500">کپشن</p>
+                    <p class="text-xs font-semibold tracking-[0.25em] text-slate-600">نمودار ۰۲ · برنامه‌ریزی اجرا</p>
+                    <p class="text-xs text-slate-500" dir="ltr">9pt · Medium · Letter-spacing +0.03em</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-white p-6">
+                  <h3>نکات کاربردی</h3>
+                  <ul class="mt-6 space-y-2 text-sm text-slate-700">
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>فاصله خطوط چاپی را سخاوتمندانه بگیرید تا حروف به‌هم نچسبند.</li>
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>وزن‌های Medium و Bold در چاپ خواناتر از وزن‌های سبک هستند.</li>
+                    <li class="flex gap-2"><span class="mt-1 h-1.5 w-1.5 rounded-full bg-blue-500"></span>برای تیترها از رنگ‌های برند و برای متن اصلی از تضاد سیاه/سفید استفاده کنید.</li>
+                  </ul>
+                </div>
             </div>
           </div>
-            
           </div>
         </div>
       </section>
 
-    <section id="applications" data-animate class="mx-auto max-w-5xl px-4 sm:px-6 py-8">
+    <!--
+      <section id="applications" data-animate class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
       <div class="rounded-[32px] border border-slate-200 bg-white p-6 sm:p-10 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-4">
-          <h2 class="text-2xl font-semibold">Related works</h2>
+          <h2>Related works</h2>
         </div>
         <div class="mt-10 grid gap-6 md:grid-cols-2">
           <a href="../ganje/" class="group relative block overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 p-8 text-white shadow-lg">
@@ -641,10 +805,10 @@
               </p>
             </div>
           </a>
-          
         </div>
       </div>
     </section>
+  -->
   </main>
 
 
