@@ -38,13 +38,8 @@
       min-height: 100vh;
     }
 
-    section {
+    main > section {
       width: 100%;
-    }
-
-    h1, h2 {
-      font-weight: 600;
-      letter-spacing: 0.12em;
     }
 
     .section-container {
@@ -53,18 +48,19 @@
       padding: 64px 24px;
     }
 
+    main h1,
+    main h2 {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+
+    .back-bar {
+      background: var(--dark-900);
+    }
+
     .back-wrapper {
       padding-top: 32px;
       padding-bottom: 16px;
-    }
-
-    .back-subtitle {
-      margin-top: 12px;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.85rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      display: inline-block;
     }
 
     .back-link {
@@ -105,47 +101,38 @@
       height: 16px;
     }
 
+    .back-subtitle {
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
     .hero {
       background: var(--dark-900);
-      color: var(--dark-900);
     }
 
     .hero-inner {
       display: grid;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .hero h1 {
-      color: var(--white);
-      font-size: 2.5rem;
-      line-height: 1.2;
-      letter-spacing: 0.08em;
-    }
-
-    .hero p {
-      color: var(--white);
-      font-size: 1.1rem;
-      max-width: 780px;
-    }
-
-    .hero-visual {
-      width: 100%;
-      max-width: 680px;
-      height: 340px;
-      background: var(--dark-900);
-      color: var(--teal-500);
-      display: flex;
+      gap: 32px;
       align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      letter-spacing: 0.5em;
-      margin-left: auto;
+    }
+
+    .hero-media {
+      display: block;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     @media (min-width: 900px) {
       .hero-inner {
-        grid-template-columns: 1.6fr 1fr;
+        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -207,17 +194,10 @@
       color: var(--teal-100);
     }
 
-    .placeholder {
+    .overview-media img {
       width: 100%;
-      min-height: 320px;
-      background: var(--dark-600);
-      border: 1px solid #3b3b3b;
-      color: var(--teal-500);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      letter-spacing: 0.45em;
+      height: auto;
+      display: block;
     }
 
     @media (min-width: 900px) {
@@ -277,11 +257,24 @@
       color: var(--teal-200);
       max-width: 580px;
     }
+
+    [data-placeholder] {
+      width: 100%;
+      min-height: 320px;
+      background: var(--dark-600);
+      border: 1px solid #3b3b3b;
+      color: var(--teal-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.45em;
+    }
   </style>
 </head>
 <body>
   <main>
-    <section class="back-bar" class="hero">
+    <section class="back-bar">
       <div class="section-container back-wrapper">
         <a class="back-link" href="https://zahra-razavi.github.io/">
           <span class="back-icon">
@@ -296,10 +289,11 @@
 
     <section id="section0" class="hero">
       <div class="section-container hero-inner">
-        <p class="back-subtitle">Case Study . Product Design</p>
-        <div class="grid ">
-          <h1>Mediana Voice - VoIP SaaS Dashboard</h1>
-          <div class="hero-visual">HORIZONTAL&nbsp;IMAGE</div>
+        <div class="hero-media hero-logo">
+          <img src="Mediana-voice-logo.svg" alt="Mediana Voice logo" />
+        </div>
+        <div class="hero-media hero-overview">
+          <img src="mockup-overview-mediana.png" alt="Mediana Voice dashboard overview mockup" />
         </div>
       </div>
     </section>
@@ -331,31 +325,30 @@
           <h2 class="case-subheader">overview</h2>
           <p class="overview-text">Mediana Voice is a modern VoIP management dashboard that centralizes business communication control—covering analytics, call logs, line management, IVR flows and voices, billing, and user access. It provides clear insights into active calls and usage through detailed reports, enables easy configuration of extension lines and IVR systems, and supports tiered service plans for different business needs. With multi-level user access (Admin, Manager, Operator) and integrated registration and billing tools, Mediana Voice delivers an intuitive, all-in-one platform for monitoring, managing, and optimizing voice operations efficiently.</p>
         </div>
-        <div class="placeholder">DASHBOARD&nbsp;OVERVIEW</div>
       </div>
       <div class="section-container" style="padding-top: 0;">
-        <div class="placeholder">FULL&nbsp;WIDTH&nbsp;INSIGHT</div>
+        <div data-placeholder>FULL&nbsp;WIDTH&nbsp;INSIGHT</div>
       </div>
     </section>
 
     <section id="section3" class="section-dark">
       <div class="section-container">
         <h2 class="case-header">User flow</h2>
-        <div class="placeholder">USER&nbsp;FLOW&nbsp;DIAGRAM</div>
+        <div data-placeholder>USER&nbsp;FLOW&nbsp;DIAGRAM</div>
       </div>
     </section>
 
     <section id="section4" class="section-ink">
       <div class="section-container">
         <h2 class="case-header">Site map</h2>
-        <div class="placeholder">SITE&nbsp;MAP&nbsp;ILLUSTRATION</div>
+        <div data-placeholder>SITE&nbsp;MAP&nbsp;ILLUSTRATION</div>
       </div>
     </section>
 
     <section id="section5-ui" class="section-dark">
       <div class="section-container">
         <h2 class="case-header">UI design</h2>
-        <div class="placeholder">UI&nbsp;SCREENS&nbsp;GALLERY</div>
+        <div data-placeholder>UI&nbsp;SCREENS&nbsp;GALLERY</div>
       </div>
     </section>
 
@@ -363,15 +356,15 @@
       <div class="section-container system-group">
         <div>
           <h2 class="case-header">Design system</h2>
-          <div class="placeholder" style="min-height: 260px;">SYSTEM&nbsp;OVERVIEW</div>
+          <div data-placeholder style="min-height: 260px;">SYSTEM&nbsp;OVERVIEW</div>
         </div>
         <div>
           <h2 class="case-header">Color</h2>
-          <div class="placeholder" style="min-height: 220px;">PALETTE&nbsp;DETAIL</div>
+          <div data-placeholder style="min-height: 220px;">PALETTE&nbsp;DETAIL</div>
         </div>
         <div>
           <h2 class="case-header">Components</h2>
-          <div class="placeholder" style="min-height: 260px;">COMPONENT&nbsp;LIBRARY</div>
+          <div data-placeholder style="min-height: 260px;">COMPONENT&nbsp;LIBRARY</div>
         </div>
       </div>
     </section>
