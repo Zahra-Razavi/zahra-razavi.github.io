@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif; }
     [data-animate] { transition: opacity .6s ease, transform .6s ease; }
     [data-animate].is-waiting { opacity: 0; transform: translateY(24px); }
@@ -22,90 +23,132 @@
 </head>
 <body class="bg-white text-gray-800">
   <!-- Header -->
-  <header class="max-w-5xl mx-auto px-4 py-6 flex items-center justify-between gap-6">
-    <div class="flex items-center gap-3">
-      <img src="images/profile-mark.svg" alt="ZR monogram" class="h-12 w-12 rounded-full border border-gray-200 shadow-sm" />
-      <a href="/" class="font-semibold">Zahra Razavi</a>
+  <header class="fixed top-0 left-0 right-0 bg-black backdrop-blur border-b border-gray-100 z-50">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <a href="/" class="text-2xl text-white font-medium tracking-[0.12em]">Zahra Razavi</a>
+      </div>
+      <nav class="text-lg hidden text-white md:flex gap-6">
+        <a href="#work" class=" hover:opacity-70">Work</a>
+        <a href="/resume/" class="hover:opacity-70">Resume</a>
+        <a href="#about" class="hover:opacity-70">About</a>
+        <a href="#contact" class="hover:opacity-70">Contact</a>
+      </nav>
     </div>
-    <nav class="hidden md:flex gap-6">
-      <a href="#work" class="hover:opacity-70">Work</a>
-      <a href="/resume/" class="hover:opacity-70">Resume</a>
-      <a href="#about" class="hover:opacity-70">About</a>
-      <a href="#contact" class="hover:opacity-70">Contact</a>
-    </nav>
   </header>
 
+  <main class="pt-0">
+
   <!-- Hero -->
-  <section data-animate class="max-w-5xl mx-auto px-4 py-16">
-    <h1 class="text-3xl md:text-5xl font-semibold leading-tight">
-      Product Designer | UI/UX Designer | UX Researcher<br class="hidden md:block" />
-    </h1>
-    <p class="mt-4 md:text-lg text-gray-600">
-      Expertise in FinTech, SaaS, logistics, IoT-enabled services, digital health, e-commerce, and AI-assisted workflows.
-    </p>
+  <section data-animate class="max-w-screen-xl mx-auto px-6 lg:px-8 py-36">
+    <div class="grid mt-48 mb-48 items-center md:[grid-template-columns:1fr_2fr]">
+      <div class="flex flex-col items-start">
+        <div class="w-80 h-80 rounded-full border-[6px] border-[#000000] overflow-hidden self-center md:self-start">
+          <img
+            src="images/zahra-profile.JPG"
+            alt="Portrait of Zahra Razavi"
+            width="80"
+            height="80"
+            class="w-full h-full object-cover" />
+        </div>
+      </div>
+      <div>
+        <h1 class="font-semibold ">
+          <span class="block text-xl text-[#000000] md:text-3xl leading-[1.2] md:leading-[1.4]">Hey !</span>
+          <span class="block text-3xl md:text-5xl text-[#000000] leading-[1.2] md:leading-[1.4]">Curious how I help startups grow </span>
+          <span class=" text-3xl md:text-5xl text-[#4EA2C9] leading-[1.2] md:leading-[1.4]">ideas </span>
+          <span class=" text-3xl md:text-5xl text-[#000000] leading-[1.2] md:leading-[1.4]">into </span>
+          <span class=" text-3xl md:text-5xl text-[#4EA2C9] leading-[1.2] md:leading-[1.4]">products people love</span>   
+          <span class="text-3xl  text-[#000000] md:text-5xl">?</span> 
+        </h1>
+        <div class="mt-6 flex justify-end pr-[48px]">
+          <a href="#work" class="inline-flex items-center justify-center w-20 h-20 rounded-full text-[#000000] text-3xl font-semibold md:text-5xl hover:bg-[#000000] hover:text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4EA2C9]" aria-label="Scroll to case studies">
+            ↓
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Work Grid -->
-  <section id="work" data-animate class="max-w-5xl mx-auto px-4 pb-16 grid gap-6 md:grid-cols-2">
+  <section id="work" data-animate class="max-w-screen-xl mx-auto px-2 lg:px-4 pb-16 scroll-mt-32">
     <!-- Project Card Template -->
-    <a href="https://zahra-razavi.github.io/projects/lendeck/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
-      <div class="aspect-[16/9]">
-       <img src="https://zahra-razavi.github.io/images/Lendeck-mockup.png" alt="Lendeck dashboard high-fidelity mockup in purple theme" />
-      </div>
-      <div class="p-5">
-        <h3 class="font-medium text-lg">Lendeck — FinTech platform</h3>
-      </div>
-    </a>
-    <a href="https://zahra-razavi.github.io/projects/mediana/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
-      <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
-      <div class="p-5">
-        <h3 class="font-medium text-lg">Mediana Voice — VoIP SaaS Dashboard</h3>
-      </div>
-    </a>
-    <!-- 
-    <a href="https://zahra-razavi.github.io/projects/ganje/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
-      <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
-      <div class="p-5">
-        <h3 class="font-medium text-lg">Ganje — B2B Logistics Platform; IoT smart lockers</h3>
-      </div>
-    </a>
-  -->
-    <a href="https://zahra-razavi.github.io/projects/ganje-brand/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
-      <div class="aspect-[16/9]">
-       <img src="https://zahra-razavi.github.io/images/ganje-LOGO-image.png" alt="Lendeck dashboard high-fidelity mockup in purple theme" />
-      </div>
-      <div class="p-5">
-        <h3 class="font-medium text-lg">Ganje - Brand Design</h3>
-        <p class="text-sm text-gray-600 mt-1"></p>
-      </div>
-    </a>
-    <a href="https://zahra-razavi.github.io/projects/kidora/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
-      <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
-      <div class="p-5">
-        <h3 class="font-medium text-lg">Kidora — Early Childhood Development App</h3>
-      </div>
-    <!-- 
-    </a>
-     <a href="https://zahra-razavi.github.io/projects/hengam/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
-      <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
-      <div class="p-5">
-        <h3 class="font-medium text-lg">Notyfy Me! - Shopify App</h3>
-      </div>
-    </a>
+    <h2 class="text-6xl font-medium">Case Studies</h2>
+    <!--
+    <div class="mt-4 mb-6">
+        <p class=" md:text-lg text-gray-600">
+        <span class="block"> Expertise in FinTech, SaaS, logistics, IoT-enabled services,</span>
+        <span class="block"> digital health, e-commerce, and AI-assisted workflows.</span>
+        </p>
+    </div>
     -->
+    <div class="mt-16 grid gap-8 md:grid-cols-2">
+      <div>
+        <a href="https://zahra-razavi.github.io/projects/lendeck/" class="group block border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+            <img src="images/mockup-homepage-lendeck.png" alt="Lendeck dashboard mockup" class="w-full h-full object-cover" />
+        </a>
+        <div class="mt-2 p-5">
+            <h3 class="font-medium text-2xl">Lendeck - FinTech platform</h3>
+        </div>
+      </div>
+      <div>
+        <a href="https://zahra-razavi.github.io/projects/mediana/" class="group block border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+            <img src="images/mockup-homepage-Mediana.png" alt="Mediana Voice SaaS dashboard mockup" class="w-full h-full object-cover" />
+        </a>
+        <div class="mt-2 p-5">
+          <h3 class="font-medium text-2xl">Mediana Voice - VoIP SaaS Dashboard</h3>
+        </div>
+      </div>
+      <!-- 
+      <a href="https://zahra-razavi.github.io/projects/ganje/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+        <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
+        <div class="p-5">
+          <h3 class="font-medium text-lg">Ganje — B2B Logistics Platform; IoT smart lockers</h3>
+        </div>
+      </a>
+    -->
+      <div>
+        <a href="https://zahra-razavi.github.io/projects/ganje-brand/" class="group block border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+            <img src="images/mockup-homepage-ganje-logo.png" alt="Lendeck dashboard high-fidelity mockup in purple theme" class="w-full h-full object-cover" />
+        </a>
+        <div class="mt-2 p-5">
+          <h3 class="font-medium text-2xl">Ganje - Brand Design</h3>
+        </div>
+      </div>
+      <div>
+        <a href="https://zahra-razavi.github.io/projects/kidora/" class="group block border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+          <div class="">
+            <img src="images/mockup-homepage-kidora.png" alt="Kidora app mockup" class="w-full h-full object-cover" />
+          </div>
+        </a>
+        <div class="mt-2 p-5">
+          <h3 class="font-medium text-2xl">Kidora - Early Childhood Development App</h3>
+        </div>
+      </div>
+      <!-- 
+      </a>
+      <a href="https://zahra-razavi.github.io/projects/hengam/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+        <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
+        <div class="p-5">
+          <h3 class="font-medium text-lg">Notyfy Me! - Shopify App</h3>
+        </div>
+      </a>
+      -->
+      
+    </div>
   </section>
 
   <!-- About -->
-  <section id="about" data-animate class="max-w-5xl mx-auto px-4 py-16">
-    <h2 class="text-2xl font-semibold">About</h2>
-    <p class="max-w-3xl mx-auto mt-8 text-gray-700 text-justify">
-      Product Designer & UX Researcher with 6+ years owning end-to-end design of SaaS products, mobile/web apps, and agentic-AI experiences, from discovery through production release, for high-growth startups across North America and MENA. Proven ability to scale platforms, reduce churn, and accelerate delivery through lean, AI-augmented workflows. Skilled in full-cycle product design, from discovery, cognitive research, and journey mapping to accessible, WCAG-compliant interfaces and iterative UX optimization in Agile/Scrum environments. Known for strong collaboration with cross-functional teams, backed by deep expertise in UX research, behavioral analytics, and product strategy.
+  <section id="about" data-animate class="max-w-screen-xl mx-auto px-2 lg:px-4 pb-16">
+    <h2 class="mt-8 text-6xl font-medium">About</h2>
+    <p class="mt-16 text-xl max-w-4xl mx-auto  text-gray-700 text-justify">
+      Product Designer & UX Researcher with 6+ years owning end-to-end design of SaaS products, mobile/web apps, and agentic-AI experiences, from discovery through production release, for high-growth startups Canada, U.S. and MENA. Proven ability to scale platforms, reduce churn, and accelerate delivery through lean, AI-augmented workflows. Skilled in full-cycle product design, from discovery, cognitive research, and journey mapping to accessible, WCAG-compliant interfaces and iterative UX optimization in Agile/Scrum environments. Known for strong collaboration with cross-functional teams, backed by deep expertise in UX research, behavioral analytics, and product strategy.
     </p>
   </section>
 
-   <!-- Resume -->
-   <section id="resume" data-animate class="max-w-5xl mx-auto px-4 py-16">
-    <h2 class="text-2xl font-semibold">Resume</h2>
+   <!-- Resume 
+   <section id="resume" data-animate class="max-w-screen-xl mx-auto px-6 lg:px-8 py-16">
+    <h2 class="text-4xl font-semibold">Resume</h2>
     
     <p class="mt-2 text-gray-600">
       Explore the interactive preview below, or click anywhere on it to open the full-page version.
@@ -132,22 +175,23 @@
       </a>
     </div>
   </section>
+  -->
 
   
   <!-- Contact -->
-  <section id="contact" data-animate class="max-w-5xl mx-auto px-4 pb-24">
-    <h2 class="text-2xl font-semibold">Contact</h2>
-    <p class="mt-3">
-      <a class="underline" href="mailto:zrazavi97@gmail.com">zrazavi97@gmail.com</a>
-      &nbsp;·&nbsp;
-      <a class="underline inline-flex items-center gap-1" href="https://www.linkedin.com/in/zahrarazavi97" target="_blank" rel="noopener">
-  LinkedIn
+  <section id="contact" data-animate class="mt-24 max-w-screen-xl mx-auto px-2 lg:px-4 pb-16">
+    <h2 class="text-6xl font-medium">Contact</h2>
+    <div class="mt-8 flex items-end gap-4 flex-wrap">
+      <a class="text-xl underline" href="mailto:zrazavi97@gmail.com">zrazavi97@gmail.com</a>
+      <a class="inline-flex items-end" href="https://www.linkedin.com/in/zahrarazavi97" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img src="images/LinkedIn.svg" alt="LinkedIn" class="w-12 h-12" />
       </a>
-
-    </p>
+    </div>
   </section>
 
-  <footer class="text-center text-sm text-gray-500 py-8">© <span id="year"></span> Zahra Razavi</footer>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 py-8">© <span id="year"></span>- Designed and coded by Zahra Razavi</footer>
 
   <!-- Optional: reduce motion for users who prefer it -->
   <script>
