@@ -12,8 +12,10 @@
         extend: {
           colors: {
             accent: '#4E0F60',
-            'accent-light': '#6F2B8A',
-            'accent-soft': '#E3E0F2',
+            'accent-bg': '#6F2B8A',
+            'purple-light': '#E3E0F2',
+            'purple-mid': '#9B4AB2',
+            'purple-main': '#4E0F60',
             highlight: '#FF5F0C',
           },
           fontSize: {
@@ -72,11 +74,11 @@
 
     @layer components {
       .case-title {
-        @apply mb-8 text-center text-4xl font-bold text-accent-soft sm:text-5xl;
+        @apply text-center text-4xl font-semibold text-purple-main lg:text-5xl;
       }
 
       .section-title {
-        @apply text-center text-3xl font-black leading-tight tracking-widest text-accent-soft sm:text-4xl md:text-5xl lg:text-display-5 lg:leading-none;
+        @apply text-center text-3xl font-black leading-tight tracking-widest text-purple-light sm:text-4xl md:text-5xl lg:text-display-5 lg:leading-none;
       }
 
       @screen md {
@@ -117,7 +119,7 @@
       }
 
       .card-heading {
-        @apply mb-4 block text-lg font-semibold tracking-wide-35 text-accent;
+        @apply mb-4 block text-3xl font-semibold tracking-wide-10 text-accent;
       }
 
       .meta-kicker {
@@ -125,11 +127,11 @@
       }
 
       .stat-label {
-        @apply text-left text-base font-semibold tracking-wide-30 text-white/70;
+        @apply text-left text-xl font-bold  text-purple-main;
       }
 
       .stat-value {
-        @apply text-left text-lg font-semibold text-white;
+        @apply text-left text-lg font-semibold text-purple-main;
       }
 
       .paragraph-medium {
@@ -145,7 +147,7 @@
       }
 
       .subheading-accent {
-        @apply text-left text-sm font-semibold uppercase tracking-wide-25 text-accent-light;
+        @apply text-left text-base font-semibold  tracking-wide-10 text-accent-bg;
       }
 
       .subheading-muted {
@@ -187,50 +189,49 @@
   </style>
 </head>
 <body class="bg-[#F9F8FD] text-gray-900 antialiased font-sans">
-  <header class="relative isolate overflow-hidden bg-gradient-to-br from-[#4E0F60] via-[#6F2B8A] to-[#2D0638] text-white">
-    <div class="pointer-events-none absolute -left-32 top-20 h-64 w-64 rounded-full bg-[#6F2B8A]/30 blur-3xl"></div>
+  <header class="relative isolate overflow-hidden bg-gradient-to-br from-purple-light">
+    <div class="pointer-events-none absolute -left-32 top-20 h-64 w-64 rounded-full bg-accent-bg/30 blur-3xl"></div>
+    <div class="pointer-events-none absolute -right-32 bottom-20 h-64 w-64 rounded-full bg-accent-bg/30 blur-3xl"></div>
     <div class="pointer-events-none absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_top,_rgba(118,52,142,0.28),_transparent_55%)]"></div>
-    <div class="relative mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:pb-28 lg:pt-16">
-      <a href="https://zahra-razavi.github.io/" class="inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition hover:text-white">
-        <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/60"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" /></svg></span>
-        
-      </a>
-      <div class="mt-12 space-y-12">
-        <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-          <div class="space-y-12">
-            <div class="space-y-8">
-              <p class="meta-kicker">Case Study · Product Design</p>
-            </div>
-          </div>
-        </div>
+
+    <div class="relative mx-auto max-w-[90rem] px-4 pb-12 pt-4 sm:px-6 lg:pb-16 lg:pt-8">
+      <div class="px-4 flex items-center justify-between gap-4">
+        <a href="https://zahra-razavi.github.io/" class="inline-flex items-center gap-3 text-2xl font-black text-white">
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-purple-main bg-purple-main text-white text-base"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"><path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" /></svg></span>
+        </a>
+        <img src="images/LendeckLogo.png" alt="Lendeck logo" class="h-10 w-auto object-contain" />
+      </div>
+      <div class="mt-6">
         <div class="relative mx-auto w-full max-w-5xl">
-          <h1 class="case-title">Lendeck - 3-sided lending platform</h1>
-          <div class="pointer-events-none absolute inset-x-4 -top-10 hidden h-64 rounded-full bg-[#9151B2]/30 blur-3xl md:block"></div>
-          <img src="images/Lendeck-mockup-purple.png" alt="Lendeck dashboard high-fidelity mockup in purple theme" class="relative w-full rounded-[32px] border border-white/30 shadow-2xl shadow-black/20" />
+          <h1 class="case-title mb-10">Lending Dashboard Design</h1>
+          <div class=" pointer-events-none absolute inset-x-4 -top-10 hidden h-64 rounded-full bg-purple-mid/30 blur-3xl md:block"></div>
+          <img src="images/lendeck-header image.png" alt="Lendeck dashboard mockup" class="relative w-full rounded-[32px] border border-white/30 shadow-2xl shadow-purple-main/40" />
         </div>
-          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="space-y-2">
-              <p class="stat-label">Role</p>
-              <p class="stat-value">Solo Product Designer</p>
-            </div>
-            <div class="space-y-2">
-              <p class="stat-label">Timeline</p>
-              <p class="stat-value">Apr 2024-Aug 2024</p>
-            </div>
-            <div class="space-y-2">
-              <p class="stat-label">Product Team</p>
-              <p class="stat-value text-base">Yousef Kohanbash, Co-founders </p>
-            </div>
-            <div class="space-y-2">
-              <p class="stat-label">Scope</p>
-              <p class="stat-value">Product Strategy, UI, UX</p>
-            </div>
+        <div class="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="space-y-2">
+            <p class="stat-label">Role</p>
+            <p class="stat-value">Solo Product Designer</p>
+            <p class="stat-value"></p>
+          </div>
+          <div class="space-y-2">
+            <p class="stat-label">Timeline</p>
+            <p class="stat-value">Apr 2024 - Aug 2024</p>
+          </div>
+          <div class="space-y-2">
+            <p class="stat-label">Product Team</p>
+            <p class="stat-value text-base">Yousef Kohanbash, Co-founders </p>
+          </div>
+          <div class="space-y-2">
+            <p class="stat-label">Scope</p>
+            <p class="stat-value">Owning End-to-end Design, Product Strategy, UI, UX</p>
           </div>
         </div>
+      </div>
+    </div>
   </header>
 
   <main class="pb-24">
-    <section id="problem" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
+    <section id="problem" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
       <div class="panel">
         <div class="grid gap-6 lg:grid-cols-2 lg:items-start">
           <article class="frost-card lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:self-center">
@@ -249,32 +250,35 @@
           </article>
           <article class="frost-card lg:col-start-2 lg:row-start-2">
             <h3 class="card-heading">Audience</h3>
-            <div class="mt-4 space-y-6">
-              <div>
-                <p class="subheading-accent">Customers</p>
-                <ul class="mt-3 space-y-2">
-                  <li class="list-row"><span class="list-dot bg-accent-light"></span>Brokers</li>
-                  <li class="list-row"><span class="list-dot bg-accent-light"></span>Independent Sales Organizations (ISOs)</li>
-                  <li class="list-row"><span class="list-dot bg-accent-light"></span>Syndicators</li>
-                </ul>
-              </div>
+            <div class="mt-4 space-y-6 grid grid-cols-2">
               <div>
                 <p class="subheading-accent">End Users</p>
                 <ul class="mt-3 space-y-2">
-                  <li class="list-row"><span class="list-dot bg-accent-light"></span>Lenders</li>
-                  <li class="list-row"><span class="list-dot bg-accent-light"></span>Brokers</li>
-                  <li class="list-row"><span class="list-dot bg-accent-light"></span>ISOs</li>
-                  <li class="list-row"><span class="list-dot bg-accent-light"></span>Syndicators</li>
-                  <li class="list-row"><span class="list-dot bg-accent-light"></span>Merchants</li>
+                  <li class="list-row"><span class="list-dot bg-accent-bg"></span>Lenders</li>
+                  <li class="list-row"><span class="list-dot bg-accent-bg"></span>Brokers</li>
+                  <li class="list-row"><span class="list-dot bg-accent-bg"></span>ISOs</li>
+                  <li class="list-row"><span class="list-dot bg-accent-bg"></span>Syndicators</li>
+                  <li class="list-row"><span class="list-dot bg-accent-bg"></span>Merchants</li>
                 </ul>
               </div>
+              <div>
+                <p class="subheading-accent">Customers</p>
+                <ul class="mt-3 space-y-2">
+                  <li class="list-row"><span class="list-dot bg-accent-bg"></span>Brokers</li>
+                  <li class="list-row"><span class="list-dot bg-accent-bg"></span>Independent Sales Organizations (ISOs)</li>
+                  <li class="list-row"><span class="list-dot bg-accent-bg"></span>Syndicators</li>
+                </ul>
+              </div>
+              
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="discovery" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
+    
+
+    <section id="discovery" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
       <div class="panel">
         <div class="space-y-6">
           <h2 class="section-title">Discovery</h2>
@@ -318,7 +322,7 @@
     </section>
 
     
-    <section id="user-journey" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
+    <section id="user-journey" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
       <div class="panel">
         <div class="gap-8 lg:grid-cols-2 lg:items-start">
             <h2 class="section-title mb-4"> Journey map</h2>
@@ -343,7 +347,7 @@
     </section>
   
 
-    <section id="site-map" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
+    <section id="site-map" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
       <div class="panel">
         <div class="space-y-6">
           <h2 class="section-title">Site Map</h2>
@@ -354,7 +358,7 @@
       </div>
     </section>
 
-    <section id="user-flow" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
+    <section id="user-flow" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
       <div class="panel">
         <div class="space-y-6">
           <h2 class="section-title">User Flow</h2>
@@ -365,56 +369,97 @@
         </div>
       </div>
     </section>
-
-    <section id="prototype-low" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
+    
+    <section id="prototype-low" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
       <div class="panel">
-        <div class="gap-8 lg:grid-cols-2 lg:items-start">
-          <div class="space-y-5">
-            <h2 class="section-title">Prototype &amp; Test</h2>
+          <div class="space-y-6">
+            <h2 class="section-title">Color Palette</h2>
+              <div class="grid gap-6 md:grid-cols-2">
+                <div class="p-8">
+                  <div class="grid gap-12 md:grid-cols-[auto,1fr] md:items-start">
+                    <div class="space-y-4 text-right">
+                      <p class="text-2xl font-bold uppercase tracking-wide-10 text-purple-main">Primary colors</p>
+                      <p class="text-xl font-bold text-purple-main">#4E0F60</p>
+                      <div class="space-y-4 ">
+                        <p class="mt-20 text-base text-gray-500">Usage: CTAs, navigation, cards, typography emphasis.</p>
+                        <div class="space-y-1 text-base font-semibold text-gray-700">
+                          <p>Brand core  -  #4E0F60</p>
+                          <p>Mid tone. -  #9B4AB2</p>
+                          <p>Soft fill -  #E3E0F2</p>
+                          <p>Background -  #F9F8FD</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex flex-col items-center gap-4">
+                      <div class="h-32 w-32 rounded-full bg-purple-main shadow-lg shadow-purple-mid/30"></div>
+                      <div class="h-56 w-32 rounded-full bg-[linear-gradient(180deg,#4E0F60_10%,#E3E0F2_85%,#F9F8FD_100%)] shadow-inner shadow-purple-mid/20"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-8">
+                  <div class="grid gap-12 md:grid-cols-[auto,1fr] md:items-start">
+                    <div class="flex flex-col items-center gap-4">
+                      <div class="h-32 w-32 rounded-full bg-[#FF5F0C] shadow-lg shadow-orange-500/30"></div>
+                      <div class="h-56 w-32 rounded-full bg-[linear-gradient(180deg,#FF5F0C_10%,#FFCBAF_65%,#FFF3EE_100%)] shadow-inner shadow-orange-500/20"></div>
+                    </div>
+                    <div class="space-y-4 text-left">
+                      <p class="text-2xl font-bold uppercase tracking-wide-10 text-[#FF5F0C]">Accent colors</p>
+                      <p class="text-xl font-bold text-[#FF5F0C]">#FF5F0C</p>
+                      <div class="space-y-4 ">
+                        <p class="mt-20 text-base text-gray-500">Usage: highlight states, alert emphasis, distinguishing Lender from Broker.</p>
+                        <div class="space-y-1 text-base font-semibold text-gray-700">
+                          <p>#FF5F0C  -  Primary accent</p>
+                          <p>#FFCBAF  -  Warm tint</p>
+                          <p>#FFF3EE  -  background</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ui-design" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
+      <div class="panel">
+        <div class="gap-10 lg:grid-cols-2 lg:items-start">
+          <div class="space-y-12">
+            <h2 class="section-title">Design System</h2>
+            <p class="paragraph-medium">To accelerate the MVP delivery, I leveraged a prebuilt design system and UI component library, customizing and extending shadcn/ui built on Radix UI primitives to create a cohesive and accessible product design.</p>
+            <p class="text-5xl font-black text-purple-light">Button & Badge</p>
+            <figure class="overflow-hidden ">
+            <img src="images/Design System-lendeck.png" alt="Lendeck design system components preview" class="image-large w-full object-cover" />
+            </figure>
+            <p class=" text-5xl font-black text-purple-light">Typography</p>
+            <figure class="overflow-hidden ">
+              <img src="images/Typography-lendeck.png" alt="Lendeck design system components preview" class="image-large w-full object-cover" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prototype-low" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
+      <div class="panel">
+        <div class="gap-10 lg:grid-cols-2 lg:items-start">
+          <div class="space-y-12">
+            <h2 class="section-title">Lo-Fi Prototype</h2>
             <p class="paragraph-medium">Low-fidelity prototypes were created in Figma and tested with eight participants across roles. Usability tests after each iteration ensured smoother navigation and reduced confusion in document management.</p>
-          </div>
-          <figure class="placeholder-frame bg-[linear-gradient(135deg,#F3F4F6_0%,#FFFFFF_60%,#F9FAFB_100%)]" role="img" aria-label="Low-fidelity prototype placeholder">
-            Prototype Placeholder
-          </figure>
+          <figure class="overflow-hidden ">
+              <img src="images/low-fi propotype.png" alt="Lendeck design system components preview" class="image-large w-full object-cover" />
+            </figure>
+            </div>
         </div>
       </div>
     </section>
 
-    <section id="ui-design" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="panel">
-        <div class="gap-10 lg:grid-cols-2 lg:items-start">
-          <div class="space-y-5">
-            <h2 class="section-title">Visual Design</h2>
-            <p class="paragraph-medium">The interface combines a modern, trustworthy aesthetic with FinTech clarity—using a clean layout, contrast-driven hierarchy, and contextual microinteractions. I applied atomic design principles to maintain consistency across modules and scalable components.</p>
-            <a href="" class="cta-link">View Design System<span aria-hidden="true">→</span></a>
-          </div>
-          <figure class="placeholder-frame bg-[linear-gradient(135deg,#F3F4F6_0%,#FFFFFF_60%,#F9FAFB_100%)]" role="img" aria-label="UI design mockup placeholder">
-            UI System Placeholder
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="ui-design" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
-      <div class="panel">
-        <div class="gap-10 lg:grid-cols-2 lg:items-start">
-          <div class="space-y-5">
-            <h2 class="section-title">High Fidelity</h2>
-            <p class="paragraph-medium">The interface combines a modern, trustworthy aesthetic with FinTech clarity—using a clean layout, contrast-driven hierarchy, and contextual microinteractions. I applied atomic design principles to maintain consistency across modules and scalable components.</p>
-          </div>
-          <figure class="placeholder-frame bg-[linear-gradient(135deg,#F3F4F6_0%,#FFFFFF_60%,#F9FAFB_100%)]" role="img" aria-label="UI design mockup placeholder">
-            UI System Placeholder
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="prototype-hi" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
+    <section id="prototype-hi" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
       <div class="panel">
         <div class="space-y-8">
           <div class="gap-8 lg:grid-cols-2 lg:items-start">
             <div class="space-y-5">
-              <h2 class="section-title">Hi-Fi Prototype &amp; Test</h2>
+              <h2 class="section-title">Hi-Fi Prototype</h2>
             </div>
           </div>
           <a href="lendeck-dashboard/build/" class="group block overflow-hidden rounded-3xl border border-gray-200 transition hover:shadow-lg">
