@@ -21,7 +21,7 @@ body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
     body h1 {
       color: var(--title-color);
       font-family: var(--playful-font);
-      font-size: 6rem;
+      font-size: 7rem;
       text-align: left;
       font-weight: 600;
       letter-spacing: 0.04em;
@@ -29,10 +29,9 @@ body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
        body h2 {
       color: var(--headline-color);
       font-family: var(--playful-font);
-      font-size: 4.5rem;
-      line-height: 1;
+      font-size: 6rem;
       text-align: center;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.08em;
     }
     body h3 {
@@ -84,19 +83,20 @@ body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased">
-  <header class="relative isolate overflow-hidden bg-gradient-to-br from-[#A130B4] via-[#9537D1] to-[#7A3FEA] text-white">
+  <header class="relative isolate overflow-hidden bg-gradient-to-br from-[#A130B4] via-[#b34cc5] to-[#d4abee] text-white">
     <div class="pointer-events-none absolute -left-32 top-16 h-72 w-72 rounded-full bg-white/20 blur-3xl"></div>
     <div class="pointer-events-none absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_55%)]"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-8 lg:pt-16 lg:pb-8 relative">
-      <div class="flex flex-col items-start gap-3">
-        <a href="https://zahra-razavi.github.io/" class="inline-flex items-center gap-2 text-sm font-semibold text-white/90 transition hover:text-white">
+    
+    <div class="max-w-7xl relative mx-auto px-4 pb-12 pt-4 sm:px-6 lg:pb-16 lg:pt-8">
+      <div class="relative flex items-center justify-center px-4 py-2">
+        <a href="https://zahra-razavi.github.io/" class="absolute left-4 top-1/2 inline-flex -translate-y-1/2 items-center gap-2 text-sm font-semibold text-white/90 transition hover:text-white">
           <span class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/60"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" /></svg></span>
         </a>
-        <p class="text-base font-regular mt-4 tracking-[0.3em] text-white/80">Case Study · Product Design</p>
+        <img src="images/logo-Kidora.svg" alt="Kidora logo" class="h-12 w-auto object-contain" style="filter: drop-shadow (48px 4px 24px rgba(255, 255, 255, 0.756));" />
       </div>
-      <div class=" grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div class="mt-12 grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div class="space-y-14">
-          <h1 class="mb-16 leading-tight sm:text-5xl">Kidora, Cognitive Growth App for Kids</h1>
+          <h1 class="mb-16 leading-tight sm:text-5xl">Cognitive Growth App for Kids</h1>
           <p class="max-w-2xl text-lg font-medium text-justify text-white/100">
             Kidora is a child healthcare mobile application designed to empower parents by offering personalized, science-based developmental programs. It provides age-appropriate and comprehensive cognitive activities that support every stage of a child’s growth.</p>
         
@@ -119,25 +119,27 @@ body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
       </div>
       <div class="mt-8 mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div class=" p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Role</p>
+          <p class="text-lg font-semibold text-white/75">Role</p>
           <p class="mt-2 text-lg font-semibold text-white">Digital Product Designer</p>
         </div>
         <div class=" p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Timeline</p>
+          <p class="text-lg font-semibold  text-white/75">Timeline</p>
           <p class="mt-2 text-lg font-semibold text-white">Sep 2020 – Dec 2022</p>
         </div>
        
         <div class=" p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Tools & Resources</p>
-          <div class="mt-2 flex items-center gap-3 text-sm font-medium text-white">
-            <img src="../../images/Figma.svg" alt="Figma logo" class="h-6 w-6 object-contain" />
+          <p class="text-lg font-semibold text-white/75">Tools & Resources</p>
+          <div class="mt-2 flex items-center gap-3 text-lg font-semibold text-white" style="font-family: var(--playful-font);">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/95 shadow-md">
+              <img src="../../images/Figma.svg" alt="Figma logo" class="h-8 w-8 object-contain" />
+            </span>
             <span>&  Eye-tracking</span>
           </div>          
         </div>
          <div class=" p-5">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/75">Product Team</p>
-          <p class="mt-2 text-sm font-medium text-white">Dr. Abolghasemi, AI Scientist</p>
-          <p class="mt-2 text-sm font-medium text-white">Dr. Navab, Cognitive Scientist</p>
+          <p class="text-lg font-semibold text-white/75">Product Team</p>
+          <p class="mt-2 text-base font-semibold text-white">Dr. Abolghasemi, AI Scientist</p>
+          <p class="mt-2 text-base font-semibold text-white">Dr. Navab, Cognitive Scientist</p>
         </div>
       </div>
     </div>
@@ -477,6 +479,25 @@ body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
       </div>
     </section> -->
 
+    <section id="ideation" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
+      <div class="p-6 sm:p-10 ">
+        <div class="space-y-6">
+          <h2>Flow</h2>
+          <p class="p1">
+             Through wireframing and idea visualization, we structured Kidora’s user journeys into a clear site map. Insights from earlier research shaped the information architecture, ensuring intuitive navigation and logical flow between features.
+          </p>
+        </div>
+          <div class="space-y-6">
+            <img src="images/Flow-Kidora.png" alt="Persona: Sara, the time-strapped teacher" class="w-full" />
+          </div>
+          <div class="mt-24 space-y-6">
+            <h3>Growth Test Flow</h3>
+            <img src="images/flow-ruler.png" alt="Persona: Sara, the time-strapped teacher" class="w-full" />
+          </div>
+      </div>
+    </section>
+
+    
 
     <section id="testing" data-animate class="mx-auto mt-16 max-w-7xl px-4 sm:px-6">
       <div class="rounded-[32px] p-6 sm:p-10">
@@ -485,10 +506,13 @@ body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
           <div class="space-y-6"> 
             <h2>Prototyping & Testing</h2>
             <p class="mt-4 text-base text-justify leading-relaxed text-slate-600">
-              Each design decision was validated through continuous prototyping and user testing in Figma. Both low- and high-fidelity prototypes were tested with 5–8 parents and caregivers per round to refine usability and engagement. </p>
+              Each design decision was validated through continuous prototyping* and user testing in Figma. Both low- and high-fidelity prototypes were tested with 5–8 parents and caregivers per round to refine usability and engagement. </p>
             <p class="mt-4 text-base leading-relaxed text-justify text-slate-600">
-              Through usability and eye-tracking tests, I identified friction points and improved key user flows. Quantitative metrics and SUS scores guided iterative refinements across onboarding, assessments, and report-sharing experiences.            </p>
-          </div>
+              Through usability and eye-tracking tests, I identified friction points and improved key user flows. Quantitative metrics and SUS scores guided iterative refinements across onboarding, assessments, and report-sharing experiences.</p>
+            <p class="mt-4 text-base leading-relaxed text-justify text-slate-600">
+              * The app was designed in both English and Persian, though only the Persian version was prototyped and tested with Persian-speaking participants.
+              </p>
+            </div>
           <!--
           <div class="space-y-6">
             <div class="mt-8 rounded-3xl border border-slate-100 bg-slate-50 p-6">
