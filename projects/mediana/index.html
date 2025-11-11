@@ -4,302 +4,213 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mediana Voice — Dashboard Case Study</title>
-  <style>
-    :root {
-      --black: #000000;
-      --dark-900: #262626;
-      --dark-800: #1f1f1f;
-      --dark-700: #232323;
-      --dark-600: #1a1a1a;
-      --teal-450: #4a8b82;
-      --teal-500: #9ac6bd;
-      --teal-300: #b7ded5;
-      --teal-200: #cfe9e3;
-      --teal-100: #e6f5f1;
-      --white: #ffffff;
-    }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'dark-900': '#262626',
+            'dark-800': '#1f1f1f',
+            'dark-700': '#232323',
+            'dark-600': '#1a1a1a',
+            'teal-500': '#9ac6bd',
+            'teal-450': '#4a8b82',
+            'teal-300': '#b7ded5',
+            'teal-200': '#cfe9e3',
+            'teal-100': '#e6f5f1',
+          },
+          fontFamily: {
+            sans: [
+              'Inter',
+              'system-ui',
+              '-apple-system',
+              '"Segoe UI"',
+              'Roboto',
+              'Ubuntu',
+              'Cantarell',
+              '"Helvetica Neue"',
+              'Arial',
+              '"Noto Sans"',
+              'sans-serif',
+            ],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-dark-900 font-sans leading-[1.6] text-white;
+      }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+      main > section {
+        @apply w-full;
+      }
 
-    body {
-      font-family: "Inter", Arial, sans-serif;
-      background: var(--dark-900);
-      color: var(--white);
-      line-height: 1.6;
-    }
+      
 
-    main {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    main > section {
-      width: 100%;
-    }
-
-    .section-container {
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 64px 24px;
-    }
-
-    main h1,
-    main h2 {
-      font-weight: 600;
-      letter-spacing: 0.12em;
-    }
-
-    .back-bar {
-      background: var(--dark-900);
-    }
-
-    .back-wrapper {
-      padding-top: 32px;
-      padding-bottom: 16px;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      transition: color 0.2s ease;
-    }
-
-    .back-link:hover,
-    .back-link:focus-visible {
-      color: var(--white);
-    }
-
-    .back-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 9999px;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      transition: border-color 0.2s ease;
-    }
-
-    .back-link:hover .back-icon,
-    .back-link:focus-visible .back-icon {
-      border-color: var(--teal-500);
-    }
-
-    .back-icon svg {
-      width: 16px;
-      height: 16px;
-    }
-
-    .back-subtitle {
-      margin-top: 12px;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.85rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      display: inline-block;
-    }
-
-    .hero {
-      background: var(--dark-900);
-    }
-
-    .hero-inner {
-      display: grid;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero-media {
-      display: block;
-    }
-
-    .hero-media img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @media (min-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr 1fr;
+      [data-placeholder] {
+        @apply flex min-h-[320px] w-full items-center justify-center border border-[#3b3b3b] bg-dark-600 text-[0.65rem] tracking-[0.45em] text-teal-500;
       }
     }
 
-    .meta {
-      background: var(--teal-300);
-      border-top: 1px solid #3b3b3b;
-      border-bottom: 1px solid #3b3b3b;
-    }
+    @layer components {
+      .section-container {
+        @apply mx-auto max-w-[1360px] px-6 pt-16 pb-16;
+      }
 
-    .meta-grid {
-      display: grid;
-      gap: 40px;
-    }
 
-    .meta-title {
-      font-size: 1rem;
-      letter-spacing: 0.2em;
-      color: var(--dark-900);
-    }
+      .meta {
+        @apply border-y border-[#3b3b3b] bg-teal-300;
+      }
 
-    .meta-value {
-      margin-top: 16px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--dark-700);
-    }
-
-    @media (min-width: 900px) {
       .meta-grid {
-        grid-template-columns: repeat(4, 1fr);
+        @apply grid gap-10 md:grid-cols-4;
       }
-    }
 
-    .case-subheader {
-      text-align: left;
-      font-size: 2rem;
-      color: var(--teal-200);
-    }
+      .meta-title {
+        @apply text-base font-semibold uppercase tracking-[0.2em] text-dark-900;
+      }
 
-    .case-header {
-      text-align: center;
-      font-size: 4rem;
-      color: var(--teal-200);
-      margin-bottom: 32px;
-    }
+      .meta-value {
+        @apply mt-4 text-lg font-semibold text-dark-700;
+      }
 
-    .overview {
-      background: var(--dark-700);
-    }
+      .case-subheader {
+        @apply text-left text-2xl uppercase tracking-[0.16em] text-teal-200;
+      }
 
-    .overview-grid {
-      display: grid;
-      gap: 40px;
-      align-items: center;
-    }
+      .case-header {
+        @apply mb-2 text-center text-[5rem] font-semibold text-teal-200;
+      }
 
-    .overview-text {
-      text-align: justify;
-      color: var(--teal-100);
-    }
+      .overview {
+        @apply bg-dark-700;
+      }
 
-    .overview-media img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @media (min-width: 900px) {
       .overview-grid {
-        grid-template-columns: 1.1fr 1fr;
+        @apply grid items-center gap-10 md:grid-cols-[1.1fr_1fr];
       }
-    }
 
-    .section-dark {
-      background: var(--dark-900);
-    }
+      .overview-text {
+        @apply text-justify text-teal-100;
+      }
 
-    .section-ink {
-      background: var(--dark-700);
-    }
+      .section-ink {
+        @apply bg-black;
+      }
 
-    .section-footer {
-      background: var(--dark-900);
-      padding-bottom: 96px;
-    }
+      .section-footer {
+        @apply bg-dark-900 pb-24;
+      }
 
-    .system-group {
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-    }
+      .system-group {
+        @apply flex flex-col gap-12;
+      }
 
-    .similar-card {
-      display: block;
-      padding: 48px 32px;
-      border: 1px solid #3b3b3b;
-      color: var(--white);
-      text-decoration: none;
-      transition: 0.2s ease;
-    }
+      .similar-card {
+        @apply block rounded-3xl border border-[#3b3b3b] p-12 text-white transition hover:bg-dark-800 focus-visible:bg-dark-800 focus-visible:outline-none;
+      }
 
-    .similar-card:hover,
-    .similar-card:focus-visible {
-      background: var(--dark-800);
-      outline: none;
-    }
+      .similar-card span {
+        @apply text-xs font-semibold uppercase tracking-[0.4em] text-teal-500;
+      }
 
-    .similar-card span {
-      font-size: 0.75rem;
-      letter-spacing: 0.4em;
-      color: var(--teal-500);
-    }
+      .similar-card h3 {
+        @apply mt-4 text-2xl tracking-[0.08em];
+      }
 
-    .similar-card h3 {
-      margin-top: 16px;
-      font-size: 1.8rem;
-      letter-spacing: 0.08em;
-    }
-
-    .similar-card p {
-      margin-top: 8px;
-      color: var(--teal-200);
-      max-width: 580px;
-    }
-
-    [data-placeholder] {
-      width: 100%;
-      min-height: 320px;
-      background: var(--dark-600);
-      border: 1px solid #3b3b3b;
-      color: var(--teal-500);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      letter-spacing: 0.45em;
+      .similar-card p {
+        @apply mt-2 max-w-[580px] text-teal-200;
+      }
     }
   </style>
+
 </head>
-<body>
-  <main>
-    <section class="back-bar">
-      <div class="section-container back-wrapper">
-        <a class="back-link" href="https://zahra-razavi.github.io/">
-          <span class="back-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+<body class="bg-dark-900 text-white antialiased">
+  <main class="flex min-h-screen flex-col">
+    <section class="bg-black">
+      <div
+        class="mx-auto max-w-[1360px] px-8 pt-6 pb-0
+          flex items-center justify-between
+        "
+      >
+        <a
+          class="
+            group
+            inline-flex items-center text-[0.9rem] font-semibold uppercase tracking-[0.08em]
+            text-white/90 transition-colors hover:text-white focus-visible:text-white
+          "
+          href="https://zahra-razavi.github.io/"
+        >
+          <span
+            class="
+              inline-flex h-12 w-12 items-center justify-center rounded-full border transition-colors
+              border-teal-300/40 bg-teal-300/10 text-teal-300
+              group-hover:border-teal-300 group-focus-visible:border-teal-300
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="h-4 w-4"
+            >
               <path fill-rule="evenodd" d="M11.78 4.22a.75.75 0 01.073.976l-.073.084L7.06 10l4.72 4.72a.75.75 0 01-.976 1.133l-.084-.073-5.25-5.25a.75.75 0 01-.073-.976l.073-.084 5.25-5.25a.75.75 0 011.133.976l-.073.084L7.81 10l3.97-3.97a.75.75 0 01.976-.073z" clip-rule="evenodd" />
             </svg>
           </span>
         </a>
-        <p class="back-subtitle">Case Study . Product Design</p>
+        <img
+          src="image/Mediana-voice-logo.svg"
+          alt="Mediana Voice logo"
+          class="h-10 w-auto"
+        />
       </div>
     </section>
 
-    <section id="section0" class="hero">
-      <div class="section-container hero-inner">
-        <div class="hero-media hero-logo">
-          <img src="Mediana-voice-logo.svg" alt="Mediana Voice logo" />
-        </div>
-        <div class="hero-media hero-overview">
-          <img src="mockup-overview-mediana.png" alt="Mediana Voice dashboard overview mockup" />
+    <section id="section0" class="bg-black">
+      <div
+        class="
+          mx-auto max-w-[1360px] px-4 pt-8 pb-16
+         items-center 
+        "
+      >
+        <h1 class="mb-12 font-bold text-6xl text-center text-teal-300 sm:text-5xl">
+          VoIP Dashboard Design
+        </h1>
+        <div class="w-full">
+          <img
+            src="image/mockup-overview-mediana.png"
+            alt="Mediana Voice dashboard overview mockup"
+            class="
+              relative
+              w-full
+              rounded-[24px]
+              bg-teal-100/10
+              border
+              border-white/30
+              p-2
+              shadow-xl
+              shadow-teal-100/10
+
+            "
+          />
         </div>
       </div>
     </section>
 
     <section id="section1" class="meta">
-      <div class="section-container meta-grid">
+      <div
+        class=" section-container meta-grid "
+      >
         <div>
           <p class="meta-title">Role</p>
           <p class="meta-value">Product Manager</p>
@@ -320,54 +231,94 @@
     </section>
 
     <section id="section2" class="overview">
-      <div class="section-container overview-grid">
+      <div
+        class="
+          section-container
+          overview-grid
+        "
+      >
         <div>
           <h2 class="case-subheader">overview</h2>
           <p class="overview-text">Mediana Voice is a modern VoIP management dashboard that centralizes business communication control—covering analytics, call logs, line management, IVR flows and voices, billing, and user access. It provides clear insights into active calls and usage through detailed reports, enables easy configuration of extension lines and IVR systems, and supports tiered service plans for different business needs. With multi-level user access (Admin, Manager, Operator) and integrated registration and billing tools, Mediana Voice delivers an intuitive, all-in-one platform for monitoring, managing, and optimizing voice operations efficiently.</p>
         </div>
       </div>
-      <div class="section-container" style="padding-top: 0;">
-        <div data-placeholder>FULL&nbsp;WIDTH&nbsp;INSIGHT</div>
-      </div>
+      <div
+        class="
+          section-container
+          pt-0
+        "
+      >
+        
     </section>
 
-    <section id="section3" class="section-dark">
-      <div class="section-container">
-        <h2 class="case-header">User flow</h2>
-        <div data-placeholder>USER&nbsp;FLOW&nbsp;DIAGRAM</div>
-      </div>
-    </section>
+    
 
     <section id="section4" class="section-ink">
       <div class="section-container">
         <h2 class="case-header">Site map</h2>
-        <div data-placeholder>SITE&nbsp;MAP&nbsp;ILLUSTRATION</div>
+        <p class="mx-auto max-w-3xl text-center text-lg text-teal-200">
+          The sitemap structures Mediana Voice into focused work zones—analytics, line management, billing, and access—so teams can navigate by intent instead of memorizing URLs. Clear vertical groupings keep future feature drops organized without restructuring.
+        </p>
+        <div class="mt-16 w-full">
+          <img
+            src="image/sitemap-lendeck.svg"
+            alt="Mediana Voice Site map"
+            class="h-auto w-full"
+          />
+        </div>
       </div>
     </section>
 
-    <section id="section5-ui" class="section-dark">
+    <section id="section3" class="section-ink">
+      <div class="section-container">
+        <h2 class="case-header">User flow</h2>
+        <p class="mx-auto max-w-3xl text-center text-lg text-teal-200">
+          This system map highlights how admins, managers, and operators move from onboarding to live call monitoring in a single pass. Each swim lane exposes the dependency handoffs so stakeholders can quickly spot bottlenecks and redundant approvals.
+        </p>
+        <div class="mt-16 w-full">
+          <img
+            src="image/User flow-New user- Mediana.svg"
+            alt="Mediana Voice New user User flow"
+            class="h-auto w-full"
+          />
+        </div>
+      </div>
+    </section>
+<!--
+    <section id="section5-ui" class="section-ink">
       <div class="section-container">
         <h2 class="case-header">UI design</h2>
-        <div data-placeholder>UI&nbsp;SCREENS&nbsp;GALLERY</div>
+        <p class="mx-auto mb-4 max-w-3xl text-center text-lg text-teal-200">
+          Screens emphasize dense telemetry balanced with breathing space, mixing charcoal panels and teal accents to keep focus on call health. Responsive cards reuse a shared grid so every breakpoint preserves hierarchy without reinventing layouts.
+        </p>
+        <div class="mt-16" data-placeholder>UI&nbsp;SCREENS&nbsp;GALLERY</div>
       </div>
     </section>
 
     <section id="section5-system" class="section-ink">
-      <div class="section-container system-group">
+      <div
+        class="
+          section-container
+          system-group
+        "
+      >
         <div>
           <h2 class="case-header">Design system</h2>
-          <div data-placeholder style="min-height: 260px;">SYSTEM&nbsp;OVERVIEW</div>
-        </div>
-        <div>
-          <h2 class="case-header">Color</h2>
-          <div data-placeholder style="min-height: 220px;">PALETTE&nbsp;DETAIL</div>
+          <p class="mx-auto mb-4 max-w-3xl text-center text-lg text-teal-200">
+            Tokens capture the Mediana palette, elevation, and typography decisions in code-ready variables, making it simple to translate brand choices into product builds. Designers and engineers share the same definitions, minimizing QA churn.
+          </p>
+          <div class="mt-16 min-h-[260px]" data-placeholder>SYSTEM&nbsp;OVERVIEW</div>
         </div>
         <div>
           <h2 class="case-header">Components</h2>
-          <div data-placeholder style="min-height: 260px;">COMPONENT&nbsp;LIBRARY</div>
+          <p class="mx-auto mb-4 max-w-3xl text-center text-lg text-teal-200">
+            Modular components—from voice cards to billing tables—slot into any workflow while maintaining consistent spacing, iconography, and states. Each module documents props and usage guidelines so new views assemble rapidly.
+          </p>
+          <div class="mt-16 min-h-[260px]" data-placeholder>COMPONENT&nbsp;LIBRARY</div>
         </div>
       </div>
     </section>
+    -->
 
     <section id="section6" class="section-footer">
       <div class="section-container">
