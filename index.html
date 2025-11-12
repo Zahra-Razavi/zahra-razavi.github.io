@@ -24,12 +24,32 @@
 <body class="bg-white text-gray-800">
   <!-- Header -->
   <header class="fixed top-0 left-0 right-0 bg-black backdrop-blur border-b border-gray-100 z-50">
-    <div class="max-w-screen-xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between gap-6">
+    <div class="max-w-screen-xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
         <a href="/" class="text-2xl text-white font-medium tracking-[0.12em]">Zahra Razavi</a>
       </div>
+      <button id="mobile-menu-toggle" type="button" class="md:hidden text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="menu">
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+        <svg class="h-7 w-7 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="close">
+          <line x1="6" y1="6" x2="18" y2="18" />
+          <line x1="6" y1="18" x2="18" y2="6" />
+        </svg>
+      </button>
       <nav class="text-lg hidden text-white md:flex gap-6">
         <a href="#work" class=" hover:opacity-70">Work</a>
+        <a href="/resume/" class="hover:opacity-70">Resume</a>
+        <a href="#about" class="hover:opacity-70">About</a>
+        <a href="#contact" class="hover:opacity-70">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t border-white/20">
+      <nav class="px-6 py-4 flex flex-col gap-4 text-white text-lg">
+        <a href="#work" class="hover:opacity-70">Work</a>
         <a href="/resume/" class="hover:opacity-70">Resume</a>
         <a href="#about" class="hover:opacity-70">About</a>
         <a href="#contact" class="hover:opacity-70">Contact</a>
@@ -40,10 +60,10 @@
   <main class="pt-0">
 
   <!-- Hero -->
-  <section data-animate class="max-w-screen-xl mx-auto px-6 lg:px-8 py-36">
-    <div class="grid mt-48 mb-48 items-center md:[grid-template-columns:1fr_2fr]">
+  <section data-animate class="max-w-screen-xl mx-auto px-6 lg:px-8 py-20 md:py-36">
+    <div class="grid mt-24 mb-24 items-center md:[grid-template-columns:1fr_2fr] md:mt-48 md:mb-48">
       <div class="flex flex-col items-start">
-        <div class="w-80 h-80 rounded-full border-[6px] border-[#000000] overflow-hidden self-center md:self-start">
+        <div class=" mb-8 w-48 h-48 rounded-full border-[6px] border-[#000000] overflow-hidden self-center md:self-start md:w-80 md:h-80">
           <img
             src="images/zahra-profile.JPG"
             alt="Portrait of Zahra Razavi"
@@ -61,8 +81,8 @@
           <span class=" text-3xl md:text-5xl text-[#4EA2C9] leading-[1.2] md:leading-[1.4]">products people love</span>   
           <span class=" text-3xl  text-[#000000] md:text-5xl">?</span> 
         </h1>
-        <div class="mt-6 flex justify-end pr-[48px]">
-          <a href="#work" class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#000000] text-white text-3xl font-semibold md:text-4xl border-2 border-transparent hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4EA2C9]" aria-label="Scroll to case studies">
+        <div class="mt-8 flex justify-end pr-4 md:pr-[48px]">
+          <a href="#work" class="inline-flex items-center justify-center w-12 h-12 text-2xl rounded-full bg-[#000000] text-white font-semibold md:w-16 md:h-16 md:text-4xl border-2 border-transparent hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4EA2C9]" aria-label="Scroll to case studies">
             ↓
           </a>
         </div>
@@ -73,7 +93,7 @@
   <!-- Work Grid -->
   <section id="work" data-animate class="max-w-screen-xl mx-auto px-2 lg:px-4 pb-16 scroll-mt-32">
     <!-- Project Card Template -->
-    <h2 class="text-6xl font-medium">Case Studies</h2>
+    <h2 class="m-2 text-6xl font-medium">Case Studies</h2>
     <!--
     <div class="mt-4 mb-6">
         <p class=" md:text-lg text-gray-600">
@@ -140,10 +160,11 @@
 
   <!-- About -->
   <section id="about" data-animate class="max-w-screen-xl mx-auto px-2 lg:px-4 pb-16">
-    <h2 class="mt-8 text-6xl font-medium">About</h2>
-    <p class="mt-16 text-xl max-w-4xl mx-auto  text-gray-700 text-justify">
-      Product Designer & UX Researcher with 6+ years owning end-to-end design of SaaS products, mobile/web apps, and agentic-AI experiences, from discovery through production release, for high-growth startups Canada, U.S. and MENA. Proven ability to scale platforms, reduce churn, and accelerate delivery through lean, AI-augmented workflows. Skilled in full-cycle product design, from discovery, cognitive research, and journey mapping to accessible, WCAG-compliant interfaces and iterative UX optimization in Agile/Scrum environments. Known for strong collaboration with cross-functional teams, backed by deep expertise in UX research, behavioral analytics, and product strategy.
-    </p>
+    <h2 class="mt-8 m-2 text-6xl font-medium">About</h2>
+    <div class="mt-16 text-lg max-w-4xl mx-auto px-4 text-gray-700 text-justify lg:text-xl space-y-6">
+      <p>Designer & UX Researcher with 6+ years owning end-to-end design of SaaS products, mobile/web apps, and agentic-AI experiences, from discovery through production release, for high-growth startups across Canada, U.S., and MENA. Proven ability to scale platforms, reduce churn, and accelerate delivery through lean, AI-augmented workflows.</p>
+      <p>Skilled in full-cycle product design, from discovery, cognitive research, and journey mapping to accessible, WCAG-compliant interfaces and iterative UX optimization in Agile environments. Known for strong collaboration with cross-functional teams, backed by deep expertise in UX research, behavioral analytics, and product strategy.</p>
+    </div>
   </section>
 
    <!-- Resume 
@@ -180,8 +201,8 @@
   
   <!-- Contact -->
   <section id="contact" data-animate class="mt-24 max-w-screen-xl mx-auto px-2 lg:px-4 pb-16">
-    <h2 class="text-6xl font-medium">Contact</h2>
-    <div class="mt-8 flex items-end gap-4 flex-wrap">
+    <h2 class="m-2 text-6xl font-medium">Contact</h2>
+    <div class="mt-16 text-lg max-w-4xl mx-auto px-4 flex items-end gap-4 flex-wrap">
       <a class="text-xl underline" href="mailto:zrazavi97@gmail.com">zrazavi97@gmail.com</a>
       <a class="inline-flex items-end" href="https://www.linkedin.com/in/zahrarazavi97" target="_blank" rel="noopener" aria-label="LinkedIn">
         <img src="images/LinkedIn.svg" alt="LinkedIn" class="w-12 h-12" />
@@ -230,6 +251,37 @@
               window.open('resume/index.html', '_blank', 'noopener');
             });
           }
+        });
+      }
+
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuToggle && mobileMenu) {
+        const iconOpen = mobileMenuToggle.querySelector('[data-icon="menu"]');
+        const iconClose = mobileMenuToggle.querySelector('[data-icon="close"]');
+
+        const setIconState = expanded => {
+          if (iconOpen && iconClose) {
+            iconOpen.classList.toggle('hidden', expanded);
+            iconClose.classList.toggle('hidden', !expanded);
+          }
+        };
+
+        mobileMenuToggle.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.toggle('hidden');
+          const expanded = !isHidden;
+          mobileMenuToggle.setAttribute('aria-expanded', expanded.toString());
+          setIconState(expanded);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              mobileMenuToggle.setAttribute('aria-expanded', 'false');
+              setIconState(false);
+            }
+          });
         });
       }
     });
