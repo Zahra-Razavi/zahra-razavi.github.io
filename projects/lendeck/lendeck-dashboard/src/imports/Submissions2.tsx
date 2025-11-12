@@ -1,6 +1,6 @@
 import svgPaths from "./svg-93gyiyt770";
-import imgVector from "figma:asset/8055a7db5b18b5076e7ebd1ee93be05627a442e5.png";
-import imgVector1 from "figma:asset/2e9df8c8ccaa0e6460167a95aa9daa0fefcd701a.png";
+import imgVector from "../assets/8055a7db5b18b5076e7ebd1ee93be05627a442e5.png";
+import imgVector1 from "../assets/2e9df8c8ccaa0e6460167a95aa9daa0fefcd701a.png";
 
 function Group() {
   return (

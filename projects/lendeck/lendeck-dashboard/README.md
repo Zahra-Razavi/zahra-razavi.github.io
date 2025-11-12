@@ -1,7 +1,7 @@
 
-  # Lendeck
+# Lendeck Dashboard
 
-  This is a code bundle for Lendeck. The original project is available at https://www.figma.com/design/AxU0iIRkbfuFTRgWEVtMeP/Lendeck.
+This package contains the source for the Lendeck multi-portal dashboard experience (broker, lender, merchant flows).
 
   ## Running the code
 

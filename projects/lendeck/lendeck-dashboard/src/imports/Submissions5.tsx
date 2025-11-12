@@ -1,5 +1,5 @@
 import svgPaths from "./svg-agqn9yowxh";
-import imgVector from "figma:asset/51b527652ecc2f3ab06d57d1085d40cfc85a41f8.png";
+import imgVector from "../assets/51b527652ecc2f3ab06d57d1085d40cfc85a41f8.png";
 
 function Group() {
   return (
