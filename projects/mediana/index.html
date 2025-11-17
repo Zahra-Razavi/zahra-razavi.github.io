@@ -67,11 +67,6 @@
         @apply mx-auto max-w-[1360px] px-6 pt-16 pb-16;
       }
 
-
-      .meta {
-        @apply border-y border-[#3b3b3b] bg-teal-300;
-      }
-
       .meta-grid {
         @apply grid gap-10 md:grid-cols-4;
       }
@@ -105,7 +100,7 @@
       }
 
       .section-footer {
-        @apply bg-dark-900 pb-24;
+        @apply bg-dark-900 pb-16;
       }
 
       .system-group {
@@ -113,7 +108,7 @@
       }
 
       .similar-card {
-        @apply block rounded-3xl border border-[#3b3b3b] p-12 text-white transition hover:bg-dark-800 focus-visible:bg-dark-800 focus-visible:outline-none;
+        @apply block rounded-2xl text-white transition hover:bg-dark-800 focus-visible:bg-dark-800 focus-visible:outline-none;
       }
 
       .similar-card span {
@@ -201,7 +196,7 @@
       </div>
     </section>
 
-    <section id="section1" class="meta ">
+    <section id="section1" class="border-y border-[#3b3b3b] bg-teal-100 ">
       <div class="section-container">
         <div
           class=" meta-grid "
@@ -322,14 +317,14 @@
     <section id="section6" class="section-footer">
       <div class="section-container">
         <h2 class="case-header">Similar projects</h2>
-        <div class="mt-12 grid gap-8 md:grid-cols-2">
+        <div class="mt-8 grid gap-8 md:grid-cols-2">
           <a class="similar-card" href="../lendeck/index.html">
-            <span>CASE STUDY</span>
-            <h3>Lendeck Dashboard</h3>
+            <img src="Image/mockup-homepage-lendeck.png" class="rounded-2xl" alt="Lendeck - Lending platform Design mockup">
+            <h3 class="text-2xl font-semibold text-center pt-4">Lendeck - Lending platform Design</h3>
           </a>
         </div>
       </div>
-    </section>x
+    </section>
   </main>
 </body>
 </html>
