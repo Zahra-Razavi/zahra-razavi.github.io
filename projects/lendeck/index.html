@@ -14,7 +14,7 @@
             accent: '#4E0F60',
             'accent-bg': '#6F2B8A',
             'purple-light': '#E3E0F2',
-            'purple-mid': '#9B4AB2',
+            'purple-mid': '#E3E0F2',
             'purple-main': '#4E0F60',
             highlight: '#FF5F0C',
           },
@@ -87,8 +87,13 @@
         }
       }
 
+      .icon-crisp {
+        
+      }
+
       .image-large {
-        @apply cursor-zoom-in transition duration-200 ease-out;
+        @apply transition duration-200 ease-out;
+        cursor: auto;
       }
 
       .image-lightbox {
@@ -160,6 +165,10 @@
 
       .panel {
         @apply rounded-4xl p-6 sm:p-10;
+      }
+
+      .panel-flush {
+        @apply rounded-none p-0;
       }
 
       .frost-card {
@@ -237,7 +246,7 @@
           <article class="frost-card lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:self-center">
             <h2 class="card-heading">Problem</h2>
             <div class="mt-4 space-y-4">
-              <p>SME lending is often messy — slow approvals, scattered communication, and endless document exchanges between brokers and lenders. Deals get lost in emails, and compliance steps create bottlenecks.</p>
+              <p>SME lending is often messy, slow approvals, scattered communication, and endless document exchanges between brokers and lenders. Deals get lost in emails, and compliance steps create bottlenecks.</p>
               <p>Lendeck set out to fix that by building one clear, connected platform that brings structure, speed, and transparency to the lending process.</p>
             </div>
           </article>
@@ -245,7 +254,7 @@
             <h3 class="card-heading">Our Solution</h3>
             <div class="mt-4 space-y-4">
               <p>Lendeck is a unified dashboard that connects brokers, lenders, and merchants in one intuitive space.</p>
-              <p>It automates data collection, simplifies deal submission, and ensures compliance from day one — cutting approval times in half and replacing back-and-forth emails with smart, transparent workflows.</p>
+              <p>It automates data collection, simplifies deal submission, and ensures compliance from day one; cutting approval times in half and replacing back-and-forth emails with smart, transparent workflows.</p>
             </div>
           </article>
           <article class="frost-card lg:col-start-2 lg:row-start-2">
@@ -279,43 +288,144 @@
     
 
     <section id="discovery" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
+      <div class="panel space-y-6">
+        <div class="flex items-center justify-center gap-4">
+          <svg class="icon-crisp h-20 w-20 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Research icon" shape-rendering="geometricPrecision">
+              <path d="M21 3H3V8.68421H21V3Z" stroke="#E3E0F2" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M3 20.0669L8.4792 14.2406L11.4397 17.2248L15.0591 13.4211L17.0751 15.4902" stroke="#4E0F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 8.29189V20.6077M3 8.29189V14.9235M7.0572 20.9999H21M8.85 5.842H18.3M5.7 5.84058H6.15" stroke="#E3E0F2" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          <h2 class="section-title">Discovery</h2>
+        </div>
+          <p class="paragraph-medium">I analyzed the lending industry’s digital transformation, focusing on automation trends, open-banking APIs, and AI-driven risk evaluation. I also studied Merchant Cash Advance (MCA) regulations and operational workflows. These insights shaped the product vision toward a smarter, compliance-first lending experience.</p>
+      </div>
+    </section>
+    <section id="discovery" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
       <div class="panel">
         <div class="space-y-6">
-          <h2 class="section-title">Discovery</h2>
-          <p class="paragraph-medium">To fully understand the ecosystem, I conducted research and interviews with all three user types to uncover workflow challenges and pain points in the lending process.</p>
+          <div class="flex items-center gap-4">
+            <svg class="icon-crisp h-14 w-14 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Analysis icon" shape-rendering="geometricPrecision">
+              <path d="M9.18262 11.2178V20.8889C9.18262 21.5022 9.18262 22 10.3797 22H12.7739C13.971 22 13.971 21.5022 13.971 20.8889V13.3756C12.1315 13.2681 10.4114 12.493 9.18262 11.2178Z" fill="#E3E0F2"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.65898 8.88993C9.9693 9.51616 10.4195 10.074 10.9797 10.5266C11.5398 10.9791 12.1972 11.316 12.9083 11.5149C13.6194 11.7137 14.3679 11.7701 15.1042 11.6802C15.8405 11.5902 16.5478 11.3561 17.1792 10.9933L20.3072 13.8966L21.9999 12.3255L18.8719 9.42215C19.3486 8.70765 19.6176 7.89064 19.6526 7.05086C19.6876 6.21107 19.4875 5.37721 19.0717 4.63064C18.6559 3.88407 18.0387 3.25031 17.2803 2.79119C16.5219 2.33208 15.6483 2.0633 14.7446 2.0111C13.8408 1.95889 12.938 2.12504 12.1241 2.49332C11.3102 2.86161 10.6131 3.41944 10.1008 4.1124C9.58851 4.80535 9.27851 5.60975 9.20108 6.44708C9.12364 7.28441 9.28141 8.12607 9.65898 8.88993ZM14.4199 9.49993C14.2499 9.49993 14.0835 9.48659 13.9207 9.45993C13.3174 9.3602 12.7651 9.08188 12.3465 8.66659C11.8991 8.22398 11.6297 7.65176 11.5838 7.04634C11.5379 6.44093 11.7182 5.83933 12.0944 5.3429C12.4706 4.84648 13.0196 4.48558 13.649 4.32101C14.2784 4.15644 14.9496 4.19827 15.5497 4.43944C16.1497 4.68061 16.6419 5.10638 16.9432 5.64501C17.2445 6.18365 17.3366 6.80222 17.2039 7.39651C17.0712 7.9908 16.7219 8.52447 16.2148 8.90761C15.7076 9.29075 15.0737 9.49994 14.4199 9.49993Z" fill="#4E0F60"/>
+              <path d="M2 3.11111C2 2.49778 2 2 3.1971 2H5.59131C6.78841 2 6.78841 2.49778 6.78841 3.11111V20.8889C6.78841 21.5022 6.78841 22 5.59131 22H3.1971C2 22 2 21.5022 2 20.8889V3.11111ZM17.5623 15.3333C16.3652 15.3333 16.3652 15.8311 16.3652 16.4444V20.8889C16.3652 21.5022 16.3652 22 17.5623 22H19.9565C20.6173 22 21.1536 22 21.1536 20.8889V16.4444C21.1536 15.8311 21.1536 15.3333 19.9565 15.3333H17.5623Z" fill="#E3E0F2"/>
+            </svg>
+            <p class="text-6xl font-black text-purple-mid">Competitive Analysis</p>
+          </div>
+          <p class="paragraph-medium m-4 text-left max-w-2xl">I analyzed key competitors business strategy and products to benchmark services, feature sets, and automation level.</p>
+          <div class="overflow-x-auto rounded-3xl border border-purple-light/70 bg-white shadow-frost">
+            <table class="w-full text-left text-sm text-gray-700 lg:text-base">
+              <thead class="bg-purple-main text-white text-sm font-semibold  lg:text-base">
+                <tr>
+                  <th class="px-4 py-3">Competitor</th>
+                  <th class="px-4 py-3">Service Focus</th>
+                  <th class="px-4 py-3">Core Features</th>
+                  <th class="px-4 py-3">Automated Tasks</th>
+                  <th class="px-4 py-3 text-center">AI</th>
+                  <th class="px-4 py-3">Underwriting</th>
+                  <th class="px-4 py-3 text-center">Merchant Panel</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-purple-light/60">
+                <tr class="bg-purple-light/30">
+                  <td class="px-4 py-4">
+                    <div class="flex items-center gap-3">
+                      <img src="https://logo.clearbit.com/bananaexchange.com" alt="BananaExchange logo" class="h-10 w-10 rounded-full border border-purple-light/70 bg-white object-contain p-1" />
+                      <span class="font-semibold text-purple-main">BananaExchange</span>
+                    </div>
+                  </td>
+                  <td class="px-4 py-4 text-gray-600">MCA funder support</td>
+                  <td class="px-4 py-4 text-gray-600">Portfolio management, broker marketplace</td>
+                  <td class="px-4 py-4 text-gray-600">RTR monitoring, funding cycles</td>
+                  <td class="px-4 py-4 text-center text-lg"><span role="img" aria-label="No">❌</span></td>
+                  <td class="px-4 py-4 text-gray-600">Portfolio rules / risk monitoring</td>
+                  <td class="px-4 py-4 text-center text-lg"><span role="img" aria-label="No">❌</span></td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="px-4 py-4">
+                    <div class="flex items-center gap-3">
+                      <img src="https://logo.clearbit.com/cashadvance.com" alt="CashAdvance logo" class="h-10 w-10 rounded-full border border-purple-light/70 bg-white object-contain p-1" />
+                      <span class="font-semibold text-purple-main">CashAdvance</span>
+                    </div>
+                  </td>
+                  <td class="px-4 py-4 text-gray-600">Consumer loan lead gen</td>
+                  <td class="px-4 py-4 text-gray-600">Borrower form, lender routing</td>
+                  <td class="px-4 py-4 text-gray-600">Application matching</td>
+                  <td class="px-4 py-4 text-center text-lg"><span role="img" aria-label="No">❌</span></td>
+                  <td class="px-4 py-4 text-gray-600">Done by partner lenders</td>
+                  <td class="px-4 py-4 text-center text-lg"><span role="img" aria-label="No">❌</span></td>
+                </tr>
+                <tr class="bg-purple-light/30">
+                  <td class="px-4 py-4">
+                    <div class="flex items-center gap-3">
+                      <img src="https://logo.clearbit.com/turnkey-lender.com" alt="TurnKey Lender logo" class="h-10 w-10 rounded-full border border-purple-light/70 bg-white object-contain p-1" />
+                      <span class="font-semibold text-purple-main">TurnKey Lender</span>
+                    </div>
+                  </td>
+                  <td class="px-4 py-4 text-gray-600">Digital lending platform</td>
+                  <td class="px-4 py-4 text-gray-600">LOS, servicing, KYC/AML, borrower portal</td>
+                  <td class="px-4 py-4 text-gray-600">Apps, scoring, docs, collections</td>
+                  <td class="px-4 py-4 text-center text-lg"><span role="img" aria-label="Yes">✅</span></td>
+                  <td class="px-4 py-4 text-gray-600">Automated scoring + rules engine</td>
+                  <td class="px-4 py-4 text-center text-lg"><span role="img" aria-label="Yes">✅</span></td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="px-4 py-4">
+                    <div class="flex items-center gap-3">
+                      <img src="https://logo.clearbit.com/zootsolutions.com" alt="Zoot Solutions logo" class="h-10 w-10 rounded-full border border-purple-light/70 bg-white object-contain p-1" />
+                      <span class="font-semibold text-purple-main">Zoot Solutions</span>
+                    </div>
+                  </td>
+                  <td class="px-4 py-4 text-gray-600">Credit decisioning</td>
+                  <td class="px-4 py-4 text-gray-600">Origination, risk, merchant onboarding</td>
+                  <td class="px-4 py-4 text-gray-600">Intake, ID, risk workflows</td>
+                  <td class="px-4 py-4 text-center text-lg"><span role="img" aria-label="No">❌</span></td>
+                  <td class="px-4 py-4 text-gray-600">Automated decisioning</td>
+                  <td class="px-4 py-4 text-center text-lg"><span role="img" aria-label="Yes">✅</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="mt-10 grid gap-6 lg:grid-cols-2">
-          <div class="muted-card">
-            <h3 class="text-2xl font-semibold text-purple-main">Actions</h3>
-            <ul class="m-4 space-y-1">
-              <li class="list-row"><span class="list-dot bg-accent"></span>Mapped the end-to-end lending process to identify inefficiencies.</li>
-              <li class="list-row"><span class="list-dot bg-accent"></span>Defined user roles and responsibilities across brokers, lenders, and merchants.</li>
-              <li class="list-row"><span class="list-dot bg-accent"></span>Validated assumptions through interviews and testing.</li>
-            </ul>
-          </div>
-          <div class="muted-card">
-            <h3 class="text-xl font-semibold text-purple-main">FinTech and Lending Background Research</h3>
-            <p class="m-4 text-justify paragraph-medium">I analyzed the lending industry’s digital transformation, focusing on trends in automation, open banking APIs, and AI-based risk evaluation. This helped shape the product vision toward a smarter, compliance-first lending experience.</p>
-          </div>
-          <div class="muted-card">
-            <h3 class="text-2xl font-semibold text-purple-main">Interview Stakeholders</h3>
-            <p class="m-4 text-justify paragraph-medium">Stakeholders (product, legal, risk, and tech teams) shared insights about operational bottlenecks, compliance rules, and strategic goals for automation and transparency.</p>
-          </div>
-          <div class="muted-card">
-            <h3 class="text-2xl font-semibold text-purple-main">Interview Users of All 3 Sides</h3>
-            <ul class="m-4 space-y-1">
-              <li class="list-row"><span class="list-dot bg-accent"></span>Brokers struggled with fragmented document workflows and slow lender responses.</li>
-              <li class="list-row"><span class="list-dot bg-accent"></span>Lenders faced inconsistent data quality and manual risk assessments.</li>
-              <li class="list-row"><span class="list-dot bg-accent"></span>Merchants lacked visibility into their loan status and document requirements.</li>
-            </ul>
-          </div>
-          <div class="muted-card">
-            <h3 class="text-2xl font-semibold text-purple-main">Competitive Analysis</h3>
-            <p class="m-4 text-justify  paragraph-medium">I analyzed key competitors — BanadaExchange.com, CashAdvance.com, and other potential B2B lending tools — to benchmark usability, feature sets, and communication flows. This informed our differentiation strategy focusing on automation, transparency, and human-centered design.</p>
-          </div>
-          <div class="rounded-3xl border border-purple-main bg-purple-light p-6 text-dark-900 shadow-lg">
-            <h3 class=" text-2xl font-semibold text-purple-main">Insights</h3>
-            <p class="m-4 text-justify ">Users desired transparency, automation, and trust. Speed of decision-making and clarity of communication were crucial. The insight led to designing a dashboard that visualizes deal progress, centralizes communication, and automates document handling.</p>
+        </div>
+      </div>
+    </section>
+    <section id="discovery" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
+      <div class="panel">
+          <div class="flex items-center gap-4">
+            <svg class="icon-crisp h-14 w-14 shrink-0" width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Interview icon" shape-rendering="geometricPrecision">
+              <g clip-path="url(#clip0_interview)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5888 17.7217L16.1916 13.1439C17.6916 13.2014 19.2041 12.6577 20.3541 11.5189C21.3988 10.4723 21.9855 9.05393 21.9855 7.57516C21.9855 6.09638 21.3988 4.67803 20.3541 3.63141C19.3075 2.58673 17.8891 2 16.4104 2C14.9316 2 13.5133 2.58673 12.4666 3.63141C11.9215 4.17428 11.4954 4.82479 11.2156 5.54147C10.9358 6.25815 10.8085 7.02527 10.8416 7.79391L6.26375 13.3967C6.02657 13.662 5.90008 14.0081 5.91031 14.3639C5.92054 14.7196 6.06671 15.0579 6.31875 15.3092L7.5 16.4904L8.68125 17.6717C9.20375 18.1942 10.0437 18.2192 10.5938 17.7267L10.5888 17.7217ZM15.2166 12.3439L11.6291 8.75641L10.1041 10.4689L13.5041 13.8689L15.2166 12.3439ZM12.5791 14.7064L9.27914 11.4064L7.18875 14.2217C7.16418 14.2496 7.15116 14.2858 7.15232 14.3229C7.15348 14.3601 7.16874 14.3954 7.195 14.4217L9.5575 16.7842C9.5838 16.8104 9.61912 16.8257 9.65626 16.8269C9.69341 16.828 9.72961 16.815 9.7575 16.7904L12.5729 14.7002L12.5791 14.7064ZM12.0854 7.44391C12.1166 6.37641 12.5391 5.31891 13.3479 4.50641C14.1609 3.69576 15.2622 3.24055 16.4104 3.24055C17.5585 3.24055 18.6598 3.69576 19.4729 4.50641C20.2835 5.31947 20.7387 6.42077 20.7387 7.56891C20.7387 8.71704 20.2835 9.81834 19.4729 10.6314C18.6939 11.4163 17.641 11.8689 16.5354 11.8939L12.0729 7.43141L12.0854 7.44391Z" fill="#4E0F60"/>
+                <circle cx="17" cy="7" r="5" fill="#4E0F60"/>
+                <path d="M2.14547 17.8376L8.56331 10.5497L13.4374 15.4227L6.22673 21.9022L2.14547 17.8376Z" fill="#E3E0F2"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_interview">
+                  <rect width="20" height="20" fill="white" transform="translate(2 2)"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <p class="text-6xl font-black text-purple-mid">Interview</p>
+            </div>
+            <div class="mt-10 grid gap-6 lg:grid-cols-2">
+              <div class="muted-card">
+                <h3 class="text-2xl font-semibold text-purple-main">Stakeholders</h3>
+                <p class="m-4 text-justify paragraph-medium">Stakeholders (product, legal, risk, and tech teams) shared insights about operational bottlenecks, compliance rules, and strategic goals for automation and transparency.</p>
+              </div>
+              <div class="muted-card">
+                <h3 class="text-2xl font-semibold text-purple-main">Users of All 3 Sides</h3>
+                <ul class="m-4 space-y-1">
+                  <li class="list-row"><span class="list-dot bg-accent"></span>Brokers struggled with fragmented document workflows and slow lender responses.</li>
+                  <li class="list-row"><span class="list-dot bg-accent"></span>Lenders faced inconsistent data quality and manual risk assessments.</li>
+                  <li class="list-row"><span class="list-dot bg-accent"></span>Merchants lacked visibility into their loan status and document requirements.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt-10 grid gap-6 lg:grid-cols-2">
+              <div class="rounded-3xl border border-purple-main bg-purple-light p-6 text-dark-900 shadow-lg">
+                <h3 class=" text-2xl font-semibold text-purple-main">Insights</h3>
+                <p class="m-4 text-justify ">Users desired transparency, automation, and trust. Speed of decision-making and clarity of communication were crucial. The insight led to designing a dashboard that visualizes deal progress, centralizes communication, and automates document handling.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -324,25 +434,32 @@
     
     <section id="user-journey" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
       <div class="panel">
-        <div class="gap-8 lg:grid-cols-2 lg:items-start">
-            <h2 class="section-title mb-4"> Journey map</h2>
-              <p class="paragraph-medium mb-12">The journey visualized handoffs across brokers, lenders, and merchants, surfacing where automation and guidance could reduce friction.</p>
-                  <div>
-                    <h3 class="item-title mb-8">Brokers Classic Journey</h3>
-                    <figure class="overflow-hidden mb-4">
-                        <img src="images/Lendeck-BrokerJourney-ClassicLendingProcess.svg" alt="Lendeck dashboard sitemap" class="w-full object-cover" />
-                    </figure>
-                    <p class="paragraph-medium mb-20">Summary: The broker experiences fragmented communication, poor visibility, and heavy manual workload throughout the lending process.</p>
-                  </div>
-                  <div class="">
-                    <h3 class="item-title mb-8">Lenders Classic Journey</h3>
-                    <figure class="overflow-hidden mb-4">
-                        <img src="images/Lendeck-LenderJourney-ClassicLendingProcess.svg" alt="Lendeck dashboard sitemap" class="w-full object-cover" />
-                    </figure>
-                    <p class="paragraph-medium ">Summary: The lender faces inefficiencies, fragmented data, and slow loan cycles that limit deal flow and scalability.</p>
-                  </div>
-              </div>
+        <div class="gap-8 lg:items-start">
+            <div class="mb-4 flex items-center justify-center gap-4">
+              <svg class="icon-crisp h-20 w-20 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Journey map icon" shape-rendering="geometricPrecision">
+                <path d="M7.11026 15.6533L7.3 17.8969C7.40359 19.1248 8.46923 20.1972 9.96718 20.3298C10.5405 20.3801 11.2636 20.4268 12 20.4268C12.6792 20.424 13.3578 20.3916 14.0333 20.3298C15.5318 20.1972 16.5974 19.1248 16.7005 17.8969L16.8903 15.6533C17.5723 15.7729 18.2031 15.9171 18.7703 16.0825C19.6503 16.3396 20.4179 16.6605 20.9815 17.0497C21.5364 17.4336 22 17.9617 22 18.6291C22 19.2965 21.5364 19.8246 20.9815 20.208C20.4179 20.5972 19.6503 20.9181 18.7703 21.1752C17.0026 21.692 14.6087 21.9999 12 21.9999C9.39128 21.9999 6.99744 21.692 5.22974 21.1752C4.34974 20.9181 3.58205 20.5972 3.01846 20.208C2.46359 19.825 2 19.2965 2 18.6291C2 17.9617 2.46359 17.4331 3.01846 17.0497C3.58205 16.6605 4.34974 16.3396 5.22974 16.0825C5.84601 15.906 6.47402 15.7627 7.11026 15.6533Z" fill="#E3E0F2"/>
+                <path d="M9.32097 4.87812C9.32097 5.64145 9.60325 6.37351 10.1057 6.91327C10.6082 7.45302 11.2896 7.75625 12.0002 7.75625C12.7108 7.75625 13.3923 7.45302 13.8947 6.91327C14.3972 6.37351 14.6794 5.64145 14.6794 4.87812C14.6794 4.1148 14.3972 3.38274 13.8947 2.84298C13.3923 2.30323 12.7108 2 12.0002 2C11.2896 2 10.6082 2.30323 10.1057 2.84298C9.60325 3.38274 9.32097 4.1148 9.32097 4.87812ZM12.0002 8.42043C10.8531 8.42043 10.0139 8.45586 9.44215 8.49438C8.76122 8.54043 8.15653 8.96019 7.87171 9.63677C7.4947 10.5312 7.21116 11.4678 7.02631 12.4294C6.86184 13.3008 7.49085 14.0545 8.28926 14.0917C8.50634 14.102 8.74693 14.112 9.011 14.1218L9.24966 17.58C9.29871 18.2911 9.79623 18.8844 10.4697 18.957C10.6021 18.9716 10.7443 18.9854 10.8927 18.9978C10.974 19.0042 11.0558 18.9931 11.1331 18.9651C11.2104 18.937 11.2816 18.8926 11.3427 18.8344C11.4037 18.7762 11.4532 18.7055 11.4884 18.6264C11.5235 18.5473 11.5435 18.4614 11.5472 18.3739L11.6709 15.7154C11.6735 15.6586 11.6964 15.6051 11.7348 15.5659C11.7731 15.5268 11.824 15.505 11.877 15.505H12.123C12.176 15.505 12.2269 15.5268 12.2652 15.5659C12.3036 15.6051 12.3265 15.6586 12.3291 15.7154L12.4528 18.3739C12.4564 18.4615 12.4764 18.5474 12.5115 18.6265C12.5466 18.7057 12.5961 18.7765 12.6572 18.8347C12.7182 18.8929 12.7895 18.9374 12.8668 18.9655C12.9442 18.9936 13.0259 19.0047 13.1073 18.9982C13.2563 18.9852 13.3974 18.9715 13.5307 18.957C14.2042 18.8844 14.7013 18.2911 14.7508 17.58L14.989 14.1218C15.2533 14.112 15.4939 14.102 15.7107 14.0917C16.5092 14.0545 17.1382 13.3008 16.9737 12.4294C16.789 11.4679 16.5056 10.5313 16.1287 9.63677C15.8435 8.96019 15.2384 8.54043 14.5583 8.49438C13.9861 8.45586 13.1469 8.42043 12.0002 8.42043Z" fill="#4E0F60"/>
+              </svg>
+              <h2 class="section-title">Journey map</h2>
             </div>
+              <p class="paragraph-medium mb-12">The journey visualized handoffs across brokers, lenders, and merchants, surfacing where automation and guidance could reduce friction.</p>
+              <div class="space-y-24">   
+                <div class="space-y-8">
+                  <p class="text-5xl font-black text-purple-mid">Broker Journey map</p>
+                  <figure class="overflow-hidden mb-4">
+                      <img src="images/Lendeck-BrokerJourney-ClassicLendingProcess.svg" alt="Lendeck dashboard sitemap" class="w-full object-cover" />
+                  </figure>
+                  <p class="paragraph-medium mb-20">Summary: The broker experiences fragmented communication, poor visibility, and heavy manual workload throughout the lending process.</p>
+                </div>
+                <div class="space-y-8">
+                  <p class="text-5xl font-black text-purple-mid">Lender Journey map</p>
+                  <figure class="overflow-hidden mb-4">
+                      <img src="images/Lendeck-LenderJourney-ClassicLendingProcess.svg" alt="Lendeck dashboard sitemap" class="w-full object-cover" />
+                  </figure>
+                  <p class="paragraph-medium ">Summary: The lender faces inefficiencies, fragmented data, and slow loan cycles that limit deal flow and scalability.</p>
+                </div>
+              </div>
+        </div>
       </div>
     </section>
   
@@ -358,11 +475,11 @@
       </div>
     </section>
 
-    <section id="user-flow" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
-      <div class="panel">
+    <section id="user-flow" data-animate class="mt-16 w-full px-0">
+      <div class="panel panel-flush">
         <div class="space-y-6">
           <h2 class="section-title">User Flow</h2>
-          <p class="paragraph-medium">Each user type’s flow was optimized to reduce steps and cognitive load. Brokers can submit deals in under three minutes; lenders review with automated insights; merchants upload documents with guided prompts.</p>
+          <p class="paragraph-medium">Each user type’s flow was optimized to reduce steps and cognitive load. Brokers can submit deals in under three minutes; lenders review with automated insights; merchants upload documents with guided prompts. Here, "Add new merchant flow", is one of them.</p>
           <figure class="overflow-hidden rounded-3xl">
             <img src="images/userflow-broker-newmerchant.svg" alt="Lendeck dashboard sitemap" class="image-large w-full object-cover" />
           </figure>
@@ -422,26 +539,50 @@
     </section>
 
     <section id="ui-design" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
-      <div class="panel">
-        <div class="gap-10 lg:grid-cols-2 lg:items-start">
-          <div class="space-y-12">
-            <h2 class="section-title">Design System</h2>
-            <p class="paragraph-medium">To accelerate the MVP delivery, I leveraged a prebuilt design system and UI component library, customizing and extending shadcn/ui built on Radix UI primitives to create a cohesive and accessible product design.</p>
-            <p class="text-5xl font-black text-purple-light">Button & Badge</p>
-            <figure class="overflow-hidden ">
-            <img src="images/Design System-lendeck.png" alt="Lendeck design system components preview" class="image-large w-full object-cover" />
-            </figure>
-            <p class=" text-5xl font-black text-purple-light">Typography</p>
-            <figure class="overflow-hidden ">
-              <img src="images/Typography-lendeck.png" alt="Lendeck design system components preview" class="image-large w-full object-cover" />
-            </figure>
+      <div class="panel space-y-16">
+        <div class="space-y-8 lg:items-start">
+          <h2 class="section-title">Design System</h2>
+          <p class="paragraph-medium">To accelerate the MVP delivery, I leveraged a prebuilt design system and UI component library, customizing and extending shadcn/ui built on Radix UI primitives to create a cohesive and accessible product design.</p>
+        </div>   
+          <div class="space-y-20">
+              <div class="space-y-12">
+                <div class="flex items-center gap-4">
+              <svg class="icon-crisp h-16 w-16 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Button & Badge icon" shape-rendering="geometricPrecision">
+                <g clip-path="url(#clip0_button)">
+                  <path d="M7.33331 10C6.27245 10 5.25503 9.57857 4.50489 8.82843C3.75474 8.07828 3.33331 7.06087 3.33331 6C3.33331 4.93913 3.75474 3.92172 4.50489 3.17157C5.25503 2.42143 6.27245 2 7.33331 2L16.6666 2C17.7275 2 18.7449 2.42143 19.4951 3.17157C20.2452 3.92172 20.6666 4.93913 20.6666 6C20.6666 7.06087 20.2452 8.07828 19.4951 8.82843C18.7449 9.57857 17.7275 10 16.6666 10H14V6.66667C14 5.78261 13.6488 4.93477 13.0237 4.30964C12.3985 3.68452 11.5507 3.33333 10.6666 3.33333C9.78259 3.33333 8.93475 3.68452 8.30962 4.30964C7.6845 4.93477 7.33331 5.78261 7.33331 6.66667V10Z" fill="#4E0F60"/>
+                  <path d="M10.6667 4.66675C10.1362 4.66675 9.62753 4.87746 9.25245 5.25253C8.87738 5.62761 8.66667 6.13632 8.66667 6.66675V12.7334C7.91376 12.8871 7.23707 13.2962 6.75113 13.8915C6.26519 14.4868 5.99984 15.2316 6 16.0001C6 17.5914 6.63214 19.1175 7.75736 20.2427C8.88258 21.3679 10.4087 22.0001 12 22.0001H12.6667C14.4348 22.0001 16.1305 21.2977 17.3807 20.0475C18.631 18.7972 19.3333 17.1015 19.3333 15.3334V14.1961C19.3333 13.4369 19.0317 12.7087 18.4949 12.1719C17.958 11.635 17.2299 11.3334 16.4707 11.3334H12.6667V6.66675C12.6667 6.13632 12.456 5.62761 12.0809 5.25253C11.7058 4.87746 11.1971 4.66675 10.6667 4.66675Z" fill="#E3E0F2"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_button">
+                    <rect width="20" height="20" fill="white" transform="translate(2 2)"/>
+                  </clipPath>
+                </defs>
+              </svg>
+                  <p class="text-6xl font-black text-purple-mid">Button & Badge</p>
+                </div>
+                <figure class="overflow-hidden ">
+                  <img src="images/Design System-lendeck.png" alt="Lendeck design system components preview" class="image-large w-full object-cover" />
+                </figure>
+              </div>
+              <div class="space-y-12">
+                <div class="flex items-center gap-4">
+              <svg class="icon-crisp h-16 w-16 shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Typography icon" shape-rendering="geometricPrecision">
+                <path d="M17.997 4.16992C18.5827 4.37631 19.09 4.75937 19.4487 5.26627C19.8075 5.77316 20.0001 6.37891 20 6.99992V18.9999C20 19.7956 19.6839 20.5586 19.1213 21.1212C18.5587 21.6839 17.7956 21.9999 17 21.9999H7C6.20435 21.9999 5.44129 21.6839 4.87868 21.1212C4.31607 20.5586 4 19.7956 4 18.9999V6.99992C3.99989 6.37891 4.19251 5.77316 4.55128 5.26627C4.91005 4.75937 5.41728 4.37631 6.003 4.16992C6.04684 5.20053 6.48713 6.17436 7.23194 6.88804C7.97674 7.60172 8.96846 8.00008 10 7.99992H14C14.9912 8.00001 15.947 7.63211 16.6824 6.96753C17.4177 6.30295 17.8801 5.38903 17.98 4.40292L17.997 4.16992ZM15 9.99992H9C8.73478 9.99992 8.48043 10.1053 8.29289 10.2928C8.10536 10.4804 8 10.7347 8 10.9999V11.9999C8 12.2651 8.10536 12.5195 8.29289 12.707C8.48043 12.8946 8.73478 12.9999 9 12.9999C9.26522 12.9999 9.51957 12.8946 9.70711 12.707C9.89464 12.5195 10 12.2651 10 11.9999H11V15.9999C10.7348 15.9999 10.4804 16.1053 10.2929 16.2928C10.1054 16.4804 10 16.7347 10 16.9999C10 17.2651 10.1054 17.5195 10.2929 17.707C10.4804 17.8946 10.7348 17.9999 11 17.9999H13C13.2652 17.9999 13.5196 17.8946 13.7071 17.707C13.8946 17.5195 14 17.2651 14 16.9999C14 16.7347 13.8946 16.4804 13.7071 16.2928C13.5196 16.1053 13.2652 15.9999 13 15.9999V11.9999H14C14 12.2651 14.1054 12.5195 14.2929 12.707C14.4804 12.8946 14.7348 12.9999 15 12.9999C15.2652 12.9999 15.5196 12.8946 15.7071 12.707C15.8946 12.5195 16 12.2651 16 11.9999V10.9999C16 10.7347 15.8946 10.4804 15.7071 10.2928C15.5196 10.1053 15.2652 9.99992 15 9.99992Z" fill="#E3E0F2"/>
+                <path d="M8 4.5C8 3.39543 8.89543 2.5 10 2.5H14C15.1046 2.5 16 3.39543 16 4.5C16 5.60457 15.1046 6.5 14 6.5H10C8.89543 6.5 8 5.60457 8 4.5Z" fill="#4E0F60"/>
+              </svg>
+                  <p class=" text-6xl font-black text-purple-mid">Typography</p>
+                </div>
+                <figure class="overflow-hidden ">
+                  <img src="images/Typography-lendeck.png" alt="Lendeck design system components preview" class="image-large w-full object-cover" />
+                </figure>
+              </div>
+            </div>
           </div>
-        </div>
       </div>
     </section>
 
-    <section id="prototype-low" data-animate class="mx-auto mt-16 max-w-[90rem] px-4 sm:px-6">
-      <div class="panel">
+    <section id="prototype-low" data-animate class="mt-16 w-full px-0">
+      <div class="panel panel-flush">
         <div class="gap-10 lg:grid-cols-2 lg:items-start">
           <div class="space-y-12">
             <h2 class="section-title">Lo-Fi Prototype</h2>
@@ -680,7 +821,7 @@
         yearEl.textContent = new Date().getFullYear();
       }
 
-      initImageLightbox();
+      // Image lightbox disabled
     });
   </script>
 </body>

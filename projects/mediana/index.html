@@ -14,8 +14,8 @@
             'dark-800': '#1f1f1f',
             'dark-700': '#232323',
             'dark-600': '#1a1a1a',
-            'teal-500': '#9ac6bd',
-            'teal-450': '#4a8b82',
+            'teal-500': '#4a8b82',
+            'teal-450': '#9ac6bd',
             'teal-300': '#b7ded5',
             'teal-200': '#cfe9e3',
             'teal-100': '#e6f5f1',
@@ -77,16 +77,14 @@
       }
 
       .meta-title {
-        @apply text-base font-semibold uppercase tracking-[0.2em] text-dark-900;
+        @apply text-2xl font-bold   text-teal-500;
       }
 
       .meta-value {
         @apply mt-4 text-lg font-semibold text-dark-700;
       }
 
-      .case-subheader {
-        @apply text-left text-2xl uppercase tracking-[0.16em] text-teal-200;
-      }
+      
 
       .case-header {
         @apply mb-2 text-center text-[5rem] font-semibold text-teal-200;
@@ -100,9 +98,7 @@
         @apply grid items-center gap-10 md:grid-cols-[1.1fr_1fr];
       }
 
-      .overview-text {
-        @apply text-justify text-teal-100;
-      }
+  
 
       .section-ink {
         @apply bg-black;
@@ -176,10 +172,10 @@
       </div>
     </section>
 
-    <section id="section0" class="bg-black">
+    <section id="section0" class="bg-black ">
       <div
         class="
-          mx-auto max-w-[1360px] px-4 pt-8 pb-16
+          mx-auto max-w-[1360px] px-4 pt-8 pb-24
          items-center 
         "
       >
@@ -198,60 +194,48 @@
               border
               border-white/30
               p-2
-              shadow-xl
-              shadow-teal-100/10
-
+              shadow-[0_0_70px_-12px_rgba(15,118,110,0.5),0_0_32px_6px_rgba(15,118,110,0.22)]
             "
           />
         </div>
       </div>
     </section>
 
-    <section id="section1" class="meta">
-      <div
-        class=" section-container meta-grid "
-      >
-        <div>
-          <p class="meta-title">Role</p>
-          <p class="meta-value">Product Manager</p>
+    <section id="section1" class="meta ">
+      <div class="section-container">
+        <div
+          class=" meta-grid "
+        >
+          <div>
+            <p class="meta-title">Role</p>
+            <p class="meta-value">Product Manager</p>
+          </div>
+          <div>
+            <p class="meta-title">Timeline</p>
+            <p class="meta-value">Apr 2023 - Mar 2024</p>
+          </div>
+          <div>
+            <p class="meta-title">Scope</p>
+            <p class="meta-value">Business development, UX, UI</p>
+          </div>
+          <div>
+            <p class="meta-title">Team</p>
+            <p class="meta-value">Iman Behboodi, Business line owner</p>
+          </div>
         </div>
-        <div>
-          <p class="meta-title">Timeline</p>
-          <p class="meta-value">Apr 2023 - Mar 2024</p>
-        </div>
-        <div>
-          <p class="meta-title">Scope</p>
-          <p class="meta-value">Business development, UX, UI</p>
-        </div>
-        <div>
-          <p class="meta-title">Team</p>
-          <p class="meta-value">Iman Behboodi, Business line owner</p>
+        <div
+          class="
+            section-container
+            max-w-3xl
+          "
+        >
+          <div>
+            <h2 class="mb-8 text-left font-semibold text-5xl text-teal-500">Overview</h2>
+            <p class="text-justify font-semibold text-dark-900">Mediana Voice is a VoIP management dashboard that centralizes business communication control, covering analytics, call logs, line management, IVR flows and voices, billing, and user access. It provides clear insights into active calls and usage through detailed reports, enables easy configuration of extension lines and IVR systems, and supports tiered service plans for different business needs. With multi-level user access (Admin, Manager, Operator), Mediana Voice delivers an intuitive, all-in-one platform for monitoring, managing, and optimizing voice operations efficiently.</p>
+          </div>
         </div>
       </div>
     </section>
-
-    <section id="section2" class="overview">
-      <div
-        class="
-          section-container
-          overview-grid
-        "
-      >
-        <div>
-          <h2 class="case-subheader">overview</h2>
-          <p class="overview-text">Mediana Voice is a modern VoIP management dashboard that centralizes business communication control—covering analytics, call logs, line management, IVR flows and voices, billing, and user access. It provides clear insights into active calls and usage through detailed reports, enables easy configuration of extension lines and IVR systems, and supports tiered service plans for different business needs. With multi-level user access (Admin, Manager, Operator) and integrated registration and billing tools, Mediana Voice delivers an intuitive, all-in-one platform for monitoring, managing, and optimizing voice operations efficiently.</p>
-        </div>
-      </div>
-      <div
-        class="
-          section-container
-          pt-0
-        "
-      >
-        
-    </section>
-
-    
 
     <section id="section4" class="section-ink">
       <div class="section-container">
@@ -338,13 +322,14 @@
     <section id="section6" class="section-footer">
       <div class="section-container">
         <h2 class="case-header">Similar projects</h2>
-        <a class="similar-card" href="../lendeck/index.html">
-          <span>CASE STUDY</span>
-          <h3>Lendeck Dashboard Modernization</h3>
-          <p>Streamlining the lending journey with modular workflows, data-rich insights, and responsive operator tooling engineered for growth.</p>
-        </a>
+        <div class="mt-12 grid gap-8 md:grid-cols-2">
+          <a class="similar-card" href="../lendeck/index.html">
+            <span>CASE STUDY</span>
+            <h3>Lendeck Dashboard</h3>
+          </a>
+        </div>
       </div>
-    </section>
+    </section>x
   </main>
 </body>
 </html>
