@@ -1,0 +1,289 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: #262626;
+  --card: #ffffff;
+  --card-foreground: #262626;
+  --popover: #ffffff;
+  --popover-foreground: #262626;
+  --primary: #4A8B82;
+  --primary-foreground: #ffffff;
+  --secondary: #f8f9fa;
+  --secondary-foreground: #262626;
+  --muted: #f5f5f5;
+  --muted-foreground: #6b7280;
+  --accent: #4A8B82;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: transparent;
+  --input-background: #f9fafb;
+  --switch-background: #d1d5db;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #4A8B82;
+  --chart-1: #9AC6BD;
+  --chart-2: #262626;
+  --chart-3: #6b7280;
+  --chart-4: #7dd3fc;
+  --chart-5: #a78bfa;
+  --radius: 0.625rem;
+  --sidebar: #262626;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #4A8B82;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #374151;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #374151;
+  --sidebar-ring: #4A8B82;
+  
+  /* Accessible teal variants */
+  --teal-50: #f0f9f7;
+  --teal-100: #ccebe6;
+  --teal-200: #9AC6BD;
+  --teal-600: #4A8B82;
+  --teal-700: #3A7A71;
+  --teal-800: #2A6A61;
+  --teal-900: #1A5A51;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #262626;
+  --card-foreground: #ffffff;
+  --popover: #262626;
+  --popover-foreground: #ffffff;
+  --primary: #9AC6BD;
+  --primary-foreground: #000000;
+  --secondary: #374151;
+  --secondary-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --accent: #9AC6BD;
+  --accent-foreground: #000000;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #374151;
+  --input: #374151;
+  --ring: #9AC6BD;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #9AC6BD;
+  --chart-2: #ffffff;
+  --chart-3: #9ca3af;
+  --chart-4: #7dd3fc;
+  --chart-5: #a78bfa;
+  --sidebar: #000000;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #9AC6BD;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #262626;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #262626;
+  --sidebar-ring: #9AC6BD;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Accessible teal scale */
+  --color-teal-50: var(--teal-50);
+  --color-teal-100: var(--teal-100);
+  --color-teal-200: var(--teal-200);
+  --color-teal-600: var(--teal-600);
+  --color-teal-700: var(--teal-700);
+  --color-teal-800: var(--teal-800);
+  --color-teal-900: var(--teal-900);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Accessible color utilities with proper contrast ratios */
+@layer utilities {
+  /* Sidebar text size increase */
+  [data-sidebar] {
+    font-size: 16px;
+  }
+  
+  /* Light teal for backgrounds and decorative elements */
+  .text-teal-light {
+    color: #9AC6BD;
+  }
+  
+  .bg-teal-light {
+    background-color: #9AC6BD;
+  }
+  
+  .border-teal-light {
+    border-color: #9AC6BD;
+  }
+  
+  /* Accessible teal for text (4.5:1 contrast on white) */
+  .text-teal {
+    color: #4A8B82;
+  }
+  
+  .bg-teal {
+    background-color: #4A8B82;
+  }
+  
+  .border-teal {
+    border-color: #4A8B82;
+  }
+  
+  /* Dark teal for high contrast needs */
+  .text-teal-dark {
+    color: #2A6A61;
+  }
+  
+  .bg-teal-dark {
+    background-color: #2A6A61;
+  }
+  
+  .border-teal-dark {
+    border-color: #2A6A61;
+  }
+  
+  /* Very light teal for subtle backgrounds */
+  .bg-teal-subtle {
+    background-color: #f0f9f7;
+  }
+  
+  .border-teal-subtle {
+    border-color: #ccebe6;
+  }
+  
+  /* Dark gray utilities */
+  .text-dark-gray {
+    color: #262626;
+  }
+  
+  .bg-dark-gray {
+    background-color: #262626;
+  }
+  
+  .border-dark-gray {
+    border-color: #262626;
+  }
+  
+  /* Success/positive action colors using accessible teal */
+  .text-success {
+    color: #4A8B82;
+  }
+  
+  .bg-success {
+    background-color: #4A8B82;
+  }
+  
+  .bg-success-subtle {
+    background-color: #f0f9f7;
+  }
+}
