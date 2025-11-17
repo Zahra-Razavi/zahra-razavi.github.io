@@ -12,6 +12,9 @@ dist/
 build/
 **/dist/
 **/build/
+# Keep Mediana dashboard build output for GitHub Pages
+!projects/mediana/mediana-dashboard/build/
+!projects/mediana/mediana-dashboard/build/**
 
 # ============================================================
 # Environment & Logs
