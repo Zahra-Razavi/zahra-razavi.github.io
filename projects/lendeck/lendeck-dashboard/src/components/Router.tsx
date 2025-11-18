@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { BASE_PATH } from '../config';
 import { Layout } from './Layout';
 import { BrokerSidebar } from './BrokerSidebar';
 import { LenderSidebar } from './LenderSidebar';
@@ -360,7 +361,7 @@ export function AppRoutes() {
 
 export function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={BASE_PATH}>
       <AuthProvider>
         <DemoProvider>
           <AppRoutes />
