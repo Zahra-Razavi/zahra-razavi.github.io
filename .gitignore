@@ -15,6 +15,9 @@ build/
 # Keep Mediana dashboard build output for GitHub Pages
 !projects/mediana/mediana-dashboard/build/
 !projects/mediana/mediana-dashboard/build/**
+# Keep Lendeck dashboard build output for GitHub Pages
+!projects/lendeck/lendeck-dashboard/build/
+!projects/lendeck/lendeck-dashboard/build/**
 
 # ============================================================
 # Environment & Logs

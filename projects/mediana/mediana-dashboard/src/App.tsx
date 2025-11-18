@@ -24,6 +24,7 @@ import { SettingsRegistration } from "./components/settings/SettingsRegistration
 import { RegisteredVoIPNumbersHeaderActions } from "./components/settings/RegisteredVoIPNumbers";
 import { SettingsView } from "./components/settings/SettingsView";
 import { UserSettings } from "./components/settings/UserSettings";
+import { BASE_PATH } from "./config";
 import { DesignSystemShowcase } from "./components/DesignSystemShowcase";
 import { CreateIVRFlow } from "./components/CreateIVRFlow";
 import { AddExtension } from "./components/AddExtension";
@@ -209,7 +210,7 @@ export default function App() {
   };
 
   return (
-    <Router>
+    <Router basename={BASE_PATH}>
       <Routes>
         {/* Root redirect */}
         <Route 
