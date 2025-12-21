@@ -6,6 +6,7 @@ const FIGMA_PREFIX = "figma:asset/";
 const VIRTUAL_PREFIX = "\0figma-asset:";
 
 export default defineConfig({
+  base: "/projects/border-ai/",
   plugins: [
     react(),
     tailwindcss(),
