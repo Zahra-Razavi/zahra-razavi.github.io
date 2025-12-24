@@ -189,7 +189,7 @@ export function ResultPage({ data, onContinue, onReset }: ResultPageProps) {
               <p className="text-xs text-gray-600">
                 <strong>Disclaimer:</strong> This assessment is for informational purposes only and does not constitute legal advice. 
                 Actual approval depends on many factors and is determined solely by Immigration, Refugees and Citizenship Canada (IRCC). 
-                Border.ai is not affiliated with IRCC.
+                Border AI is not affiliated with IRCC.
               </p>
             </div>
 

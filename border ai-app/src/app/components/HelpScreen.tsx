@@ -10,20 +10,20 @@ export function HelpScreen() {
 
   const faqs = [
     {
-      question: 'What is Border.ai and how does it help with visa applications?',
-      answer: 'Border.ai is an AI-powered assistant designed to help Canadian visa applicants navigate the complex application process. We provide personalized guidance, document preparation assistance, compliance checks, and case-specific recommendations based on official IRCC requirements and best practices.',
+      question: 'What is Border AI and how does it help with visa applications?',
+      answer: 'Border AI is an AI-powered assistant designed to help Canadian visa applicants navigate the complex application process. We provide personalized guidance, document preparation assistance, compliance checks, and case-specific recommendations based on official IRCC requirements and best practices.',
     },
     {
-      question: 'Is Border.ai affiliated with Immigration, Refugees and Citizenship Canada (IRCC)?',
-      answer: 'No, Border.ai is an independent service and is not affiliated with IRCC or the Canadian government. We provide information and assistance based on official IRCC guidelines, but we are not a government agency or regulated immigration consultant.',
+      question: 'Is Border AI affiliated with Immigration, Refugees and Citizenship Canada (IRCC)?',
+      answer: 'No, Border AI is an independent service and is not affiliated with IRCC or the Canadian government. We provide information and assistance based on official IRCC guidelines, but we are not a government agency or regulated immigration consultant.',
     },
     {
-      question: 'Can Border.ai guarantee my visa will be approved?',
-      answer: 'No service can guarantee visa approval. Border.ai helps you prepare a strong, compliant application by identifying potential issues and providing guidance. Final decisions are made by IRCC visa officers based on their assessment of your application.',
+      question: 'Can Border AI guarantee my visa will be approved?',
+      answer: 'No service can guarantee visa approval. Border AI helps you prepare a strong, compliant application by identifying potential issues and providing guidance. Final decisions are made by IRCC visa officers based on their assessment of your application.',
     },
     {
-      question: 'Is my personal information secure on Border.ai?',
-      answer: 'We take data security seriously and implement industry-standard security measures. However, Border.ai is not intended for collecting highly sensitive personally identifiable information (PII). Always exercise caution when sharing sensitive data online.',
+      question: 'Is my personal information secure on Border AI?',
+      answer: 'We take data security seriously and implement industry-standard security measures. However, Border AI is not intended for collecting highly sensitive personally identifiable information (PII). Always exercise caution when sharing sensitive data online.',
     },
     {
       question: 'How accurate is the AI analysis and feedback?',
@@ -31,11 +31,11 @@ export function HelpScreen() {
     },
     {
       question: 'Do I still need to hire an immigration consultant or lawyer?',
-      answer: 'Border.ai provides information and document-prep assistance, not legal advice. For complex cases, previous refusals, or legal questions, we recommend consulting with a licensed Regulated Canadian Immigration Consultant (RCIC) or immigration lawyer.',
+      answer: 'Border AI provides information and document-prep assistance, not legal advice. For complex cases, previous refusals, or legal questions, we recommend consulting with a licensed Regulated Canadian Immigration Consultant (RCIC) or immigration lawyer.',
     },
     {
-      question: 'What visa types does Border.ai support?',
-      answer: 'Currently, Border.ai supports Canadian temporary visas and permits including visitor visas, study permits, work permits, and permanent residency applications (Express Entry, PNP, etc.).',
+      question: 'What visa types does Border AI support?',
+      answer: 'Currently, Border AI supports Canadian temporary visas and permits including visitor visas, study permits, work permits, and permanent residency applications (Express Entry, PNP, etc.).',
     },
     {
       question: 'How do I upload my documents?',
@@ -66,7 +66,7 @@ export function HelpScreen() {
       answer: 'This screen shows your application completion percentage and any critical issues blocking submission. Aim for 100% completion before submitting to IRCC. It provides a final checklist and summary of your entire application.',
     },
     {
-      question: 'How do I contact Border.ai support?',
+      question: 'How do I contact Border AI support?',
       answer: 'Use the contact form on this page or email us directly. For urgent issues, use the in-app chat feature. We typically respond within 24-48 hours.',
     },
   ];
@@ -131,7 +131,7 @@ export function HelpScreen() {
           </div>
           <h3 className="mb-2">User Guide</h3>
           <p className="text-sm text-gray-600 mb-4">
-            Comprehensive guide to using Border.ai
+            Comprehensive guide to using Border AI
           </p>
           <Button size="sm" variant="outline" className="w-full">
             View Guide
@@ -275,7 +275,7 @@ export function HelpScreen() {
 
       <Card className="p-4 bg-amber-50 border-amber-200">
         <p className="text-sm text-gray-700">
-          <strong>Disclaimer:</strong> Border.ai provides information and document-prep assistance, not legal advice. For legal questions or complex cases, please consult a licensed Regulated Canadian Immigration Consultant (RCIC) or immigration lawyer.
+          <strong>Disclaimer:</strong> Border AI provides information and document-prep assistance, not legal advice. For legal questions or complex cases, please consult a licensed Regulated Canadian Immigration Consultant (RCIC) or immigration lawyer.
         </p>
       </Card>
     </div>

@@ -257,7 +257,7 @@ export function SignUpScreen({ onSignUp, onNavigateToLogin }: SignUpScreenProps)
               }
             />
             <Label htmlFor="terms" className="text-sm font-normal leading-relaxed cursor-pointer">
-              I agree to the Terms of Service and Privacy Policy. I understand that Border.ai provides information assistance, not legal advice.
+              I agree to the Terms of Service and Privacy Policy. I understand that Border AI provides information assistance, not legal advice.
             </Label>
           </div>
 
@@ -285,7 +285,7 @@ export function SignUpScreen({ onSignUp, onNavigateToLogin }: SignUpScreenProps)
 
         <div className="mt-6 pt-6 border-t">
           <p className="text-xs text-gray-500 text-center">
-            By creating an account, you acknowledge that Border.ai is not intended for collecting personally identifiable information (PII) or securing highly sensitive data.
+            By creating an account, you acknowledge that Border AI is not intended for collecting personally identifiable information (PII) or securing highly sensitive data.
           </p>
         </div>
       </Card>

@@ -1,7 +1,7 @@
-# Border.ai - Canadian Visa Assistant
+# Border AI - Canadian Visa Assistant
 
 ## Overview
-Border.ai is a comprehensive B2C AI SaaS platform that helps visa applicants navigate Canadian visa processes by clarifying requirements, assisting with document preparation, and answering case-specific questions in the user's own language.
+Border AI is a comprehensive B2C AI SaaS platform that helps visa applicants navigate Canadian visa processes by clarifying requirements, assisting with document preparation, and answering case-specific questions in the user's own language.
 
 ## Features Implemented
 
@@ -70,14 +70,14 @@ Border.ai is a comprehensive B2C AI SaaS platform that helps visa applicants nav
 - **Field extraction**: Automatic key data extraction from PDFs
 
 ### ✅ Disclaimers & Compliance
-- Persistent disclaimer: "Border.ai provides information and document-prep assistance, not legal advice. Always verify with official IRCC sources."
+- Persistent disclaimer: "Border AI provides information and document-prep assistance, not legal advice. Always verify with official IRCC sources."
 - Official sources panel wherever guidance is shown
 - Privacy notices about PII and sensitive data
 
 ## Design System
 
 ### Brand Colors
-- Primary: `#E9692C` (Border.ai Orange)
+- Primary: `#E9692C` (Border AI Orange)
 - Various shades: `--orange-50` through `--orange-900`
 - Semantic colors: success, warning, error
 
@@ -205,4 +205,4 @@ To make this a production-ready application:
 
 ## License & Disclaimer
 
-This is a prototype demonstration. Border.ai is not affiliated with Immigration, Refugees and Citizenship Canada (IRCC) or the Canadian government. Always verify information with official IRCC sources.
+This is a prototype demonstration. Border AI is not affiliated with Immigration, Refugees and Citizenship Canada (IRCC) or the Canadian government. Always verify information with official IRCC sources.

@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImage from 'figma:asset/37f78f5301e404d8aa54f52c5161fd523205bb00.png';
+import logoImage from '../../../images/border-ai-logo.svg';
 import { Button } from './ui/button';
 
 interface OnboardingScreenProps {
@@ -31,13 +31,13 @@ export function OnboardingScreen({ onEstimateChance, onLogin }: OnboardingScreen
             <div className="rounded-3xl bg-muted/40 p-10 shadow-lg">
               <img
                 src={logoImage}
-                alt="Border.ai Logo"
+                alt="Border AI Logo"
                 className="w-36 h-36 object-contain"
               />
             </div>
           </div>
           <div className="space-y-3">
-            <p className="text-lg uppercase tracking-[0.3em] text-muted-foreground">Border.ai</p>
+            <p className="text-lg uppercase tracking-[0.3em] text-muted-foreground">Border AI</p>
             <h1 className="text-4xl md:text-5xl font-semibold">Your AI visa assistant and advisor</h1>
             <p className="text-lg md:text-xl text-muted-foreground">
               Personalized pathways, crystal-clear requirements, and AI-powered prep for Canadian visas.
@@ -54,10 +54,10 @@ export function OnboardingScreen({ onEstimateChance, onLogin }: OnboardingScreen
           ))}
         </div>
 
-        <div className="space-y-4">
+        <div className="flex flex-col items-center gap-2 text-center">
           <Button
             size="lg"
-            className="mx-auto w-full max-w-md text-lg py-7"
+            className="w-full max-w-md text-lg py-7"
             onClick={onEstimateChance}
           >
             Estimate your chance

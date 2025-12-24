@@ -36,7 +36,7 @@ export function WelcomeScreen({ onGetStarted, onLogin }: WelcomeScreenProps) {
             Your AI-Powered Canadian Visa Assistant
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Navigate visa processes with confidence. Border.ai clarifies requirements, assists with document preparation, and answers case-specific questions in your language.
+            Navigate visa processes with confidence. Border AI clarifies requirements, assists with document preparation, and answers case-specific questions in your language.
           </p>
           <div className="flex gap-4 justify-center">
             <Button size="lg" onClick={onGetStarted} className="px-8">
@@ -137,8 +137,8 @@ export function WelcomeScreen({ onGetStarted, onLogin }: WelcomeScreenProps) {
         {/* Disclaimer */}
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 text-center">
           <p className="text-sm text-gray-700">
-            <strong>Important:</strong> Border.ai provides information and document-prep assistance, not legal advice. 
-            Always verify with official IRCC sources. Border.ai is not intended for collecting PII or securing highly sensitive data.
+            <strong>Important:</strong> Border AI provides information and document-prep assistance, not legal advice. 
+            Always verify with official IRCC sources. Border AI is not intended for collecting PII or securing highly sensitive data.
           </p>
         </div>
       </section>
@@ -146,7 +146,7 @@ export function WelcomeScreen({ onGetStarted, onLogin }: WelcomeScreenProps) {
       {/* Footer */}
       <footer className="border-t bg-gray-50 py-8">
         <div className="max-w-7xl mx-auto px-6 text-center text-sm text-gray-600">
-          <p>© 2024 Border.ai - Canadian Visa Assistant</p>
+          <p>© 2024 Border AI - Canadian Visa Assistant</p>
         </div>
       </footer>
     </div>
