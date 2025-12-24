@@ -14,8 +14,10 @@ import { AccountScreen } from './components/AccountScreen';
 import { BackButton } from './components/BackButton';
 import { TopNav } from './components/TopNav';
 import { DEMO_USER } from './utils/constants';
+import { OnboardingScreen } from './components/OnboardingScreen';
 
 export type Screen =
+  | 'onboarding'
   | 'welcome'
   | 'signup'
   | 'login'
@@ -72,7 +74,7 @@ const USER_ACCOUNTS: Record<string, { password: string; userData: UserData }> = 
 };
 
 export default function App() {
-  const [currentScreen, setCurrentScreen] = useState<Screen>('signup');
+  const [currentScreen, setCurrentScreen] = useState<Screen>('onboarding');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [setupComplete, setSetupComplete] = useState(false);
   const [currentProject, setCurrentProject] = useState<string | null>(null);
@@ -207,12 +209,21 @@ export default function App() {
     setSetupComplete(false);
     setUserData(null);
     setIsDemoUser(false);
-    setCurrentScreen('signup');
+    setCurrentScreen('onboarding');
     setNavigationHistory([]);
   };
 
   // Pre-auth screens
   if (!isAuthenticated) {
+    if (currentScreen === 'onboarding') {
+      return (
+        <OnboardingScreen
+          onEstimateChance={() => navigateWithHistory('signup')}
+          onLogin={() => navigateWithHistory('login')}
+        />
+      );
+    }
+
     if (currentScreen === 'welcome') {
       return (
         <WelcomeScreen
