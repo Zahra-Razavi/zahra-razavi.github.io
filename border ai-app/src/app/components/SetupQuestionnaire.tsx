@@ -380,12 +380,12 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 6 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Travel history (last 10 years)
-                </h2>
-                <p className="text-sm text-gray-600">
-                  Have you previously held a visa or entry permission for any of the following: Canada / USA / UK / Schengen? (multi-select)
                 </p>
+                <h2 className="text-2xl font-semibold text-gray-900">
+                  Have you previously held a visa or entry permission for any of the following: Canada / USA / UK / Schengen? (multi-select)
+                </h2>
                 <div className="space-y-3">
                   {[
                     'Yes, I had a Canada visa',
@@ -419,10 +419,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 7 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Previous refusals or immigration issues *
-                </h2>
-                <p className="text-sm text-gray-600">Have you ever had any of these?</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Have you ever had any of these?</h2>
                 <div className="space-y-3">
                   {[
                     'No, never refused, never overstayed',
@@ -448,11 +448,11 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 8 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Program length
-                </h2>
-                <p className="text-sm text-gray-600">How long is your program in Canada?</p>
-                <p className="text-xs text-gray-500 italic">(A study permit is generally for programs longer than 6 months.)</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">How long is your program in Canada?</h2>
+                <p className="text-sm text-gray-700 italic">(A study permit is generally for programs longer than 6 months.)</p>
                 <div className="space-y-3 mt-4">
                   {[
                     'More than 6 months',
@@ -477,10 +477,12 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 9 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Letter of Acceptance (LOA) from a DLI
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">
+                  Do you have a Letter of Acceptance from a Designated Learning Institution (DLI)?
                 </h2>
-                <p className="text-sm text-gray-600">Do you have a Letter of Acceptance from a Designated Learning Institution (DLI)?</p>
                 <div className="space-y-3">
                   {[
                     'Yes, I have an LOA from a DLI',
@@ -505,11 +507,11 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 10 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Province/territory of study
-                </h2>
-                <p className="text-sm text-gray-600">Where will you study?</p>
-                <p className="text-xs text-gray-500 italic">(If you'll study in Quebec, you also need a CAQ.)</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Where will you study?</h2>
+                <p className="text-sm text-gray-700 italic">(If you'll study in Quebec, you also need a CAQ.)</p>
                 <div className="space-y-3 mt-4">
                   {[
                     'Quebec',
@@ -534,11 +536,15 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 11 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Provincial/Territorial Attestation Letter (PAL/TAL)
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">
+                  Can you provide a PAL/TAL (Click here to see if it's required for your case.)?
                 </h2>
-                <p className="text-sm text-gray-600">Can you provide a PAL/TAL (Click here to see if it's required for your case.)?</p>
-                <p className="text-xs text-gray-500 italic">(Most study permit applicants must include a PAL/TAL. If required and missing, the application may be returned.)</p>
+                <p className="text-sm text-gray-700 italic">
+                  (Most study permit applicants must include a PAL/TAL. If required and missing, the application may be returned.)
+                </p>
                 <div className="space-y-3 mt-4">
                   {[
                     'Yes, I have a PAL/TAL',
@@ -564,10 +570,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 12 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Study plan fit
-                </h2>
-                <p className="text-sm text-gray-600">Which best describes your study plan?</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Which best describes your study plan?</h2>
                 <div className="space-y-3">
                   {[
                     'The program clearly matches my previous education/work and goals',
@@ -592,11 +598,11 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 13 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Accompanying family members
-                </h2>
-                <p className="text-sm text-gray-600">Will any family members come with you to Canada?</p>
-                <p className="text-xs text-gray-500 italic">(Funds are assessed for you and accompanying family members.)</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Will any family members come with you to Canada?</h2>
+                <p className="text-sm text-gray-700 italic">(Funds are assessed for you and accompanying family members.)</p>
                 <div className="space-y-3 mt-4">
                   {[
                     "No, I'm applying alone",
@@ -622,10 +628,12 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 14 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Proof of funds, minimum living expenses guideline (outside Quebec)
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">
+                  Can you show funds to cover tuition + living expenses + travel?
                 </h2>
-                <p className="text-sm text-gray-600">Can you show funds to cover tuition + living expenses + travel?</p>
                 <div className="mb-4 mt-2 rounded-2xl border border-gray-200 bg-gray-50 p-4">
                   <div className="flex items-start gap-3">
                     <Info className="h-5 w-5 text-[#E9692C] mt-0.5" />
@@ -668,10 +676,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 15 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Proof of funds documents
-                </h2>
-                <p className="text-sm text-gray-600">Which proofs can you provide? (multi-select)</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Which proofs can you provide? (multi-select)</h2>
                 <div className="space-y-3 mt-4">
                   {[
                     'Bank statements (Canadian or foreign) for the past 4 months',
@@ -706,10 +714,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 16 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
+                <p className="text-sm text-gray-700">Consistency of funds</p>
                 <h2 className="text-2xl font-semibold text-gray-900">
-                  Consistency of funds
+                  Will your bank history look consistent with your declared income/source of funds?
                 </h2>
-                <p className="text-sm text-gray-600">Will your bank history look consistent with your declared income/source of funds?</p>
                 <div className="space-y-3">
                   {[
                     'Yes, deposits and spending match my income/source',
@@ -827,10 +835,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 107 && data.visaType === 'Canada Work Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Job offer status
-                </h2>
-                <p className="text-sm text-gray-600">Do you have a job offer from a Canadian employer?</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Do you have a job offer from a Canadian employer?</h2>
                 <div className="space-y-3">
                   {[
                     'Yes, I have a job offer',
@@ -855,11 +863,11 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 108 && data.visaType === 'Canada Work Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   LMIA (Labour Market Impact Assessment)
-                </h2>
-                <p className="text-sm text-gray-600">Does your employer have a positive LMIA?</p>
-                <p className="text-xs text-gray-500 italic">(Most work permits require an LMIA unless exempt.)</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Does your employer have a positive LMIA?</h2>
+                <p className="text-sm text-gray-700 italic">(Most work permits require an LMIA unless exempt.)</p>
                 <div className="space-y-3 mt-4">
                   {[
                     'Yes, employer has LMIA',
@@ -885,10 +893,8 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 109 && data.visaType === 'Canada Work Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
-                  Work experience
-                </h2>
-                <p className="text-sm text-gray-600">How many years of relevant work experience do you have?</p>
+                <p className="text-sm text-gray-700">Work experience</p>
+                <h2 className="text-2xl font-semibold text-gray-900">How many years of relevant work experience do you have?</h2>
                 <div className="space-y-3">
                   {[
                     'Less than 1 year',
@@ -914,12 +920,12 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 110 && data.visaType === 'Canada Work Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Travel history (last 10 years)
-                </h2>
-                <p className="text-sm text-gray-600">
-                  Have you previously held a visa or entry permission for any of the following: Canada / USA / UK / Schengen? (multi-select)
                 </p>
+                <h2 className="text-2xl font-semibold text-gray-900">
+                  Have you previously held a visa or entry permission for any of the following: Canada / USA / UK / Schengen? (multi-select)
+                </h2>
                 <div className="space-y-3">
                   {[
                     'Yes, I had a Canada visa',
@@ -953,10 +959,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 111 && data.visaType === 'Canada Work Permit and Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Previous refusals or immigration issues
-                </h2>
-                <p className="text-sm text-gray-600">Have you ever had any of these?</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Have you ever had any of these?</h2>
                 <div className="space-y-3">
                   {[
                     'No, never refused, never overstayed',
@@ -1048,10 +1054,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 206 && data.visaType === 'Canada Visitor Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Length of stay
-                </h2>
-                <p className="text-sm text-gray-600">How long do you plan to stay in Canada?</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">How long do you plan to stay in Canada?</h2>
                 <div className="space-y-3">
                   {[
                     'Less than 2 weeks',
@@ -1078,12 +1084,12 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 207 && data.visaType === 'Canada Visitor Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Travel history (last 10 years)
-                </h2>
-                <p className="text-sm text-gray-600">
-                  Have you previously held a visa or entry permission for any of the following: Canada / USA / UK / Schengen? (multi-select)
                 </p>
+                <h2 className="text-2xl font-semibold text-gray-900">
+                  Have you previously held a visa or entry permission for any of the following: Canada / USA / UK / Schengen? (multi-select)
+                </h2>
                 <div className="space-y-3">
                   {[
                     'Yes, I had a Canada visa',
@@ -1117,10 +1123,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 208 && data.visaType === 'Canada Visitor Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Previous refusals or immigration issues
-                </h2>
-                <p className="text-sm text-gray-600">Have you ever had any of these?</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Have you ever had any of these?</h2>
                 <div className="space-y-3">
                   {[
                     'No, never refused, never overstayed',
@@ -1146,10 +1152,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 209 && data.visaType === 'Canada Visitor Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Ties to home country
-                </h2>
-                <p className="text-sm text-gray-600">Which best describes your ties to your home country?</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Which best describes your ties to your home country?</h2>
                 <div className="space-y-3">
                   {[
                     'Strong ties (stable job, property, family)',
@@ -1174,10 +1180,10 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
 
             {currentQuestion === 210 && data.visaType === 'Canada Visitor Visa' && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-semibold text-gray-900">
+                <p className="text-sm text-gray-700">
                   Proof of funds
-                </h2>
-                <p className="text-sm text-gray-600">Can you show sufficient funds for your stay in Canada?</p>
+                </p>
+                <h2 className="text-2xl font-semibold text-gray-900">Can you show sufficient funds for your stay in Canada?</h2>
                 <div className="space-y-3">
                   {[
                     'Yes, I have sufficient funds (bank statements, pay stubs)',
