@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImage from '../../../images/Border AI logo 2.svg';
+import logoImage from '../../../images/Border AI logo 3.svg';
 
 interface LogoProps {
   className?: string;

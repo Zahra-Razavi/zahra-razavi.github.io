@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Info } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Checkbox } from './ui/checkbox';
 import { Textarea } from './ui/textarea';
@@ -317,9 +317,18 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
             {/* STUDY FLOW */}
             {currentQuestion === 4 && data.visaType === 'Canada Study Permit and Visa' && (
               <div className="space-y-6">
-                <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <p className="text-sm font-medium text-blue-900">Your visa type is Canada Study Permit and Visa</p>
-                  <p className="text-sm text-blue-700 mt-1">Answer the rest of the questions to see whether you are eligible and what is your chance of approval.</p>
+                <div className="mb-6 rounded-2xl border border-gray-200 bg-gray-50 p-4">
+                  <div className="flex items-start gap-3">
+                    <Info className="h-5 w-5 text-[#E9692C] mt-0.5" />
+                    <div>
+                      <p className="text-sm font-semibold text-[#E9692C]">
+                        Your visa type is Canada Study Permit and Visa
+                      </p>
+                      <p className="text-sm text-gray-700 mt-1">
+                        Answer the rest of the questions to see whether you are eligible and what is your chance of approval.
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <h2 className="text-2xl font-semibold text-gray-900">
                   Select the option that best matches your situation
@@ -617,14 +626,23 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
                   Proof of funds, minimum living expenses guideline (outside Quebec)
                 </h2>
                 <p className="text-sm text-gray-600">Can you show funds to cover tuition + living expenses + travel?</p>
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg mb-4 mt-2">
-                  <p className="text-xs font-medium text-blue-900 mb-2">For applications on or after Sep 1, 2025, required living expenses (excluding tuition + travel) are:</p>
-                  <ul className="text-xs text-blue-800 space-y-1">
-                    <li>• 1 person: CAD 22,895 / year</li>
-                    <li>• 2 people: CAD 28,502 / year</li>
-                    <li>• 3 people: CAD 35,040 / year</li>
-                  </ul>
-                  <p className="text-xs text-blue-700 mt-2 italic">(Outside Quebec; Quebec uses different amounts via CAQ/MIFI.)</p>
+                <div className="mb-4 mt-2 rounded-2xl border border-gray-200 bg-gray-50 p-4">
+                  <div className="flex items-start gap-3">
+                    <Info className="h-5 w-5 text-[#E9692C] mt-0.5" />
+                    <div>
+                      <p className="text-xs font-semibold text-[#E9692C] mb-2">
+                        For applications on or after Sep 1, 2025, required living expenses (excluding tuition + travel) are:
+                      </p>
+                      <ul className="text-xs text-gray-700 space-y-1">
+                        <li>• 1 person: CAD 22,895 / year</li>
+                        <li>• 2 people: CAD 28,502 / year</li>
+                        <li>• 3 people: CAD 35,040 / year</li>
+                      </ul>
+                      <p className="text-xs text-gray-600 mt-2 italic">
+                        (Outside Quebec; Quebec uses different amounts via CAQ/MIFI.)
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div className="space-y-3">
                   {[
@@ -717,9 +735,18 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
             {/* WORK FLOW */}
             {currentQuestion === 104 && data.visaType === 'Canada Work Permit and Visa' && (
               <div className="space-y-6">
-                <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <p className="text-sm font-medium text-blue-900">Your visa type is Canada Work Permit and Visa</p>
-                  <p className="text-sm text-blue-700 mt-1">Answer the rest of the questions to see whether you are eligible and what is your chance of approval.</p>
+                <div className="mb-6 rounded-2xl border border-gray-200 bg-gray-50 p-4">
+                  <div className="flex items-start gap-3">
+                    <Info className="h-5 w-5 text-[#E9692C] mt-0.5" />
+                    <div>
+                      <p className="text-sm font-semibold text-[#E9692C]">
+                        Your visa type is Canada Work Permit and Visa
+                      </p>
+                      <p className="text-sm text-gray-700 mt-1">
+                        Answer the rest of the questions to see whether you are eligible and what is your chance of approval.
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <h2 className="text-2xl font-semibold text-gray-900">
                   Select the option that best matches your situation
@@ -956,9 +983,18 @@ export function SetupQuestionnaire({ onComplete }: SetupQuestionnaireProps) {
             {/* VISITOR FLOW */}
             {currentQuestion === 204 && data.visaType === 'Canada Visitor Visa' && (
               <div className="space-y-6">
-                <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <p className="text-sm font-medium text-blue-900">Your visa type is Canada Visitor Visa</p>
-                  <p className="text-sm text-blue-700 mt-1">Answer the rest of the questions to see whether you are eligible and what is your chance of approval.</p>
+                <div className="mb-6 rounded-2xl border border-gray-200 bg-gray-50 p-4">
+                  <div className="flex items-start gap-3">
+                    <Info className="h-5 w-5 text-[#E9692C] mt-0.5" />
+                    <div>
+                      <p className="text-sm font-semibold text-[#E9692C]">
+                        Your visa type is Canada Visitor Visa
+                      </p>
+                      <p className="text-sm text-gray-700 mt-1">
+                        Answer the rest of the questions to see whether you are eligible and what is your chance of approval.
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <h2 className="text-2xl font-semibold text-gray-900">
                   Purpose of visit

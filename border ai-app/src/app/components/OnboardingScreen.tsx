@@ -1,6 +1,6 @@
 import React from 'react';
 import { Gauge, FileText, Sparkles } from 'lucide-react';
-import logoImage from '../../../images/Border AI logo 2.svg';
+import { Logo } from './Logo';
 import { Button } from './ui/button';
 
 interface OnboardingScreenProps {
@@ -11,17 +11,17 @@ interface OnboardingScreenProps {
 const FEATURES = [
   {
     title: 'Approval chance estimation',
-    description: 'Quickly understand the strength of your application with AI-generated readiness scores.',
+    description: 'AI scoring to gauge your readiness in seconds.',
     icon: Gauge,
   },
   {
     title: 'Doc preparation',
-    description: 'Organize every form, checklist, and supporting proof the way visa officers expect to see it.',
+    description: 'Auto-organized forms, checklists, and evidence.',
     icon: FileText,
   },
   {
     title: 'Data-based suggestions',
-    description: 'Get actionable recommendations grounded in the latest IRCC guidance and peer case data.',
+    description: 'Guidance grounded in IRCC updates and case data.',
     icon: Sparkles,
   },
 ];
@@ -33,7 +33,7 @@ export function OnboardingScreen({ onEstimateChance, onLogin }: OnboardingScreen
         <div className="space-y-6">
           <div className="flex justify-center">
             <img
-              src={logoImage}
+              src={logo}
               alt="Border AI Logo"
               className="w-40 h-40 md:w-56 md:h-56 object-contain drop-shadow-xl"
             />
@@ -48,12 +48,12 @@ export function OnboardingScreen({ onEstimateChance, onLogin }: OnboardingScreen
 
         <div className="grid gap-6 md:grid-cols-3 text-left">
           {FEATURES.map(({ title, description, icon: Icon }) => (
-            <div key={title} className="rounded-2xl border bg-card/60 p-6 shadow-sm space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-slate-100 border border-white/60 text-[#E9692C] flex items-center justify-center">
-                <Icon className="w-6 h-6" />
+            <div key={title} className="rounded-2xl border bg-card/60 p-7 shadow-sm space-y-3">
+              <div className="w-14 h-14 rounded-3xl bg-slate-100 border border-white/70 text-[#E9692C] flex items-center justify-center shadow-inner">
+                <Icon className="w-7 h-7" />
               </div>
               <h3 className="text-xl font-semibold">{title}</h3>
-              <p className="text-base text-muted-foreground">{description}</p>
+              <p className="text-base text-muted-foreground leading-snug">{description}</p>
             </div>
           ))}
         </div>
