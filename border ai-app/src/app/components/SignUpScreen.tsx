@@ -22,7 +22,7 @@ export function SignUpScreen({ onSignUp, onNavigateToLogin }: SignUpScreenProps)
     confirmPassword: '',
     agreedToTerms: false,
   });
-  const [demoMode, setDemoMode] = useState(false);
+  const [demoMode, setDemoMode] = useState(true);
   const [passwordFocused, setPasswordFocused] = useState(false);
   const [passwordValidation, setPasswordValidation] = useState({
     isValid: false,
@@ -118,17 +118,24 @@ export function SignUpScreen({ onSignUp, onNavigateToLogin }: SignUpScreenProps)
             <Logo />
           </div>
           <h1 className="mb-2">Create Your Account</h1>
-          <p className="text-sm text-gray-600">Start your Canadian visa journey today</p>
         </div>
 
         {/* Demo Mode Toggle */}
-        <div className="mb-4 p-3 rounded-lg bg-orange-50 border border-orange-200">
+        <div
+          className={`mb-4 p-3 rounded-lg border transition-colors ${
+            demoMode ? 'bg-orange-50 border-orange-200' : 'bg-gray-100 border-gray-200 text-gray-500'
+          }`}
+        >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#E9692C]" />
+              <Sparkles className={`w-4 h-4 ${demoMode ? 'text-[#E9692C]' : 'text-gray-400'}`} />
               <div>
-                <p className="text-sm font-medium text-gray-900">Demo Mode</p>
-                <p className="text-xs text-gray-600">Auto-fill with sample data</p>
+                <p className={`text-sm font-medium ${demoMode ? 'text-gray-900' : 'text-gray-500'}`}>
+                  Demo mode — {demoMode ? 'active' : 'inactive'}
+                </p>
+                <p className={`text-xs ${demoMode ? 'text-gray-600' : 'text-gray-500'}`}>
+                  Auto-fill with sample data when active
+                </p>
               </div>
             </div>
             <Switch
@@ -137,17 +144,6 @@ export function SignUpScreen({ onSignUp, onNavigateToLogin }: SignUpScreenProps)
             />
           </div>
         </div>
-
-        {demoMode && (
-          <div className="mb-4 p-3 rounded-lg bg-blue-50 border border-blue-200">
-            <div className="flex items-start gap-2">
-              <Check className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
-              <div className="text-xs text-blue-800">
-                <p className="font-medium">Demo mode active - fields will auto-fill</p>
-              </div>
-            </div>
-          </div>
-        )}
 
         {error && (
           <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200">
