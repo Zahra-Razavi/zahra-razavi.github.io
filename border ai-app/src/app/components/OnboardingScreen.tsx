@@ -1,6 +1,6 @@
 import React from 'react';
 import { Gauge, FileText, Sparkles } from 'lucide-react';
-import { Logo } from './Logo';
+import logoImage from '../../../images/Border AI logo 3.svg';
 import { Button } from './ui/button';
 
 interface OnboardingScreenProps {
@@ -33,7 +33,7 @@ export function OnboardingScreen({ onEstimateChance, onLogin }: OnboardingScreen
         <div className="space-y-6">
           <div className="flex justify-center">
             <img
-              src={logo}
+              src={logoImage}
               alt="Border AI Logo"
               className="w-40 h-40 md:w-56 md:h-56 object-contain drop-shadow-xl"
             />
