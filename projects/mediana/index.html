@@ -177,10 +177,9 @@
         <h1 class="mb-12 font-bold text-6xl text-center text-teal-300 sm:text-5xl">
           VoIP Dashboard Design
         </h1>
-        <div class="w-full">
-          <img
-            src="Image/mockup-overview-mediana.png"
-            alt="Mediana Voice dashboard overview mockup"
+        <div class="relative w-full">
+          <video
+            id="mediana-hero-video"
             class="
               relative
               w-full
@@ -191,7 +190,85 @@
               p-2
               shadow-[0_0_70px_-12px_rgba(15,118,110,0.5),0_0_32px_6px_rgba(15,118,110,0.22)]
             "
-          />
+            src="Image/Mediana-Video.mp4"
+            poster="Image/mockup-overview-mediana.png"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-label="Mediana Voice dashboard overview video"
+          ></video>
+          <button
+            id="mediana-video-toggle"
+            type="button"
+            class="
+              absolute
+              left-1/2
+              top-1/2
+              z-10
+              inline-flex
+              h-16
+              w-16
+              -translate-x-1/2
+              -translate-y-1/2
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-white/50
+              bg-black/45
+              text-white
+              shadow-xl
+              backdrop-blur
+              transition
+              hover:bg-black/65
+              focus-visible:outline
+              focus-visible:outline-2
+              focus-visible:outline-offset-4
+              focus-visible:outline-teal-300
+            "
+            aria-label="Pause Mediana video"
+            aria-pressed="true"
+          >
+            <svg
+              class="h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path class="video-icon-play hidden" d="M8 5v14l11-7z" />
+              <path class="video-icon-pause" d="M7 5h4v14H7zM13 5h4v14h-4z" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-10 flex justify-center">
+          <a
+            href="https://zahra-razavi.github.io/mediana/demo/reports"
+            class="
+              inline-flex
+              min-h-12
+              items-center
+              justify-center
+              rounded-full
+              bg-teal-300
+              px-8
+              py-3
+              text-center
+              text-base
+              font-semibold
+              text-dark-900
+              shadow-[0_14px_38px_-18px_rgba(183,222,213,0.85)]
+              transition
+              hover:bg-teal-200
+              focus-visible:outline
+              focus-visible:outline-2
+              focus-visible:outline-offset-4
+              focus-visible:outline-teal-300
+            "
+          >
+            View Interactive Prototype
+          </a>
         </div>
       </div>
     </section>
@@ -331,7 +408,7 @@
             </div>
             <div class="flex items-center justify-between px-6 py-4">
               <div>
-                <h3 class="mt-2 text-left text-xl font-semibold text-purple-main">Mediana Voice (VoIP) dashboard interactive demo</h3>
+                <h3 class="mt-2 text-left text-xl font-semibold text-purple-main">Mediana Voice (VoIP) dashboard interactive prototype</h3>
               </div>
               <span class="text-lg text-purple-main transition group-hover:text-gray-600">→</span>
             </div>
@@ -352,5 +429,38 @@
       </div>
     </section>
   </main>
+  <script>
+    const medianaHeroVideo = document.getElementById('mediana-hero-video');
+    const medianaVideoToggle = document.getElementById('mediana-video-toggle');
+    const medianaPlayIcon = medianaVideoToggle?.querySelector('.video-icon-play');
+    const medianaPauseIcon = medianaVideoToggle?.querySelector('.video-icon-pause');
+
+    function syncMedianaVideoButton() {
+      if (!medianaHeroVideo || !medianaVideoToggle || !medianaPlayIcon || !medianaPauseIcon) {
+        return;
+      }
+
+      const isPlaying = !medianaHeroVideo.paused;
+      medianaVideoToggle.setAttribute('aria-label', isPlaying ? 'Pause Mediana video' : 'Play Mediana video');
+      medianaVideoToggle.setAttribute('aria-pressed', String(isPlaying));
+      medianaPlayIcon.classList.toggle('hidden', isPlaying);
+      medianaPauseIcon.classList.toggle('hidden', !isPlaying);
+    }
+
+    if (medianaHeroVideo && medianaVideoToggle) {
+      medianaVideoToggle.addEventListener('click', () => {
+        if (medianaHeroVideo.paused) {
+          medianaHeroVideo.play();
+        } else {
+          medianaHeroVideo.pause();
+        }
+      });
+
+      medianaHeroVideo.addEventListener('play', syncMedianaVideoButton);
+      medianaHeroVideo.addEventListener('pause', syncMedianaVideoButton);
+      medianaHeroVideo.addEventListener('loadedmetadata', syncMedianaVideoButton);
+      syncMedianaVideoButton();
+    }
+  </script>
 </body>
 </html>
