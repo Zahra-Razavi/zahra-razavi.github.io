@@ -199,48 +199,6 @@
             preload="metadata"
             aria-label="Mediana Voice dashboard overview video"
           ></video>
-          <button
-            id="mediana-video-toggle"
-            type="button"
-            class="
-              absolute
-              left-1/2
-              top-1/2
-              z-10
-              inline-flex
-              h-16
-              w-16
-              -translate-x-1/2
-              -translate-y-1/2
-              items-center
-              justify-center
-              rounded-full
-              border
-              border-white/50
-              bg-black/45
-              text-white
-              shadow-xl
-              backdrop-blur
-              transition
-              hover:bg-black/65
-              focus-visible:outline
-              focus-visible:outline-2
-              focus-visible:outline-offset-4
-              focus-visible:outline-teal-300
-            "
-            aria-label="Pause Mediana video"
-            aria-pressed="true"
-          >
-            <svg
-              class="h-7 w-7"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path class="video-icon-play hidden" d="M8 5v14l11-7z" />
-              <path class="video-icon-pause" d="M7 5h4v14H7zM13 5h4v14h-4z" />
-            </svg>
-          </button>
         </div>
         <div class="mt-10 flex justify-center">
           <a
@@ -480,38 +438,5 @@
       </div>
     </section>
   </main>
-  <script>
-    const medianaHeroVideo = document.getElementById('mediana-hero-video');
-    const medianaVideoToggle = document.getElementById('mediana-video-toggle');
-    const medianaPlayIcon = medianaVideoToggle?.querySelector('.video-icon-play');
-    const medianaPauseIcon = medianaVideoToggle?.querySelector('.video-icon-pause');
-
-    function syncMedianaVideoButton() {
-      if (!medianaHeroVideo || !medianaVideoToggle || !medianaPlayIcon || !medianaPauseIcon) {
-        return;
-      }
-
-      const isPlaying = !medianaHeroVideo.paused;
-      medianaVideoToggle.setAttribute('aria-label', isPlaying ? 'Pause Mediana video' : 'Play Mediana video');
-      medianaVideoToggle.setAttribute('aria-pressed', String(isPlaying));
-      medianaPlayIcon.classList.toggle('hidden', isPlaying);
-      medianaPauseIcon.classList.toggle('hidden', !isPlaying);
-    }
-
-    if (medianaHeroVideo && medianaVideoToggle) {
-      medianaVideoToggle.addEventListener('click', () => {
-        if (medianaHeroVideo.paused) {
-          medianaHeroVideo.play();
-        } else {
-          medianaHeroVideo.pause();
-        }
-      });
-
-      medianaHeroVideo.addEventListener('play', syncMedianaVideoButton);
-      medianaHeroVideo.addEventListener('pause', syncMedianaVideoButton);
-      medianaHeroVideo.addEventListener('loadedmetadata', syncMedianaVideoButton);
-      syncMedianaVideoButton();
-    }
-  </script>
 </body>
 </html>

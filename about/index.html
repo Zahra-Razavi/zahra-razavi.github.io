@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Zahra Razavi</title>
+  <meta name="description" content="About Zahra Razavi, product designer, UX researcher, and startup product builder." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; }
+
+    .portrait-orbit {
+      position: relative;
+      width: min(58vw, 344px);
+      aspect-ratio: 1;
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+    }
+
+    .portrait-orbit::before {
+      content: "";
+      position: absolute;
+      inset: 6.5%;
+      z-index: 3;
+      border: 2px solid rgba(17, 17, 17, 0.84);
+      border-radius: inherit;
+      transform: translate(5%, -5%);
+    }
+
+    .portrait-orbit::after {
+      display: none;
+    }
+
+    .portrait-crescent {
+      position: absolute;
+      left: -3%;
+      bottom: 6%;
+      z-index: 2;
+      width: 26%;
+      height: 26%;
+      border-radius: 9999px;
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(17, 17, 17, 0.42) 0 2px,
+        transparent 2px 6px
+      );
+      pointer-events: none;
+      transform: rotate(-18deg);
+    }
+
+    .portrait-frame {
+      position: relative;
+      z-index: 1;
+      width: 86%;
+      height: 86%;
+      overflow: hidden;
+      border-radius: 9999px;
+      background: #f2f2f2;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-gray-100 bg-black">
+    <div class="mx-auto flex max-w-screen-xl items-center justify-between gap-4 px-6 py-5 lg:px-8">
+      <a href="/" class="text-2xl font-medium tracking-[0.12em] text-white">Zahra Razavi</a>
+      <nav class="hidden gap-6 text-lg text-white md:flex">
+        <a href="/#work" class="hover:opacity-70">Work</a>
+        <a href="/resume/" class="hover:opacity-70">Resume</a>
+        <a href="/about/" class="hover:opacity-70">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <section class="mx-auto grid min-h-[calc(100vh-6rem)] max-w-screen-xl items-center gap-14 px-6 py-12 lg:grid-cols-2 lg:px-8 lg:py-16">
+      <div class="flex justify-center">
+        <div class="portrait-orbit" aria-label="Portrait of Zahra Razavi">
+          <span class="portrait-crescent" aria-hidden="true"></span>
+          <div class="portrait-frame">
+            <img
+              src="../images/zahra-profile.JPG"
+              alt="Portrait of Zahra Razavi"
+              class="h-full w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-xl">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-[#4EA2C9]">About</p>
+        <h1 class="text-3xl font-semibold tracking-tight text-black md:text-4xl">My Story</h1>
+        <p class="mt-5 text-sm leading-6 text-gray-700 md:text-base md:leading-7">
+          I’m Zara, the oldest of Gen Zs. When I was 15 I fell in love [with design of course]. I knew it was beyond love; it was about self-discovery. So I decided after finishing studying mathematics and physics at high school to study design in university. And leave the engineering path. After 4 years of studying bachelor in design and 3 years of doing HCI and UX research at master. And 7 years of designing brand, Products and user experiences at Startups here I am.
+        </p>
+
+        <div class="mt-10">
+          <h2 class="text-2xl font-semibold tracking-tight text-black md:text-3xl">Experiences</h2>
+          <div class="mt-5 space-y-4">
+          <div class="grid gap-1 md:grid-cols-[1fr_auto] md:items-start">
+            <div>
+              <h3 class="text-base font-semibold text-black">Co-founder</h3>
+              <p class="mt-1 text-sm text-gray-600">Visa Assistant (AI Startup)</p>
+            </div>
+            <p class="text-sm font-medium text-gray-500 md:text-right">2024-2025</p>
+          </div>
+          <div class="grid gap-1 md:grid-cols-[1fr_auto] md:items-start">
+            <div>
+              <h3 class="text-base font-semibold text-black">Senior Product Designer</h3>
+              <p class="mt-1 text-sm text-gray-600">Lendeck</p>
+            </div>
+            <p class="text-sm font-medium text-gray-500 md:text-right">2024-2024</p>
+          </div>
+          <div class="grid gap-1 md:grid-cols-[1fr_auto] md:items-start">
+            <div>
+              <h3 class="text-base font-semibold text-black">Founding Product Manager</h3>
+              <p class="mt-1 text-sm text-gray-600">Mediana</p>
+            </div>
+            <p class="text-sm font-medium text-gray-500 md:text-right">2023-2024</p>
+          </div>
+          <div class="grid gap-1 md:grid-cols-[1fr_auto] md:items-start">
+            <div>
+              <h3 class="text-base font-semibold text-black">Senior Product Designer</h3>
+              <p class="mt-1 text-sm text-gray-600">Hengam</p>
+            </div>
+            <p class="text-sm font-medium text-gray-500 md:text-right">2022-2022</p>
+          </div>
+          <div class="grid gap-1 md:grid-cols-[1fr_auto] md:items-start">
+            <div>
+              <h3 class="text-base font-semibold text-black">Founding Product Designer</h3>
+              <p class="mt-1 text-sm text-gray-600">Ganje</p>
+            </div>
+            <p class="text-sm font-medium text-gray-500 md:text-right">2019-2021</p>
+          </div>
+          <div class="grid gap-1 md:grid-cols-[1fr_auto] md:items-start">
+            <div>
+              <h3 class="text-base font-semibold text-black">Product Designer</h3>
+              <p class="mt-1 text-sm text-gray-600">Kidora</p>
+            </div>
+            <p class="text-sm font-medium text-gray-500 md:text-right">2020-2021</p>
+          </div>
+          <div class="grid gap-1 md:grid-cols-[1fr_auto] md:items-start">
+            <div>
+              <h3 class="text-base font-semibold text-black">Project Manager &amp; Brand Design Lead</h3>
+              <p class="mt-1 text-sm text-gray-600">NBIC, University of Tehran</p>
+            </div>
+            <p class="text-sm font-medium text-gray-500 md:text-right">2019-2020</p>
+          </div>
+          <div class="grid gap-1 md:grid-cols-[1fr_auto] md:items-start">
+            <div>
+              <h3 class="text-base font-semibold text-black">Junior Business &amp; Service Designer</h3>
+              <p class="mt-1 text-sm text-gray-600">Lean Design Agency</p>
+            </div>
+            <p class="text-sm font-medium text-gray-500 md:text-right">2019-2020</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-black text-white">
+    <div class="mx-auto grid max-w-screen-xl gap-10 px-6 py-14 md:grid-cols-2 lg:px-8">
+      <div>
+        <p class="mb-4 text-xs uppercase tracking-[0.35em] text-white/60">Contact</p>
+        <div class="space-y-3 text-lg">
+          <a class="inline-flex items-center gap-3 transition hover:opacity-80" href="https://www.linkedin.com/in/zahrarazavi97" target="_blank" rel="noopener">
+            <span>LinkedIn</span>
+            <span aria-hidden="true" class="text-white/60">↗</span>
+          </a>
+          <a class="block transition hover:opacity-80" href="mailto:zrazavi97@gmail.com">zrazavi97@gmail.com</a>
+        </div>
+      </div>
+      <div>
+        <p class="mb-4 text-xs uppercase tracking-[0.35em] text-white/60">Links</p>
+        <div class="grid gap-2 text-lg">
+          <a class="transition hover:opacity-80" href="/projects/lendeck/">Lendeck</a>
+          <a class="transition hover:opacity-80" href="/projects/mediana/">Mediana</a>
+          <a class="transition hover:opacity-80" href="/projects/ganje-brand/">Ganje</a>
+          <a class="transition hover:opacity-80" href="/projects/kidora/">Kidora</a>
+          <a class="transition hover:opacity-80" href="/resume/">Resume</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
