@@ -3,7 +3,18 @@
   import App from "./App.tsx";
   import "./index.css";
 
-  const clickFocusableSelector = 'button, a[href], [role="button"], [data-slot="button"]';
+  const clickFocusableSelector = [
+    "button",
+    "a[href]",
+    '[role="button"]',
+    '[role="menuitem"]',
+    '[role="tab"]',
+    '[role="checkbox"]',
+    '[role="radio"]',
+    '[role="switch"]',
+    '[data-slot="button"]',
+    '[tabindex]:not([tabindex="-1"])',
+  ].join(",");
 
   document.addEventListener(
     "mousedown",
@@ -27,7 +38,7 @@
     () => {
       window.requestAnimationFrame(() => {
         const activeElement = document.activeElement;
-        if (activeElement instanceof HTMLElement && activeElement.matches(clickFocusableSelector)) {
+        if (activeElement instanceof HTMLElement && activeElement.closest(clickFocusableSelector)) {
           activeElement.blur();
         }
       });
@@ -39,7 +50,7 @@
     "focusin",
     (event) => {
       const target = event.target;
-      if (target instanceof HTMLElement && target.matches(clickFocusableSelector)) {
+      if (target instanceof HTMLElement && target.closest(clickFocusableSelector)) {
         target.blur();
       }
     },

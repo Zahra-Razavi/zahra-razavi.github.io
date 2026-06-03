@@ -4106,17 +4106,22 @@ html {
   --tw-ring-shadow: 0 0 #0000 !important;
   --tw-ring-offset-shadow: 0 0 #0000 !important;
   --tw-inset-ring-shadow: 0 0 #0000 !important;
+  -webkit-focus-ring-color: transparent;
   -webkit-tap-highlight-color: transparent;
 }
 
 *:focus,
 *:focus-visible,
 *:focus-within,
+*:-moz-focusring,
 *:active {
-  outline: none !important;
+  outline: 0 solid transparent !important;
   outline-color: transparent !important;
   outline-offset: 0 !important;
+  outline-style: none !important;
+  outline-width: 0 !important;
   box-shadow: none !important;
+  -webkit-box-shadow: none !important;
   --ring: transparent !important;
   --tw-ring-color: transparent !important;
   --tw-ring-shadow: 0 0 #0000 !important;
@@ -4142,6 +4147,9 @@ a:active,
   --tw-ring-shadow: 0 0 #0000 !important;
   --tw-ring-offset-shadow: 0 0 #0000 !important;
   --tw-inset-ring-shadow: 0 0 #0000 !important;
+  outline: 0 solid transparent !important;
+  outline-style: none !important;
+  outline-width: 0 !important;
   transition-property: background-color, border-color, color, fill, stroke, opacity, transform !important;
 }
 

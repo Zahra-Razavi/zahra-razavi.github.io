@@ -17,31 +17,54 @@
     *,
     *::before,
     *::after {
+      --tw-ring-color: transparent !important;
       --tw-ring-shadow: 0 0 #0000 !important;
       --tw-ring-offset-shadow: 0 0 #0000 !important;
       --tw-inset-ring-shadow: 0 0 #0000 !important;
+      -webkit-focus-ring-color: transparent;
       -webkit-tap-highlight-color: transparent;
     }
 
     *:focus,
     *:focus-visible,
+    *:focus-within,
+    *:-moz-focusring,
     *:active {
-      outline: none !important;
+      outline: 0 solid transparent !important;
+      outline-color: transparent !important;
+      outline-offset: 0 !important;
+      outline-style: none !important;
+      outline-width: 0 !important;
       box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      --ring: transparent !important;
+      --tw-ring-color: transparent !important;
+      --tw-ring-shadow: 0 0 #0000 !important;
+      --tw-ring-offset-shadow: 0 0 #0000 !important;
+      --tw-inset-ring-shadow: 0 0 #0000 !important;
     }
 
     button:focus,
     button:focus-visible,
+    button:focus-within,
     button:active,
     a:focus,
     a:focus-visible,
+    a:focus-within,
     a:active,
     [role="button"]:focus,
     [role="button"]:focus-visible,
+    [role="button"]:focus-within,
     [role="button"]:active {
       border-color: transparent !important;
       --ring: transparent !important;
       --tw-ring-color: transparent !important;
+      --tw-ring-shadow: 0 0 #0000 !important;
+      --tw-ring-offset-shadow: 0 0 #0000 !important;
+      --tw-inset-ring-shadow: 0 0 #0000 !important;
+      outline: 0 solid transparent !important;
+      outline-style: none !important;
+      outline-width: 0 !important;
       transition-property: background-color, border-color, color, fill, stroke, opacity, transform !important;
     }
 
@@ -118,7 +141,7 @@
       <div class="flex items-center gap-3">
         <a href="/" class="text-2xl text-white font-medium tracking-[0.12em]">Zahra Razavi</a>
       </div>
-      <button id="mobile-menu-toggle" type="button" class="md:hidden text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-expanded="false" aria-controls="mobile-menu">
+      <button id="mobile-menu-toggle" type="button" class="md:hidden text-white" aria-expanded="false" aria-controls="mobile-menu">
         <span class="sr-only">Toggle navigation</span>
         <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="menu">
           <line x1="4" y1="6" x2="20" y2="6" />
@@ -166,7 +189,7 @@
         </h1>
       </div>
       <div class="flex justify-center md:translate-y-16">
-        <a href="#work" class="inline-flex items-center justify-center w-12 h-12 text-2xl rounded-full bg-[#000000] text-white font-semibold md:w-16 md:h-16 md:text-4xl border-2 border-transparent hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4EA2C9]" aria-label="Scroll to case studies">
+        <a href="#work" class="inline-flex items-center justify-center w-12 h-12 text-2xl rounded-full bg-[#000000] text-white font-semibold md:w-16 md:h-16 md:text-4xl border-2 border-transparent hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition" aria-label="Scroll to case studies">
           ↓
         </a>
       </div>
@@ -187,7 +210,7 @@
     -->
     <div class="mt-16 gap-16">
       <div class="mt-16">
-        <a href="https://zahra-razavi.github.io/projects/lendeck/" class="group block border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+        <a href="https://zahra-razavi.github.io/projects/lendeck/" class="group block border rounded-xl overflow-hidden">
             <img src="images/mockup-homepage-lendeck.png" alt="Lendeck dashboard mockup" class="w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
         </a>
         <div class="mt-6 space-y-2">
@@ -196,7 +219,7 @@
         </div>
       </div>
       <div class="mt-16">
-        <a href="https://zahra-razavi.github.io/projects/mediana/" class="group block border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+        <a href="https://zahra-razavi.github.io/projects/mediana/" class="group block border rounded-xl overflow-hidden">
             <img src="images/mockup-homepage-Mediana.png" alt="Mediana Voice SaaS dashboard mockup" class="w-full h-full object-cover" />
         </a>
         <div class="mt-6 space-y-2">
@@ -205,7 +228,7 @@
         </div>
       </div>
       <!-- 
-      <a href="https://zahra-razavi.github.io/projects/ganje/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+      <a href="https://zahra-razavi.github.io/projects/ganje/" class="group border rounded-xl overflow-hidden">
         <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
         <div class="p-5">
           <h3 class="font-medium text-lg">Ganje — B2B Logistics Platform; IoT smart lockers</h3>
@@ -213,7 +236,7 @@
       </a>
     -->
       <div class="mt-16">
-        <a href="https://zahra-razavi.github.io/projects/ganje-brand/" class="group block border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+        <a href="https://zahra-razavi.github.io/projects/ganje-brand/" class="group block border rounded-xl overflow-hidden">
             <img src="images/mockup-homepage-ganje-logo.png" alt="Lendeck dashboard high-fidelity mockup in purple theme" class="w-full h-full object-cover" />
         </a>
         <div class="mt-6 space-y-2">
@@ -222,7 +245,7 @@
         </div>
       </div>
       <div class="mt-16">
-        <a href="https://zahra-razavi.github.io/projects/kidora/" class="group block border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+        <a href="https://zahra-razavi.github.io/projects/kidora/" class="group block border rounded-xl overflow-hidden">
           <div class="">
             <img src="images/mockup-homepage-kidora.png" alt="Kidora app mockup" class="w-full h-full object-cover" />
           </div>
@@ -234,7 +257,7 @@
       </div>
       <!-- 
       </a>
-      <a href="https://zahra-razavi.github.io/projects/hengam/" class="group border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
+      <a href="https://zahra-razavi.github.io/projects/hengam/" class="group border rounded-xl overflow-hidden">
         <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
         <div class="p-5">
           <h3 class="font-medium text-lg">Notyfy Me! - Shopify App</h3>

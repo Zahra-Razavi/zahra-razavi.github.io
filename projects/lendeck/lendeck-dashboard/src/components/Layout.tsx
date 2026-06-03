@@ -118,7 +118,7 @@ export function Layout({ children, sidebar, title, currentDashboard, onDashboard
         <div className="flex items-center justify-center flex-1 px-2 min-w-0">
           {user.dashboards.length > 1 ? (
             <Select value={currentDashboard} onValueChange={handleDashboardChange}>
-              <SelectTrigger className="w-auto min-w-[120px] max-w-[200px] border-0 bg-transparent gap-1 sm:gap-2 hover:bg-muted/50 focus:ring-0 focus:ring-offset-0 h-8 sm:h-10">
+              <SelectTrigger className="w-auto min-w-[120px] max-w-[200px] border-0 bg-transparent gap-1 sm:gap-2 hover:bg-muted/50 h-8 sm:h-10">
                 <SelectValue>
                   <span className="font-medium text-[#4E0F60] capitalize text-sm sm:text-base truncate">
                     <span className="hidden sm:inline">{currentDashboard} Dashboard</span>

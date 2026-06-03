@@ -74,17 +74,31 @@
       *,
       *::before,
       *::after {
+        --tw-ring-color: transparent !important;
         --tw-ring-shadow: 0 0 #0000 !important;
         --tw-ring-offset-shadow: 0 0 #0000 !important;
         --tw-inset-ring-shadow: 0 0 #0000 !important;
+        -webkit-focus-ring-color: transparent;
         -webkit-tap-highlight-color: transparent;
       }
 
       *:focus,
       *:focus-visible,
+      *:focus-within,
+      *:-moz-focusring,
       *:active {
-        outline: none !important;
+        outline: 0 solid transparent !important;
+        outline-color: transparent !important;
+        outline-offset: 0 !important;
+        outline-style: none !important;
+        outline-width: 0 !important;
         box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        --ring: transparent !important;
+        --tw-ring-color: transparent !important;
+        --tw-ring-shadow: 0 0 #0000 !important;
+        --tw-ring-offset-shadow: 0 0 #0000 !important;
+        --tw-inset-ring-shadow: 0 0 #0000 !important;
       }
 
       button:focus,
@@ -92,13 +106,18 @@
       button:active,
       a:focus,
       a:focus-visible,
+      a:focus-within,
       a:active,
       [role="button"]:focus,
       [role="button"]:focus-visible,
+      [role="button"]:focus-within,
       [role="button"]:active {
         border-color: transparent !important;
         --ring: transparent !important;
         --tw-ring-color: transparent !important;
+        --tw-ring-shadow: 0 0 #0000 !important;
+        --tw-ring-offset-shadow: 0 0 #0000 !important;
+        --tw-inset-ring-shadow: 0 0 #0000 !important;
         transition-property: background-color, border-color, color, fill, stroke, opacity, transform !important;
       }
 
@@ -277,10 +296,6 @@
               transition
               hover:bg-[#ff7a32]
               hover:shadow-[0_9px_66px_-14px_rgba(255,95,12,1),0_0_0_1px_rgba(255,255,255,0.24)]
-              focus-visible:outline
-              focus-visible:outline-2
-              focus-visible:outline-offset-4
-              focus-visible:outline-highlight
             "
           >
             <span>View Interactive Prototype</span>
@@ -534,19 +549,19 @@
             </div>
               <p class="paragraph-medium mb-12">The journey visualized handoffs across brokers, lenders, and merchants, surfacing where automation and guidance could reduce friction.</p>
               <div class="space-y-24">   
-                <div class="space-y-16">
+                <div>
                   <p class="text-5xl font-black text-purple-mid">Broker Journey map</p>
-                  <figure class="overflow-hidden mb-4">
+                  <figure class="mt-16 overflow-hidden">
                       <img src="image/Lendeck-BrokerJourney-ClassicLendingProcess.svg" alt="Lendeck dashboard sitemap" class="w-full object-cover" />
                   </figure>
-                  <p class="paragraph-medium mb-20">Summary: The broker experiences fragmented communication, poor visibility, and heavy manual workload throughout the lending process.</p>
+                  <p class="paragraph-medium mt-4 mb-20">Summary: The broker experiences fragmented communication, poor visibility, and heavy manual workload throughout the lending process.</p>
                 </div>
-                <div class="space-y-16">
+                <div>
                   <p class="text-5xl font-black text-purple-mid">Lender Journey map</p>
-                  <figure class="overflow-hidden mb-4">
+                  <figure class="mt-16 overflow-hidden">
                       <img src="image/Lendeck-LenderJourney-ClassicLendingProcess.svg" alt="Lendeck dashboard sitemap" class="w-full object-cover" />
                   </figure>
-                  <p class="paragraph-medium ">Summary: The lender faces inefficiencies, fragmented data, and slow loan cycles that limit deal flow and scalability.</p>
+                  <p class="paragraph-medium mt-4">Summary: The lender faces inefficiencies, fragmented data, and slow loan cycles that limit deal flow and scalability.</p>
                 </div>
               </div>
         </div>

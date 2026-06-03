@@ -369,7 +369,7 @@ All interactive elements have visible focus indicators:
 <Button>Button</Button> // Has focus ring
 
 // Custom elements
-<div className="focus-visible:ring-2 focus-visible:ring-ring">
+<div className="">
   Focusable element
 </div>
 ```
