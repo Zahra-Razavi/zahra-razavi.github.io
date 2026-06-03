@@ -35,5 +35,16 @@
     true,
   );
 
+  document.addEventListener(
+    "focusin",
+    (event) => {
+      const target = event.target;
+      if (target instanceof HTMLElement && target.matches(clickFocusableSelector)) {
+        target.blur();
+      }
+    },
+    true,
+  );
+
   createRoot(document.getElementById("root")!).render(<App />);
   

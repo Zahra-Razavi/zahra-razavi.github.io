@@ -50,6 +50,52 @@
   --teal-900: #1A5A51;
 }
 
+*,
+*::before,
+*::after {
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+  --tw-inset-ring-shadow: 0 0 #0000 !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus,
+*:focus-visible,
+*:focus-within,
+*:active {
+  outline: none !important;
+  outline-color: transparent !important;
+  outline-offset: 0 !important;
+  box-shadow: none !important;
+  --ring: transparent !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+  --tw-inset-ring-shadow: 0 0 #0000 !important;
+}
+
+button:focus,
+button:focus-visible,
+button:focus-within,
+button:active,
+a:focus,
+a:focus-visible,
+a:focus-within,
+a:active,
+[role="button"]:focus,
+[role="button"]:focus-visible,
+[role="button"]:focus-within,
+[role="button"]:active {
+  border-color: transparent !important;
+  --ring: transparent !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+  --tw-inset-ring-shadow: 0 0 #0000 !important;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, transform !important;
+}
+
 .dark {
   --background: #000000;
   --foreground: #ffffff;
