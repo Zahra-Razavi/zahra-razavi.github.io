@@ -62,14 +62,7 @@ type OnboardingData = {
 };
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
-  const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
-  
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
-  }
-  
-  // Allow access to dashboard even if onboarding is not complete
-  // Onboarding is only required for new signups
+  // Public portfolio prototype: allow direct access to dashboard routes.
   return <>{children}</>;
 }
 
@@ -201,11 +194,6 @@ export default function App() {
   };
 
   const getDefaultRoute = () => {
-    const isAuth = localStorage.getItem('isAuthenticated') === 'true';
-    const isOnboardingDone = localStorage.getItem('onboardingComplete') === 'true';
-    
-    if (!isAuth) return '/login';
-    if (!isOnboardingDone) return '/onboarding';
     return '/reports';
   };
 
