@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zahra Razavi — Dark Editorial Portfolio</title>
+  <meta name="description" content="Dark editorial portfolio homepage for Zahra Razavi, product designer and UX researcher." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-bg: #080808;
+      --dark-bg-deep: #050505;
+      --dark-main-surface: #0B0B0B;
+      --dark-surface: #1F1F21;
+      --dark-border: #3A3A3A;
+      --dark-text: #F4F1EB;
+      --dark-muted: #BCBCBC;
+      --dark-subtle: #8E8E8E;
+      --dark-white: #FFFFFF;
+      --dark-focus: #F4F1EB;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--dark-bg-deep);
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--dark-bg-deep);
+      color: var(--dark-text);
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--dark-focus);
+      outline-offset: 4px;
+      border-radius: 8px;
+    }
+
+    .dark-page {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% -12%, rgba(244, 241, 235, 0.08), transparent 32rem),
+        var(--dark-bg-deep);
+      color: var(--dark-text);
+    }
+
+    .dark-shell {
+      width: min(100%, 1540px);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 72px);
+    }
+
+    .dark-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(58, 58, 58, 0.7);
+      background: rgba(5, 5, 5, 0.82);
+      backdrop-filter: blur(18px);
+    }
+
+    .dark-nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 78px;
+    }
+
+    .dark-brand {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dark-white);
+    }
+
+    .dark-nav__links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 15px;
+      color: var(--dark-muted);
+    }
+
+    .dark-nav__links a {
+      transition: color 180ms ease;
+    }
+
+    .dark-nav__links a:hover {
+      color: var(--dark-white);
+    }
+
+    .dark-hero {
+      min-height: min(840px, calc(100vh - 78px));
+      display: grid;
+      align-items: end;
+      padding-block: clamp(72px, 9vw, 132px) clamp(44px, 7vw, 96px);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .dark-hero__eyebrow {
+      margin: 0 0 28px;
+      color: var(--dark-subtle);
+      font-size: 14px;
+      line-height: 1.5;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .dark-hero-title {
+      max-width: 1180px;
+      margin: 0;
+      font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+      font-size: clamp(56px, 7vw, 112px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--dark-text);
+    }
+
+    .dark-hero-title em {
+      font-style: italic;
+      text-decoration: underline;
+      text-decoration-thickness: 0.04em;
+      text-underline-offset: 0.12em;
+    }
+
+    .dark-hero__footer {
+      display: grid;
+      grid-template-columns: minmax(0, 680px) auto;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-top: clamp(36px, 7vw, 84px);
+    }
+
+    .dark-hero__summary {
+      margin: 0;
+      color: var(--dark-muted);
+      font-size: clamp(18px, 1.8vw, 26px);
+      line-height: 1.45;
+    }
+
+    .dark-scroll-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border: 1px solid var(--dark-border);
+      border-radius: 999px;
+      background: var(--dark-main-surface);
+      color: var(--dark-white);
+      font-size: 28px;
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .dark-scroll-link:hover {
+      border-color: var(--dark-text);
+      transform: translateY(3px);
+    }
+
+    .dark-section {
+      padding-block: clamp(72px, 9vw, 132px);
+    }
+
+    .dark-section__header {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 40px;
+      align-items: end;
+      margin-bottom: clamp(32px, 6vw, 72px);
+    }
+
+    .dark-section__label {
+      margin: 0;
+      color: var(--dark-subtle);
+      font-size: 14px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .dark-section__title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(44px, 5.8vw, 88px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    .dark-cases {
+      display: grid;
+      gap: clamp(32px, 4vw, 48px);
+    }
+
+    .dark-case-card {
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid var(--dark-border);
+      border-radius: 28px;
+      background: var(--dark-bg);
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .dark-case-card:hover {
+      border-color: rgba(244, 241, 235, 0.68);
+      transform: translateY(-2px);
+    }
+
+    .dark-experience-row {
+      display: grid;
+      grid-template-columns: 180px 420px 1fr;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .dark-date-cell,
+    .dark-title-cell,
+    .dark-description-cell {
+      min-width: 0;
+      padding: clamp(24px, 3vw, 42px);
+    }
+
+    .dark-date-cell,
+    .dark-title-cell {
+      border-right: 1px solid var(--dark-border);
+    }
+
+    .dark-date-cell {
+      color: #E8E8E8;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .dark-title-cell {
+      color: var(--dark-white);
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .dark-description-cell {
+      color: var(--dark-muted);
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .dark-media-cell {
+      padding: 16px;
+    }
+
+    .dark-media-frame {
+      display: grid;
+      min-height: 420px;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--dark-surface);
+      padding: clamp(28px, 5vw, 72px);
+    }
+
+    .dark-media-frame img {
+      width: 100%;
+      max-height: 720px;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 28px 72px rgba(0, 0, 0, 0.32);
+    }
+
+    .dark-media-frame--cover img {
+      max-height: none;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .dark-about {
+      border-top: 1px solid var(--dark-border);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .dark-about__body {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 920px);
+      gap: 40px;
+    }
+
+    .dark-about__copy {
+      display: grid;
+      gap: 26px;
+      color: var(--dark-muted);
+      font-size: clamp(20px, 2vw, 30px);
+      line-height: 1.45;
+    }
+
+    .dark-about__copy p {
+      margin: 0;
+    }
+
+    .dark-footer {
+      padding-block: clamp(56px, 7vw, 92px);
+    }
+
+    .dark-footer__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      border: 1px solid var(--dark-border);
+      border-radius: 28px;
+      padding: clamp(28px, 5vw, 56px);
+      background: var(--dark-main-surface);
+    }
+
+    .dark-footer__label {
+      margin: 0 0 20px;
+      color: var(--dark-subtle);
+      font-size: 13px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .dark-footer__links {
+      display: grid;
+      gap: 12px;
+      color: var(--dark-muted);
+      font-size: clamp(18px, 2vw, 26px);
+    }
+
+    .dark-footer__links a:hover {
+      color: var(--dark-white);
+    }
+
+    .dark-footer__credit {
+      margin: 28px 0 0;
+      color: var(--dark-subtle);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    [data-animate] {
+      transition: opacity 620ms ease, transform 620ms ease;
+    }
+
+    [data-animate].is-waiting {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    @media (max-width: 1180px) {
+      .dark-experience-row {
+        grid-template-columns: 140px 300px 1fr;
+      }
+
+      .dark-date-cell,
+      .dark-title-cell,
+      .dark-description-cell {
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .dark-hero__footer,
+      .dark-section__header,
+      .dark-about__body {
+        grid-template-columns: 1fr;
+      }
+
+      .dark-experience-row {
+        grid-template-columns: 140px 300px;
+      }
+
+      .dark-title-cell {
+        border-right: 0;
+      }
+
+      .dark-description-cell {
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--dark-border);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .dark-shell {
+        padding-inline: 18px;
+      }
+
+      .dark-nav__inner {
+        min-height: 68px;
+      }
+
+      .dark-brand {
+        font-size: 13px;
+        letter-spacing: 0.12em;
+      }
+
+      .dark-nav__links {
+        gap: 16px;
+        font-size: 14px;
+      }
+
+      .dark-hero {
+        min-height: auto;
+        padding-top: 72px;
+      }
+
+      .dark-hero__summary {
+        font-size: 18px;
+      }
+
+      .dark-scroll-link {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+      }
+
+      .dark-experience-row {
+        grid-template-columns: 132px 1fr;
+      }
+
+      .dark-date-cell,
+      .dark-title-cell {
+        padding: 24px 20px;
+      }
+
+      .dark-date-cell {
+        font-size: 24px;
+      }
+
+      .dark-title-cell {
+        font-size: 20px;
+      }
+
+      .dark-description-cell {
+        display: none;
+      }
+
+      .dark-media-cell {
+        padding: 12px;
+      }
+
+      .dark-media-frame {
+        min-height: 270px;
+        border-radius: 22px;
+        padding: 26px;
+      }
+
+      .dark-media-frame img {
+        width: 150%;
+        max-width: none;
+      }
+
+      .dark-media-frame--focus-left img {
+        transform: translateX(13%);
+      }
+
+      .dark-media-frame--focus-right img {
+        transform: translateX(-12%);
+      }
+
+      .dark-footer__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      [data-animate].is-waiting {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dark-page">
+    <header class="dark-nav">
+      <div class="dark-shell dark-nav__inner">
+        <a class="dark-brand" href="/dark/">Zahra Razavi</a>
+        <nav class="dark-nav__links" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="/resume/">Resume</a>
+          <a href="/about/">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="dark-shell dark-hero" data-animate>
+        <div>
+          <p class="dark-hero__eyebrow">Product design / UX research / Human-AI systems</p>
+          <h1 class="dark-hero-title">
+            Zahra Razavi designs experiences and products from 0-&gt;1 in startups, currently shaping <em>Human-AI</em> collaboration.
+          </h1>
+          <div class="dark-hero__footer">
+            <p class="dark-hero__summary">
+              Product designer with 6 years of experience across SaaS, VoIP, FinTech, brand systems, mobile apps, and agentic-AI workflows.
+            </p>
+            <a class="dark-scroll-link" href="#work" aria-label="Scroll to case studies">↓</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="dark-shell dark-section" aria-labelledby="work-title">
+        <div class="dark-section__header" data-animate>
+          <p class="dark-section__label">Selected work</p>
+          <h2 id="work-title" class="dark-section__title">Case Studies</h2>
+        </div>
+
+        <div class="dark-cases">
+          <a class="dark-case-card" href="https://zahra-razavi.github.io/projects/lendeck/" data-animate>
+            <div class="dark-experience-row">
+              <div class="dark-date-cell">2024</div>
+              <div class="dark-title-cell">Lending Platform Design</div>
+              <div class="dark-description-cell">Designed a FinTech lending experience for broker and lender workflows, from structured onboarding to dashboard operations.</div>
+            </div>
+            <div class="dark-media-cell">
+              <div class="dark-media-frame">
+                <img src="../images/mockup-homepage-lendeck.png" alt="Lendeck dashboard mockup" loading="eager" decoding="async">
+              </div>
+            </div>
+          </a>
+
+          <a class="dark-case-card" href="https://zahra-razavi.github.io/projects/mediana/" data-animate>
+            <div class="dark-experience-row">
+              <div class="dark-date-cell">2023</div>
+              <div class="dark-title-cell">VoIP SaaS Dashboard Design</div>
+              <div class="dark-description-cell">Built a modern VoIP SaaS interface for analytics, call operations, IVR flows, users, billing, and team settings.</div>
+            </div>
+            <div class="dark-media-cell">
+              <div class="dark-media-frame dark-media-frame--focus-right">
+                <img src="../images/mockup-homepage-Mediana.png" alt="Mediana Voice SaaS dashboard mockup" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </a>
+
+          <a class="dark-case-card" href="https://zahra-razavi.github.io/projects/ganje-brand/" data-animate>
+            <div class="dark-experience-row">
+              <div class="dark-date-cell">2020-<br>2022</div>
+              <div class="dark-title-cell">Brand &amp; Visual Identity Design</div>
+              <div class="dark-description-cell">Created the visual identity foundations for Ganje, including brand marks, presentation systems, and product-facing identity assets.</div>
+            </div>
+            <div class="dark-media-cell">
+              <div class="dark-media-frame dark-media-frame--cover">
+                <img src="../images/mockup-homepage-ganje-logo.png" alt="Ganje brand and logo identity mockup" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </a>
+
+          <a class="dark-case-card" href="https://zahra-razavi.github.io/projects/kidora/" data-animate>
+            <div class="dark-experience-row">
+              <div class="dark-date-cell">2021-<br>2023</div>
+              <div class="dark-title-cell">Early Childhood Development App Redesign</div>
+              <div class="dark-description-cell">Redesigned a mobile app experience around parent needs, clearer flows, research findings, and approachable child-development guidance.</div>
+            </div>
+            <div class="dark-media-cell">
+              <div class="dark-media-frame dark-media-frame--focus-left">
+                <img src="../images/mockup-homepage-kidora.png" alt="Kidora app redesign mockup" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="about" class="dark-about">
+        <div class="dark-shell dark-section dark-about__body" data-animate>
+          <p class="dark-section__label">About</p>
+          <div class="dark-about__copy">
+            <p>Designer &amp; UX Researcher with 6+ years owning end-to-end design of SaaS products, mobile/web apps, and agentic-AI experiences, from discovery through production release, for high-growth startups across Canada, U.S., and MENA.</p>
+            <p>Skilled in full-cycle product design, from discovery, cognitive research, and journey mapping to accessible, WCAG-compliant interfaces and iterative UX optimization in Agile environments.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="dark-shell dark-footer">
+      <div class="dark-footer__grid">
+        <div>
+          <p class="dark-footer__label">Contact</p>
+          <div class="dark-footer__links">
+            <a href="https://www.linkedin.com/in/zahrarazavi97" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="mailto:zrazavi97@gmail.com">zrazavi97@gmail.com</a>
+          </div>
+        </div>
+        <div>
+          <p class="dark-footer__label">Links</p>
+          <div class="dark-footer__links">
+            <a href="https://zahra-razavi.github.io/projects/lendeck/">Lendeck</a>
+            <a href="https://zahra-razavi.github.io/projects/mediana/">Mediana</a>
+            <a href="https://zahra-razavi.github.io/projects/ganje/">Ganje</a>
+            <a href="https://zahra-razavi.github.io/projects/kidora/">Kidora</a>
+            <a href="https://zahra-razavi.github.io/projects/border-ai/">Border AI</a>
+            <a href="https://zahra-razavi.github.io/resume/">Resume</a>
+          </div>
+        </div>
+      </div>
+      <p class="dark-footer__credit">© 2025 - Designed and coded by Zahra Razavi</p>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const animateEls = document.querySelectorAll('[data-animate]');
+
+      if (prefersReduced || !('IntersectionObserver' in window)) {
+        return;
+      }
+
+      animateEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          return;
+        }
+
+        el.classList.add('is-waiting');
+      });
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('is-waiting');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px 24% 0px', threshold: 0.01 });
+
+      animateEls.forEach(el => {
+        if (el.classList.contains('is-waiting')) {
+          observer.observe(el);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
