@@ -3,438 +3,630 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zahra Razavi — Product Designer| UI/UX Designer</title>
-  <meta name="description" content="Product Designer & PM portfolio: UI/UX case studies across SaaS, VoIP, FinTech, and AI-assisted products." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Zara Razavi — Dark Editorial Portfolio</title>
+  <meta name="description" content="Dark editorial portfolio homepage for Zara Razavi, product designer and UX researcher." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif; }
-    [data-animate] { transition: opacity .6s ease, transform .6s ease; }
-    [data-animate].is-waiting { opacity: 0; transform: translateY(24px); }
-    *,
-    *::before,
-    *::after {
-      --tw-ring-color: transparent !important;
-      --tw-ring-shadow: 0 0 #0000 !important;
-      --tw-ring-offset-shadow: 0 0 #0000 !important;
-      --tw-inset-ring-shadow: 0 0 #0000 !important;
-      -webkit-focus-ring-color: transparent;
-      -webkit-tap-highlight-color: transparent;
+    :root {
+      --dark-bg: #080808;
+      --dark-bg-deep: #050505;
+      --dark-main-surface: #0B0B0B;
+      --dark-surface: #1F1F21;
+      --dark-border: #3A3A3A;
+      --dark-text: #F4F1EB;
+      --dark-muted: #BCBCBC;
+      --dark-subtle: #8E8E8E;
+      --dark-white: #FFFFFF;
+      --dark-focus: #F4F1EB;
     }
 
-    *:focus,
-    *:focus-visible,
-    *:focus-within,
-    *:-moz-focusring,
-    *:active {
-      outline: 0 solid transparent !important;
-      outline-color: transparent !important;
-      outline-offset: 0 !important;
-      outline-style: none !important;
-      outline-width: 0 !important;
-      box-shadow: none !important;
-      -webkit-box-shadow: none !important;
-      --ring: transparent !important;
-      --tw-ring-color: transparent !important;
-      --tw-ring-shadow: 0 0 #0000 !important;
-      --tw-ring-offset-shadow: 0 0 #0000 !important;
-      --tw-inset-ring-shadow: 0 0 #0000 !important;
+    * {
+      box-sizing: border-box;
     }
 
-    button:focus,
-    button:focus-visible,
-    button:focus-within,
-    button:active,
-    a:focus,
+    html {
+      scroll-behavior: smooth;
+      background: var(--dark-bg-deep);
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--dark-bg-deep);
+      color: var(--dark-text);
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     a:focus-visible,
-    a:focus-within,
-    a:active,
-    [role="button"]:focus,
-    [role="button"]:focus-visible,
-    [role="button"]:focus-within,
-    [role="button"]:active {
-      border-color: transparent !important;
-      --ring: transparent !important;
-      --tw-ring-color: transparent !important;
-      --tw-ring-shadow: 0 0 #0000 !important;
-      --tw-ring-offset-shadow: 0 0 #0000 !important;
-      --tw-inset-ring-shadow: 0 0 #0000 !important;
-      outline: 0 solid transparent !important;
-      outline-style: none !important;
-      outline-width: 0 !important;
-      transition-property: background-color, border-color, color, fill, stroke, opacity, transform !important;
+    button:focus-visible {
+      outline: 2px solid var(--dark-focus);
+      outline-offset: 4px;
+      border-radius: 8px;
     }
 
-    input:focus,
-    input:focus-visible,
-    textarea:focus,
-    textarea:focus-visible,
-    select:focus,
-    select:focus-visible {
-      transition-property: background-color, border-color, color, fill, stroke, opacity, transform !important;
+    .dark-page {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% -12%, rgba(244, 241, 235, 0.08), transparent 32rem),
+        var(--dark-bg-deep);
+      color: var(--dark-text);
     }
 
-    .portrait-orbit {
-      position: relative;
-      width: min(58vw, 344px);
-      aspect-ratio: 1;
-      border-radius: 9999px;
+    .dark-shell {
+      width: min(100%, 1540px);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 72px);
+    }
+
+    .dark-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(58, 58, 58, 0.7);
+      background: rgba(5, 5, 5, 0.82);
+      backdrop-filter: blur(18px);
+    }
+
+    .dark-nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 78px;
+    }
+
+    .dark-brand {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dark-white);
+    }
+
+    .dark-nav__links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 15px;
+      color: var(--dark-muted);
+    }
+
+    .dark-nav__links a {
+      transition: color 180ms ease;
+    }
+
+    .dark-nav__links a:hover {
+      color: var(--dark-white);
+    }
+
+    .dark-hero {
+      min-height: min(840px, calc(100vh - 78px));
       display: grid;
-      place-items: center;
+      align-items: end;
+      padding-block: clamp(72px, 9vw, 132px) clamp(44px, 7vw, 96px);
+      border-bottom: 1px solid var(--dark-border);
     }
 
-    .portrait-orbit--hero {
-      width: clamp(108px, 12vw, 129px);
+    .dark-hero__eyebrow {
+      margin: 0 0 28px;
+      color: var(--dark-subtle);
+      font-size: 14px;
+      line-height: 1.5;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
     }
 
-    .portrait-orbit::before {
-      content: "";
-      position: absolute;
-      inset: 6.5%;
-      z-index: 3;
-      border: 2px solid rgba(17, 17, 17, 0.84);
-      border-radius: inherit;
-      transform: translate(5%, -5%);
+    .dark-hero-title {
+      max-width: 1180px;
+      margin: 0;
+      font-family: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+      font-size: clamp(56px, 7vw, 112px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--dark-text);
     }
 
-    .portrait-crescent {
-      position: absolute;
-      left: -3%;
-      bottom: 6%;
-      z-index: 2;
-      width: 26%;
-      height: 26%;
-      border-radius: 9999px;
-      background: repeating-linear-gradient(
-        135deg,
-        rgba(17, 17, 17, 0.42) 0 2px,
-        transparent 2px 4px
-      );
-      pointer-events: none;
-      transform: rotate(-18deg);
+    .dark-hero-title em {
+      font-style: italic;
+      text-decoration: underline;
+      text-decoration-thickness: 0.04em;
+      text-underline-offset: 0.12em;
     }
 
-    .portrait-frame {
-      position: relative;
-      z-index: 1;
-      width: 86%;
-      height: 86%;
+    .dark-hero__footer {
+      display: grid;
+      grid-template-columns: minmax(0, 680px) auto;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-top: clamp(36px, 7vw, 84px);
+    }
+
+    .dark-hero__summary {
+      margin: 0;
+      color: var(--dark-muted);
+      font-size: clamp(18px, 1.8vw, 26px);
+      line-height: 1.45;
+    }
+
+    .dark-scroll-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border: 1px solid var(--dark-border);
+      border-radius: 999px;
+      background: var(--dark-main-surface);
+      color: var(--dark-white);
+      font-size: 28px;
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .dark-scroll-link:hover {
+      border-color: var(--dark-text);
+      transform: translateY(3px);
+    }
+
+    .dark-section {
+      padding-block: clamp(72px, 9vw, 132px);
+    }
+
+    .dark-section__header {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 40px;
+      align-items: end;
+      margin-bottom: clamp(32px, 6vw, 72px);
+    }
+
+    .dark-section__label {
+      margin: 0;
+      color: var(--dark-subtle);
+      font-size: 14px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .dark-section__title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(44px, 5.8vw, 88px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }
+
+    .dark-cases {
+      display: grid;
+      gap: clamp(32px, 4vw, 48px);
+    }
+
+    .dark-case-card {
+      width: 100%;
       overflow: hidden;
-      border-radius: 9999px;
-      background: #f2f2f2;
+      border: 1px solid var(--dark-border);
+      border-radius: 28px;
+      background: var(--dark-bg);
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .dark-case-card:hover {
+      border-color: rgba(244, 241, 235, 0.68);
+      transform: translateY(-2px);
+    }
+
+    .dark-experience-row {
+      display: grid;
+      grid-template-columns: 180px 420px 1fr;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .dark-date-cell,
+    .dark-title-cell,
+    .dark-description-cell {
+      min-width: 0;
+      padding: clamp(24px, 3vw, 42px);
+    }
+
+    .dark-date-cell,
+    .dark-title-cell {
+      border-right: 1px solid var(--dark-border);
+    }
+
+    .dark-date-cell {
+      color: #E8E8E8;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .dark-title-cell {
+      color: var(--dark-white);
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .dark-description-cell {
+      color: var(--dark-muted);
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .dark-media-cell {
+      padding: 16px;
+    }
+
+    .dark-media-frame {
+      display: grid;
+      min-height: 420px;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--dark-surface);
+      padding: clamp(28px, 5vw, 72px);
+    }
+
+    .dark-media-frame img {
+      width: 100%;
+      max-height: 720px;
+      object-fit: contain;
+      border-radius: inherit;
+      box-shadow: 0 28px 72px rgba(0, 0, 0, 0.32);
+    }
+
+    .dark-media-frame--cover img {
+      max-height: none;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .dark-footer {
+      padding-block: clamp(56px, 7vw, 92px);
+    }
+
+    .dark-footer__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      border: 1px solid var(--dark-border);
+      border-radius: 28px;
+      padding: clamp(28px, 5vw, 56px);
+      background: var(--dark-main-surface);
+    }
+
+    .dark-footer__label {
+      margin: 0 0 20px;
+      color: var(--dark-subtle);
+      font-size: 13px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .dark-footer__links {
+      display: grid;
+      gap: 12px;
+      color: var(--dark-muted);
+      font-size: clamp(18px, 2vw, 26px);
+    }
+
+    .dark-footer__links a:hover {
+      color: var(--dark-white);
+    }
+
+    .dark-footer__credit {
+      margin: 28px 0 0;
+      color: var(--dark-subtle);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    [data-animate] {
+      transition: opacity 620ms ease, transform 620ms ease;
+    }
+
+    [data-animate].is-waiting {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    @media (max-width: 1180px) {
+      .dark-experience-row {
+        grid-template-columns: 140px 300px 1fr;
+      }
+
+      .dark-date-cell,
+      .dark-title-cell,
+      .dark-description-cell {
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .dark-hero__footer,
+      .dark-section__header {
+        grid-template-columns: 1fr;
+      }
+
+      .dark-experience-row {
+        grid-template-columns: 140px 300px;
+      }
+
+      .dark-title-cell {
+        border-right: 0;
+      }
+
+      .dark-description-cell {
+        grid-column: 1 / -1;
+        border-top: 1px solid var(--dark-border);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .dark-shell {
+        padding-inline: 18px;
+      }
+
+      .dark-nav__inner {
+        min-height: 68px;
+      }
+
+      .dark-brand {
+        font-size: 13px;
+        letter-spacing: 0.12em;
+      }
+
+      .dark-nav__links {
+        gap: 16px;
+        font-size: 14px;
+      }
+
+      .dark-hero {
+        min-height: auto;
+        padding-top: 72px;
+      }
+
+      .dark-hero__summary {
+        font-size: 18px;
+      }
+
+      .dark-scroll-link {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+      }
+
+      .dark-experience-row {
+        grid-template-columns: 132px 1fr;
+      }
+
+      .dark-date-cell,
+      .dark-title-cell {
+        padding: 24px 20px;
+      }
+
+      .dark-date-cell {
+        font-size: 24px;
+      }
+
+      .dark-title-cell {
+        font-size: 20px;
+      }
+
+      .dark-description-cell {
+        display: none;
+      }
+
+      .dark-media-cell {
+        padding: 12px;
+      }
+
+      .dark-media-frame {
+        min-height: 270px;
+        border-radius: 22px;
+        padding: 26px;
+      }
+
+      .dark-media-frame img {
+        width: 150%;
+        max-width: none;
+      }
+
+      .dark-media-frame--focus-left img {
+        transform: translateX(13%);
+      }
+
+      .dark-media-frame--focus-right img {
+        transform: translateX(-12%);
+      }
+
+      .dark-footer__grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      [data-animate] { transition: none; }
-      [data-animate].is-waiting { opacity: 1; transform: none; }
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      [data-animate].is-waiting {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-DWcLgJ8Ycm9B3ch6xubDq0hP47Gm2f7RtADxFODrM1Sr3srmh64MczOQ8pXxvFVF6pHI9gV5g9KQ0kivS4QnTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="bg-white text-gray-800">
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 bg-black backdrop-blur border-b border-gray-100 z-50">
-    <div class="max-w-screen-xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <a href="/" class="text-2xl text-white font-medium tracking-[0.12em]">Zahra Razavi</a>
+<body>
+  <div class="dark-page">
+    <header class="dark-nav">
+      <div class="dark-shell dark-nav__inner">
+        <a class="dark-brand" href="/">Zara Razavi</a>
+        <nav class="dark-nav__links" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="/resume/">Resume</a>
+        </nav>
       </div>
-      <button id="mobile-menu-toggle" type="button" class="md:hidden text-white" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="sr-only">Toggle navigation</span>
-        <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="menu">
-          <line x1="4" y1="6" x2="20" y2="6" />
-          <line x1="4" y1="12" x2="20" y2="12" />
-          <line x1="4" y1="18" x2="20" y2="18" />
-        </svg>
-        <svg class="h-7 w-7 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-icon="close">
-          <line x1="6" y1="6" x2="18" y2="18" />
-          <line x1="6" y1="18" x2="18" y2="6" />
-        </svg>
-      </button>
-      <nav class="text-lg hidden text-white md:flex gap-6">
-        <a href="#work" class=" hover:opacity-70">Work</a>
-        <a href="/resume/" class="hover:opacity-70">Resume</a>
-        <a href="/about/" class="hover:opacity-70">About</a>
-      </nav>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden border-t border-white/20">
-      <nav class="px-6 py-4 flex flex-col gap-4 text-white text-lg">
-        <a href="#work" class="hover:opacity-70">Work</a>
-        <a href="/resume/" class="hover:opacity-70">Resume</a>
-        <a href="/about/" class="hover:opacity-70">About</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <main class="pt-0">
-
-  <!-- Hero -->
-  <section data-animate class="max-w-screen-xl mx-auto px-6 lg:px-8 py-20 md:py-36">
-    <div class="grid mt-24 mb-24 items-center gap-10 md:grid-cols-2 md:mt-48 md:mb-48">
-      <div class="flex flex-col items-start justify-center">
-        <div class="portrait-orbit portrait-orbit--hero mb-6" aria-label="Portrait of Zahra Razavi">
-          <span class="portrait-crescent" aria-hidden="true"></span>
-          <div class="portrait-frame">
-            <img
-              src="images/zahra-profile.JPG"
-              alt="Portrait of Zahra Razavi"
-              class="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-        <h1 class="max-w-xl text-lg font-medium leading-8 text-black md:text-xl md:leading-9">
-          Zara Razavi is a Product designer with 6 years of experience designing experiences and products 0-&gt;1 in startups. Currently designing Human-AI experiences.
-        </h1>
-      </div>
-      <div class="flex justify-center md:translate-y-16">
-        <a href="#work" class="inline-flex items-center justify-center w-12 h-12 text-2xl rounded-full bg-[#000000] text-white font-semibold md:w-16 md:h-16 md:text-4xl border-2 border-transparent hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition" aria-label="Scroll to case studies">
-          ↓
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Work Grid -->
-  <section id="work" class="max-w-screen-xl mx-auto px-2 lg:px-4 pb-16 scroll-mt-32">
-    <!-- Project Card Template -->
-    <h2 class="m-2 text-6xl font-medium">Case Studies</h2>
-    <!--
-    <div class="mt-4 mb-6">
-        <p class=" md:text-lg text-gray-600">
-        <span class="block"> Expertise in FinTech, SaaS, logistics, IoT-enabled services,</span>
-        <span class="block"> digital health, e-commerce, and AI-assisted workflows.</span>
-        </p>
-    </div>
-    -->
-    <div class="mt-16 gap-16">
-      <div class="mt-16">
-        <a href="https://zahra-razavi.github.io/projects/lendeck/" class="group block border rounded-xl overflow-hidden">
-            <img src="images/mockup-homepage-lendeck.png" alt="Lendeck dashboard mockup" class="w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
-        </a>
-        <div class="mt-6 space-y-2">
-            <h3 class="font-medium text-3xl">Lending platform Design</h3>
-            <p class="text-gray-600 text-xl">Lendeck - 2024</p>
-        </div>
-      </div>
-      <div class="mt-16">
-        <a href="https://zahra-razavi.github.io/projects/mediana/" class="group block border rounded-xl overflow-hidden">
-            <img src="images/mockup-homepage-Mediana.png" alt="Mediana Voice SaaS dashboard mockup" class="w-full h-full object-cover" />
-        </a>
-        <div class="mt-6 space-y-2">
-          <h3 class="font-medium text-3xl">VoIP SaaS Dashboard Design</h3>
-          <p class="text-gray-600 text-xl">Mediana Voice - 2023</p>
-        </div>
-      </div>
-      <!-- 
-      <a href="https://zahra-razavi.github.io/projects/ganje/" class="group border rounded-xl overflow-hidden">
-        <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
-        <div class="p-5">
-          <h3 class="font-medium text-lg">Ganje — B2B Logistics Platform; IoT smart lockers</h3>
-        </div>
-      </a>
-    -->
-      <div class="mt-16">
-        <a href="https://zahra-razavi.github.io/projects/ganje-brand/" class="group block border rounded-xl overflow-hidden">
-            <img src="images/mockup-homepage-ganje-logo.png" alt="Lendeck dashboard high-fidelity mockup in purple theme" class="w-full h-full object-cover" />
-        </a>
-        <div class="mt-6 space-y-2">
-          <h3 class="font-medium text-3xl">Brand & Visual Identity Design </h3> 
-          <p class="text-gray-600 text-xl">Ganje - 2020-2022</p>
-        </div>
-      </div>
-      <div class="mt-16">
-        <a href="https://zahra-razavi.github.io/projects/kidora/" class="group block border rounded-xl overflow-hidden">
-          <div class="">
-            <img src="images/mockup-homepage-kidora.png" alt="Kidora app mockup" class="w-full h-full object-cover" />
-          </div>
-        </a>
-        <div class="mt-6 space-y-2">
-          <h3 class="font-medium text-3xl">Early Childhood Development App Redesign </h3>
-          <p class="text-gray-600 text-xl">Kidora - 2021-2023</p>
-        </div>
-      </div>
-      <!-- 
-      </a>
-      <a href="https://zahra-razavi.github.io/projects/hengam/" class="group border rounded-xl overflow-hidden">
-        <div class="aspect-[16/9] bg-gray-100 flex items-center justify-center text-gray-400 text-sm">Project Cover</div>
-        <div class="p-5">
-          <h3 class="font-medium text-lg">Notyfy Me! - Shopify App</h3>
-        </div>
-      </a>
-      -->
-      
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" data-animate class="max-w-screen-xl mx-auto px-2 lg:px-4 pb-16">
-    <h2 class="mt-8 m-2 text-6xl font-medium">About</h2>
-    
-    <div class="mt-16 text-lg max-w-4xl mx-auto px-4 text-gray-700 text-justify lg:text-xl space-y-6">
-      <p>Designer & UX Researcher with 6+ years owning end-to-end design of SaaS products, mobile/web apps, and agentic-AI experiences, from discovery through production release, for high-growth startups across Canada, U.S., and MENA. Proven ability to scale platforms, reduce churn, and accelerate delivery through lean, AI-augmented workflows.</p>
-      <p>Skilled in full-cycle product design, from discovery, cognitive research, and journey mapping to accessible, WCAG-compliant interfaces and iterative UX optimization in Agile environments. Known for strong collaboration with cross-functional teams, backed by deep expertise in UX research, behavioral analytics, and product strategy.</p>
-    </div>
-  </section>
-
-   <!-- Resume 
-   <section id="resume" data-animate class="max-w-screen-xl mx-auto px-6 lg:px-8 py-16">
-    <h2 class="text-4xl font-semibold">Resume</h2>
-    
-    <p class="mt-2 text-gray-600">
-      Explore the interactive preview below, or click anywhere on it to open the full-page version.
-    </p>
-
-    <div class="text-center">
-      <div class="relative max-w-3xl mx-auto mt-8 w-full h-[min(80vh,900px)] border rounded-xl overflow-hidden shadow-sm">
-        <iframe
-          id="resume-preview"
-          src="resume/index.html"
-          title="Zahra Razavi — Resume Preview"
-          class="w-full h-full bg-gray-50"
-          loading="lazy">
-        </iframe>
-      </div>
-
-      <a href="resume/"
-        class="inline-block mt-6 px-5 py-3 border rounded-lg text-gray-700 hover:translate-y-0.5 transition">
-        Open full resume
-      </a>
-      <a href="assets/Zahra-Razavi-Resume.pdf" download
-        class="inline-block mt-3 px-5 py-3 border rounded-lg text-gray-700 hover:translate-y-0.5 transition">
-        Download my resume (PDF)
-      </a>
-    </div>
-  </section>
-  -->
-
-  
-  </main>
-
-  <footer class="bg-black text-white mt-24">
-    <div class="max-w-screen-xl mx-auto px-6 py-16 space-y-12">
-      <div class="grid gap-10 md:grid-cols-2">
+    <main>
+      <section class="dark-shell dark-hero" data-animate>
         <div>
-          <p class="text-xs uppercase tracking-[0.35em] text-white/60 mb-4">Contact</p>
-          <div class="space-y-3 text-lg">
-            <a class="inline-flex items-center gap-3 hover:opacity-80 transition" href="https://www.linkedin.com/in/zahrarazavi97" target="_blank" rel="noopener">
-              <span>LinkedIn</span>
-              <span aria-hidden="true" class="text-white/60">↗</span>
-            </a>
-            <a class="block hover:opacity-80 transition" href="mailto:zrazavi97@gmail.com">zrazavi97@gmail.com</a>
+          <p class="dark-hero__eyebrow">Product design / UX research / Human-AI systems</p>
+          <h1 class="dark-hero-title">
+            Zara Razavi designs experiences and products from 0-&gt;1 in startups, currently shaping <em>Human-AI</em> collaboration.
+          </h1>
+          <div class="dark-hero__footer">
+            <p class="dark-hero__summary">
+              Product designer with 6 years of experience across SaaS, VoIP, FinTech, brand systems, mobile apps, and agentic-AI workflows.
+            </p>
+            <a class="dark-scroll-link" href="#work" aria-label="Scroll to case studies">↓</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="dark-shell dark-section" aria-labelledby="work-title">
+        <div class="dark-section__header" data-animate>
+          <p class="dark-section__label">Selected work</p>
+          <h2 id="work-title" class="dark-section__title">Case Studies</h2>
+        </div>
+
+        <div class="dark-cases">
+          <a class="dark-case-card" href="https://zahra-razavi.github.io/projects/lendeck/" data-animate>
+            <div class="dark-experience-row">
+              <div class="dark-date-cell">2024</div>
+              <div class="dark-title-cell">Lending Platform Design</div>
+              <div class="dark-description-cell">Designed a FinTech lending experience for broker and lender workflows, from structured onboarding to dashboard operations.</div>
+            </div>
+            <div class="dark-media-cell">
+              <div class="dark-media-frame">
+                <img src="images/mockup-homepage-lendeck.png" alt="Lendeck dashboard mockup" loading="eager" decoding="async">
+              </div>
+            </div>
+          </a>
+
+          <a class="dark-case-card" href="https://zahra-razavi.github.io/projects/mediana/" data-animate>
+            <div class="dark-experience-row">
+              <div class="dark-date-cell">2023</div>
+              <div class="dark-title-cell">VoIP SaaS Dashboard Design</div>
+              <div class="dark-description-cell">Built a modern VoIP SaaS interface for analytics, call operations, IVR flows, users, billing, and team settings.</div>
+            </div>
+            <div class="dark-media-cell">
+              <div class="dark-media-frame dark-media-frame--focus-right">
+                <img src="images/mockup-homepage-Mediana.png" alt="Mediana Voice SaaS dashboard mockup" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </a>
+
+          <a class="dark-case-card" href="https://zahra-razavi.github.io/projects/ganje-brand/" data-animate>
+            <div class="dark-experience-row">
+              <div class="dark-date-cell">2020-<br>2022</div>
+              <div class="dark-title-cell">Brand &amp; Visual Identity Design</div>
+              <div class="dark-description-cell">Created the visual identity foundations for Ganje, including brand marks, presentation systems, and product-facing identity assets.</div>
+            </div>
+            <div class="dark-media-cell">
+              <div class="dark-media-frame dark-media-frame--cover">
+                <img src="images/mockup-homepage-ganje-logo.png" alt="Ganje brand and logo identity mockup" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </a>
+
+          <a class="dark-case-card" href="https://zahra-razavi.github.io/projects/kidora/" data-animate>
+            <div class="dark-experience-row">
+              <div class="dark-date-cell">2021-<br>2023</div>
+              <div class="dark-title-cell">Early Childhood Development App Redesign</div>
+              <div class="dark-description-cell">Redesigned a mobile app experience around parent needs, clearer flows, research findings, and approachable child-development guidance.</div>
+            </div>
+            <div class="dark-media-cell">
+              <div class="dark-media-frame dark-media-frame--focus-left">
+                <img src="images/mockup-homepage-kidora.png" alt="Kidora app redesign mockup" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="dark-shell dark-footer">
+      <div class="dark-footer__grid">
+        <div>
+          <p class="dark-footer__label">Contact</p>
+          <div class="dark-footer__links">
+            <a href="https://www.linkedin.com/in/zahrarazavi97" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="mailto:zrazavi97@gmail.com">zrazavi97@gmail.com</a>
           </div>
         </div>
         <div>
-          <p class="text-xs uppercase tracking-[0.35em] text-white/60 mb-4">Links</p>
-          <div class="grid gap-2 text-lg">
-            <a class="hover:opacity-80 transition" href="https://zahra-razavi.github.io/projects/lendeck/">Lendeck</a>
-            <a class="hover:opacity-80 transition" href="https://zahra-razavi.github.io/projects/mediana/">Mediana</a>
-            <a class="hover:opacity-80 transition" href="https://zahra-razavi.github.io/projects/ganje/">Ganje</a>
-            <a class="hover:opacity-80 transition" href="https://zahra-razavi.github.io/projects/kidora/">Kidora</a>
-            <a class="hover:opacity-80 transition" href="https://zahra-razavi.github.io/projects/border-ai/">Border AI</a>
-            <a class="hover:opacity-80 transition" href="https://zahra-razavi.github.io/resume/">Resume</a>
+          <p class="dark-footer__label">Links</p>
+          <div class="dark-footer__links">
+            <a href="https://zahra-razavi.github.io/projects/lendeck/">Lendeck</a>
+            <a href="https://zahra-razavi.github.io/projects/mediana/">Mediana</a>
+            <a href="https://zahra-razavi.github.io/projects/ganje/">Ganje</a>
+            <a href="https://zahra-razavi.github.io/projects/kidora/">Kidora</a>
+            <a href="https://zahra-razavi.github.io/projects/border-ai/">Border AI</a>
+            <a href="https://zahra-razavi.github.io/resume/">Resume</a>
           </div>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-6 text-center text-sm text-white/80">
-        © 2025- Designed and coded by Zahra Razavi
-      </div>
-    </div>
-  </footer>
+      <p class="dark-footer__credit">© 2025 - Designed and coded by Zara Razavi</p>
+    </footer>
+  </div>
 
-  <!-- Optional: reduce motion for users who prefer it -->
   <script>
-    (() => {
-      const clickFocusableSelector = 'button, a[href], [role="button"]';
-
-      document.addEventListener('mousedown', event => {
-        if (event.button !== 0) {
-          return;
-        }
-
-        if (event.target instanceof Element && event.target.closest(clickFocusableSelector)) {
-          event.preventDefault();
-        }
-      }, true);
-
-      document.addEventListener('mouseup', () => {
-        window.requestAnimationFrame(() => {
-          if (document.activeElement instanceof HTMLElement && document.activeElement.matches(clickFocusableSelector)) {
-            document.activeElement.blur();
-          }
-        });
-      }, true);
-    })();
-
     document.addEventListener('DOMContentLoaded', () => {
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const animateEls = document.querySelectorAll('[data-animate]');
 
-      if (!prefersReduced) {
-        animateEls.forEach(el => el.classList.add('is-waiting'));
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.remove('is-waiting');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { rootMargin: '0px 0px 30% 0px', threshold: 0.01 });
-        animateEls.forEach(el => observer.observe(el));
-
-        document.querySelectorAll('a, button').forEach(el => {
-          el.classList.add('transition', 'duration-300');
-        });
+      if (prefersReduced || !('IntersectionObserver' in window)) {
+        return;
       }
 
-      const yearEl = document.getElementById('year');
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
+      animateEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          return;
+        }
 
-      const resumePreview = document.getElementById('resume-preview');
-      if (resumePreview) {
-        resumePreview.addEventListener('load', () => {
-          const previewDocument = resumePreview.contentDocument || resumePreview.contentWindow?.document;
-          if (previewDocument) {
-            previewDocument.addEventListener('click', () => {
-              window.open('resume/index.html', '_blank', 'noopener');
-            });
+        el.classList.add('is-waiting');
+      });
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('is-waiting');
+            obs.unobserve(entry.target);
           }
         });
-      }
+      }, { rootMargin: '0px 0px 24% 0px', threshold: 0.01 });
 
-      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileMenuToggle && mobileMenu) {
-        const iconOpen = mobileMenuToggle.querySelector('[data-icon="menu"]');
-        const iconClose = mobileMenuToggle.querySelector('[data-icon="close"]');
-
-        const setIconState = expanded => {
-          if (iconOpen && iconClose) {
-            iconOpen.classList.toggle('hidden', expanded);
-            iconClose.classList.toggle('hidden', !expanded);
-          }
-        };
-
-        mobileMenuToggle.addEventListener('click', () => {
-          const isHidden = mobileMenu.classList.toggle('hidden');
-          const expanded = !isHidden;
-          mobileMenuToggle.setAttribute('aria-expanded', expanded.toString());
-          setIconState(expanded);
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            if (!mobileMenu.classList.contains('hidden')) {
-              mobileMenu.classList.add('hidden');
-              mobileMenuToggle.setAttribute('aria-expanded', 'false');
-              setIconState(false);
-            }
-          });
-        });
-      }
+      animateEls.forEach(el => {
+        if (el.classList.contains('is-waiting')) {
+          observer.observe(el);
+        }
+      });
     });
   </script>
 </body>

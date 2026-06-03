@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zahra Razavi — Dark Editorial Portfolio</title>
-  <meta name="description" content="Dark editorial portfolio homepage for Zahra Razavi, product designer and UX researcher." />
+  <title>Zara Razavi — Dark Editorial Portfolio</title>
+  <meta name="description" content="Dark editorial portfolio homepage for Zara Razavi, product designer and UX researcher." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -286,7 +286,7 @@
       width: 100%;
       max-height: 720px;
       object-fit: contain;
-      border-radius: 14px;
+      border-radius: inherit;
       box-shadow: 0 28px 72px rgba(0, 0, 0, 0.32);
     }
 
@@ -294,29 +294,6 @@
       max-height: none;
       aspect-ratio: 16 / 9;
       object-fit: cover;
-    }
-
-    .dark-about {
-      border-top: 1px solid var(--dark-border);
-      border-bottom: 1px solid var(--dark-border);
-    }
-
-    .dark-about__body {
-      display: grid;
-      grid-template-columns: 180px minmax(0, 920px);
-      gap: 40px;
-    }
-
-    .dark-about__copy {
-      display: grid;
-      gap: 26px;
-      color: var(--dark-muted);
-      font-size: clamp(20px, 2vw, 30px);
-      line-height: 1.45;
-    }
-
-    .dark-about__copy p {
-      margin: 0;
     }
 
     .dark-footer {
@@ -382,8 +359,7 @@
 
     @media (max-width: 980px) {
       .dark-hero__footer,
-      .dark-section__header,
-      .dark-about__body {
+      .dark-section__header {
         grid-template-columns: 1fr;
       }
 
@@ -508,11 +484,10 @@
   <div class="dark-page">
     <header class="dark-nav">
       <div class="dark-shell dark-nav__inner">
-        <a class="dark-brand" href="/dark/">Zahra Razavi</a>
+        <a class="dark-brand" href="/dark/">Zara Razavi</a>
         <nav class="dark-nav__links" aria-label="Primary navigation">
           <a href="#work">Work</a>
           <a href="/resume/">Resume</a>
-          <a href="/about/">About</a>
         </nav>
       </div>
     </header>
@@ -522,7 +497,7 @@
         <div>
           <p class="dark-hero__eyebrow">Product design / UX research / Human-AI systems</p>
           <h1 class="dark-hero-title">
-            Zahra Razavi designs experiences and products from 0-&gt;1 in startups, currently shaping <em>Human-AI</em> collaboration.
+            Zara Razavi designs experiences and products from 0-&gt;1 in startups, currently shaping <em>Human-AI</em> collaboration.
           </h1>
           <div class="dark-hero__footer">
             <p class="dark-hero__summary">
@@ -593,16 +568,6 @@
           </a>
         </div>
       </section>
-
-      <section id="about" class="dark-about">
-        <div class="dark-shell dark-section dark-about__body" data-animate>
-          <p class="dark-section__label">About</p>
-          <div class="dark-about__copy">
-            <p>Designer &amp; UX Researcher with 6+ years owning end-to-end design of SaaS products, mobile/web apps, and agentic-AI experiences, from discovery through production release, for high-growth startups across Canada, U.S., and MENA.</p>
-            <p>Skilled in full-cycle product design, from discovery, cognitive research, and journey mapping to accessible, WCAG-compliant interfaces and iterative UX optimization in Agile environments.</p>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="dark-shell dark-footer">
@@ -626,7 +591,7 @@
           </div>
         </div>
       </div>
-      <p class="dark-footer__credit">© 2025 - Designed and coded by Zahra Razavi</p>
+      <p class="dark-footer__credit">© 2025 - Designed and coded by Zara Razavi</p>
     </footer>
   </div>
 
