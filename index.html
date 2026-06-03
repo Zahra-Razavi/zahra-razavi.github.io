@@ -14,6 +14,53 @@
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif; }
     [data-animate] { transition: opacity .6s ease, transform .6s ease; }
     [data-animate].is-waiting { opacity: 0; transform: translateY(24px); }
+
+    .portrait-orbit {
+      position: relative;
+      width: min(58vw, 344px);
+      aspect-ratio: 1;
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+    }
+
+    .portrait-orbit::before {
+      content: "";
+      position: absolute;
+      inset: 6.5%;
+      z-index: 3;
+      border: 2px solid rgba(17, 17, 17, 0.84);
+      border-radius: inherit;
+      transform: translate(5%, -5%);
+    }
+
+    .portrait-crescent {
+      position: absolute;
+      left: -3%;
+      bottom: 6%;
+      z-index: 2;
+      width: 26%;
+      height: 26%;
+      border-radius: 9999px;
+      background: repeating-linear-gradient(
+        135deg,
+        rgba(17, 17, 17, 0.42) 0 2px,
+        transparent 2px 6px
+      );
+      pointer-events: none;
+      transform: rotate(-18deg);
+    }
+
+    .portrait-frame {
+      position: relative;
+      z-index: 1;
+      width: 86%;
+      height: 86%;
+      overflow: hidden;
+      border-radius: 9999px;
+      background: #f2f2f2;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       [data-animate] { transition: none; }
       [data-animate].is-waiting { opacity: 1; transform: none; }
@@ -61,13 +108,15 @@
   <section data-animate class="max-w-screen-xl mx-auto px-6 lg:px-8 py-20 md:py-36">
     <div class="grid mt-24 mb-24 items-center md:[grid-template-columns:1fr_2fr] md:mt-48 md:mb-48">
       <div class="flex flex-col items-start">
-        <div class=" mb-8 w-48 h-48 rounded-full border-[6px] border-[#000000] overflow-hidden self-center md:self-start md:w-80 md:h-80">
-          <img
-            src="images/zahra-profile.JPG"
-            alt="Portrait of Zahra Razavi"
-            width="80"
-            height="80"
-            class="w-full h-full object-cover" />
+        <div class="portrait-orbit mb-8 self-center md:self-start" aria-label="Portrait of Zahra Razavi">
+          <span class="portrait-crescent" aria-hidden="true"></span>
+          <div class="portrait-frame">
+            <img
+              src="images/zahra-profile.JPG"
+              alt="Portrait of Zahra Razavi"
+              class="h-full w-full object-cover"
+            />
+          </div>
         </div>
       </div>
       <div>
