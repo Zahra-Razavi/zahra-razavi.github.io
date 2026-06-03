@@ -19,21 +19,30 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const getStoredUser = (): User | null => {
+    const storedUser = localStorage.getItem('lendeck_user');
+    if (!storedUser) {
+      return null;
+    }
+
+    try {
+      return JSON.parse(storedUser);
+    } catch (error) {
+      console.error('Failed to parse stored user:', error);
+      localStorage.removeItem('lendeck_user');
+      return null;
+    }
+  };
+
+  const [user, setUser] = useState<User | null>(() => getStoredUser());
+  const [isAuthenticated, setIsAuthenticated] = useState(() => Boolean(getStoredUser()));
 
   // Check for existing session on mount
   useEffect(() => {
-    const storedUser = localStorage.getItem('lendeck_user');
+    const storedUser = getStoredUser();
     if (storedUser) {
-      try {
-        const parsedUser = JSON.parse(storedUser);
-        setUser(parsedUser);
-        setIsAuthenticated(true);
-      } catch (error) {
-        console.error('Failed to parse stored user:', error);
-        localStorage.removeItem('lendeck_user');
-      }
+      setUser(storedUser);
+      setIsAuthenticated(true);
     }
   }, []);
 

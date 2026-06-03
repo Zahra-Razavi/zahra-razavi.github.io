@@ -24,6 +24,10 @@
       place-items: center;
     }
 
+    .portrait-orbit--hero {
+      width: clamp(108px, 12vw, 129px);
+    }
+
     .portrait-orbit::before {
       content: "";
       position: absolute;
@@ -45,7 +49,7 @@
       background: repeating-linear-gradient(
         135deg,
         rgba(17, 17, 17, 0.42) 0 2px,
-        transparent 2px 6px
+        transparent 2px 4px
       );
       pointer-events: none;
       transform: rotate(-18deg);
@@ -106,9 +110,9 @@
 
   <!-- Hero -->
   <section data-animate class="max-w-screen-xl mx-auto px-6 lg:px-8 py-20 md:py-36">
-    <div class="grid mt-24 mb-24 items-center md:[grid-template-columns:1fr_2fr] md:mt-48 md:mb-48">
-      <div class="flex flex-col items-start">
-        <div class="portrait-orbit mb-8 self-center md:self-start" aria-label="Portrait of Zahra Razavi">
+    <div class="grid mt-24 mb-24 items-center gap-10 md:grid-cols-2 md:mt-48 md:mb-48">
+      <div class="flex flex-col items-start justify-center">
+        <div class="portrait-orbit portrait-orbit--hero mb-6" aria-label="Portrait of Zahra Razavi">
           <span class="portrait-crescent" aria-hidden="true"></span>
           <div class="portrait-frame">
             <img
@@ -118,27 +122,20 @@
             />
           </div>
         </div>
-      </div>
-      <div>
-        <h1 class="font-semibold ">
-          <span class="block text-xl text-[#000000] md:text-3xl leading-[1.2] md:leading-[1.4]">Hey !</span>
-          <span class="block text-3xl md:text-5xl text-[#000000] leading-[1.2] md:leading-[1.4]">Curious how I help startups grow </span>
-          <span class=" text-3xl md:text-5xl text-[#4EA2C9] leading-[1.2] md:leading-[1.4]">ideas </span>
-          <span class=" text-3xl md:text-5xl text-[#000000] leading-[1.2] md:leading-[1.4]">into </span>
-          <span class=" text-3xl md:text-5xl text-[#4EA2C9] leading-[1.2] md:leading-[1.4]">products people love</span>   
-          <span class=" text-3xl  text-[#000000] md:text-5xl">?</span> 
+        <h1 class="max-w-xl text-lg font-medium leading-8 text-black md:text-xl md:leading-9">
+          Zara Razavi is a Product designer with 6 years of experience designing experiences and products 0-&gt;1 in startups. Currently designing Human-AI experiences.
         </h1>
-        <div class="mt-8 flex justify-end pr-4 md:pr-[48px]">
-          <a href="#work" class="inline-flex items-center justify-center w-12 h-12 text-2xl rounded-full bg-[#000000] text-white font-semibold md:w-16 md:h-16 md:text-4xl border-2 border-transparent hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4EA2C9]" aria-label="Scroll to case studies">
-            ↓
-          </a>
-        </div>
+      </div>
+      <div class="flex justify-center md:translate-y-16">
+        <a href="#work" class="inline-flex items-center justify-center w-12 h-12 text-2xl rounded-full bg-[#000000] text-white font-semibold md:w-16 md:h-16 md:text-4xl border-2 border-transparent hover:bg-transparent hover:text-[#000000] hover:border-[#000000] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4EA2C9]" aria-label="Scroll to case studies">
+          ↓
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Work Grid -->
-  <section id="work" data-animate class="max-w-screen-xl mx-auto px-2 lg:px-4 pb-16 scroll-mt-32">
+  <section id="work" class="max-w-screen-xl mx-auto px-2 lg:px-4 pb-16 scroll-mt-32">
     <!-- Project Card Template -->
     <h2 class="m-2 text-6xl font-medium">Case Studies</h2>
     <!--
@@ -152,7 +149,7 @@
     <div class="mt-16 gap-16">
       <div class="mt-16">
         <a href="https://zahra-razavi.github.io/projects/lendeck/" class="group block border rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-gray-800">
-            <img src="images/mockup-homepage-lendeck.png" alt="Lendeck dashboard mockup" class="w-full h-full object-cover" />
+            <img src="images/mockup-homepage-lendeck.png" alt="Lendeck dashboard mockup" class="w-full h-full object-cover" loading="eager" decoding="async" fetchpriority="high" />
         </a>
         <div class="mt-6 space-y-2">
             <h3 class="font-medium text-3xl">Lending platform Design</h3>
@@ -299,7 +296,7 @@
               obs.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.18 });
+        }, { rootMargin: '0px 0px 30% 0px', threshold: 0.01 });
         animateEls.forEach(el => observer.observe(el));
 
         document.querySelectorAll('a, button').forEach(el => {
