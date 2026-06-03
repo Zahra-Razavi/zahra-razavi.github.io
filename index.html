@@ -14,12 +14,44 @@
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif; }
     [data-animate] { transition: opacity .6s ease, transform .6s ease; }
     [data-animate].is-waiting { opacity: 0; transform: translateY(24px); }
-    *:focus,
-    *:focus-visible {
-      outline: none !important;
-      box-shadow: none !important;
+    *,
+    *::before,
+    *::after {
       --tw-ring-shadow: 0 0 #0000 !important;
       --tw-ring-offset-shadow: 0 0 #0000 !important;
+      --tw-inset-ring-shadow: 0 0 #0000 !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    *:focus,
+    *:focus-visible,
+    *:active {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    button:focus,
+    button:focus-visible,
+    button:active,
+    a:focus,
+    a:focus-visible,
+    a:active,
+    [role="button"]:focus,
+    [role="button"]:focus-visible,
+    [role="button"]:active {
+      border-color: transparent !important;
+      --ring: transparent !important;
+      --tw-ring-color: transparent !important;
+      transition-property: background-color, border-color, color, fill, stroke, opacity, transform !important;
+    }
+
+    input:focus,
+    input:focus-visible,
+    textarea:focus,
+    textarea:focus-visible,
+    select:focus,
+    select:focus-visible {
+      transition-property: background-color, border-color, color, fill, stroke, opacity, transform !important;
     }
 
     .portrait-orbit {
