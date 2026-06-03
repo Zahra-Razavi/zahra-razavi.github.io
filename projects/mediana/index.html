@@ -55,7 +55,13 @@
         @apply w-full;
       }
 
-      
+      *:focus,
+      *:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+        --tw-ring-shadow: 0 0 #0000 !important;
+        --tw-ring-offset-shadow: 0 0 #0000 !important;
+      }
 
       [data-placeholder] {
         @apply flex min-h-[320px] w-full items-center justify-center border border-[#3b3b3b] bg-dark-600 text-[0.65rem] tracking-[0.45em] text-teal-500;

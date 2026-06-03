@@ -70,6 +70,14 @@
       body.image-lightbox-open {
         @apply overflow-hidden;
       }
+
+      *:focus,
+      *:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+        --tw-ring-shadow: 0 0 #0000 !important;
+        --tw-ring-offset-shadow: 0 0 #0000 !important;
+      }
     }
 
     @layer components {
