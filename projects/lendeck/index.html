@@ -725,6 +725,28 @@
   <div data-toast class="pointer-events-none fixed inset-x-0 bottom-6 mx-auto hidden w-fit max-w-xs rounded-full bg-gray-900 px-4 py-2 text-sm text-white shadow-lg"></div>
 
   <script>
+    (() => {
+      const clickFocusableSelector = 'button, a[href], [role="button"]';
+
+      document.addEventListener('mousedown', event => {
+        if (event.button !== 0) {
+          return;
+        }
+
+        if (event.target instanceof Element && event.target.closest(clickFocusableSelector)) {
+          event.preventDefault();
+        }
+      }, true);
+
+      document.addEventListener('mouseup', () => {
+        window.requestAnimationFrame(() => {
+          if (document.activeElement instanceof HTMLElement && document.activeElement.matches(clickFocusableSelector)) {
+            document.activeElement.blur();
+          }
+        });
+      }, true);
+    })();
+
     document.addEventListener('DOMContentLoaded', () => {
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const animateEls = document.querySelectorAll('[data-animate]');

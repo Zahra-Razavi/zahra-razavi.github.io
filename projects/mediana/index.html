@@ -476,5 +476,28 @@
       </div>
     </section>
   </main>
+  <script>
+    (() => {
+      const clickFocusableSelector = 'button, a[href], [role="button"]';
+
+      document.addEventListener('mousedown', event => {
+        if (event.button !== 0) {
+          return;
+        }
+
+        if (event.target instanceof Element && event.target.closest(clickFocusableSelector)) {
+          event.preventDefault();
+        }
+      }, true);
+
+      document.addEventListener('mouseup', () => {
+        window.requestAnimationFrame(() => {
+          if (document.activeElement instanceof HTMLElement && document.activeElement.matches(clickFocusableSelector)) {
+            document.activeElement.blur();
+          }
+        });
+      }, true);
+    })();
+  </script>
 </body>
 </html>
