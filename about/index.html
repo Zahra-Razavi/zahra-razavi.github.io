@@ -161,9 +161,9 @@
       width: 86%;
       height: 86%;
       overflow: hidden;
-      border: 1px solid var(--dark-border);
+      border: 0;
       border-radius: inherit;
-      background: var(--dark-main-surface);
+      background: transparent;
     }
 
     .portrait-frame img {
@@ -218,6 +218,10 @@
       line-height: 1.02;
       letter-spacing: -0.03em;
       color: var(--dark-text);
+    }
+
+    .timeline-heading {
+      margin-bottom: clamp(28px, 5vw, 56px);
     }
 
     .experience-timeline {
@@ -472,14 +476,8 @@
     </section>
 
     <section class="dark-shell about-section" aria-labelledby="experience-title">
-      <h2 id="experience-title" class="section-title">Experiences</h2>
+      <h2 id="experience-title" class="about-kicker timeline-heading">work timeline</h2>
       <div class="experience-timeline">
-        <div class="timeline-node-only">
-          <div class="timeline-marker" aria-label="2025">
-            <span class="timeline-node" aria-hidden="true"></span>
-            <span class="timeline-year">2025</span>
-          </div>
-        </div>
         <article class="timeline-entry timeline-entry--right">
           <div class="timeline-content">
             <h3 class="timeline-role">Product designer &amp; Founder</h3>
@@ -487,9 +485,9 @@
           </div>
         </article>
         <div class="timeline-node-only">
-          <div class="timeline-marker" aria-label="2024">
+          <div class="timeline-marker" aria-label="2025">
             <span class="timeline-node" aria-hidden="true"></span>
-            <span class="timeline-year">2024</span>
+            <span class="timeline-year">2025</span>
           </div>
         </div>
         <article class="timeline-entry timeline-entry--left">
@@ -499,9 +497,9 @@
           </div>
         </article>
         <div class="timeline-node-only">
-          <div class="timeline-marker" aria-label="2023">
+          <div class="timeline-marker" aria-label="2024">
             <span class="timeline-node" aria-hidden="true"></span>
-            <span class="timeline-year">2023</span>
+            <span class="timeline-year">2024</span>
           </div>
         </div>
         <article class="timeline-entry timeline-entry--right">
@@ -511,23 +509,29 @@
           </div>
         </article>
         <div class="timeline-node-only">
-          <div class="timeline-marker" aria-label="2022">
+          <div class="timeline-marker" aria-label="2023">
             <span class="timeline-node" aria-hidden="true"></span>
-            <span class="timeline-year">2022</span>
+            <span class="timeline-year">2023</span>
           </div>
         </div>
         <article class="timeline-entry timeline-entry--left">
           <div class="timeline-content">
             <h3 class="timeline-role">Product Designer</h3>
-            <p class="timeline-company">Kidora</p>
+            <p class="timeline-company">Hengam</p>
           </div>
         </article>
         <article class="timeline-entry timeline-entry--right">
           <div class="timeline-content">
             <h3 class="timeline-role">Product Designer</h3>
-            <p class="timeline-company">Hengam</p>
+            <p class="timeline-company">Kidora</p>
           </div>
         </article>
+        <div class="timeline-node-only">
+          <div class="timeline-marker" aria-label="2022">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <span class="timeline-year">2022</span>
+          </div>
+        </div>
         <article class="timeline-entry timeline-entry--left">
           <div class="timeline-content">
             <h3 class="timeline-role">Founding Product Designer</h3>
@@ -550,12 +554,6 @@
           <div class="timeline-marker" aria-label="2019">
             <span class="timeline-node" aria-hidden="true"></span>
             <span class="timeline-year">2019</span>
-          </div>
-        </div>
-        <div class="timeline-node-only">
-          <div class="timeline-marker" aria-label="2018">
-            <span class="timeline-node" aria-hidden="true"></span>
-            <span class="timeline-year">2018</span>
           </div>
         </div>
       </div>
