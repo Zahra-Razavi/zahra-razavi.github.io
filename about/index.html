@@ -238,7 +238,8 @@
       transform: translateX(-50%);
     }
 
-    .timeline-item {
+    .timeline-entry,
+    .timeline-node-only {
       position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1fr) 112px minmax(0, 1fr);
@@ -246,17 +247,17 @@
       gap: clamp(18px, 3vw, 40px);
     }
 
-    .timeline-item:nth-child(even) .timeline-content {
+    .timeline-entry--left .timeline-content {
+      grid-column: 1;
+      text-align: right;
+    }
+
+    .timeline-entry--right .timeline-content {
       grid-column: 3;
     }
 
-    .timeline-item:nth-child(even) .timeline-marker {
+    .timeline-node-only .timeline-marker {
       grid-column: 2;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-content {
-      grid-column: 1;
-      text-align: right;
     }
 
     .timeline-marker {
@@ -389,22 +390,20 @@
         left: 8px;
       }
 
-      .timeline-item,
-      .timeline-item:nth-child(even),
-      .timeline-item:nth-child(odd) {
+      .timeline-entry,
+      .timeline-node-only {
         display: grid;
         grid-template-columns: 1fr;
         gap: 12px;
       }
 
-      .timeline-item:nth-child(even) .timeline-content,
-      .timeline-item:nth-child(odd) .timeline-content {
+      .timeline-entry--left .timeline-content,
+      .timeline-entry--right .timeline-content {
         grid-column: 1;
         text-align: left;
       }
 
-      .timeline-item:nth-child(even) .timeline-marker,
-      .timeline-item:nth-child(odd) .timeline-marker {
+      .timeline-node-only .timeline-marker {
         grid-column: 1;
       }
 
@@ -475,76 +474,90 @@
     <section class="dark-shell about-section" aria-labelledby="experience-title">
       <h2 id="experience-title" class="section-title">Experiences</h2>
       <div class="experience-timeline">
-        <article class="timeline-item">
-          <div class="timeline-content">
-            <h3 class="timeline-role">Product designer &amp; Founder</h3>
-            <p class="timeline-company">Visa Assistant (AI Startup)</p>
-          </div>
+        <div class="timeline-node-only">
           <div class="timeline-marker" aria-label="2025">
             <span class="timeline-node" aria-hidden="true"></span>
             <span class="timeline-year">2025</span>
           </div>
-        </article>
-        <article class="timeline-item">
+        </div>
+        <article class="timeline-entry timeline-entry--right">
           <div class="timeline-content">
-            <h3 class="timeline-role">AI Product Designer</h3>
-            <p class="timeline-company">Lendeck</p>
+            <h3 class="timeline-role">Product designer &amp; Founder</h3>
+            <p class="timeline-company">Border AI (AI Visa Assistant)</p>
           </div>
+        </article>
+        <div class="timeline-node-only">
           <div class="timeline-marker" aria-label="2024">
             <span class="timeline-node" aria-hidden="true"></span>
             <span class="timeline-year">2024</span>
           </div>
-        </article>
-        <article class="timeline-item">
+        </div>
+        <article class="timeline-entry timeline-entry--left">
           <div class="timeline-content">
-            <h3 class="timeline-role">Product designer</h3>
-            <p class="timeline-company">Mediana</p>
+            <h3 class="timeline-role">AI Product Designer</h3>
+            <p class="timeline-company">Lendeck</p>
           </div>
+        </article>
+        <div class="timeline-node-only">
           <div class="timeline-marker" aria-label="2023">
             <span class="timeline-node" aria-hidden="true"></span>
             <span class="timeline-year">2023</span>
           </div>
-        </article>
-        <article class="timeline-item">
+        </div>
+        <article class="timeline-entry timeline-entry--right">
           <div class="timeline-content">
-            <h3 class="timeline-role">Product Designer</h3>
-            <p class="timeline-company">Hengam</p>
+            <h3 class="timeline-role">Product designer</h3>
+            <p class="timeline-company">Mediana</p>
           </div>
+        </article>
+        <div class="timeline-node-only">
           <div class="timeline-marker" aria-label="2022">
             <span class="timeline-node" aria-hidden="true"></span>
             <span class="timeline-year">2022</span>
           </div>
-        </article>
-        <article class="timeline-item">
+        </div>
+        <article class="timeline-entry timeline-entry--left">
           <div class="timeline-content">
             <h3 class="timeline-role">Product Designer</h3>
             <p class="timeline-company">Kidora</p>
           </div>
-          <div class="timeline-marker" aria-label="2021">
-            <span class="timeline-node" aria-hidden="true"></span>
-            <span class="timeline-year">2021</span>
+        </article>
+        <article class="timeline-entry timeline-entry--right">
+          <div class="timeline-content">
+            <h3 class="timeline-role">Product Designer</h3>
+            <p class="timeline-company">Hengam</p>
           </div>
         </article>
-        <article class="timeline-item">
+        <article class="timeline-entry timeline-entry--left">
           <div class="timeline-content">
             <h3 class="timeline-role">Founding Product Designer</h3>
             <p class="timeline-company">Ganje</p>
           </div>
+        </article>
+        <div class="timeline-node-only">
           <div class="timeline-marker" aria-label="2020">
             <span class="timeline-node" aria-hidden="true"></span>
             <span class="timeline-year">2020</span>
           </div>
-        </article>
-        <article class="timeline-item">
+        </div>
+        <article class="timeline-entry timeline-entry--right">
           <div class="timeline-content">
             <h3 class="timeline-role">Junior Business &amp; Service Designer</h3>
             <p class="timeline-company">Lean Design Agency</p>
           </div>
+        </article>
+        <div class="timeline-node-only">
           <div class="timeline-marker" aria-label="2019">
             <span class="timeline-node" aria-hidden="true"></span>
             <span class="timeline-year">2019</span>
           </div>
-        </article>
+        </div>
+        <div class="timeline-node-only">
+          <div class="timeline-marker" aria-label="2018">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <span class="timeline-year">2018</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
