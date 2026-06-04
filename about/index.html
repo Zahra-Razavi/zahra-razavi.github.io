@@ -220,26 +220,78 @@
       color: var(--dark-text);
     }
 
-    .experience-list {
-      overflow: hidden;
+    .experience-timeline {
+      position: relative;
+      display: grid;
+      gap: clamp(28px, 4vw, 48px);
+      padding-block: 12px;
+    }
+
+    .experience-timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: var(--dark-border);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 112px minmax(0, 1fr);
+      align-items: start;
+      gap: clamp(18px, 3vw, 40px);
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      grid-column: 3;
+    }
+
+    .timeline-item:nth-child(even) .timeline-marker {
+      grid-column: 2;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content {
+      grid-column: 1;
+      text-align: right;
+    }
+
+    .timeline-marker {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+      padding-top: 8px;
+    }
+
+    .timeline-node {
+      width: 17px;
+      height: 17px;
+      border: 1px solid var(--dark-text);
+      border-radius: 999px;
+      background: var(--dark-bg-deep);
+      box-shadow: 0 0 0 8px var(--dark-bg-deep);
+    }
+
+    .timeline-year {
+      color: #E8E8E8;
+      font-size: clamp(17px, 1.5vw, 22px);
+      line-height: 1.25;
+    }
+
+    .timeline-content {
+      min-width: 0;
+      padding: clamp(20px, 2.6vw, 32px);
       border: 1px solid var(--dark-border);
-      border-radius: 28px;
+      border-radius: 24px;
       background: var(--dark-bg);
     }
 
-    .experience-row {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 180px;
-      gap: 28px;
-      padding: clamp(22px, 3vw, 34px);
-      border-bottom: 1px solid var(--dark-border);
-    }
-
-    .experience-row:last-child {
-      border-bottom: 0;
-    }
-
-    .experience-role {
+    .timeline-role {
       margin: 0;
       color: var(--dark-white);
       font-size: clamp(19px, 1.8vw, 26px);
@@ -247,19 +299,11 @@
       line-height: 1.3;
     }
 
-    .experience-company {
+    .timeline-company {
       margin: 8px 0 0;
       color: var(--dark-muted);
       font-size: clamp(15px, 1.25vw, 18px);
       line-height: 1.45;
-    }
-
-    .experience-date {
-      margin: 0;
-      color: #E8E8E8;
-      font-size: clamp(18px, 1.7vw, 24px);
-      line-height: 1.35;
-      text-align: right;
     }
 
     .dark-footer {
@@ -332,13 +376,61 @@
         order: 2;
       }
 
-      .experience-row,
       .dark-footer__grid {
         grid-template-columns: 1fr;
       }
 
-      .experience-date {
+      .experience-timeline {
+        gap: 24px;
+        padding-left: 28px;
+      }
+
+      .experience-timeline::before {
+        left: 8px;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(even),
+      .timeline-item:nth-child(odd) {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content,
+      .timeline-item:nth-child(odd) .timeline-content {
+        grid-column: 1;
         text-align: left;
+      }
+
+      .timeline-item:nth-child(even) .timeline-marker,
+      .timeline-item:nth-child(odd) .timeline-marker {
+        grid-column: 1;
+      }
+
+      .timeline-marker {
+        position: absolute;
+        top: 16px;
+        left: -28px;
+        padding-top: 0;
+      }
+
+      .timeline-node {
+        width: 15px;
+        height: 15px;
+        box-shadow: 0 0 0 6px var(--dark-bg-deep);
+      }
+
+      .timeline-year {
+        position: absolute;
+        left: 25px;
+        top: -2px;
+        white-space: nowrap;
+        font-size: 15px;
+      }
+
+      .timeline-content {
+        padding-top: 46px;
       }
     }
   </style>
@@ -370,9 +462,8 @@
 
       <div>
         <p class="about-kicker">About</p>
-        <h1 class="about-title">My story spans design, research, and startup product building.</h1>
+        <h1 class="about-title">I’m Zara, a product designer shaped by design, research, and startup life.</h1>
         <div class="about-copy">
-          <p>I’m Zara, a product designer shaped by design, research, and startup life.</p>
           <p>I fell in love with design when I was 15. It quickly became more than a field I wanted to study. It became a way to understand people, systems, and how ideas turn into real experiences.</p>
           <p>I started in mathematics and physics, with engineering as the obvious path ahead. But I chose design instead.</p>
           <p>Since then, I’ve spent four years studying design, three years researching HCI and UX during my master’s, and seven years designing brands, products, and user experiences for startups.</p>
@@ -383,63 +474,77 @@
 
     <section class="dark-shell about-section" aria-labelledby="experience-title">
       <h2 id="experience-title" class="section-title">Experiences</h2>
-      <div class="experience-list">
-        <div class="experience-row">
-          <div>
-            <h3 class="experience-role">Co-founder</h3>
-            <p class="experience-company">Visa Assistant (AI Startup)</p>
+      <div class="experience-timeline">
+        <article class="timeline-item">
+          <div class="timeline-content">
+            <h3 class="timeline-role">Product designer &amp; Founder</h3>
+            <p class="timeline-company">Visa Assistant (AI Startup)</p>
           </div>
-          <p class="experience-date">2024-2025</p>
-        </div>
-        <div class="experience-row">
-          <div>
-            <h3 class="experience-role">Senior Product Designer</h3>
-            <p class="experience-company">Lendeck</p>
+          <div class="timeline-marker" aria-label="2025">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <span class="timeline-year">2025</span>
           </div>
-          <p class="experience-date">2024-2024</p>
-        </div>
-        <div class="experience-row">
-          <div>
-            <h3 class="experience-role">Founding Product Manager</h3>
-            <p class="experience-company">Mediana</p>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-content">
+            <h3 class="timeline-role">AI Product Designer</h3>
+            <p class="timeline-company">Lendeck</p>
           </div>
-          <p class="experience-date">2023-2024</p>
-        </div>
-        <div class="experience-row">
-          <div>
-            <h3 class="experience-role">Senior Product Designer</h3>
-            <p class="experience-company">Hengam</p>
+          <div class="timeline-marker" aria-label="2024">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <span class="timeline-year">2024</span>
           </div>
-          <p class="experience-date">2022-2022</p>
-        </div>
-        <div class="experience-row">
-          <div>
-            <h3 class="experience-role">Founding Product Designer</h3>
-            <p class="experience-company">Ganje</p>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-content">
+            <h3 class="timeline-role">Product designer</h3>
+            <p class="timeline-company">Mediana</p>
           </div>
-          <p class="experience-date">2019-2021</p>
-        </div>
-        <div class="experience-row">
-          <div>
-            <h3 class="experience-role">Product Designer</h3>
-            <p class="experience-company">Kidora</p>
+          <div class="timeline-marker" aria-label="2023">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <span class="timeline-year">2023</span>
           </div>
-          <p class="experience-date">2020-2021</p>
-        </div>
-        <div class="experience-row">
-          <div>
-            <h3 class="experience-role">Project Manager &amp; Brand Design Lead</h3>
-            <p class="experience-company">NBIC, University of Tehran</p>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-content">
+            <h3 class="timeline-role">Product Designer</h3>
+            <p class="timeline-company">Hengam</p>
           </div>
-          <p class="experience-date">2019-2020</p>
-        </div>
-        <div class="experience-row">
-          <div>
-            <h3 class="experience-role">Junior Business &amp; Service Designer</h3>
-            <p class="experience-company">Lean Design Agency</p>
+          <div class="timeline-marker" aria-label="2022">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <span class="timeline-year">2022</span>
           </div>
-          <p class="experience-date">2019-2020</p>
-        </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-content">
+            <h3 class="timeline-role">Product Designer</h3>
+            <p class="timeline-company">Kidora</p>
+          </div>
+          <div class="timeline-marker" aria-label="2021">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <span class="timeline-year">2021</span>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-content">
+            <h3 class="timeline-role">Founding Product Designer</h3>
+            <p class="timeline-company">Ganje</p>
+          </div>
+          <div class="timeline-marker" aria-label="2020">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <span class="timeline-year">2020</span>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-content">
+            <h3 class="timeline-role">Junior Business &amp; Service Designer</h3>
+            <p class="timeline-company">Lean Design Agency</p>
+          </div>
+          <div class="timeline-marker" aria-label="2019">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <span class="timeline-year">2019</span>
+          </div>
+        </article>
       </div>
     </section>
   </main>
