@@ -154,7 +154,7 @@
       align-items: end;
       justify-content: flex-end;
       gap: 32px;
-      margin-top: clamp(36px, 7vw, 84px);
+      margin-top: clamp(8px, 1.6vw, 22px);
     }
 
     .dark-hero__summary {
@@ -286,7 +286,8 @@
       padding: clamp(28px, 5vw, 72px);
     }
 
-    .dark-media-frame img {
+    .dark-media-frame img,
+    .dark-media-frame video {
       width: 100%;
       max-height: 720px;
       object-fit: contain;
@@ -294,7 +295,13 @@
       box-shadow: 0 28px 72px rgba(0, 0, 0, 0.32);
     }
 
-    .dark-media-frame--cover img {
+    .dark-media-frame video {
+      display: block;
+      background: #000;
+    }
+
+    .dark-media-frame--cover img,
+    .dark-media-frame--cover video {
       max-height: none;
       aspect-ratio: 16 / 9;
       object-fit: cover;
@@ -550,8 +557,10 @@
               <div class="dark-description-cell">Built a modern VoIP SaaS interface for analytics, call operations, IVR flows, users, billing, and team settings.</div>
             </div>
             <div class="dark-media-cell">
-              <div class="dark-media-frame dark-media-frame--focus-right">
-                <img src="images/mockup-homepage-Mediana.png" alt="Mediana Voice SaaS dashboard mockup" loading="lazy" decoding="async">
+              <div class="dark-media-frame dark-media-frame--cover">
+                <video aria-label="Mediana Voice SaaS dashboard prototype video" muted loop playsinline preload="metadata" data-autoplay-video>
+                  <source src="projects/mediana/Image/Mediana-Video.mp4" type="video/mp4">
+                </video>
               </div>
             </div>
           </a>
@@ -614,6 +623,24 @@
     document.addEventListener('DOMContentLoaded', () => {
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const animateEls = document.querySelectorAll('[data-animate]');
+      const autoplayVideos = document.querySelectorAll('[data-autoplay-video]');
+
+      if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.35 });
+
+        autoplayVideos.forEach(video => videoObserver.observe(video));
+      } else {
+        autoplayVideos.forEach(video => video.play().catch(() => {}));
+      }
 
       if (prefersReduced || !('IntersectionObserver' in window)) {
         return;
