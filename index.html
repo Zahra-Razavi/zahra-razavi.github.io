@@ -149,6 +149,27 @@
       text-underline-offset: 0.12em;
     }
 
+    .dark-typewriter {
+      color: transparent;
+    }
+
+    .dark-typewriter.is-ready {
+      color: inherit;
+    }
+
+    .dark-typewriter__char {
+      opacity: 0;
+      transition: opacity 80ms ease;
+    }
+
+    .dark-typewriter__word {
+      white-space: nowrap;
+    }
+
+    .dark-typewriter__char.is-visible {
+      opacity: 1;
+    }
+
     .dark-hero__footer {
       display: flex;
       align-items: end;
@@ -503,6 +524,13 @@
       }
     }
   </style>
+  <noscript>
+    <style>
+      .dark-typewriter {
+        color: inherit;
+      }
+    </style>
+  </noscript>
 </head>
 <body>
   <div class="dark-page">
@@ -522,7 +550,7 @@
       <section class="dark-shell dark-hero" data-animate>
         <div class="dark-hero__content">
           <h1 class="dark-hero-title">
-            Zara Razavi is a product designer with 6 years of experience designing experiences and products for startups, currently focused on <em>Human-AI</em> experiences.
+            Zara Razavi is a product designer with 6 years of experience <span class="dark-typewriter" data-typewriter data-typewriter-text="designing experiences and products for startups">designing experiences and products for startups</span>, currently focused on <em>Human-AI</em> experiences.
           </h1>
           <div class="dark-hero__footer">
             <a class="dark-scroll-link" href="#work" aria-label="Scroll to case studies">↓</a>
@@ -619,6 +647,52 @@
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const animateEls = document.querySelectorAll('[data-animate]');
       const autoplayVideos = document.querySelectorAll('[data-autoplay-video]');
+      const typewriterEls = document.querySelectorAll('[data-typewriter]');
+
+      const setupTypewriter = el => {
+        const text = el.dataset.typewriterText || el.textContent || '';
+        el.setAttribute('aria-label', text);
+        el.classList.add('is-ready');
+        const renderChar = char => {
+          const safeChar = char.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          return `<span class="dark-typewriter__char" aria-hidden="true">${safeChar}</span>`;
+        };
+
+        el.innerHTML = text.split(/(\s+)/).map(token => {
+          if (/^\s+$/.test(token)) {
+            return Array.from(token).map(renderChar).join('');
+          }
+
+          return `<span class="dark-typewriter__word" aria-hidden="true">${Array.from(token).map(renderChar).join('')}</span>`;
+        }).join('');
+
+        const charEls = Array.from(el.querySelectorAll('.dark-typewriter__char'));
+        const startDelay = 350;
+        const revealDelay = 58;
+        const restartDelay = 120000;
+
+        if (prefersReduced) {
+          charEls.forEach(charEl => charEl.classList.add('is-visible'));
+          return;
+        }
+
+        const reveal = index => {
+          if (index >= charEls.length) {
+            window.setTimeout(() => {
+              charEls.forEach(charEl => charEl.classList.remove('is-visible'));
+              window.setTimeout(() => reveal(0), startDelay);
+            }, restartDelay);
+            return;
+          }
+
+          charEls[index].classList.add('is-visible');
+          window.setTimeout(() => reveal(index + 1), revealDelay);
+        };
+
+        window.setTimeout(() => reveal(0), startDelay);
+      };
+
+      typewriterEls.forEach(setupTypewriter);
 
       if ('IntersectionObserver' in window) {
         const videoObserver = new IntersectionObserver(entries => {
