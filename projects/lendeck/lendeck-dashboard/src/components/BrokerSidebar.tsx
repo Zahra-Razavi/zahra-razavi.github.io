@@ -34,8 +34,8 @@ export function BrokerSidebar({ activeTab, onTabChange }: BrokerSidebarProps) {
             className={cn(
               "w-full justify-start gap-3 h-11",
               isActive 
-                ? "bg-[#4E0F60] text-white hover:bg-[#4E0F60]/90" 
-                : "text-[#747474] hover:text-foreground hover:bg-[#F9F8FD]"
+                ? "bg-[#FF5F0C] text-white hover:bg-[#FF5F0C]/90"
+                : "text-[#747474] hover:text-foreground hover:bg-[#FF5F0C]/10"
             )}
             asChild
           >

@@ -170,7 +170,7 @@ export function DealDetailPage() {
             <MessageSquare className="h-4 w-4 mr-2" />
             Add Note
           </Button>
-          <Button className="bg-[#4E0F60] hover:bg-[#4E0F60]/90">
+          <Button className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
             <Upload className="h-4 w-4 mr-2" />
             Submit Deal
           </Button>
@@ -479,7 +479,7 @@ export function DealDetailPage() {
               
               <div className="flex justify-end gap-2">
                 <Button variant="outline">Save Draft</Button>
-                <Button className="bg-[#4E0F60] hover:bg-[#4E0F60]/90">
+                <Button className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
                   Submit to Lenders
                 </Button>
               </div>
@@ -498,7 +498,7 @@ export function DealDetailPage() {
                 <div>
                   <Textarea placeholder="Add a new note..." />
                   <div className="flex justify-end mt-2">
-                    <Button size="sm" className="bg-[#4E0F60] hover:bg-[#4E0F60]/90">
+                    <Button size="sm" className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
                       Add Note
                     </Button>
                   </div>

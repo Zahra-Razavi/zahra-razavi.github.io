@@ -199,7 +199,7 @@ export function ClosingDetailPage() {
             <Phone className="h-4 w-4 mr-2" />
             Call Lender
           </Button>
-          <Button className="bg-[#4E0F60] hover:bg-[#4E0F60]/90">
+          <Button className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
             <MessageSquare className="h-4 w-4 mr-2" />
             Send Update
           </Button>
@@ -497,7 +497,7 @@ export function ClosingDetailPage() {
               <div className="space-y-4">
                 <div className="flex gap-2">
                   <Input placeholder="Type a message..." className="flex-1" />
-                  <Button className="bg-[#4E0F60] hover:bg-[#4E0F60]/90">
+                  <Button className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
                     Send
                   </Button>
                 </div>

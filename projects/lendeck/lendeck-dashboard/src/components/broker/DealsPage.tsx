@@ -98,7 +98,7 @@ export function DealsPage() {
               
               <Button 
                 onClick={() => setShowAddDeal(true)}
-                className="bg-[#4E0F60] hover:bg-[#4E0F60]/90 shrink-0"
+                className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90 shrink-0"
               >
                 <Plus className="h-4 w-4 mr-2" />
                 <span className="hidden sm:inline">Add Deal</span>
@@ -209,7 +209,7 @@ export function DealsPage() {
               <Button variant="outline" onClick={() => setShowAddDeal(false)}>
                 Cancel
               </Button>
-              <Button className="bg-[#4E0F60] hover:bg-[#4E0F60]/90">
+              <Button className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
                 Create Deal
               </Button>
             </div>
@@ -350,7 +350,7 @@ export function DealsPage() {
                         </div>
                       ))}
                     </div>
-                    <Button className="w-full bg-[#4E0F60] hover:bg-[#4E0F60]/90">
+                    <Button className="w-full bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
                       Request Background Reports
                     </Button>
                   </div>
