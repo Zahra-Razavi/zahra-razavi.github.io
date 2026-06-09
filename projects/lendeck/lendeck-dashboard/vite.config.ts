@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
 export default defineConfig({
-  base: '/Lendeck/demo/',
+  base: '/Lendeck/prototype/',
   plugins: [react()],
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -14,7 +14,7 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    outDir: path.resolve(__dirname, '../../../Lendeck/demo'),
+    outDir: path.resolve(__dirname, '../../../Lendeck/prototype'),
     emptyOutDir: false,
   },
   server: {

@@ -1,2 +1,2 @@
-// Base path for hosting Lendeck dashboard under /Lendeck/demo on GitHub Pages
-export const BASE_PATH = "/Lendeck/demo";
+// Base path for hosting Lendeck dashboard under /Lendeck/prototype on GitHub Pages
+export const BASE_PATH = "/Lendeck/prototype";
