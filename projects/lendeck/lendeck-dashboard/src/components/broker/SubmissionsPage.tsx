@@ -167,28 +167,30 @@ export function SubmissionsPage() {
                     </Badge>
                   </TableCell>
                   <TableCell>
-                    <TableActionsMenu>
-                      <TableActionItem
-                        href={`/broker/deals/${submission.dealId}`}
-                        icon={<Eye className="h-4 w-4" />}
-                        label="View Details"
-                      />
-                      <TableActionItem
-                        onClick={() => console.log('Edit submission', submission.id)}
-                        icon={<Edit className="h-4 w-4" />}
-                        label="Edit Submission"
-                      />
-                      <TableActionItem
-                        onClick={() => console.log('Upload document', submission.id)}
-                        icon={<Upload className="h-4 w-4" />}
-                        label="Upload Document"
-                      />
-                      <TableActionItem
-                        onClick={() => console.log('Negotiate deal', submission.id)}
-                        icon={<Handshake className="h-4 w-4" />}
-                        label="Negotiate Deal"
-                      />
-                    </TableActionsMenu>
+                    <div className="flex items-center gap-2">
+                      <Button variant="ghost" size="sm" asChild>
+                        <Link to={`/broker/deals/${submission.dealId}`}>
+                          <Eye className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                      <TableActionsMenu>
+                        <TableActionItem
+                          onClick={() => console.log('Edit submission', submission.id)}
+                          icon={<Edit className="h-4 w-4" />}
+                          label="Edit Submission"
+                        />
+                        <TableActionItem
+                          onClick={() => console.log('Upload document', submission.id)}
+                          icon={<Upload className="h-4 w-4" />}
+                          label="Upload Document"
+                        />
+                        <TableActionItem
+                          onClick={() => console.log('Negotiate deal', submission.id)}
+                          icon={<Handshake className="h-4 w-4" />}
+                          label="Negotiate Deal"
+                        />
+                      </TableActionsMenu>
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}

@@ -450,36 +450,36 @@ export function ACHManagementPage() {
                       </Badge>
                     </TableCell>
                     <TableCell>
-                      <TableActionsMenu>
-                        <TableActionItem
+                      <div className="flex items-center gap-2">
+                        <Button
+                          variant="ghost"
+                          size="sm"
                           onClick={() => {
                             setSelectedTransaction(transaction);
                             setIsDetailOpen(true);
                           }}
-                          icon={<Eye className="h-4 w-4" />}
-                          label="View Details"
-                        />
-                        {transaction.status === "Failed" && (
+                        >
+                          <Eye className="h-4 w-4" />
+                        </Button>
+                        <TableActionsMenu>
+                          {transaction.status === "Failed" && (
+                            <TableActionItem
+                              onClick={() => {
+                                /* Handle retry action */
+                              }}
+                              icon={<RotateCcw className="h-4 w-4" />}
+                              label="Retry Transaction"
+                            />
+                          )}
                           <TableActionItem
                             onClick={() => {
-                              /* Handle retry action */
+                              /* Handle folder action */
                             }}
-                            icon={
-                              <RotateCcw className="h-4 w-4" />
-                            }
-                            label="Retry Transaction"
+                            icon={<FolderOpen className="h-4 w-4" />}
+                            label="View Folder"
                           />
-                        )}
-                        <TableActionItem
-                          onClick={() => {
-                            /* Handle folder action */
-                          }}
-                          icon={
-                            <FolderOpen className="h-4 w-4" />
-                          }
-                          label="View Folder"
-                        />
-                      </TableActionsMenu>
+                        </TableActionsMenu>
+                      </div>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -713,29 +713,34 @@ export function ACHManagementPage() {
                       </Badge>
                     </TableCell>
                     <TableCell>
-                      <TableActionsMenu>
-                        <TableActionItem
+                      <div className="flex items-center gap-2">
+                        <Button
+                          variant="ghost"
+                          size="sm"
                           onClick={() => {
-                            /* Handle view action */
+                            setSelectedTransaction(disbursement);
+                            setIsDetailOpen(true);
                           }}
-                          icon={<Eye className="h-4 w-4" />}
-                          label="View Details"
-                        />
-                        <TableActionItem
-                          onClick={() => {
-                            /* Handle folder action */
-                          }}
-                          icon={<FolderOpen className="h-4 w-4" />}
-                          label="View Folder"
-                        />
-                        <TableActionItem
-                          onClick={() => {
-                            /* Handle download action */
-                          }}
-                          icon={<Download className="h-4 w-4" />}
-                          label="Download Report"
-                        />
-                      </TableActionsMenu>
+                        >
+                          <Eye className="h-4 w-4" />
+                        </Button>
+                        <TableActionsMenu>
+                          <TableActionItem
+                            onClick={() => {
+                              /* Handle folder action */
+                            }}
+                            icon={<FolderOpen className="h-4 w-4" />}
+                            label="View Folder"
+                          />
+                          <TableActionItem
+                            onClick={() => {
+                              /* Handle download action */
+                            }}
+                            icon={<Download className="h-4 w-4" />}
+                            label="Download Report"
+                          />
+                        </TableActionsMenu>
+                      </div>
                     </TableCell>
                   </TableRow>
                 ))}

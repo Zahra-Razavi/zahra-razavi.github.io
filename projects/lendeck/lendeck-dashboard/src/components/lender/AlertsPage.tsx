@@ -8,7 +8,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
 import { Label } from '../ui/label';
 import { Checkbox } from '../ui/checkbox';
-import { AlertTriangle, Search, Filter, Plus, Bell, Clock, DollarSign, TrendingDown } from 'lucide-react';
+import { AlertTriangle, Search, Filter, Plus, Bell, Clock, DollarSign, TrendingDown, Eye, MoreHorizontal } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu';
 
 const alertsData = [
   {
@@ -114,6 +115,7 @@ export function AlertsPage() {
   const [typeFilter, setTypeFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [addTriggerDialog, setAddTriggerDialog] = useState(false);
+  const [selectedAlert, setSelectedAlert] = useState<any>(null);
 
   const filteredAlerts = alertsData.filter(alert => {
     const matchesSearch = alert.dba.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -389,13 +391,47 @@ export function AlertsPage() {
                       <Badge className={getStatusColor(alert.status)}>{alert.status}</Badge>
                     </TableCell>
                     <TableCell>
-                      <div className="flex gap-2">
-                        <Button variant="ghost" size="sm">
-                          View
-                        </Button>
-                        <Button variant="ghost" size="sm">
-                          Acknowledge
-                        </Button>
+                      <div className="flex items-center gap-2">
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button variant="ghost" size="sm" onClick={() => setSelectedAlert(alert)}>
+                              <Eye className="h-4 w-4" />
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-2xl">
+                            <DialogHeader>
+                              <DialogTitle>Alert Details - {alert.id}</DialogTitle>
+                              <DialogDescription>{alert.dba} — {alert.alertType}</DialogDescription>
+                            </DialogHeader>
+                            {selectedAlert && (
+                              <div className="space-y-3 text-sm">
+                                <div><strong>MID:</strong> {selectedAlert.mid}</div>
+                                <div><strong>DBA:</strong> {selectedAlert.dba}</div>
+                                <div><strong>Alert Type:</strong> {selectedAlert.alertType}</div>
+                                <div><strong>Severity:</strong> {selectedAlert.severity}</div>
+                                <div><strong>Description:</strong> {selectedAlert.description}</div>
+                                <div><strong>Balance:</strong> {selectedAlert.balance}</div>
+                                <div><strong>Days Overdue:</strong> {selectedAlert.daysOverdue}</div>
+                                <div><strong>Last Payment:</strong> {selectedAlert.lastPaymentDate}</div>
+                                <div><strong>Status:</strong> {selectedAlert.status}</div>
+                                <div><strong>Created:</strong> {selectedAlert.createdDate}</div>
+                                <div><strong>Triggered By:</strong> {selectedAlert.triggeredBy}</div>
+                              </div>
+                            )}
+                          </DialogContent>
+                        </Dialog>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm">
+                              <MoreHorizontal className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuItem>Acknowledge</DropdownMenuItem>
+                            <DropdownMenuItem>Assign</DropdownMenuItem>
+                            <DropdownMenuItem>Dismiss</DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
                       </div>
                     </TableCell>
                   </TableRow>
@@ -435,13 +471,21 @@ export function AlertsPage() {
                       <Badge className={getTriggerStatusColor(trigger.status)}>{trigger.status}</Badge>
                     </TableCell>
                     <TableCell>
-                      <div className="flex gap-2">
+                      <div className="flex items-center gap-2">
                         <Button variant="ghost" size="sm">
-                          Edit
+                          <Eye className="h-4 w-4" />
                         </Button>
-                        <Button variant="ghost" size="sm">
-                          Disable
-                        </Button>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm">
+                              <MoreHorizontal className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuItem>Edit</DropdownMenuItem>
+                            <DropdownMenuItem>Disable</DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
                       </div>
                     </TableCell>
                   </TableRow>

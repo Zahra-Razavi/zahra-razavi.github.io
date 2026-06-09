@@ -216,18 +216,20 @@ export function FundedPage() {
                     </Badge>
                   </TableCell>
                   <TableCell>
-                    <TableActionsMenu>
-                      <TableActionItem
-                        href={`/broker/funded/${deal.id}`}
-                        icon={<Eye className="h-4 w-4" />}
-                        label="View Details"
-                      />
-                      <TableActionItem
-                        onClick={() => console.log('Download report', deal.id)}
-                        icon={<Download className="h-4 w-4" />}
-                        label="Download Report"
-                      />
-                    </TableActionsMenu>
+                    <div className="flex items-center gap-2">
+                      <Button variant="ghost" size="sm" asChild>
+                        <Link to={`/broker/funded/${deal.id}`}>
+                          <Eye className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                      <TableActionsMenu>
+                        <TableActionItem
+                          onClick={() => console.log('Download report', deal.id)}
+                          icon={<Download className="h-4 w-4" />}
+                          label="Download Report"
+                        />
+                      </TableActionsMenu>
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}

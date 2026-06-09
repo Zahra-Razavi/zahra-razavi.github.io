@@ -178,33 +178,30 @@ export function ClosingPage() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <TableActionsMenu label={`Actions for deal ${deal.dealId}`}>
-                      <TableActionItem
-                        asChild
-                        icon={<Eye className="h-4 w-4" />}
-                        label="View Deal"
-                      >
-                        <Link to={`/broker/deals/${deal.dealId}`} className="flex items-center gap-2">
+                    <div className="flex items-center gap-2">
+                      <Button variant="ghost" size="sm" asChild>
+                        <Link to={`/broker/deals/${deal.dealId}`}>
                           <Eye className="h-4 w-4" />
-                          View Deal
                         </Link>
-                      </TableActionItem>
-                      <TableActionItem
-                        onClick={() => {/* Handle edit action */}}
-                        icon={<Edit className="h-4 w-4" />}
-                        label="Edit Deal"
-                      />
-                      <TableActionItem
-                        onClick={() => {/* Handle upload action */}}
-                        icon={<Upload className="h-4 w-4" />}
-                        label="Upload Documents"
-                      />
-                      <TableActionItem
-                        onClick={() => {/* Handle send action */}}
-                        icon={<Send className="h-4 w-4" />}
-                        label="Send to Lender"
-                      />
-                    </TableActionsMenu>
+                      </Button>
+                      <TableActionsMenu label={`Actions for deal ${deal.dealId}`}>
+                        <TableActionItem
+                          onClick={() => {/* Handle edit action */}}
+                          icon={<Edit className="h-4 w-4" />}
+                          label="Edit Deal"
+                        />
+                        <TableActionItem
+                          onClick={() => {/* Handle upload action */}}
+                          icon={<Upload className="h-4 w-4" />}
+                          label="Upload Documents"
+                        />
+                        <TableActionItem
+                          onClick={() => {/* Handle send action */}}
+                          icon={<Send className="h-4 w-4" />}
+                          label="Send to Lender"
+                        />
+                      </TableActionsMenu>
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}

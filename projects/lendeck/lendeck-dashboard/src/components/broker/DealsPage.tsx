@@ -135,23 +135,25 @@ export function DealsPage() {
                   </TableCell>
                   <TableCell>{deal.dateAdded}</TableCell>
                   <TableCell>
-                    <TableActionsMenu>
-                      <TableActionItem
-                        href={`/broker/deals/${deal.id}`}
-                        icon={<Eye className="h-4 w-4" />}
-                        label="View Details"
-                      />
-                      <TableActionItem
-                        onClick={() => console.log('Edit deal', deal.id)}
-                        icon={<Edit className="h-4 w-4" />}
-                        label="Edit Deal"
-                      />
-                      <TableActionItem
-                        onClick={() => console.log('Upload document', deal.id)}
-                        icon={<Upload className="h-4 w-4" />}
-                        label="Upload Document"
-                      />
-                    </TableActionsMenu>
+                    <div className="flex items-center gap-2">
+                      <Button variant="ghost" size="sm" asChild>
+                        <Link to={`/broker/deals/${deal.id}`}>
+                          <Eye className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                      <TableActionsMenu>
+                        <TableActionItem
+                          onClick={() => console.log('Edit deal', deal.id)}
+                          icon={<Edit className="h-4 w-4" />}
+                          label="Edit Deal"
+                        />
+                        <TableActionItem
+                          onClick={() => console.log('Upload document', deal.id)}
+                          icon={<Upload className="h-4 w-4" />}
+                          label="Upload Document"
+                        />
+                      </TableActionsMenu>
+                    </div>
                   </TableCell>
                 </TableRow>
               ))}

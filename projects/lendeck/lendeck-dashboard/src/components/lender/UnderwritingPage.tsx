@@ -276,12 +276,11 @@ export function UnderwritingPage() {
                       <Dialog>
                         <DialogTrigger asChild>
                           <Button
-                            variant="outline"
+                            variant="ghost"
                             size="sm"
                             onClick={() => handleQuickView(deal)}
                           >
-                            <Eye className="h-4 w-4 mr-2" />
-                            View
+                            <Eye className="h-4 w-4" />
                           </Button>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl">
