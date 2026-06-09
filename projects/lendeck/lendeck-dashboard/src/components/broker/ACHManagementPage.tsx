@@ -565,7 +565,7 @@ export function ACHManagementPage() {
                 />
               </div>
 
-              <Button className="w-full">
+              <Button className="w-full bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
                 Initiate Manual ACH Pull
               </Button>
             </CardContent>
@@ -619,7 +619,7 @@ export function ACHManagementPage() {
                 />
               </div>
 
-              <Button className="w-full">
+              <Button className="w-full bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
                 Initiate Correlated ACH Pull
               </Button>
             </CardContent>

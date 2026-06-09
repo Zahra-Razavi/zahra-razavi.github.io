@@ -83,7 +83,7 @@ export function SettingsPage() {
 
               <div className="flex justify-end gap-3">
                 <Button variant="outline">Cancel</Button>
-                <Button>Save Changes</Button>
+                <Button className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">Save Changes</Button>
               </div>
             </CardContent>
           </Card>
@@ -157,7 +157,7 @@ export function SettingsPage() {
 
               <div className="flex justify-end gap-3">
                 <Button variant="outline">Cancel</Button>
-                <Button>Save Changes</Button>
+                <Button className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">Save Changes</Button>
               </div>
             </CardContent>
           </Card>

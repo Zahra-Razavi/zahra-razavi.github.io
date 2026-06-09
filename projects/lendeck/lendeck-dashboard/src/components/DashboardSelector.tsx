@@ -39,19 +39,19 @@ export function DashboardSelector() {
         {/* Dashboard Options */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Broker Dashboard Card */}
-          <Card className="hover:shadow-lg transition-shadow duration-200 border-2 hover:border-[#4E0F60]/20">
+          <Card className="hover:shadow-lg transition-shadow duration-200 border-2 hover:border-[#FF5F0C]/20">
             <CardHeader className="text-center pb-4">
-              <div className="w-16 h-16 bg-[#4E0F60] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#FF5F0C] rounded-full flex items-center justify-center mx-auto mb-4">
                 <FileText className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-2xl text-[#4E0F60]">Broker Dashboard</CardTitle>
+              <CardTitle className="text-2xl text-[#FF5F0C]">Broker Dashboard</CardTitle>
               <CardDescription className="text-base">
                 Manage deals, submissions, and client relationships
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <p className="font-medium text-sm text-[#4E0F60]">Key Features:</p>
+                <p className="font-medium text-sm text-[#FF5F0C]">Key Features:</p>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• Deal management and tracking</li>
                   <li>• Document collection and webforms</li>
@@ -61,9 +61,9 @@ export function DashboardSelector() {
                   <li>• Commission tracking</li>
                 </ul>
               </div>
-              <Button 
+              <Button
                 onClick={() => handleSelectDashboard('broker')}
-                className="w-full"
+                className="w-full bg-[#FF5F0C] hover:bg-[#FF5F0C]/90"
                 size="lg"
               >
                 Enter Broker Dashboard
@@ -73,19 +73,19 @@ export function DashboardSelector() {
           </Card>
 
           {/* Lender Dashboard Card */}
-          <Card className="hover:shadow-lg transition-shadow duration-200 border-2 hover:border-[#FF5F0C]/20">
+          <Card className="hover:shadow-lg transition-shadow duration-200 border-2 hover:border-[#4E0F60]/20">
             <CardHeader className="text-center pb-4">
-              <div className="w-16 h-16 bg-[#FF5F0C] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#4E0F60] rounded-full flex items-center justify-center mx-auto mb-4">
                 <Building2 className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-2xl text-[#FF5F0C]">Lender Dashboard</CardTitle>
+              <CardTitle className="text-2xl text-[#4E0F60]">Lender Dashboard</CardTitle>
               <CardDescription className="text-base">
                 Underwrite, fund, and manage lending operations
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <p className="font-medium text-sm text-[#FF5F0C]">Key Features:</p>
+                <p className="font-medium text-sm text-[#4E0F60]">Key Features:</p>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• Deal review and underwriting</li>
                   <li>• ISO and syndicator management</li>
@@ -95,9 +95,9 @@ export function DashboardSelector() {
                   <li>• Alert and notification system</li>
                 </ul>
               </div>
-              <Button 
+              <Button
                 onClick={() => handleSelectDashboard('lender')}
-                className="w-full bg-[rgb(255,95,12)]"
+                className="w-full bg-[#4E0F60] hover:bg-[#4E0F60]/90"
                 size="lg"
               >
                 Enter Lender Dashboard

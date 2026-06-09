@@ -204,7 +204,7 @@ export function ProfilePage() {
                   </div>
 
                   <div className="flex gap-2">
-                    <Button>
+                    <Button className="bg-[#FF5F0C] hover:bg-[#FF5F0C]/90">
                       <Edit className="h-4 w-4 mr-2" />
                       Edit Profile
                     </Button>
