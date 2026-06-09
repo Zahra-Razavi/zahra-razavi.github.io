@@ -16,6 +16,14 @@ export default defineConfig({
     target: 'esnext',
     outDir: path.resolve(__dirname, '../../../Lendeck/prototype'),
     emptyOutDir: false,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/app.js',
+        chunkFileNames: 'assets/app-chunk.js',
+        assetFileNames: (info) =>
+          info.name?.endsWith('.css') ? 'assets/app.css' : 'assets/[name][extname]',
+      },
+    },
   },
   server: {
     port: 3000,
