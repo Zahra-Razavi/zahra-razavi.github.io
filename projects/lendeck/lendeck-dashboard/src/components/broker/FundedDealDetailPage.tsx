@@ -7,7 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
-import { ArrowLeft, MessageSquare, Clock, FileText, DollarSign, Building, Calendar, Download, TrendingUp, AlertCircle, CheckCircle, CreditCard, Phone, Mail, Plus, ExternalLink, BarChart3, FileCheck, FileX } from 'lucide-react';
+import { ArrowLeft, MessageSquare, Clock, FileText, DollarSign, Building, Calendar, Download, TrendingUp, AlertCircle, CheckCircle, CreditCard, Phone, Mail, Plus, ExternalLink, BarChart3, FileCheck, FileX, Eye, MoreHorizontal } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 import { Progress } from '../ui/progress';
 import { Separator } from '../ui/separator';
@@ -402,9 +403,24 @@ export function FundedDealDetailPage() {
                       <TableCell>{doc.size}</TableCell>
                       <TableCell>{doc.date}</TableCell>
                       <TableCell>
-                        <Button variant="ghost" size="sm">
-                          <Download className="h-4 w-4" />
-                        </Button>
+                        <div className="flex items-center gap-2">
+                          <Button variant="ghost" size="sm">
+                            <Eye className="h-4 w-4" />
+                          </Button>
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <Button variant="ghost" size="sm">
+                                <MoreHorizontal className="h-4 w-4" />
+                              </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                              <DropdownMenuItem>
+                                <Download className="h-4 w-4 mr-2" />
+                                Download
+                              </DropdownMenuItem>
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+                        </div>
                       </TableCell>
                     </TableRow>
                   ))}

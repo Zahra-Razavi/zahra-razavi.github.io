@@ -3,7 +3,8 @@ import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { Badge } from '../ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
-import { ArrowLeft, MessageSquare, Clock, FileText, DollarSign, Building, Calendar, Download, Upload, AlertCircle, CheckCircle, XCircle, RefreshCw, CreditCard, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import { ArrowLeft, MessageSquare, Clock, FileText, DollarSign, Building, Calendar, Download, Upload, AlertCircle, CheckCircle, XCircle, RefreshCw, CreditCard, ArrowUpRight, ArrowDownRight, Eye, MoreHorizontal } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 import { Separator } from '../ui/separator';
 import { Input } from '../ui/input';
@@ -461,11 +462,26 @@ export function ACHDetailPage() {
                         </Badge>
                       </TableCell>
                       <TableCell>
-                        <Link to={`/broker/ach-management/${trans.id}`}>
-                          <Button variant="ghost" size="sm">
-                            View Details
+                        <div className="flex items-center gap-2">
+                          <Button variant="ghost" size="sm" asChild>
+                            <Link to={`/broker/ach-management/${trans.id}`}>
+                              <Eye className="h-4 w-4" />
+                            </Link>
                           </Button>
-                        </Link>
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <Button variant="ghost" size="sm">
+                                <MoreHorizontal className="h-4 w-4" />
+                              </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                              <DropdownMenuItem>
+                                <Download className="h-4 w-4 mr-2" />
+                                Download
+                              </DropdownMenuItem>
+                            </DropdownMenuContent>
+                          </DropdownMenu>
+                        </div>
                       </TableCell>
                     </TableRow>
                   ))}

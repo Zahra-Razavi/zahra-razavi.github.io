@@ -5,7 +5,8 @@ import { Input } from '../ui/input';
 import { Badge } from '../ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
-import { ArrowLeft, Share, FileText, Upload, Download, MessageSquare, Clock, User, Building, DollarSign, Calendar, AlertCircle, CheckCircle, XCircle } from 'lucide-react';
+import { ArrowLeft, Share, FileText, Upload, Download, MessageSquare, Clock, User, Building, DollarSign, Calendar, AlertCircle, CheckCircle, XCircle, Eye, MoreHorizontal } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu';
 import { Separator } from '../ui/separator';
 import { Textarea } from '../ui/textarea';
 import { Checkbox } from '../ui/checkbox';
@@ -355,15 +356,29 @@ export function DealDetailPage() {
                       </TableCell>
                       <TableCell>{doc.uploadDate || 'Not uploaded'}</TableCell>
                       <TableCell>
-                        <div className="flex gap-2">
+                        <div className="flex items-center gap-2">
                           <Button variant="ghost" size="sm">
-                            <Upload className="h-4 w-4" />
+                            <Eye className="h-4 w-4" />
                           </Button>
-                          {doc.uploadDate && (
-                            <Button variant="ghost" size="sm">
-                              <Download className="h-4 w-4" />
-                            </Button>
-                          )}
+                          <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                              <Button variant="ghost" size="sm">
+                                <MoreHorizontal className="h-4 w-4" />
+                              </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                              <DropdownMenuItem>
+                                <Upload className="h-4 w-4 mr-2" />
+                                Upload
+                              </DropdownMenuItem>
+                              {doc.uploadDate && (
+                                <DropdownMenuItem>
+                                  <Download className="h-4 w-4 mr-2" />
+                                  Download
+                                </DropdownMenuItem>
+                              )}
+                            </DropdownMenuContent>
+                          </DropdownMenu>
                         </div>
                       </TableCell>
                     </TableRow>
