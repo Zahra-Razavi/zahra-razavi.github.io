@@ -15,7 +15,7 @@ export default defineConfig({
   build: {
     target: 'esnext',
     outDir: path.resolve(__dirname, '../../../Lendeck/demo'),
-    emptyOutDir: true,
+    emptyOutDir: false,
   },
   server: {
     port: 3000,
