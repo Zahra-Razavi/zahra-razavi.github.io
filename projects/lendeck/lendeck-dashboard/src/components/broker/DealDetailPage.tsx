@@ -30,7 +30,11 @@ const mockDeals = [
     monthlyRevenue: '$45,000',
     loanPurpose: 'Equipment Financing',
     timeline: 'Within 30 days',
-    collateral: 'Equipment & Inventory'
+    collateral: 'Equipment & Inventory',
+    owner: 'David Chen',
+    ownershipPct: '100%',
+    entityType: 'S-Corporation',
+    businessAddress: '4200 Innovation Way, Austin, TX 78759'
   },
   {
     id: 'D002', 
@@ -48,7 +52,11 @@ const mockDeals = [
     monthlyRevenue: '$67,000',
     loanPurpose: 'Working Capital',
     timeline: 'ASAP',
-    collateral: 'Accounts Receivable'
+    collateral: 'Accounts Receivable',
+    owner: 'Maria Alvarez',
+    ownershipPct: '60%',
+    entityType: 'LLC',
+    businessAddress: '880 Solar Park Dr, Phoenix, AZ 85004'
   },
   {
     id: 'D003',
@@ -66,41 +74,154 @@ const mockDeals = [
     monthlyRevenue: '$28,000',
     loanPurpose: 'Inventory Expansion',
     timeline: 'Within 60 days',
-    collateral: 'Inventory'
+    collateral: 'Inventory',
+    owner: 'James Porter',
+    ownershipPct: '50%',
+    entityType: 'LLC (two members)',
+    businessAddress: '1530 Market St, Columbus, OH 43215'
   }
 ];
 
-const mockDocuments = [
-  { name: 'Bank Statements (3 months)', status: 'completed', uploadDate: '2024-01-15' },
-  { name: 'Tax Returns (2 years)', status: 'pending', uploadDate: null },
-  { name: 'Business License', status: 'completed', uploadDate: '2024-01-14' },
-  { name: 'Financial Statements', status: 'in-review', uploadDate: '2024-01-13' },
-  { name: 'Voided Check', status: 'completed', uploadDate: '2024-01-15' }
-];
+const dealDocuments: Record<string, { name: string; status: string; uploadDate: string | null }[]> = {
+  D001: [
+    { name: 'Bank Statements (3 months)', status: 'completed', uploadDate: '2024-01-15' },
+    { name: 'Equipment Purchase Quote', status: 'pending', uploadDate: null },
+    { name: 'Tax Returns (2 years)', status: 'pending', uploadDate: null },
+    { name: 'Business License', status: 'completed', uploadDate: '2024-01-14' },
+    { name: 'Financial Statements (YTD)', status: 'in-review', uploadDate: '2024-01-13' },
+    { name: 'Voided Check', status: 'completed', uploadDate: '2024-01-15' }
+  ],
+  D002: [
+    { name: 'Bank Statements (6 months)', status: 'completed', uploadDate: '2024-01-12' },
+    { name: 'Tax Returns (2 years)', status: 'completed', uploadDate: '2024-01-12' },
+    { name: 'A/R Aging Report', status: 'completed', uploadDate: '2024-01-13' },
+    { name: 'Business Debt Schedule', status: 'completed', uploadDate: '2024-01-13' },
+    { name: "Owner's Driver License", status: 'completed', uploadDate: '2024-01-11' },
+    { name: 'Voided Check', status: 'completed', uploadDate: '2024-01-11' }
+  ],
+  D003: [
+    { name: 'Bank Statements (3 months)', status: 'completed', uploadDate: '2024-01-10' },
+    { name: 'Sales Tax Returns (4 quarters)', status: 'in-review', uploadDate: '2024-01-11' },
+    { name: 'Inventory Valuation Report', status: 'in-review', uploadDate: '2024-01-11' },
+    { name: 'Store Lease Agreement', status: 'completed', uploadDate: '2024-01-10' },
+    { name: 'Tax Returns (2 years)', status: 'pending', uploadDate: null }
+  ]
+};
 
-const mockNotes = [
-  {
-    id: 1,
-    author: 'John Smith',
-    date: '2024-01-15 10:30 AM',
-    note: 'Client is very responsive and has provided all initial documentation. Strong credit profile.',
-    type: 'internal'
+const dealNotes: Record<string, { id: number; author: string; date: string; note: string; type: string }[]> = {
+  D001: [
+    {
+      id: 1,
+      author: 'John Smith',
+      date: '2024-01-15 10:30 AM',
+      note: 'Client is very responsive and has provided all initial documentation. Strong credit profile — 720 FICO. Waiting on the equipment vendor quote before we can finalize the package.',
+      type: 'internal'
+    },
+    {
+      id: 2,
+      author: 'System',
+      date: '2024-01-15 9:15 AM',
+      note: 'Document upload completed: Bank Statements (3 months)',
+      type: 'system'
+    },
+    {
+      id: 3,
+      author: 'John Smith',
+      date: '2024-01-14 4:45 PM',
+      note: 'Spoke with client about timeline. They need funding within 30 days for a CNC machine purchase. Vendor is holding the price until end of month.',
+      type: 'client'
+    }
+  ],
+  D002: [
+    {
+      id: 1,
+      author: 'Sarah Johnson',
+      date: '2024-01-16 2:20 PM',
+      note: 'Full document package verified. A/R aging looks healthy — 85% of receivables under 60 days. Deal is ready to submit; client confirmed they want offers ASAP.',
+      type: 'internal'
+    },
+    {
+      id: 2,
+      author: 'System',
+      date: '2024-01-16 11:05 AM',
+      note: 'All required documents received. Deal status changed to Ready to Submit.',
+      type: 'system'
+    },
+    {
+      id: 3,
+      author: 'Sarah Johnson',
+      date: '2024-01-15 3:30 PM',
+      note: 'Client call: working capital needed to bridge a utility-scale solar install contract. Existing funding position with OnDeck will be paid off at closing.',
+      type: 'client'
+    },
+    {
+      id: 4,
+      author: 'System',
+      date: '2024-01-14 9:00 AM',
+      note: 'Document upload completed: Business Debt Schedule',
+      type: 'system'
+    }
+  ],
+  D003: [
+    {
+      id: 1,
+      author: 'Mike Davis',
+      date: '2024-01-14 1:15 PM',
+      note: 'Credit score (650) is below prime threshold — flagged for manual review. Inventory valuation report sent to underwriting for verification.',
+      type: 'internal'
+    },
+    {
+      id: 2,
+      author: 'System',
+      date: '2024-01-13 10:40 AM',
+      note: 'Deal status changed to Under Review.',
+      type: 'system'
+    },
+    {
+      id: 3,
+      author: 'Mike Davis',
+      date: '2024-01-12 5:00 PM',
+      note: 'Client expanding to a second location before the spring season. Landlord reference confirmed 5 years of on-time rent payments at current store.',
+      type: 'client'
+    }
+  ]
+};
+
+const dealProgress: Record<string, { percent: number; stages: { label: string; status: 'complete' | 'active' | 'pending' }[] }> = {
+  D001: {
+    percent: 60,
+    stages: [
+      { label: 'Initial Info', status: 'complete' },
+      { label: 'Documents', status: 'active' },
+      { label: 'Review', status: 'pending' },
+      { label: 'Submit', status: 'pending' }
+    ]
   },
-  {
-    id: 2,
-    author: 'System',
-    date: '2024-01-15 9:15 AM',
-    note: 'Document upload completed: Bank Statements',
-    type: 'system'
+  D002: {
+    percent: 100,
+    stages: [
+      { label: 'Initial Info', status: 'complete' },
+      { label: 'Documents', status: 'complete' },
+      { label: 'Review', status: 'complete' },
+      { label: 'Submit', status: 'active' }
+    ]
   },
-  {
-    id: 3,
-    author: 'Sarah Johnson',
-    date: '2024-01-14 4:45 PM',
-    note: 'Spoke with client about timeline. They need funding within 30 days for equipment purchase.',
-    type: 'client'
+  D003: {
+    percent: 80,
+    stages: [
+      { label: 'Initial Info', status: 'complete' },
+      { label: 'Documents', status: 'complete' },
+      { label: 'Review', status: 'active' },
+      { label: 'Submit', status: 'pending' }
+    ]
   }
-];
+};
+
+const dealLenders: Record<string, string[]> = {
+  D001: ['Wells Fargo Equipment Finance', 'CIT Equipment Leasing', 'Balboa Capital'],
+  D002: ['Capital One Business', 'Rapid Finance', 'Credibly Working Capital'],
+  D003: ['Alternative Lending Solutions', 'Fora Financial', 'Reliant Funding']
+};
 
 export function DealDetailPage() {
   const { id } = useParams();
@@ -146,6 +267,27 @@ export function DealDetailPage() {
     }
   };
 
+  const documents = dealDocuments[deal.id] ?? [];
+  const notes = dealNotes[deal.id] ?? [];
+  const progress = dealProgress[deal.id] ?? { percent: 0, stages: [] };
+  const lenders = dealLenders[deal.id] ?? [];
+
+  const getStageClasses = (status: 'complete' | 'active' | 'pending') => {
+    switch (status) {
+      case 'complete': return 'bg-green-100 text-green-600';
+      case 'active': return 'bg-[#FF5F0C]/10 text-[#FF5F0C]';
+      default: return 'bg-gray-100 text-gray-400';
+    }
+  };
+
+  const getStageIcon = (status: 'complete' | 'active' | 'pending') => {
+    switch (status) {
+      case 'complete': return <CheckCircle className="h-4 w-4" />;
+      case 'active': return <Clock className="h-4 w-4" />;
+      default: return <AlertCircle className="h-4 w-4" />;
+    }
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -158,8 +300,8 @@ export function DealDetailPage() {
             </Button>
           </Link>
           <div>
-            <h1 className="text-2xl font-bold">Deal {deal.id}</h1>
-            <p className="text-muted-foreground">{deal.company}</p>
+            <h1 className="text-2xl font-bold">{deal.id} — {deal.company} Deal Detail</h1>
+            <p className="text-muted-foreground">{deal.industry} • Rep: {deal.rep}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -294,34 +436,18 @@ export function DealDetailPage() {
               <div className="space-y-4">
                 <div className="flex justify-between text-sm">
                   <span>Documents Collection</span>
-                  <span>75%</span>
+                  <span>{progress.percent}%</span>
                 </div>
-                <Progress value={75} className="h-2" />
+                <Progress value={progress.percent} className="h-2" />
                 <div className="grid grid-cols-4 gap-4 text-center text-sm">
-                  <div className="space-y-2">
-                    <div className="w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
-                      <CheckCircle className="h-4 w-4" />
+                  {progress.stages.map((stage) => (
+                    <div key={stage.label} className="space-y-2">
+                      <div className={`w-8 h-8 ${getStageClasses(stage.status)} rounded-full flex items-center justify-center mx-auto`}>
+                        {getStageIcon(stage.status)}
+                      </div>
+                      <span>{stage.label}</span>
                     </div>
-                    <span>Initial Info</span>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto">
-                      <Clock className="h-4 w-4" />
-                    </div>
-                    <span>Documents</span>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="w-8 h-8 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center mx-auto">
-                      <AlertCircle className="h-4 w-4" />
-                    </div>
-                    <span>Review</span>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="w-8 h-8 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center mx-auto">
-                      <Upload className="h-4 w-4" />
-                    </div>
-                    <span>Submit</span>
-                  </div>
+                  ))}
                 </div>
               </div>
             </CardContent>
@@ -345,7 +471,7 @@ export function DealDetailPage() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {mockDocuments.map((doc, index) => (
+                  {documents.map((doc, index) => (
                     <TableRow key={index}>
                       <TableCell className="font-medium">{doc.name}</TableCell>
                       <TableCell>
@@ -390,7 +516,7 @@ export function DealDetailPage() {
         </TabsContent>
 
         <TabsContent value="background" className="space-y-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <Card>
               <CardHeader>
                 <CardTitle>Business Information</CardTitle>
@@ -442,6 +568,32 @@ export function DealDetailPage() {
                 </div>
               </CardContent>
             </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Owner Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Owner:</span>
+                    <span className="font-medium">{deal.owner}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Ownership:</span>
+                    <span className="font-medium">{deal.ownershipPct}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Entity Type:</span>
+                    <span className="font-medium">{deal.entityType}</span>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <span className="text-muted-foreground shrink-0">Address:</span>
+                    <span className="font-medium text-right">{deal.businessAddress}</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </TabsContent>
 
@@ -455,19 +607,14 @@ export function DealDetailPage() {
               <div className="space-y-4">
                 <div>
                   <label className="text-sm font-medium mb-2 block">Select Lenders</label>
+                  <p className="text-sm text-muted-foreground mb-2">Recommended for {deal.loanPurpose.toLowerCase()}</p>
                   <div className="space-y-2">
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="lender1" />
-                      <label htmlFor="lender1" className="text-sm">Capital One Business</label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="lender2" />
-                      <label htmlFor="lender2" className="text-sm">Wells Fargo Equipment Finance</label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox id="lender3" />
-                      <label htmlFor="lender3" className="text-sm">Alternative Lending Solutions</label>
-                    </div>
+                    {lenders.map((lender, index) => (
+                      <div key={lender} className="flex items-center space-x-2">
+                        <Checkbox id={`lender${index + 1}`} />
+                        <label htmlFor={`lender${index + 1}`} className="text-sm">{lender}</label>
+                      </div>
+                    ))}
                   </div>
                 </div>
                 
@@ -507,7 +654,7 @@ export function DealDetailPage() {
                 <Separator />
                 
                 <div className="space-y-4">
-                  {mockNotes.map((note) => (
+                  {notes.map((note) => (
                     <div key={note.id} className="border rounded-lg p-4">
                       <div className="flex justify-between items-start mb-2">
                         <div className="flex items-center gap-2">
