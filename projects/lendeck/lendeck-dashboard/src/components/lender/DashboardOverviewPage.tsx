@@ -7,18 +7,18 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { TrendingUp, TrendingDown, DollarSign, Users, FileText, AlertTriangle, CheckCircle, Clock } from 'lucide-react';
 
 const dealTrendData = [
-  { name: 'Jan', received: 65, approved: 34, declined: 31, reviewDays: 3.2 },
-  { name: 'Feb', received: 78, approved: 42, declined: 36, reviewDays: 2.9 },
-  { name: 'Mar', received: 90, approved: 48, declined: 42, reviewDays: 3.4 },
-  { name: 'Apr', received: 81, approved: 43, declined: 38, reviewDays: 3.1 },
-  { name: 'May', received: 95, approved: 52, declined: 43, reviewDays: 2.8 },
-  { name: 'Jun', received: 102, approved: 57, declined: 45, reviewDays: 2.6 },
-  { name: 'Jul', received: 110, approved: 61, declined: 49, reviewDays: 2.7 },
-  { name: 'Aug', received: 98, approved: 52, declined: 46, reviewDays: 2.9 },
-  { name: 'Sep', received: 121, approved: 67, declined: 54, reviewDays: 2.5 },
-  { name: 'Oct', received: 115, approved: 64, declined: 51, reviewDays: 2.4 },
-  { name: 'Nov', received: 128, approved: 72, declined: 56, reviewDays: 2.3 },
-  { name: 'Dec', received: 134, approved: 77, declined: 57, reviewDays: 2.2 },
+  { name: 'Jan', received: 58, approved: 33, declined: 25, reviewDays: 3.6 },
+  { name: 'Feb', received: 86, approved: 55, declined: 31, reviewDays: 3.1 },
+  { name: 'Mar', received: 124, approved: 84, declined: 40, reviewDays: 2.4 },
+  { name: 'Apr', received: 92, approved: 58, declined: 34, reviewDays: 3.0 },
+  { name: 'May', received: 78, approved: 47, declined: 31, reviewDays: 3.3 },
+  { name: 'Jun', received: 96, approved: 62, declined: 34, reviewDays: 2.8 },
+  { name: 'Jul', received: 138, approved: 97, declined: 41, reviewDays: 2.1 },
+  { name: 'Aug', received: 104, approved: 66, declined: 38, reviewDays: 2.7 },
+  { name: 'Sep', received: 88, approved: 55, declined: 33, reviewDays: 3.0 },
+  { name: 'Oct', received: 126, approved: 88, declined: 38, reviewDays: 2.3 },
+  { name: 'Nov', received: 84, approved: 52, declined: 32, reviewDays: 2.9 },
+  { name: 'Dec', received: 62, approved: 36, declined: 26, reviewDays: 3.4 },
 ];
 
 const fundingData = [
@@ -110,6 +110,8 @@ export function DashboardOverviewPage() {
   const totalReceived = dealTrendData.reduce((s, d) => s + d.received, 0);
   const totalApproved = dealTrendData.reduce((s, d) => s + d.approved, 0);
   const avgApprovalRate = Math.round((totalApproved / totalReceived) * 100);
+  const bestDealMonth = dealTrendData.reduce((best, d) => (d.received > best.received ? d : best), dealTrendData[0]);
+  const avgReviewDays = (dealTrendData.reduce((s, d) => s + d.reviewDays, 0) / dealTrendData.length).toFixed(1);
 
   const fundMax = 6000000;
   const totalFunded = fundingData.reduce((s, d) => s + d.amount, 0);
@@ -311,11 +313,11 @@ export function DashboardOverviewPage() {
               </div>
               <div>
                 <div className="text-[10px] text-muted-foreground">Best month</div>
-                <div className="text-sm font-semibold">Dec • 134 deals</div>
+                <div className="text-sm font-semibold">{bestDealMonth.name} • {bestDealMonth.received} deals</div>
               </div>
               <div>
                 <div className="text-[10px] text-muted-foreground">Avg review time</div>
-                <div className="text-sm font-semibold">2.75 days</div>
+                <div className="text-sm font-semibold">{avgReviewDays} days</div>
               </div>
             </div>
           </CardContent>
