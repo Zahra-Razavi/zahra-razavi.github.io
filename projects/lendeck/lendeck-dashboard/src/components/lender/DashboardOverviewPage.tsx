@@ -7,18 +7,18 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { TrendingUp, TrendingDown, DollarSign, Users, FileText, AlertTriangle, CheckCircle, Clock } from 'lucide-react';
 
 const dealTrendData = [
-  { name: 'Jan', received: 65, approved: 45, declined: 14, reviewDays: 3.2 },
-  { name: 'Feb', received: 78, approved: 62, declined: 11, reviewDays: 2.9 },
-  { name: 'Mar', received: 90, approved: 71, declined: 13, reviewDays: 3.4 },
-  { name: 'Apr', received: 81, approved: 65, declined: 12, reviewDays: 3.1 },
-  { name: 'May', received: 95, approved: 76, declined: 13, reviewDays: 2.8 },
-  { name: 'Jun', received: 102, approved: 84, declined: 12, reviewDays: 2.6 },
-  { name: 'Jul', received: 110, approved: 89, declined: 15, reviewDays: 2.7 },
-  { name: 'Aug', received: 98, approved: 80, declined: 12, reviewDays: 2.9 },
-  { name: 'Sep', received: 121, approved: 97, declined: 16, reviewDays: 2.5 },
-  { name: 'Oct', received: 115, approved: 94, declined: 14, reviewDays: 2.4 },
-  { name: 'Nov', received: 128, approved: 106, declined: 15, reviewDays: 2.3 },
-  { name: 'Dec', received: 134, approved: 112, declined: 14, reviewDays: 2.2 },
+  { name: 'Jan', received: 65, approved: 34, declined: 31, reviewDays: 3.2 },
+  { name: 'Feb', received: 78, approved: 42, declined: 36, reviewDays: 2.9 },
+  { name: 'Mar', received: 90, approved: 48, declined: 42, reviewDays: 3.4 },
+  { name: 'Apr', received: 81, approved: 43, declined: 38, reviewDays: 3.1 },
+  { name: 'May', received: 95, approved: 52, declined: 43, reviewDays: 2.8 },
+  { name: 'Jun', received: 102, approved: 57, declined: 45, reviewDays: 2.6 },
+  { name: 'Jul', received: 110, approved: 61, declined: 49, reviewDays: 2.7 },
+  { name: 'Aug', received: 98, approved: 52, declined: 46, reviewDays: 2.9 },
+  { name: 'Sep', received: 121, approved: 67, declined: 54, reviewDays: 2.5 },
+  { name: 'Oct', received: 115, approved: 64, declined: 51, reviewDays: 2.4 },
+  { name: 'Nov', received: 128, approved: 72, declined: 56, reviewDays: 2.3 },
+  { name: 'Dec', received: 134, approved: 77, declined: 57, reviewDays: 2.2 },
 ];
 
 const fundingData = [
