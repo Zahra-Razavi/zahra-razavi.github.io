@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { Badge } from '../ui/badge';
 import { Progress } from '../ui/progress';
@@ -6,22 +7,54 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { TrendingUp, TrendingDown, DollarSign, Users, FileText, AlertTriangle, CheckCircle, Clock } from 'lucide-react';
 
 const dealTrendData = [
-  { name: 'Jan', deals: 65, success: 45 },
-  { name: 'Feb', deals: 78, success: 62 },
-  { name: 'Mar', deals: 90, success: 71 },
-  { name: 'Apr', deals: 81, success: 65 },
-  { name: 'May', deals: 95, success: 76 },
-  { name: 'Jun', deals: 102, success: 84 },
+  { name: 'Jan', received: 65, approved: 45, declined: 14, reviewDays: 3.2 },
+  { name: 'Feb', received: 78, approved: 62, declined: 11, reviewDays: 2.9 },
+  { name: 'Mar', received: 90, approved: 71, declined: 13, reviewDays: 3.4 },
+  { name: 'Apr', received: 81, approved: 65, declined: 12, reviewDays: 3.1 },
+  { name: 'May', received: 95, approved: 76, declined: 13, reviewDays: 2.8 },
+  { name: 'Jun', received: 102, approved: 84, declined: 12, reviewDays: 2.6 },
+  { name: 'Jul', received: 110, approved: 89, declined: 15, reviewDays: 2.7 },
+  { name: 'Aug', received: 98, approved: 80, declined: 12, reviewDays: 2.9 },
+  { name: 'Sep', received: 121, approved: 97, declined: 16, reviewDays: 2.5 },
+  { name: 'Oct', received: 115, approved: 94, declined: 14, reviewDays: 2.4 },
+  { name: 'Nov', received: 128, approved: 106, declined: 15, reviewDays: 2.3 },
+  { name: 'Dec', received: 134, approved: 112, declined: 14, reviewDays: 2.2 },
 ];
 
 const fundingData = [
-  { name: 'Jan', amount: 2400000 },
-  { name: 'Feb', amount: 3100000 },
-  { name: 'Mar', amount: 2800000 },
-  { name: 'Apr', amount: 3500000 },
-  { name: 'May', amount: 4200000 },
-  { name: 'Jun', amount: 3900000 },
+  { name: 'Jan', amount: 2400000, deals: 38 },
+  { name: 'Feb', amount: 3100000, deals: 45 },
+  { name: 'Mar', amount: 2800000, deals: 41 },
+  { name: 'Apr', amount: 3500000, deals: 52 },
+  { name: 'May', amount: 4200000, deals: 61 },
+  { name: 'Jun', amount: 3900000, deals: 57 },
+  { name: 'Jul', amount: 4600000, deals: 66 },
+  { name: 'Aug', amount: 4100000, deals: 60 },
+  { name: 'Sep', amount: 5000000, deals: 72 },
+  { name: 'Oct', amount: 4700000, deals: 68 },
+  { name: 'Nov', amount: 5400000, deals: 77 },
+  { name: 'Dec', amount: 5800000, deals: 82 },
 ];
+
+// Catmull-Rom → cubic bezier for smooth chart curves
+function smoothPath(pts: { x: number; y: number }[]) {
+  if (pts.length < 2) return '';
+  let d = `M ${pts[0].x},${pts[0].y}`;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[Math.max(0, i - 1)];
+    const p1 = pts[i];
+    const p2 = pts[i + 1];
+    const p3 = pts[Math.min(pts.length - 1, i + 2)];
+    const c1x = p1.x + (p2.x - p0.x) / 6;
+    const c1y = p1.y + (p2.y - p0.y) / 6;
+    const c2x = p2.x - (p3.x - p1.x) / 6;
+    const c2y = p2.y - (p3.y - p1.y) / 6;
+    d += ` C ${c1x},${c1y} ${c2x},${c2y} ${p2.x},${p2.y}`;
+  }
+  return d;
+}
+
+const formatM = (n: number) => `$${(n / 1000000).toFixed(1)}M`;
 
 const performanceData = [
   { name: 'Q1', performance: 85 },
@@ -70,6 +103,24 @@ const bottomMerchants = [
 ];
 
 export function DashboardOverviewPage() {
+  const [dealHover, setDealHover] = useState<number | null>(null);
+  const [fundHover, setFundHover] = useState<number | null>(null);
+
+  const dealMax = 140;
+  const totalReceived = dealTrendData.reduce((s, d) => s + d.received, 0);
+  const totalApproved = dealTrendData.reduce((s, d) => s + d.approved, 0);
+  const avgApprovalRate = Math.round((totalApproved / totalReceived) * 100);
+
+  const fundMax = 6000000;
+  const totalFunded = fundingData.reduce((s, d) => s + d.amount, 0);
+  const peakMonth = fundingData.reduce((best, d) => (d.amount > best.amount ? d : best), fundingData[0]);
+  const fundPts = fundingData.map((d, i) => ({
+    x: (i / (fundingData.length - 1)) * 100,
+    y: 100 - (d.amount / fundMax) * 100,
+  }));
+  const fundLine = smoothPath(fundPts);
+  const fundArea = `${fundLine} L 100,100 L 0,100 Z`;
+
   return (
     <div className="space-y-6">
       {/* Key Metrics Cards */}
@@ -146,62 +197,125 @@ export function DashboardOverviewPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Deal Review Trends */}
         <Card>
-          <CardHeader>
-            <CardTitle>Deal Review Trends</CardTitle>
-            <CardDescription>Monthly deal volume and success rates</CardDescription>
+          <CardHeader className="flex flex-row items-start justify-between space-y-0">
+            <div>
+              <CardTitle>Deal Review Trends</CardTitle>
+              <CardDescription>Monthly volume, approvals and declines — last 12 months</CardDescription>
+            </div>
+            <div className="text-right">
+              <div className="text-2xl font-bold">{totalReceived.toLocaleString()}</div>
+              <div className="flex items-center justify-end gap-1 text-xs text-[#25A900]">
+                <TrendingUp className="h-3 w-3" />
+                +24% vs last year
+              </div>
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="h-80 p-4">
-              {/* Chart Legend */}
-              <div className="flex justify-center gap-6 mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-lendeck-primary rounded"></div>
-                  <span className="text-sm">Total Deals</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-lendeck-success rounded"></div>
-                  <span className="text-sm">Successful</span>
-                </div>
+            {/* Legend */}
+            <div className="flex items-center mb-4" style={{ gap: 20 }}>
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#4E0F60]"></span>
+                <span className="text-xs text-muted-foreground">Received</span>
               </div>
-              
-              {/* Custom Bar Chart */}
-              <div className="flex items-end justify-between h-48 gap-2 px-4 border-l border-b border-gray-300">
-                {dealTrendData.map((item, index) => (
-                  <div key={index} className="flex-1 flex flex-col items-center gap-2">
-                    <div className="flex items-end gap-1 h-40">
-                      {/* Total Deals Bar */}
-                      <div className="relative group">
-                        <div 
-                          className="w-4 bg-lendeck-primary rounded-t transition-all duration-500 hover:opacity-80" 
-                          style={{ height: `${(item.deals / 102) * 160}px` }}
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#25A900]"></span>
+                <span className="text-xs text-muted-foreground">Approved</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#ED1E59]"></span>
+                <span className="text-xs text-muted-foreground">Declined</span>
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              {/* Y axis */}
+              <div className="flex flex-col justify-between text-[10px] text-muted-foreground text-right w-7 shrink-0" style={{ height: '14rem', paddingBottom: 20 }}>
+                <span>140</span>
+                <span>105</span>
+                <span>70</span>
+                <span>35</span>
+                <span>0</span>
+              </div>
+
+              {/* Plot area */}
+              <div className="relative flex-1" onMouseLeave={() => setDealHover(null)}>
+                {/* Gridlines */}
+                <div className="absolute left-0 right-0 top-0 flex flex-col justify-between pointer-events-none" style={{ bottom: 20 }}>
+                  {[0, 1, 2, 3, 4].map((g) => (
+                    <div key={g} className="w-full" style={{ borderTop: '1px dashed #E5E7EB', height: 0 }}></div>
+                  ))}
+                </div>
+
+                {/* Bars */}
+                <div className="relative flex items-end" style={{ height: '14rem', paddingBottom: 20 }}>
+                  {dealTrendData.map((item, index) => (
+                    <div
+                      key={item.name}
+                      className="relative flex-1 flex flex-col items-center justify-end h-full rounded-md transition-colors"
+                      style={{ backgroundColor: dealHover === index ? 'rgba(78,15,96,0.05)' : 'transparent' }}
+                      onMouseEnter={() => setDealHover(index)}
+                    >
+                      <div className="flex items-end w-full justify-center h-full" style={{ gap: 3 }}>
+                        <div
+                          className="rounded-full bg-[#4E0F60] transition-all duration-300"
+                          style={{ width: '22%', maxWidth: 10, height: `${(item.received / dealMax) * 100}%` }}
                         ></div>
-                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                          {item.deals} deals
-                        </div>
-                      </div>
-                      {/* Success Bar */}
-                      <div className="relative group">
-                        <div 
-                          className="w-4 bg-lendeck-success rounded-t transition-all duration-500 hover:opacity-80" 
-                          style={{ height: `${(item.success / 102) * 160}px` }}
+                        <div
+                          className="rounded-full bg-[#25A900] transition-all duration-300"
+                          style={{ width: '22%', maxWidth: 10, height: `${(item.approved / dealMax) * 100}%` }}
                         ></div>
-                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                          {item.success} successful
-                        </div>
+                        <div
+                          className="rounded-full bg-[#ED1E59] transition-all duration-300"
+                          style={{ width: '22%', maxWidth: 10, height: `${(item.declined / dealMax) * 100}%` }}
+                        ></div>
                       </div>
                     </div>
-                    <span className="text-xs font-medium text-gray-600">{item.name}</span>
+                  ))}
+                </div>
+
+                {/* X labels */}
+                <div className="absolute left-0 right-0 flex" style={{ bottom: 0 }}>
+                  {dealTrendData.map((item) => (
+                    <span key={item.name} className="flex-1 text-center text-[10px] text-muted-foreground whitespace-nowrap">{item.name}</span>
+                  ))}
+                </div>
+
+                {/* Tooltip */}
+                {dealHover !== null && (
+                  <div
+                    className="absolute top-0 pointer-events-none"
+                    style={{
+                      left: `${((dealHover + 0.5) / dealTrendData.length) * 100}%`,
+                      transform: dealHover < 2 ? 'translateX(0)' : dealHover > dealTrendData.length - 3 ? 'translateX(-100%)' : 'translateX(-50%)',
+                    }}
+                  >
+                    <div className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-xs whitespace-nowrap">
+                      <div className="font-semibold mb-1">{dealTrendData[dealHover].name}</div>
+                      <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#4E0F60]"></span>Received: <span className="font-medium">{dealTrendData[dealHover].received}</span></div>
+                      <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#25A900]"></span>Approved: <span className="font-medium">{dealTrendData[dealHover].approved}</span></div>
+                      <div className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-[#ED1E59]"></span>Declined: <span className="font-medium">{dealTrendData[dealHover].declined}</span></div>
+                      <div className="border-t border-gray-200 mt-1 pt-1 text-muted-foreground">
+                        Approval rate {Math.round((dealTrendData[dealHover].approved / dealTrendData[dealHover].received) * 100)}% • {dealTrendData[dealHover].reviewDays}d avg review
+                      </div>
+                    </div>
                   </div>
-                ))}
+                )}
               </div>
-              
-              {/* Y-axis labels */}
-              <div className="absolute left-0 top-0 h-48 flex flex-col justify-between text-xs text-gray-500 -ml-8">
-                <span>100</span>
-                <span>75</span>
-                <span>50</span>
-                <span>25</span>
-                <span>0</span>
+            </div>
+
+            {/* Footer stats */}
+            <div className="grid grid-cols-3 gap-3 mt-4 pt-4 border-t border-gray-200">
+              <div>
+                <div className="text-[10px] text-muted-foreground">Avg approval rate</div>
+                <div className="text-sm font-semibold">{avgApprovalRate}%</div>
+              </div>
+              <div>
+                <div className="text-[10px] text-muted-foreground">Best month</div>
+                <div className="text-sm font-semibold">Dec • 134 deals</div>
+              </div>
+              <div>
+                <div className="text-[10px] text-muted-foreground">Avg review time</div>
+                <div className="text-sm font-semibold">2.75 days</div>
               </div>
             </div>
           </CardContent>
@@ -209,90 +323,131 @@ export function DashboardOverviewPage() {
 
         {/* Funding Over Time */}
         <Card>
-          <CardHeader>
-            <CardTitle>Funding Over Time</CardTitle>
-            <CardDescription>Monthly funding amounts</CardDescription>
+          <CardHeader className="flex flex-row items-start justify-between space-y-0">
+            <div>
+              <CardTitle>Funding Over Time</CardTitle>
+              <CardDescription>Monthly funded volume and deal count — last 12 months</CardDescription>
+            </div>
+            <div className="text-right">
+              <div className="text-2xl font-bold">{formatM(totalFunded)}</div>
+              <div className="flex items-center justify-end gap-1 text-xs text-[#25A900]">
+                <TrendingUp className="h-3 w-3" />
+                +31% vs last year
+              </div>
+            </div>
           </CardHeader>
           <CardContent>
-            <div className="h-80 p-4">
-              {/* Chart Legend */}
-              <div className="flex justify-center gap-6 mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 bg-lendeck-primary rounded"></div>
-                  <span className="text-sm">Funding Amount</span>
-                </div>
+            {/* Legend */}
+            <div className="flex items-center mb-4" style={{ gap: 20 }}>
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#4E0F60]"></span>
+                <span className="text-xs text-muted-foreground">Funded amount</span>
               </div>
-              
-              {/* Custom Area Chart */}
-              <div className="relative h-48 border-l border-b border-gray-300">
-                <svg className="w-full h-full" viewBox="0 0 400 200" preserveAspectRatio="none">
-                  {/* Grid lines */}
-                  <defs>
-                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#e5e7eb" strokeWidth="0.5"/>
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#grid)" />
-                  
-                  {/* Area Chart Path */}
-                  <defs>
-                    <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" style={{stopColor: '#4E0F60', stopOpacity: 0.6}} />
-                      <stop offset="100%" style={{stopColor: '#4E0F60', stopOpacity: 0.1}} />
-                    </linearGradient>
-                  </defs>
-                  
-                  {/* Generate area path */}
-                  <path
-                    d={`M 0,${200 - (fundingData[0].amount / 4200000) * 180}
-                       L ${400/6},${200 - (fundingData[1].amount / 4200000) * 180}
-                       L ${400*2/6},${200 - (fundingData[2].amount / 4200000) * 180}
-                       L ${400*3/6},${200 - (fundingData[3].amount / 4200000) * 180}
-                       L ${400*4/6},${200 - (fundingData[4].amount / 4200000) * 180}
-                       L ${400*5/6},${200 - (fundingData[5].amount / 4200000) * 180}
-                       L ${400*5/6},200 L 0,200 Z`}
-                    fill="url(#areaGradient)"
-                    stroke="#4E0F60"
-                    strokeWidth="2"
-                  />
-                  
-                  {/* Data points */}
-                  {fundingData.map((item, index) => (
-                    <g key={index}>
-                      <circle
-                        cx={index * (400/6) + (index === 0 ? 0 : 400/12)}
-                        cy={200 - (item.amount / 4200000) * 180}
-                        r="4"
-                        fill="#4E0F60"
-                        className="hover:r-6 transition-all cursor-pointer"
-                      />
-                      <text
-                        x={index * (400/6) + (index === 0 ? 0 : 400/12)}
-                        y={200 - (item.amount / 4200000) * 180 - 10}
-                        textAnchor="middle"
-                        className="text-xs fill-gray-600 opacity-0 hover:opacity-100 transition-opacity"
-                      >
-                        ${(item.amount / 1000000).toFixed(1)}M
-                      </text>
-                    </g>
-                  ))}
-                </svg>
-                
-                {/* X-axis labels */}
-                <div className="flex justify-between mt-2 text-xs text-gray-600">
-                  {fundingData.map((item, index) => (
-                    <span key={index} className="flex-1 text-center">{item.name}</span>
+            </div>
+
+            <div className="flex gap-3">
+              {/* Y axis */}
+              <div className="flex flex-col justify-between text-[10px] text-muted-foreground text-right w-9 shrink-0" style={{ height: '14rem', paddingBottom: 20 }}>
+                <span>$6M</span>
+                <span>$4.5M</span>
+                <span>$3M</span>
+                <span>$1.5M</span>
+                <span>$0</span>
+              </div>
+
+              {/* Plot area */}
+              <div className="relative flex-1" onMouseLeave={() => setFundHover(null)}>
+                {/* Gridlines */}
+                <div className="absolute left-0 right-0 top-0 flex flex-col justify-between pointer-events-none" style={{ bottom: 20 }}>
+                  {[0, 1, 2, 3, 4].map((g) => (
+                    <div key={g} className="w-full" style={{ borderTop: '1px dashed #E5E7EB', height: 0 }}></div>
                   ))}
                 </div>
-                
-                {/* Y-axis labels */}
-                <div className="absolute left-0 top-0 h-48 flex flex-col justify-between text-xs text-gray-500 -ml-12">
-                  <span>$4.2M</span>
-                  <span>$3.1M</span>
-                  <span>$2.1M</span>
-                  <span>$1.0M</span>
-                  <span>$0M</span>
+
+                <div className="relative" style={{ height: '14rem', paddingBottom: 20 }}>
+                  <div className="relative h-full">
+                    <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="lenderFundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#4E0F60" stopOpacity="0.25" />
+                          <stop offset="100%" stopColor="#4E0F60" stopOpacity="0.02" />
+                        </linearGradient>
+                      </defs>
+                      <path d={fundArea} fill="url(#lenderFundGradient)" />
+                      <path d={fundLine} fill="none" stroke="#4E0F60" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+                      {fundHover !== null && (
+                        <line
+                          x1={fundPts[fundHover].x} y1="0" x2={fundPts[fundHover].x} y2="100"
+                          stroke="#4E0F60" strokeWidth="1" strokeDasharray="3 3" vectorEffect="non-scaling-stroke" opacity="0.4"
+                        />
+                      )}
+                    </svg>
+
+                    {/* Data dots (HTML so they stay round) */}
+                    {fundingData.map((item, index) => (
+                      <span
+                        key={item.name}
+                        className="absolute w-2 h-2 rounded-full bg-[#4E0F60] border-2 transition-transform"
+                        style={{
+                          left: `${fundPts[index].x}%`,
+                          top: `${fundPts[index].y}%`,
+                          borderColor: '#fff',
+                          transform: `translate(-50%, -50%)${fundHover === index ? ' scale(1.5)' : ''}`,
+                        }}
+                      ></span>
+                    ))}
+
+                    {/* Hover zones */}
+                    <div className="absolute inset-0 flex">
+                      {fundingData.map((item, index) => (
+                        <div key={item.name} className="flex-1" onMouseEnter={() => setFundHover(index)}></div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* X labels */}
+                  <div className="absolute left-0 right-0 flex" style={{ bottom: 0 }}>
+                    {fundingData.map((item) => (
+                      <span key={item.name} className="flex-1 text-center text-[10px] text-muted-foreground whitespace-nowrap">{item.name}</span>
+                    ))}
+                  </div>
                 </div>
+
+                {/* Tooltip */}
+                {fundHover !== null && (
+                  <div
+                    className="absolute top-0 pointer-events-none"
+                    style={{
+                      left: `${fundPts[fundHover].x}%`,
+                      transform: fundHover < 2 ? 'translateX(0)' : fundHover > fundingData.length - 3 ? 'translateX(-100%)' : 'translateX(-50%)',
+                    }}
+                  >
+                    <div className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-xs whitespace-nowrap">
+                      <div className="font-semibold mb-1">{fundingData[fundHover].name}</div>
+                      <div>Funded: <span className="font-medium">{formatM(fundingData[fundHover].amount)}</span></div>
+                      <div>Deals: <span className="font-medium">{fundingData[fundHover].deals}</span></div>
+                      <div className="border-t border-gray-200 mt-1 pt-1 text-muted-foreground">
+                        Avg {formatM(fundingData[fundHover].amount / fundingData[fundHover].deals)} per deal
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Footer stats */}
+            <div className="grid grid-cols-3 gap-3 mt-4 pt-4 border-t border-gray-200">
+              <div>
+                <div className="text-[10px] text-muted-foreground">Total funded</div>
+                <div className="text-sm font-semibold">{formatM(totalFunded)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] text-muted-foreground">Peak month</div>
+                <div className="text-sm font-semibold">{peakMonth.name} • {formatM(peakMonth.amount)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] text-muted-foreground">Monthly average</div>
+                <div className="text-sm font-semibold">{formatM(totalFunded / fundingData.length)}</div>
               </div>
             </div>
           </CardContent>
